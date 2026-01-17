@@ -431,6 +431,45 @@
   </div>
 </section>
 
+<section>
+  <h2>Why Choose FameOceans?</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-3">
+  <img src="{{ asset('images/Bold Moves.jpeg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Bold Moves</h5>
+    <p class="card-text">We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
+    <button class="btn btn-primary">Connect</button>
+  </div>
+</div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+  <img src="{{ asset('images/Global Network.jpeg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Global Network</h5>
+    <p class="card-text">Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
+    <button class="btn btn-primary">Connect</button>
+  </div>
+</div>
+    </div>
+
+     <div class="col-md-4">
+      <div class="card mb-3">
+  <img src="{{ asset('images/Future Focus.jpeg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Future Focus</h5>
+    <p class="card-text">We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
+    <button class="btn btn-primary">Connect</button>
+  </div>
+</div>
+    </div>
+
+  </div>
+</section>
+
 <footer>
   © FameOceans. All Rights Reserved.
 </footer>
