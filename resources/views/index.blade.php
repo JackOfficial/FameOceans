@@ -213,10 +213,10 @@
       <h2>Ocean Insights</h2>
       <h2>Designed for visibility, credibility, and opportunity.</h2>
     </div>
-    <div class="grid text-white">
-      <div class="card"><h3>Mobility Moves</h3><p>Showcase your talent on an international stage.</p></div>
-      <div class="card"><h3>Global Market Tides</h3><p>Elevate your influence and digital identity.</p></div>
-      <div class="card"><h3>Cultural Currents</h3><p>Connect with brands, sponsors, and collaborators.</p></div>
+    <div class="grid">
+      <div class="card"><h3>Mobility Moves</h3><p class="text-white">Showcase your talent on an international stage.</p></div>
+      <div class="card"><h3>Global Market Tides</h3><p class="text-white">Elevate your influence and digital identity.</p></div>
+      <div class="card"><h3>Cultural Currents</h3><p class="text-white">Connect with brands, sponsors, and collaborators.</p></div>
     </div>
   </div>
 </section>
