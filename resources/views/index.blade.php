@@ -431,7 +431,7 @@
   </div>
 </section>
 
-<section>
+<section class="container">
   <h2>Why Choose FameOceans?</h2>
   <div class="row">
     <div class="col-md-4">
