@@ -290,7 +290,7 @@ footer{
   <div class="container text-center">
     <h2 class="section-title">Ocean Insights</h2>
     <p class="section-subtitle">
-      Designed for visibility, credibility, and opportunity.
+      Wisdom from the deep blue.
     </p>
 
     <div class="row g-4 mt-5">
@@ -389,17 +389,17 @@ footer{
       <div class="col-md-6">
         <div class="glass-card mb-4">
           <h5>Business Brains</h5>
-          <p>Sharp insights that solve real-world business challenges.</p>
+          <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
         </div>
 
         <div class="glass-card mb-4">
           <h5>Money Moves</h5>
-          <p>Strategic capital placement for long-term growth.</p>
+          <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
         </div>
 
         <div class="glass-card">
           <h5>Global Reach</h5>
-          <p>Expanding influence across markets and continents.</p>
+          <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
         </div>
       </div>
 
