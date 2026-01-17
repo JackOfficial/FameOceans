@@ -228,9 +228,9 @@
       <p>Designed for visibility, credibility, and opportunity.</p>
     </div>
     <div class="grid">
-      <div class="card"><h3>Consult</h3><p>We dissect your business problems like a pirate with a map. Solutions incoming!</p></div>
-      <div class="card"><h3>Culture</h3><p>Bridging worlds, one handshake at a time. Get ready for global connections.</p></div>
-      <div class="card"><h3>Invest</h3><p>We find the gold mines for your capital. Let your money swim in profit.</p></div>
+      <div class="card"><h3>Consult</h3><p class="text-light">We dissect your business problems like a pirate with a map. Solutions incoming!</p></div>
+      <div class="card"><h3>Culture</h3><p class="text-light">Bridging worlds, one handshake at a time. Get ready for global connections.</p></div>
+      <div class="card"><h3>Invest</h3><p class="text-light">We find the gold mines for your capital. Let your money swim in profit.</p></div>
     </div>
   </div>
 </section>
