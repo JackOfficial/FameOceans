@@ -272,8 +272,8 @@ footer{
           We believe talent has no borders. FameOceans exists to bridge gaps,
           remove barriers, and provide a trusted digital space where creativity
           meets opportunity.
-          <a class="btn btn-outline-light mt-3">Learn More</a>
         </p>
+        <a class="btn btn-outline-light mt-3">Learn More</a>
       </div>
       <div class="col-md-6">
         <div class="glass-card">
