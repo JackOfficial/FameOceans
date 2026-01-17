@@ -435,7 +435,7 @@
   <h2>Why Choose FameOceans?</h2>
   <div class="row">
     <div class="col-md-4">
-      <div class="card mb-3">
+      <div class="card mb-3 text-light">
   <img src="{{ asset('images/Bold Moves.jpeg') }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Bold Moves</h5>
@@ -446,7 +446,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="card mb-3">
+      <div class="card mb-3 text-light">
   <img src="{{ asset('images/Global Network.jpeg') }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Global Network</h5>
@@ -457,7 +457,7 @@
     </div>
 
      <div class="col-md-4">
-      <div class="card mb-3">
+      <div class="card mb-3 text-light">
   <img src="{{ asset('images/Future Focus.jpeg') }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Future Focus</h5>
