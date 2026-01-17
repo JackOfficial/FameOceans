@@ -54,6 +54,7 @@ body{
 .navbar-brand{
   font-weight:700;
   font-size:24px;
+   letter-spacing: 1px;
   background:linear-gradient(90deg,#fff,var(--accent));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -65,6 +66,14 @@ body{
 }
 .nav-link:hover{color:var(--accent)!important}
 
+  .navbar-nav .nav-link {
+    margin-right: 1rem;
+    transition: color 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #0d6efd;
+  }
 /* =======================
    SECTIONS
 ======================= */
@@ -171,16 +180,35 @@ footer{
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">FameOceans</a>
-    <div class="collapse navbar-collapse show">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Talents</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="#">FameOceans</a>
+
+    <!-- Toggler/collapsible Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Talents</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -378,7 +406,6 @@ footer{
     </div>
   </div>
 </section>
-
 
 <section>
   <div class="container text-center">
