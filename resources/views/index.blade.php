@@ -656,14 +656,34 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 </section>
 
 
-<!-- CTA -->
-<section class="cta">
+<!-- CTA ABOVE FOOTER -->
+<section class="cta" style="
+  background: linear-gradient(180deg, #081b34 0%, #020611 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: #e3e9ff;
+  position: relative;
+  overflow: hidden;
+">
   <div class="container">
-    <h2 class="section-title">Join the Ocean of Opportunity</h2>
-    <p class="section-subtitle">
+
+    <!-- Optional Wave Overlay for continuity with footer -->
+    <div style="position:absolute; top:-50px; left:0; width:100%; height:80px; overflow:hidden; z-index:0;">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
+        <path d="M0,50 C300,0 900,100 1200,50 L1200,0 L0,0 Z" style="stroke:none; fill:rgba(58,123,253,0.4);"></path>
+      </svg>
+    </div>
+
+    <h2 class="section-title fw-bold mb-3" style="position: relative; z-index:1; background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Join the Ocean of Opportunity
+    </h2>
+    <p class="section-subtitle mb-4" style="position: relative; z-index:1; color: rgba(227,233,255,0.85); max-width:700px; margin:0 auto;">
       Start your journey today and be part of a growing global community.
     </p>
-    <a class="btn btn-primary mt-4">Create Your Account</a>
+
+    <a href="#" class="btn btn-primary btn-lg px-5 py-3 shadow-lg" style="position: relative; z-index:1; background: linear-gradient(90deg,#3a7bfd,#00e0ff); transition: all 0.3s;">
+      <i class="fas fa-ship me-2"></i>Create Your Account
+    </a>
   </div>
 </section>
 
