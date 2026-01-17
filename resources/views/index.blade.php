@@ -180,7 +180,7 @@ footer{
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
   <div class="container">
     <!-- Brand -->
     <a class="navbar-brand fw-bold" href="#">FameOceans</a>
