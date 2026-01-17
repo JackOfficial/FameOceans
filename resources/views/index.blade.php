@@ -272,6 +272,7 @@ footer{
           We believe talent has no borders. FameOceans exists to bridge gaps,
           remove barriers, and provide a trusted digital space where creativity
           meets opportunity.
+          <a class="btn btn-outline-light mt-3">Learn More</a>
         </p>
       </div>
       <div class="col-md-6">
@@ -344,27 +345,6 @@ footer{
         <div class="glass-card">
           <h4>Invest</h4>
           <p>Identify high-impact opportunities beyond borders.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-md-6">
-        <h2 class="section-title">Why Choose FameOceans?</h2>
-        <p class="mt-4">
-        We're not your average consultants. We bring the wild, the bold, and the profitable. Prepare for impact.
-        </p>
-        <a class="btn btn-outline-light mt-3">Learn More</a>
-      </div>
-
-      <div class="col-md-6">
-        <div class="glass-card">
-          <h5>Bold Thinking</h5>
-          <p>We deliver daring strategies that create measurable impact.</p>
         </div>
       </div>
     </div>
