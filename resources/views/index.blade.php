@@ -240,18 +240,21 @@
   <h2>Ready to Conquer the Business Ocean?</h2>
       <p>Stop treading water. Let fameOceans Corporation guide your ship to unparalleled success. Your fortune awaits!</p>
   </div>
-  <button class="btn btn-outline-light  btn-rounded d-block mx-auto">Set Sail</button>
+  <button class="mt-2 btn btn-outline-light  btn-rounded d-block mx-auto">Set Sail</button>
 </section>
 
 <section>
   <div class="container">
+    <div class="row">
 <div class="col-md-6">
     <h2>Why Us?</h2>
 <p>We're not your average consultants. We bring the wild, the bold, and the profitable. Prepare for impact.</p>
-</div class="col-md-6">
-<img src="" alt="" srcset="">
+ <button class="mt-2 btn btn-light  btn-rounded d-block mx-auto">Learn More</button>
 </div>
-  <button class="btn btn-rounded">Set Sail</button>
+<div class="col-md-6">
+<img src="" alt="">
+</div>
+    </div>
 </section>
 
 <section class="cta">
