@@ -390,8 +390,8 @@
         <header condition="bg.type === 'video'">Fallback Image</header>
         <input type="image" title="Fallback Image" value="../_images/background1.jpg" name="fallBackImage" condition="bg.type === 'video'">
         <input type="checkbox" title="Overlay" name="overlay" condition="bg.type !== 'color'">
-        <input type="color" title="Overlay Color" name="overlayColor" value="#000000" condition="overlay && bg.type !== 'color'">
-        <input type="range" inline title="Opacity" name="overlayOpacity" min="0" max="1" step="0.1" value="0.5" condition="overlay && bg.type !== 'color'">
+        <input type="color" title="Overlay Color" value="#000000" condition="overlay && bg.type !== 'color'">
+        <input type="range" inline title="Opacity" min="0" max="1" step="0.1" value="0.5" condition="overlay && bg.type !== 'color'">
     </mbr-parameters>
 
     <div class="mbr-fallback-image disabled" mbr-if="bg.type == 'video'"></div>
