@@ -343,15 +343,6 @@
 </section>
 
 <section>
-  <div class="container text-center text-light">
-     <div>About</div>
-     <h2>FameOceans: Making Waves</h2>
-     <h2> Your partners in global success. </h2>
-     <p>We're the captains of your corporate ship, steering you through choppy waters to calm, profitable seas.</p>
-  </div>
-</section>
-
-<section>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -428,6 +419,15 @@
   </div>
 </div>
 
+  </div>
+</section>
+
+<section>
+  <div class="container text-center text-light">
+     <div>About Us</div>
+     <h2>FameOceans: Making Waves</h2>
+     <h2> Your partners in global success. </h2>
+     <p>We're the captains of your corporate ship, steering you through choppy waters to calm, profitable seas.</p>
   </div>
 </section>
 
