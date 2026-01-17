@@ -290,6 +290,176 @@ footer{
   </div>
 </section>
 
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">Our Treasure Chest</h2>
+    <p class="section-subtitle">
+      Strategic services designed to unlock global success.
+    </p>
+
+    <div class="row g-4 mt-5">
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Consult</h4>
+          <p>Strategic guidance that turns complexity into clarity.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Culture</h4>
+          <p>Cross-cultural connections that open global doors.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Invest</h4>
+          <p>Identify high-impact opportunities beyond borders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <h2 class="section-title">Why Choose FameOceans?</h2>
+        <p class="mt-4">
+          We are not ordinary consultants. We blend strategy, culture,
+          and opportunity into a powerful global advantage.
+        </p>
+        <a class="btn btn-outline-light mt-3">Learn More</a>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card">
+          <h5>Bold Thinking</h5>
+          <p>We deliver daring strategies that create measurable impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2 class="section-title">Our Prowess</h2>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card mb-4">
+          <h5>Business Brains</h5>
+          <p>Sharp insights that solve real-world business challenges.</p>
+        </div>
+
+        <div class="glass-card mb-4">
+          <h5>Money Moves</h5>
+          <p>Strategic capital placement for long-term growth.</p>
+        </div>
+
+        <div class="glass-card">
+          <h5>Global Reach</h5>
+          <p>Expanding influence across markets and continents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">Our Impact</h2>
+    <p class="section-subtitle">Numbers that reflect trust and results.</p>
+
+    <div class="row g-4 mt-5">
+      <div class="col-md-3">
+        <div class="glass-card">
+          <h2>99+</h2>
+          <p>Client Wins</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="glass-card">
+          <h2>1K+</h2>
+          <p>Connections Made</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="glass-card">
+          <h2>50+</h2>
+          <p>Projects Launched</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="glass-card">
+          <h2>10+</h2>
+          <p>Years of Excellence</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">What People Say</h2>
+
+    <div class="row g-4 mt-5">
+      <div class="col-md-4">
+        <div class="glass-card">
+          <p>
+            “FameOceans transformed our global strategy.
+            Their insights are sharp and effective.”
+          </p>
+          <strong>Alex Johnson</strong><br>
+          <small>CEO</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <p>
+            “The cultural exchange experience opened doors
+            I never imagined possible.”
+          </p>
+          <strong>Maria Chen</strong><br>
+          <small>Entrepreneur</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <p>
+            “Smart investments, global reach,
+            and professional execution.”
+          </p>
+          <strong>David Okello</strong><br>
+          <small>Investor</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 class="section-title">Oceans of Opportunity Await</h2>
+    <p class="section-subtitle">
+      FameOceans is your compass for global ambition and growth.
+    </p>
+    <a class="btn btn-primary mt-4">Connect Now</a>
+  </div>
+</section>
+
+
 <!-- CTA -->
 <section class="cta">
   <div class="container">
