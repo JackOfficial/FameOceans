@@ -327,14 +327,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-     <a href="">Consultancy</a>
-      <a href="">Exchange</a>
-       <a href="">Mobility</a>
-        <a href="">Growth</a>
-        <a href="">Vision</a>
+      <ul>
+        <li><a href="">Consultancy</a></li>
+        <li><a href="">Exchange</a></li>
+        <li><a href="">Mobility</a></li>
+        <li><a href="">Growth</a></li>
+        <li><a href="">Vision</a></li>
+      </ul>
       </div>
       <div class="col-md-6">
-    <img src="{{ asset('images/continents.jpeg') }}" alt="">
+    <img src="{{ asset('images/continents.jpeg') }}" alt="" class="w-100">
       </div>
     </div>
   </div>
@@ -404,7 +406,7 @@
  <div class="card mb-3" class="w-100">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
+      <img src="{{ asset('images/boost.jpeg') }}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body text-light">
