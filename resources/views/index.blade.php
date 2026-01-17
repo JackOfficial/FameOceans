@@ -621,7 +621,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
           <!-- Blog Title -->
           <h4 class="mb-2">Mobility Moves</h4>
           <!-- Metadata -->
-          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By Jane Doe | <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026</small>
+          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By Jane Doe | <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026</small>
           <!-- Blog Excerpt -->
           <p>Showcase your talent on an international stage and explore career-defining opportunities worldwide.</p>
           <!-- Read More -->
@@ -634,7 +634,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
         <div class="glass-card text-start">
           <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="img-fluid rounded mb-3">
           <h4 class="mb-2">Global Market Tides</h4>
-          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By John Smith | <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026</small>
+          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By John Smith | <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026</small>
           <p>Elevate your influence and digital identity, expanding your reach across global markets.</p>
           <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
         </div>
@@ -645,7 +645,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
         <div class="glass-card text-start">
           <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="img-fluid rounded mb-3">
           <h4 class="mb-2">Cultural Currents</h4>
-          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By Maria Lee | <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026</small>
+          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By Maria Lee | <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026</small>
           <p>Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
           <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
         </div>
