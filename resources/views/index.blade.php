@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <title>FameOceans | Discover, Connect & Grow Talent</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+   <!-- Favicon -->
+    {{-- <link href="{{ asset('frontend/img/logo.png') }}" rel="icon"> --}}
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <style>
 /* =======================
-   GLOBAL DESIGN SYSTEM
+   GLOBAL DESIGN SYSTEMw
 ======================= */
 :root{
   --surface:#0e2a47;
@@ -360,26 +361,32 @@ footer{
 
     <div class="row g-4 mt-5">
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3">
           <h4>Bold Moves</h4>
           <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
-          <button class="btn btn-sm btn-primary">Connect</button>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3">
           <h4>Global Network</h4>
           <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
-         <button class="btn btn-sm btn-primary">Connect</button>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
           <h4>Future Focus</h4>
           <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
-         <button class="btn btn-sm btn-primary">Connect</button>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
         </div>
       </div>
     </div>
