@@ -2,141 +2,277 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FameOceans | Global Talent Platform</title>
+<title>FameOceans | Discover, Connect & Grow Talent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
+/* =======================
+   GLOBAL DESIGN SYSTEM
+======================= */
 :root{
---surface:#0f2a5c;
---mid:#081a3a;
---deep:#040914;
---abyss:#02040a;
---primary:#3a7bfd;
---secondary:#00e0ff;
---text:#cfd6ff;
+  --surface:#0e2a47;
+  --mid:#081b34;
+  --deep:#040d1c;
+  --abyss:#020611;
+
+  --primary:#3a7bfd;
+  --accent:#00e0ff;
+
+  --text:#e3e9ff;
+  --muted:rgba(227,233,255,.75);
 }
+
+*{box-sizing:border-box}
 
 body{
-font-family:Poppins,sans-serif;
-background:linear-gradient(to bottom,var(--surface),var(--mid),var(--deep),var(--abyss));
-color:var(--text);
-overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  color:var(--text);
+  background:linear-gradient(
+    to bottom,
+    var(--surface),
+    var(--mid) 35%,
+    var(--deep) 70%,
+    var(--abyss)
+  );
+  overflow-x:hidden;
 }
 
-section{padding:120px 0;position:relative;}
-section::after{
-content:"";
-position:absolute;
-left:0;right:0;bottom:0;height:1px;
-background:linear-gradient(to right,transparent,rgba(255,255,255,.15),transparent);
+/* =======================
+   NAVBAR
+======================= */
+.navbar{
+  background:rgba(3,8,20,.75);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.navbar-brand{
+  font-weight:700;
+  font-size:24px;
+  background:linear-gradient(90deg,#fff,var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.nav-link{
+  color:var(--text)!important;
+  margin-left:20px;
+  font-size:14px;
+}
+.nav-link:hover{color:var(--accent)!important}
+
+/* =======================
+   SECTIONS
+======================= */
+section{
+  padding:120px 0;
+  position:relative;
+}
+.section-title{
+  font-size:42px;
+  font-weight:700;
+  background:linear-gradient(90deg,#fff,#9adfff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-subtitle{
+  max-width:700px;
+  margin:20px auto 0;
+  color:var(--muted);
+  font-size:17px;
 }
 
-header{
-position:fixed;top:0;width:100%;z-index:999;
-background:rgba(4,9,20,.85);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-header .nav{
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px;
-}
-
-header a{
-color:#fff;margin-left:20px;text-decoration:none;font-weight:500;
-}
-
+/* =======================
+   HERO
+======================= */
 .hero{
-min-height:100vh;
-display:flex;align-items:center;
-background:
-radial-gradient(circle at 20% 20%, rgba(58,123,253,.35), transparent 60%),
-radial-gradient(circle at 80% 80%, rgba(0,224,255,.25), transparent 60%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(58,123,253,.35),transparent 60%),
+    radial-gradient(circle at 80% 70%,rgba(0,224,255,.25),transparent 60%);
+}
+.hero h1{
+  font-size:64px;
+  font-weight:700;
+  background:linear-gradient(90deg,#fff,#9adfff,#3a7bfd);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p{
+  max-width:760px;
+  margin:25px auto;
+  font-size:18px;
+  color:var(--muted);
 }
 
-h1,h2{
-background:linear-gradient(90deg,#fff,#9adfff,#3a7bfd);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+/* =======================
+   CARDS (GLASS)
+======================= */
+.glass-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(20px);
+  border-radius:22px;
+  padding:35px;
+  height:100%;
+  box-shadow:0 25px 70px rgba(0,0,0,.55);
+  transition:.4s ease;
+}
+.glass-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 35px 100px rgba(0,224,255,.3);
 }
 
-.card{
-background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
-border:1px solid rgba(255,255,255,.1);
-border-radius:22px;
-backdrop-filter:blur(18px);
-box-shadow:0 25px 70px rgba(0,0,0,.45);
-transition:.4s;
-}
-
-.card:hover{transform:translateY(-8px);}
-
+/* =======================
+   BUTTONS
+======================= */
 .btn-primary{
-background:linear-gradient(90deg,var(--primary),var(--secondary));
-border:none;border-radius:50px;
-padding:12px 28px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  border:none;
+  border-radius:50px;
+  padding:14px 40px;
+  box-shadow:0 15px 45px rgba(0,224,255,.45);
 }
-
 .btn-outline-light{
-border-radius:50px;
-border:1px solid rgba(255,255,255,.4);
-color:#fff;
+  border-radius:50px;
+  padding:14px 40px;
 }
 
-img{border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.5);}
-
+/* =======================
+   CTA
+======================= */
 .cta{
-background:
-radial-gradient(circle at center,rgba(0,224,255,.2),transparent 70%),
-linear-gradient(to bottom,var(--deep),var(--abyss));
+  background:
+    radial-gradient(circle at center,rgba(0,224,255,.25),transparent 70%),
+    linear-gradient(to bottom,var(--deep),var(--abyss));
+  text-align:center;
 }
 
+/* =======================
+   FOOTER
+======================= */
 footer{
-background:#01020a;
-padding:60px 20px;
-border-top:1px solid rgba(255,255,255,.08);
-text-align:center;
-color:rgba(255,255,255,.6);
-}
-
-form input,form textarea{
-margin-bottom:15px;
-background:rgba(255,255,255,.08);
-border:none;color:#fff;
-}
-
-video{border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.6);}
-
-@media(max-width:768px){
-section{padding:80px 20px;}
-header .nav{flex-direction:column;}
+  background:#01040d;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:70px 20px;
+  text-align:center;
+  color:rgba(255,255,255,.6);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="nav">
-<div class="logo fw-bold text-white">FameOceans</div>
-<nav>
-<a href="#">Home</a><a href="#">About</a><a href="#">Talents</a><a href="#">Contact</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">FameOceans</a>
+    <div class="collapse navbar-collapse show">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Talents</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-</div>
-</header>
 
-<!-- YOUR SECTIONS CONTINUE EXACTLY AS YOU PROVIDED -->
-<!-- NOTHING REMOVED -->
-<!-- ONLY VISUAL POLISH APPLIED -->
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Discover, Connect & Grow</h1>
+    <h1>With Global Talent</h1>
+    <p>
+      FameOceans is a global platform designed to help talents, businesses,
+      and creators connect across borders, unlock opportunities,
+      and navigate the modern creative economy.
+    </p>
+    <div class="mt-4">
+      <a class="btn btn-primary me-3">Get Started</a>
+      <a class="btn btn-outline-light">Explore Talents</a>
+    </div>
+  </div>
+</section>
 
-<!-- (Content omitted here ONLY because ChatGPT message limit exists) -->
+<!-- FEATURES -->
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-subtitle">
+      Powerful tools and connections designed to elevate talent visibility
+      and business collaboration worldwide.
+    </p>
+    <div class="row g-4 mt-5">
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Talent Discovery</h4>
+          <p>Find and showcase talents from different industries and regions with ease.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Global Networking</h4>
+          <p>Connect creators, brands, and investors on a single trusted platform.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Growth Opportunities</h4>
+          <p>Unlock collaborations, sponsorships, and career-defining opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ABOUT -->
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="section-title">Why FameOceans?</h2>
+        <p class="mt-4">
+          We believe talent has no borders. FameOceans exists to bridge gaps,
+          remove barriers, and provide a trusted digital space where creativity
+          meets opportunity.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="glass-card">
+          <p>
+            Our mission is to empower individuals and organizations
+            through visibility, connection, and meaningful engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2 class="section-title">Join the Ocean of Opportunity</h2>
+    <p class="section-subtitle">
+      Start your journey today and be part of a growing global community.
+    </p>
+    <a class="btn btn-primary mt-4">Create Your Account</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-© 2026 FameOceans Corporation. All rights reserved.
+  © 2026 FameOceans. All rights reserved.<br>
+  Connecting talent beyond borders.
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
