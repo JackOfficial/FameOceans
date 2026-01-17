@@ -346,11 +346,18 @@ footer{
 
 <section>
   <div class="container">
-    <div class="row g-5">
+    <div class="row align-items-center g-5">
+      
+      <!-- LEFT -->
       <div class="col-md-6">
         <h2 class="section-title">Our Prowess</h2>
+        <p class="section-subtitle mt-3">
+          Expertise that blends strategy, capital, and global perspective
+          to deliver measurable impact.
+        </p>
       </div>
 
+      <!-- RIGHT -->
       <div class="col-md-6">
         <div class="glass-card mb-4">
           <h5>Business Brains</h5>
@@ -367,9 +374,11 @@ footer{
           <p>Expanding influence across markets and continents.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
 
 <section>
   <div class="container text-center">
@@ -448,17 +457,6 @@ footer{
     </div>
   </div>
 </section>
-
-<section class="cta">
-  <div class="container">
-    <h2 class="section-title">Oceans of Opportunity Await</h2>
-    <p class="section-subtitle">
-      FameOceans is your compass for global ambition and growth.
-    </p>
-    <a class="btn btn-primary mt-4">Connect Now</a>
-  </div>
-</section>
-
 
 <!-- CTA -->
 <section class="cta">
