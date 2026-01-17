@@ -352,6 +352,34 @@ footer{
   </div>
 </section>
 
+<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/about-bg.jpg') }}') no-repeat center center/cover; padding: 120px 0;">
+  <div class="container text-center text-light">
+    
+    <!-- Decorative icon -->
+    <i class="fa fa-globe fa-3x mb-3" style="color: var(--accent);"></i>
+    
+    <!-- Section small title -->
+    <div class="text-uppercase fw-bold mb-2" style="letter-spacing:2px; color: rgba(255,255,255,0.7); font-size: 16px;">About Us</div>
+    
+    <!-- Main headings -->
+    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      FameOceans: Making Waves
+    </h2>
+    <h3 class="mb-4" style="font-weight:500; color: #e3e9ff;">Your Partners in Global Success</h3>
+    
+    <!-- Description -->
+    <p class="lead mx-auto" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
+      We're the captains of your corporate ship, steering you through choppy waters to calm, profitable seas. Join us and navigate the global talent ocean with confidence.
+    </p>
+
+    <!-- Optional CTA -->
+    <a href="#" class="btn btn-primary mt-4 px-5 py-3 shadow-lg" style="font-size:16px;">
+      Learn More <i class="fa fa-arrow-right ms-2"></i>
+    </a>
+
+  </div>
+</section>
+
 <section>
   <div class="container text-center">
     <h2 class="section-title">Why Choose FameOceans?</h2>
