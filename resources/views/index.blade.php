@@ -547,13 +547,6 @@
 </section>
 
 <section>
-  <div class="container">
-     <h3>Who We've Rocked</h3>
-     <div>Partners</div>
-  </div>
-</section>
-
-<section>
   <div class="row">
     <div class="col-md-4">
       <h3>Stats</h3>
@@ -618,9 +611,137 @@
   </div>
 </section>
 
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Our World in Motion</h3>
+    </div>
+    <div class="col-md-6">
+      <video src="https://www.youtube.com/embed/0O2l7q6Mfxg?autoplay=1&loop=1&playlist=0O2l7q6Mfxg&t=20&mute=1&playsinline=1&controls=0&showinfo=0&autohide=1&allowfullscreen=true&mode=transparent" class="w-100"></video>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-sm rounded">Insights</button>
+      <h6>Our World in Motion</h6>
+      <h2>Why Your Business Needs a Global Makeover</h2>
+      <div class="d-flex">
+        <img src="dasd" class="w-25 rounded-circle">
+        <div>fameOceans</div>
+      </div>
+    </div>
+    <div class="col-md-6">
+     <img src="{{ asset('images/insights.jpeg') }}" alt="" class="w-100">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="text-center">Raves</div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card w-75">
+  <div class="card-body">
+    <p class="card-text">fameOceans turned our stagnant business into a roaring success. Their advice was sharp, their connections were golden, and their energy was infectious. We're still pinching ourselves!</p>
+    <div class="d-flex">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <div>
+         <div>Alex Johnson</div>
+         <div>CEO</div>
+      </div>
+    </div>
+  </div>
+   </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card w-75">
+  <div class="card-body">
+    <p class="card-text">The cultural exchange program was life-changing. I met incredible people and saw the world in a way I never imagined. fameOceans made it seamless and unforgettable.</p>
+    <div class="d-flex">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <div>
+         <div>Alex Johnson</div>
+         <div>CEO</div>
+      </div>
+    </div>
+  </div>
+   </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card w-75">
+  <div class="card-body">
+    <p class="card-text">Investing with fameOceans was a no-brainer. They identified opportunities I would have missed and managed everything with professional flair. My portfolio has never looked better.</p>
+    <div class="d-flex">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <div>
+         <div>Alex Johnson</div>
+         <div>CEO</div>
+      </div>
+    </div>
+  </div>
+   </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container">
+<h2>Oceans of Opportunity</h2>
+<p>fameOceans: Your compass for global business, cultural tides, and investment currents.</p>
+<button class="btn btn-primary">Connect</button>
+</section>
+
+<section class="container">
+  <div>Send Us a Signal</div>
+  <form action="" method="post">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" name="" placeholder="First Name" class="form-control">
+      </div>
+       <div class="col-md-6">
+        <input type="text" name="" id="" placeholder="Last Name" class="form-control">
+      </div>
+    </div>
+     <input type="email" name="" id="" placeholder="Email" class="form-control">
+     <textarea name="" id="" rows="2" class="form-control"></textarea>
+     <button type="submit" class="btn btn-primary">Launch</button>
+  </form>
+</section>
+
+<section class="container">
+  <h2>Our Coordinates</h2>
+  <div>contact@fameoceans.com</div>
+  <div>+250 788799797</div>
+  <div>Kicukiro Modern Market, Kigali City</div>
+</section>
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-5">
+      The Deep Dive Q&A
+      <div>
+        <h6>Ask us anything!</h6>
+        <p>ask@fameoceans.com</p>
+      </div>
+    </div>
+    <div class="col-md-7">
+      What's business consultancy?
+Cultural exchange explained?
+Investment mobility?
+Why fameOceans?
+Are you serious?
+What's next?
+    </div>
+  </div>
+</section>
 
 <footer>
-  © FameOceans. All Rights Reserved.
+ © {{ date('Y') }} fameOceans Corporation. All rights reserved. Don't steal our ideas, or we'll send the sharks.
 </footer>
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
