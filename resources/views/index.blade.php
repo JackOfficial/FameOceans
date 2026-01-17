@@ -470,6 +470,168 @@
   </div>
 </section>
 
+<section class="container">
+  <div class="row">
+      <div class="col-md 6">
+      <img src="{{ asset('images/global fame.jpeg') }}" alt="" class="w-100">
+    </div>
+    <div class="col-md-6">
+      <div>Ready for Glory?</div>
+      <h2>Let's Make It Happen</h2>
+      <p>Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
+</p>
+<button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+
+  <div class="row">
+     <div class="col-md-6">
+      <div>Invest</div>
+      <h2>Money Moves</h2>
+      <p>Got cash burning a hole in your pocket? We'll guide it to where it'll multiply like rabbits. Forget dusty spreadsheets; we're talking smart, bold investments that pay off big time. Your future self will thank you.
+</p>
+<button class="btn btn-primary">Get Started</button>
+    </div>
+      <div class="col-md 6">
+      <img src="{{ asset('images/money move.jpeg') }}" alt="" class="w-100">
+    </div>
+  </div>
+
+   <div class="row">
+     <div class="col-md-6">
+      <div>Invest</div>
+      <h2>Money Moves</h2>
+      <p>Got cash burning a hole in your pocket? We'll guide it to where it'll multiply like rabbits. Forget dusty spreadsheets; we're talking smart, bold investments that pay off big time. Your future self will thank you.
+</p>
+<div class="d-flex">
+<button class="btn btn-xs btn-primary">Capital</button>
+<button class="btn btn-xs btn-primary">Assets</button>
+<button class="btn btn-xs btn-primary">Returns</button>
+</div>
+    </div>
+      <div class="col-md 6">
+      <img src="{{ asset('images/money move.jpeg') }}" alt="" class="w-100">
+    </div>
+  </div>
+
+   <div class="row">
+     <div class="col-md-6">
+      <div>Consult</div>
+      <h2>Business Brains</h2>
+      <p>We don't just offer advice; we inject rocket fuel into your business. Think of us as your strategic pit crew, fine-tuning your operations for maximum velocity. Get ready for a performance boost that'll make your competitors weep.
+</p>
+<div class="d-flex">
+<button class="btn btn-xs btn-primary">Strategy</button>
+<button class="btn btn-xs btn-primary">Growth</button>
+<button class="btn btn-xs btn-primary">Profit</button>
+</div>
+    </div>
+      <div class="col-md 6">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="" class="w-100">
+    </div>
+  </div>
+
+    <div class="row">
+     <div class="col-md-6">
+      <div>Culture</div>
+      <h2>Global Vibes</h2>
+      <p>Tired of the same old? We fling open doors to new worlds, connecting you with vibrant cultures. It's not just travel; it's a mind-expanding, perspective-shifting escapade that'll leave you buzzing.
+<div class="d-flex">
+<button class="btn btn-xs btn-primary">Exchange</button>
+<button class="btn btn-xs btn-primary">World</button>
+<button class="btn btn-xs btn-primary">Connect</button>
+</div>
+    </div>
+      <div class="col-md 6">
+      <img src="{{ asset('images/culture.jpeg') }}" alt="" class="w-100">
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <div class="container">
+     <h3>Who We've Rocked</h3>
+     <div>Partners</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+     <h3>Who We've Rocked</h3>
+     <div>Partners</div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Stats</h3>
+      <p>Numbers don't lie, but we make them sing. See the impact.</p>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">99</h5>
+    <p class="card-text">Client Wins</p>
+    <div class="d-flex text-align-between">
+  <div><span class="badge badge-primary">Success</span></div>
+<a href="#" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+</div>
+        </div>
+
+         <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">1000</h5>
+    <p class="card-text">Connections Made</p>
+    <div class="d-flex text-align-between">
+  <div><span class="badge badge-primary">Global</span></div>
+<a href="#" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+</div>
+        </div>
+
+         <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">50</h5>
+    <p class="card-text">Projects Launched</p>
+    <div class="d-flex text-align-between">
+  <div><span class="badge badge-primary">Action</span></div>
+<a href="#" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+</div>
+        </div>
+
+         <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">10</h5>
+    <p class="card-text">Years of Awesome</p>
+    <div class="d-flex text-align-between">
+  <div><span class="badge badge-primary">Expirience</span></div>
+<a href="#" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <footer>
   © FameOceans. All Rights Reserved.
 </footer>
