@@ -687,6 +687,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer style="position: relative; background: linear-gradient(to top, #020611, #081b34); color: rgba(227,233,255,0.8); padding: 80px 0; overflow: hidden;">
 
