@@ -401,7 +401,7 @@
   </div>
 </div>
 
- <div class="card mb-3" style="max-width: 540px;">
+ <div class="card mb-3" class="w-100">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
@@ -410,7 +410,7 @@
       <div class="card-body">
         <h5 class="card-title">$2500</h5>
         <h5>Business Boost</h5>
-        <p class="card-text">Get your business humming. We provide expert advice to supercharge your operations and profits.</p>
+        <p class="card-text text-light">Get your business humming. We provide expert advice to supercharge your operations and profits.</p>
         <btn class="btn btn-primary">Sign Up</btn>
       </div>
     </div>
