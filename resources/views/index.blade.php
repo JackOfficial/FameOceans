@@ -232,18 +232,28 @@ footer{
   </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="cta" style="position: relative; padding:120px 0; background: linear-gradient(to bottom right, rgba(58,123,253,0.5), rgba(0,224,255,0.7)), url('{{ asset('images/continentms.jpeg') }}') no-repeat center center/cover;">
-  <div class="container text-center text-light">
+<!-- CTA SECTION: Ocean Vibe -->
+<section class="cta" style="position: relative; padding: 140px 0; overflow: hidden;
+background: linear-gradient(to bottom right, rgba(58,123,253,0.6), rgba(0,224,255,0.4)),
+url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
+
+  <!-- Optional Animated Waves (SVG) -->
+  <div style="position:absolute; bottom:0; width:100%; height:100px; overflow:hidden;">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
+      <path d="M0,30 C150,80 350,0 600,30 C850,60 1050,10 1200,30 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(0,224,255,0.2);"></path>
+    </svg>
+  </div>
+
+  <div class="container text-center text-light" style="position: relative; z-index:1;">
     
-    <!-- Decorative Icon -->
-    <i class="fas fa-ship fa-3x mb-3" style="color: var(--accent);"></i>
+    <!-- Ocean Icon -->
+    <i class="fas fa-water fa-3x mb-3" style="color: var(--accent);"></i>
 
     <!-- Headings -->
-    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
       FameOceans: Your Partner in
     </h2>
-    <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#fff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#00e0ff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
       Global Ambition
     </h2>
 
@@ -256,12 +266,13 @@ footer{
     </h4>
 
     <!-- CTA Button -->
-    <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px;">
-      <i class="fas fa-rocket me-2"></i>Connect Now
+    <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px; background: linear-gradient(90deg,#3a7bfd,#00e0ff); transition: all 0.3s;">
+      <i class="fas fa-ship me-2"></i>Connect Now
     </a>
 
   </div>
 </section>
+
 
 <!-- FEATURES -->
 <section>
