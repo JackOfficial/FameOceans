@@ -252,7 +252,7 @@
  <button class="mt-2 btn btn-light  btn-rounded d-block mx-auto">Learn More</button>
 </div>
 <div class="col-md-6">
-<img src="" alt="">
+<img src="{{ asset('images/office.jpeg') }}" alt="" class="w-100">
 </div>
     </div>
 </section>
