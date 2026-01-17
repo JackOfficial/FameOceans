@@ -232,6 +232,37 @@ footer{
   </div>
 </section>
 
+<!-- CTA SECTION -->
+<section class="cta" style="position: relative; padding:120px 0; background: linear-gradient(to bottom right, rgba(58,123,253,0.5), rgba(0,224,255,0.3)), url('{{ asset('images/continents.jpeg') }}') no-repeat center center/cover;">
+  <div class="container text-center text-light">
+    
+    <!-- Decorative Icon -->
+    <i class="fas fa-ship fa-3x mb-3" style="color: var(--accent);"></i>
+
+    <!-- Headings -->
+    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      FameOceans: Your Partner in
+    </h2>
+    <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#fff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Global Ambition
+    </h2>
+
+    <!-- Subtext -->
+    <h3 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85); max-width:700px; margin:0 auto;">
+      From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
+    </h3>
+    <h4 class="mb-4" style="font-weight:400; color: rgba(227,233,255,0.75); max-width:700px; margin:0 auto;">
+      We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.
+    </h4>
+
+    <!-- CTA Button -->
+    <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px;">
+      <i class="fas fa-rocket me-2"></i>Connect Now
+    </a>
+
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section>
   <div class="container text-center">
