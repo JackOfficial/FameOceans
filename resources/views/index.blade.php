@@ -102,7 +102,7 @@ footer{background:#01040d;border-top:1px solid rgba(255,255,255,.08);padding:70p
       <a class="btn btn-outline-light"><i class="fa fa-eye me-2"></i>Explore Talents</a>
     </div>
     <!-- Hero image -->
-    <img src="{{ asset('images/hero.jpg') }}" alt="Global Talent" class="img-fluid mt-5 rounded shadow-lg">
+    <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Talent" class="img-fluid mt-5 rounded shadow-lg">
   </div>
 </section>
 
