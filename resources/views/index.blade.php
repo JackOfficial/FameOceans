@@ -343,7 +343,7 @@
 </section>
 
 <section>
-  <div class="container text-center">
+  <div class="container text-center text-light">
      <div>About</div>
      <h2>FameOceans: Making Waves</h2>
      <h2> Your partners in global success. </h2>
