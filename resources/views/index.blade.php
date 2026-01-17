@@ -335,6 +335,7 @@ footer{
   </div>
 </section>
 
+<!-- TREASURE CHEST -->
 <section>
   <div class="container text-center">
     <h2 class="section-title">Our Treasure Chest</h2>
@@ -343,29 +344,41 @@ footer{
     </p>
 
     <div class="row g-4 mt-5">
+
+      <!-- CARD 1: Consult -->
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-lightbulb fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Consult</h4>
-          <p>Strategic guidance that turns complexity into clarity.</p>
+          <p>We dissect your business problems like a pirate with a map. Solutions incoming!</p>
         </div>
       </div>
 
+      <!-- CARD 2: Culture -->
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-globe-americas fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Culture</h4>
-          <p>Cross-cultural connections that open global doors.</p>
+          <p>Bridging worlds, one handshake at a time. Get ready for global connections.</p>
         </div>
       </div>
 
+      <!-- CARD 3: Invest -->
       <div class="col-md-4">
-        <div class="glass-card">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Invest</h4>
-          <p>Identify high-impact opportunities beyond borders.</p>
+          <p>We find the gold mines for your capital. Let your money swim in profit.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
 
 <section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/about-bg.jpg') }}') no-repeat center center/cover; padding: 120px 0;">
   <div class="container text-center text-light">
