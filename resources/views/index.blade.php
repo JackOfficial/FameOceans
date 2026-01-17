@@ -658,7 +658,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
 <!-- CTA ABOVE FOOTER -->
 <section class="cta" style="
-  background: linear-gradient(180deg, #020611 0%, #081b34 100%);
+  background: linear-gradient(180deg, #081b34 0%, #020611 100%);
   padding: 100px 0;
   text-align: center;
   color: #e3e9ff;
@@ -667,11 +667,10 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 ">
   <div class="container">
 
-    <!-- Wave Overlay for smooth transition -->
-    <div style="position:absolute; bottom:-1px; left:0; width:100%; height:80px; overflow:hidden; z-index:0;">
+    <!-- Optional Wave Overlay for continuity with footer -->
+    <div style="position:absolute; top:-50px; left:0; width:100%; height:80px; overflow:hidden; z-index:0;">
       <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
-        <path d="M0,50 C300,0 900,100 1200,50 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(58,123,253,0.3);"></path>
-        <path d="M0,70 C400,10 800,90 1200,70 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(0,224,255,0.2);"></path>
+        <path d="M0,50 C300,0 900,100 1200,50 L1200,0 L0,0 Z" style="stroke:none; fill:rgba(58,123,253,0.4);"></path>
       </svg>
     </div>
 
