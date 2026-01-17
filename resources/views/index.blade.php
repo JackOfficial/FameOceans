@@ -658,7 +658,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
 <!-- CTA ABOVE FOOTER -->
 <section class="cta" style="
-  background: linear-gradient(180deg, #081b34 0%, #020611 100%);
+  background: linear-gradient(to bottom, #020611, #081b34);;
   padding: 100px 0;
   text-align: center;
   color: #e3e9ff;
