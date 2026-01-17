@@ -356,8 +356,7 @@ footer{
       <div class="col-md-6">
         <h2 class="section-title">Why Choose FameOceans?</h2>
         <p class="mt-4">
-          We are not ordinary consultants. We blend strategy, culture,
-          and opportunity into a powerful global advantage.
+        We're not your average consultants. We bring the wild, the bold, and the profitable. Prepare for impact.
         </p>
         <a class="btn btn-outline-light mt-3">Learn More</a>
       </div>
