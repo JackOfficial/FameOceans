@@ -258,6 +258,38 @@ footer{
   </div>
 </section>
 
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">Ocean Insights</h2>
+    <p class="section-subtitle">
+      Designed for visibility, credibility, and opportunity.
+    </p>
+
+    <div class="row g-4 mt-5">
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Mobility Moves</h4>
+          <p>Showcase your talent on an international stage.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Global Market Tides</h4>
+          <p>Elevate your influence and digital identity.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Cultural Currents</h4>
+          <p>Connect with brands, sponsors, and collaborators.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta">
   <div class="container">
