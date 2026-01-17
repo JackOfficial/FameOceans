@@ -647,7 +647,7 @@
   <div class="card-body">
     <p class="card-text">fameOceans turned our stagnant business into a roaring success. Their advice was sharp, their connections were golden, and their energy was infectious. We're still pinching ourselves!</p>
     <div class="d-flex">
-      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="" class="w-100">
       <div>
          <div>Alex Johnson</div>
          <div>CEO</div>
@@ -662,7 +662,7 @@
   <div class="card-body">
     <p class="card-text">The cultural exchange program was life-changing. I met incredible people and saw the world in a way I never imagined. fameOceans made it seamless and unforgettable.</p>
     <div class="d-flex">
-      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="" class="w-100">
       <div>
          <div>Alex Johnson</div>
          <div>CEO</div>
@@ -677,7 +677,7 @@
   <div class="card-body">
     <p class="card-text">Investing with fameOceans was a no-brainer. They identified opportunities I would have missed and managed everything with professional flair. My portfolio has never looked better.</p>
     <div class="d-flex">
-      <img src="{{ asset('images/consult.jpeg') }}" alt="">
+      <img src="{{ asset('images/consult.jpeg') }}" alt="" class="w-100">
       <div>
          <div>Alex Johnson</div>
          <div>CEO</div>
