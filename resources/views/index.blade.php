@@ -345,38 +345,6 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
   </div>
 </section>
 
-<section>
-  <div class="container text-center">
-    <h2 class="section-title">Ocean Insights</h2>
-    <p class="section-subtitle">
-      Wisdom from the deep blue.
-    </p>
-
-    <div class="row g-4 mt-5">
-      <div class="col-md-4">
-        <div class="glass-card">
-          <h4>Mobility Moves</h4>
-          <p>Showcase your talent on an international stage.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card">
-          <h4>Global Market Tides</h4>
-          <p>Elevate your influence and digital identity.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card">
-          <h4>Cultural Currents</h4>
-          <p>Connect with brands, sponsors, and collaborators.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TREASURE CHEST -->
 <section>
   <div class="container text-center">
@@ -636,6 +604,57 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
     </div>
   </div>
 </section>
+
+<!-- OCEAN INSIGHTS BLOG SECTION -->
+<section>
+  <div class="container text-center">
+    <h2 class="section-title">Ocean Insights</h2>
+    <p class="section-subtitle">Wisdom from the deep blue.</p>
+
+    <div class="row g-4 mt-5">
+
+      <!-- BLOG CARD 1 -->
+      <div class="col-md-4">
+        <div class="glass-card text-start">
+          <!-- Blog Image -->
+          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="img-fluid rounded mb-3">
+          <!-- Blog Title -->
+          <h4 class="mb-2">Mobility Moves</h4>
+          <!-- Metadata -->
+          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By Jane Doe | <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026</small>
+          <!-- Blog Excerpt -->
+          <p>Showcase your talent on an international stage and explore career-defining opportunities worldwide.</p>
+          <!-- Read More -->
+          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+        </div>
+      </div>
+
+      <!-- BLOG CARD 2 -->
+      <div class="col-md-4">
+        <div class="glass-card text-start">
+          <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="img-fluid rounded mb-3">
+          <h4 class="mb-2">Global Market Tides</h4>
+          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By John Smith | <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026</small>
+          <p>Elevate your influence and digital identity, expanding your reach across global markets.</p>
+          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+        </div>
+      </div>
+
+      <!-- BLOG CARD 3 -->
+      <div class="col-md-4">
+        <div class="glass-card text-start">
+          <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="img-fluid rounded mb-3">
+          <h4 class="mb-2">Cultural Currents</h4>
+          <small class="text-muted d-block mb-2"><i class="fas fa-user me-1"></i>By Maria Lee | <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026</small>
+          <p>Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
+          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- CTA -->
 <section class="cta">
