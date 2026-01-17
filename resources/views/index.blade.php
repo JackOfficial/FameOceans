@@ -214,9 +214,9 @@
       <h2>Designed for visibility, credibility, and opportunity.</h2>
     </div>
     <div class="grid">
-      <div class="card"><h3>Mobility Moves</h3><p class="text-light">Showcase your talent on an international stage.</p></div>
-      <div class="card"><h3>Global Market Tides</h3><p class="text-light">Elevate your influence and digital identity.</p></div>
-      <div class="card"><h3>Cultural Currents</h3><p class="text-light">Connect with brands, sponsors, and collaborators.</p></div>
+      <div class="card"><h3>Mobility Moves</h3><p style="color:white;">Showcase your talent on an international stage.</p></div>
+      <div class="card"><h3>Global Market Tides</h3><p style="color:white;">Elevate your influence and digital identity.</p></div>
+      <div class="card"><h3>Cultural Currents</h3><p style="color:white;">Connect with brands, sponsors, and collaborators.</p></div>
     </div>
   </div>
 </section>
