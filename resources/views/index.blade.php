@@ -367,43 +367,57 @@
   </div>
 </section>
 
-<section data-bs-version="5.1" class="map01 emblemm5" group="Contact" mbr-class="{
-    'mbr-fullscreen': fullScreen,
-    'mbr-parallax-background': bg.parallax}">
-    <mbr-parameters>
-        <header>Size</header>
-        <input type="checkbox" title="Full Screen" name="fullScreen">
-        <input type="checkbox" title="Full Width" name="fullWidth">
-        <input type="range" inline title="Top" name="paddingTop" min="0" max="12" step="1" value="5" condition="fullScreen == false">
-        <input type="range" inline title="Bottom" name="paddingBottom" min="0" max="12" step="1" value="5" condition="fullScreen == false">
-        <header>Map</header>
-        <input type="map" title="Map" name="googleMap" value="<iframe src=&quot;https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;%20Rwanda&quot;></iframe>" place-id="<iframe src=&quot;https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;%20Rwanda&quot;></iframe>">
-        <header>Show/Hide</header>
-        <input type="checkbox" title="Border Bottom" name="showBorder" checked>
-        <input type="color" title="Border Gradient 1" value="#4EA3A4" name="border_1" selected>
-        <input type="color" title="Border Gradient 2" value="#845655" name="border_2" selected>
-        <header>Background</header>
-        <fieldset type="background" name="bg" parallax>
-            <input type="image" title="Image" value="../_images/background1.jpg">
-            <input type="color" title="Color" value="#001819" selected>
-        </fieldset>
-        <header condition="bg.type === 'video'">Fallback Image</header>
-        <input type="image" title="Fallback Image" value="../_images/background1.jpg" name="fallBackImage" condition="bg.type === 'video'">
-        <input type="checkbox" title="Overlay" name="overlay" condition="bg.type !== 'color'">
-        <input type="color" title="Overlay Color" name="overlayColor" value="#000000" condition="overlay && bg.type !== 'color'">
-        <input type="range" inline title="Opacity" name="overlayOpacity" min="0" max="1" step="0.1" value="0.5" condition="overlay && bg.type !== 'color'">
-    </mbr-parameters>
-
-    <div class="mbr-fallback-image disabled" mbr-if="bg.type == 'video'"></div>
-    <div class="mbr-overlay" mbr-if="overlay && bg.type !== 'color'" opacity="0.5" bg-color="blue"></div>
-
-    <div mbr-class="{'container': !fullWidth, 'container-fluid': fullWidth}">
-        <div class="row">
-            <div class="col-12">
-                <div class="google-map" mbr-map="googleMap"></div>
-            </div>
-        </div>
+<section>
+  <div class="container">
+  <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ asset('images/Cultural.jpeg') }}" class="img-fluid rounded-start" alt="...">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">$5000</h5>
+        <h5>Cultural Immersion</h5>
+        <p class="card-text">Experience new cultures firsthand. We arrange authentic exchanges that broaden your perspective and fill your photo album.</p>
+        <btn class="btn btn-primary">Sign Up</btn>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">$10000</h5>
+        <h5>Investment Voyage</h5>
+        <p class="card-text">Let your money sail to profitable shores. We chart courses for smart investments across borders.</p>
+        <btn class="btn btn-primary">Sign Up</btn>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">$2500</h5>
+        <h5>Business Boost</h5>
+        <p class="card-text">Get your business humming. We provide expert advice to supercharge your operations and profits.</p>
+        <btn class="btn btn-primary">Sign Up</btn>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
 </section>
 
 <footer>
