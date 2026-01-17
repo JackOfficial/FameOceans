@@ -352,6 +352,41 @@ footer{
 </section>
 
 <section>
+  <div class="container text-center">
+    <h2 class="section-title">Why Choose FameOceans?</h2>
+    <p class="section-subtitle">
+      Strategic services designed to unlock global success.
+    </p>
+
+    <div class="row g-4 mt-5">
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Bold Moves</h4>
+          <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
+          <button class="btn btn-sm">Connect</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Global Network</h4>
+          <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
+         <button class="btn btn-sm">Connect</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card">
+          <h4>Future Focus</h4>
+          <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
+         <button class="btn btn-sm">Connect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="container">
     <div class="row align-items-center g-5">
       
