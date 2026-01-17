@@ -233,7 +233,7 @@ footer{
 </section>
 
 <!-- CTA SECTION -->
-<section class="cta" style="position: relative; padding:120px 0; background: linear-gradient(to bottom right, rgba(58,123,253,0.5), rgba(0,224,255,0.7)), url('{{ asset('images/continents.jpeg') }}') no-repeat center center/cover;">
+<section class="cta" style="position: relative; padding:120px 0; background: linear-gradient(to bottom right, rgba(58,123,253,0.5), rgba(0,224,255,0.7)), url('{{ asset('images/continentms.jpeg') }}') no-repeat center center/cover;">
   <div class="container text-center text-light">
     
     <!-- Decorative Icon -->
