@@ -369,13 +369,13 @@
 
 <section>
   <div class="container">
-  <div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3" class="w-100">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{ asset('images/Cultural.jpeg') }}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
-      <div class="card-body">
+      <div class="card-body text-light">
         <h5 class="card-title">$5000</h5>
         <h5>Cultural Immersion</h5>
         <p class="card-text">Experience new cultures firsthand. We arrange authentic exchanges that broaden your perspective and fill your photo album.</p>
@@ -385,13 +385,13 @@
   </div>
 </div>
 
- <div class="card mb-3" style="max-width: 540px;">
+ <div class="card mb-3" class="w-100">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
-      <div class="card-body">
+      <div class="card-body text-light">
         <h5 class="card-title">$10000</h5>
         <h5>Investment Voyage</h5>
         <p class="card-text">Let your money sail to profitable shores. We chart courses for smart investments across borders.</p>
@@ -407,7 +407,7 @@
       <img src="{{ asset('images/voyage.jpeg') }}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
-      <div class="card-body">
+      <div class="card-body text-light">
         <h5 class="card-title">$2500</h5>
         <h5>Business Boost</h5>
         <p class="card-text text-light">Get your business humming. We provide expert advice to supercharge your operations and profits.</p>
