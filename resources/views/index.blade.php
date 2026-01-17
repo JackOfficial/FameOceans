@@ -487,19 +487,6 @@
 
 <section class="container">
 
-  <div class="row">
-     <div class="col-md-6">
-      <div>Invest</div>
-      <h2>Money Moves</h2>
-      <p>Got cash burning a hole in your pocket? We'll guide it to where it'll multiply like rabbits. Forget dusty spreadsheets; we're talking smart, bold investments that pay off big time. Your future self will thank you.
-</p>
-<button class="btn btn-primary">Get Started</button>
-    </div>
-      <div class="col-md 6">
-      <img src="{{ asset('images/money move.jpeg') }}" alt="" class="w-100">
-    </div>
-  </div>
-
    <div class="row">
      <div class="col-md-6">
       <div>Invest</div>
