@@ -179,6 +179,60 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 40px; }
     }
+
+    & when not (@fullScreen) {
+  padding-top: (@paddingTop * 1rem);
+  padding-bottom: (@paddingBottom * 1rem);
+}
+& when (@bg-type = 'color') {
+  background-color: @bg-value;
+}
+& when (@bg-type = 'image') {
+  background-image: url(@bg-value);
+}
+.mbr-fallback-image.disabled {
+  display: none;
+}
+.mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  & when (@bg-type = 'video') {
+    background-image: url(@fallBackImage);
+  }
+}
+.google-map {
+  position: relative;
+  & when (@showBorder) {
+    margin-bottom: 56px;
+    @media (max-width: 992px) {
+      margin-bottom: 32px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -56px;
+      left: 0;
+      background-image: linear-gradient(90deg, transparent, @border_1, @border_2, transparent);
+      height: 1px;
+      width: 100%;
+      @media (max-width: 992px) {
+        bottom: -32px;
+      }
+    }
+  }
+  iframe {
+    height: 700px;
+    filter: invert(1);
+    @media (max-width: 992px) {
+      height: 350px;
+    }
+  }
+}
   </style>
 </head>
 <body>
@@ -260,11 +314,96 @@
 <section class="cta">
   <div class="container">
     <div class="section-title">
-      <h2>Join the Ocean of Fame</h2>
-      <p>Your journey deserves global recognition.</p>
+      <h2>fameOceans: Your Partner in</h2>
+      <h2>Global Ambition</h2>
+      <h3>From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.</h3>
+      <h4>We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</h4>
     </div>
-    <a href="#" class="btn btn-primary">Create Your Profile</a>
+    <a href="#" class="btn btn-primary">Connect Now</a>
   </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+     <a href="">Consultancy</a>
+      <a href="">Exchange</a>
+       <a href="">Mobility</a>
+        <a href="">Growth</a>
+        <a href="">Vision</a>
+      </div>
+      <div class="col-md-6">
+    <img src="{{ asset('images/continents.jpeg') }}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+    <h2>Our Prowess</h2>
+      </div>
+      <div class="col-md-6">
+    <div>
+      <h3>Business Brains</h3>
+      <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
+    </div>
+
+     <div>
+      <h3>Money Moves</h3>
+      <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
+    </div>
+
+    <div>
+      <h3>Global Reach</h3>
+      <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
+    </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="map01 emblemm5" group="Contact" mbr-class="{
+    'mbr-fullscreen': fullScreen,
+    'mbr-parallax-background': bg.parallax}">
+    <mbr-parameters>
+        <header>Size</header>
+        <input type="checkbox" title="Full Screen" name="fullScreen">
+        <input type="checkbox" title="Full Width" name="fullWidth">
+        <input type="range" inline title="Top" name="paddingTop" min="0" max="12" step="1" value="5" condition="fullScreen == false">
+        <input type="range" inline title="Bottom" name="paddingBottom" min="0" max="12" step="1" value="5" condition="fullScreen == false">
+        <header>Map</header>
+        <input type="map" title="Map" name="googleMap" value="<iframe src=&quot;https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;%20Rwanda&quot;></iframe>" place-id="<iframe src=&quot;https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;%20Rwanda&quot;></iframe>">
+        <header>Show/Hide</header>
+        <input type="checkbox" title="Border Bottom" name="showBorder" checked>
+        <input type="color" title="Border Gradient 1" value="#4EA3A4" name="border_1" selected>
+        <input type="color" title="Border Gradient 2" value="#845655" name="border_2" selected>
+        <header>Background</header>
+        <fieldset type="background" name="bg" parallax>
+            <input type="image" title="Image" value="../_images/background1.jpg">
+            <input type="color" title="Color" value="#001819" selected>
+        </fieldset>
+        <header condition="bg.type === 'video'">Fallback Image</header>
+        <input type="image" title="Fallback Image" value="../_images/background1.jpg" name="fallBackImage" condition="bg.type === 'video'">
+        <input type="checkbox" title="Overlay" name="overlay" condition="bg.type !== 'color'">
+        <input type="color" title="Overlay Color" name="overlayColor" value="#000000" condition="overlay && bg.type !== 'color'">
+        <input type="range" inline title="Opacity" name="overlayOpacity" min="0" max="1" step="0.1" value="0.5" condition="overlay && bg.type !== 'color'">
+    </mbr-parameters>
+
+    <div class="mbr-fallback-image disabled" mbr-if="bg.type == 'video'"></div>
+    <div class="mbr-overlay" mbr-if="overlay && bg.type !== 'color'" opacity="{{overlayOpacity}}" bg-color="{{overlayColor}}"></div>
+
+    <div mbr-class="{'container': !fullWidth, 'container-fluid': fullWidth}">
+        <div class="row">
+            <div class="col-12">
+                <div class="google-map" mbr-map="googleMap"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
