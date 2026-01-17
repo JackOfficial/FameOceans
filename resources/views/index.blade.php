@@ -240,7 +240,7 @@
   <h2>Ready to Conquer the Business Ocean?</h2>
       <p>Stop treading water. Let fameOceans Corporation guide your ship to unparalleled success. Your fortune awaits!</p>
   </div>
-  <button class="btn btn-outline-light  btn-rounded">Set Sail</button>
+  <button class="btn btn-outline-light  btn-rounded d-block mx-auto">Set Sail</button>
 </section>
 
 <section>
