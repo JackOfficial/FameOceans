@@ -676,16 +676,18 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
     <!-- Main headings -->
     <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      Join the Ocean of Opportunity
+      fameOceans: Your Partner in
     </h2>
     <h3 class="mb-4" style="font-weight:500; color: #e3e9ff;">
-      Start your journey with FameOceans today
+      Global Ambition
     </h3>
 
     <!-- Description -->
-    <p class="lead mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
-      Be part of a global community connecting talents, businesses, and opportunities across the oceans. Your success begins here.
+    <p class="lead mx-auto mb-2" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
+      From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
     </p>
+
+    <p class="lead mx-auto mb-4" >We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</p>
 
     <!-- CTA Button -->
     <a href="#" class="btn btn-primary mt-3 px-5 py-3 shadow-lg" style="font-size:16px; background: linear-gradient(90deg,#3a7bfd,#00e0ff);">
