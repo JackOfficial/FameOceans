@@ -699,7 +699,66 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
 
 <!-- FOOTER -->
+<footer style="position: relative; background: linear-gradient(to bottom, #020611, #081b34); color: rgba(227,233,255,0.8); padding: 80px 0; overflow: hidden;">
 
+  <!-- Decorative Waves (SVG) -->
+  <div style="position:absolute; top:0; width:100%; height:100px; overflow:hidden;">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
+      <path d="M0,50 C300,0 900,100 1200,50 L1200,0 L0,0 Z" style="stroke:none; fill:rgba(58,123,253,0.3);"></path>
+      <path d="M0,70 C400,10 800,90 1200,70 L1200,0 L0,0 Z" style="stroke:none; fill:rgba(0,224,255,0.2);"></path>
+    </svg>
+  </div>
+
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="row text-center text-md-start g-4">
+
+      <!-- BRAND + ABOUT -->
+      <div class="col-md-4">
+        <h3 style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+          FameOceans
+        </h3>
+        <p>Connecting talents, businesses, and opportunities across the oceans. Your partner in global growth.</p>
+
+        <!-- Social Icons -->
+        <div class="mt-3">
+          <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f fa-lg"></i></a>
+          <a href="#" class="me-3 text-light"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          <a href="#" class="me-3 text-light"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Home</a></li>
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>About</a></li>
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Services</a></li>
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Blog</a></li>
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Join the Wave</h5>
+        <p>Subscribe to our newsletter for insights, updates, and ocean of opportunities.</p>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2 rounded-pill" placeholder="Your email">
+          <button type="submit" class="btn btn-primary rounded-pill"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center mt-5 pt-4 border-top border-light border-opacity-25">
+      &copy; 2026 FameOceans. All rights reserved. <br>
+      Making waves in global talent.
+    </div>
+  </div>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
