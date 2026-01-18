@@ -691,7 +691,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
     <!-- CTA Button -->
     <a href="#" class="btn btn-primary mt-3 px-5 py-3 shadow-lg" style="font-size:16px; background: linear-gradient(90deg,#3a7bfd,#00e0ff);">
-      Create Your Account <i class="fas fa-arrow-right ms-2"></i>
+      Connect Now! <i class="fas fa-arrow-right ms-2"></i>
     </a>
 
   </div>
