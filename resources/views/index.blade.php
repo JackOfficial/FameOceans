@@ -683,9 +683,9 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
     </h3>
 
     <!-- Description -->
-    <h6 class="lead mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
+    <h4 class="lead mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
       From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
-    </h6>
+    </h4>
 
     <p class="mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</p>
 
