@@ -655,15 +655,13 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
   </div>
 </section>
 
-
-<!-- CTA ABOVE FOOTER -->
 <!-- CTA ABOVE FOOTER -->
 <section style="
   position: relative; 
-  background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover; 
+  background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5));
   padding: 120px 0;
   overflow: hidden;
- ">
+">
   <div class="container text-center text-light">
 
     <!-- Decorative icon -->
@@ -692,12 +690,25 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
       Create Your Account <i class="fas fa-arrow-right ms-2"></i>
     </a>
 
+    <!-- Wave overlay connecting to footer -->
+    <div style="position:absolute; bottom:0; left:0; width:100%; height:100px; overflow:hidden; z-index:0;">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
+        <path d="M0,50 C300,0 900,100 1200,50 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(58,123,253,0.3);"></path>
+        <path d="M0,70 C400,10 800,90 1200,70 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(0,224,255,0.2);"></path>
+      </svg>
+    </div>
+
   </div>
 </section>
 
-
 <!-- FOOTER -->
-<footer style="position: relative; background: linear-gradient(to top, #020611, #081b34); color: rgba(227,233,255,0.8); padding: 80px 0; overflow: hidden;">
+<footer style="
+  position: relative; 
+  background: linear-gradient(to top, rgba(0,224,255,0.5), rgba(58,123,253,0.7));
+  color: rgba(227,233,255,0.8); 
+  padding: 80px 0; 
+  overflow: hidden;
+">
 
   <!-- Decorative Waves (SVG) -->
   <div style="position:absolute; top:0; width:100%; height:100px; overflow:hidden;">
@@ -757,8 +768,3 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
     </div>
   </div>
 </footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
