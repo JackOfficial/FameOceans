@@ -319,32 +319,6 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
   </div>
 </section>
 
-
-<!-- ABOUT -->
-<section>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2 class="section-title">Why FameOceans?</h2>
-        <p class="mt-4">
-          We believe talent has no borders. FameOceans exists to bridge gaps,
-          remove barriers, and provide a trusted digital space where creativity
-          meets opportunity.
-        </p>
-        <a class="btn btn-outline-light mt-3">Learn More</a>
-      </div>
-      <div class="col-md-6">
-        <div class="glass-card">
-          <p>
-            Our mission is to empower individuals and organizations
-            through visibility, connection, and meaningful engagement.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TREASURE CHEST -->
 <section>
   <div class="container text-center">
@@ -699,7 +673,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
 
 <!-- FOOTER -->
-<footer style="position: relative; background: linear-gradient(to bottom, #020611, #081b34); color: rgba(227,233,255,0.8); padding: 80px 0; overflow: hidden;">
+<footer style="position: relative; background: linear-gradient(to top, #020611, #081b34); color: rgba(227,233,255,0.8); padding: 80px 0; overflow: hidden;">
 
   <!-- Decorative Waves (SVG) -->
   <div style="position:absolute; top:0; width:100%; height:100px; overflow:hidden;">
