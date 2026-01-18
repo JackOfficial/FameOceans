@@ -687,7 +687,7 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
       From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
     </h4>
 
-    <p class="mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</p>
+    <p class="mx-auto mb-4" style="color: rgba(227,233,255,0.85);">We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</p>
 
     <!-- CTA Button -->
     <a href="#" class="btn btn-primary mt-3 px-5 py-3 shadow-lg" style="font-size:16px; background: linear-gradient(90deg,#3a7bfd,#00e0ff);">
