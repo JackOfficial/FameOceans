@@ -182,78 +182,82 @@
 
 <section>
   <div class="container text-center">
-    <h2 class="section-title">Our Impact</h2>
-    <p class="section-subtitle">Numbers that reflect trust and results.</p>
+    <h2 class="section-title mb-2">Our Impact</h2>
+    <p class="section-subtitle mb-5">Numbers that reflect trust and results.</p>
 
-    <div class="row g-4 mt-5">
-      <div class="col-md-3">
-        <div class="glass-card">
-          <h2>99+</h2>
-          <p>Client Wins</p>
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-6 col-md-3">
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
+          <h2 class="display-4 fw-bold text-primary mb-2">99+</h2>
+          <p class="fw-semibold">Client Wins</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="glass-card">
-          <h2>1K+</h2>
-          <p>Connections Made</p>
+      <div class="col-6 col-md-3">
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
+          <h2 class="display-4 fw-bold text-primary mb-2">1K+</h2>
+          <p class="fw-semibold">Connections Made</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="glass-card">
-          <h2>50+</h2>
-          <p>Projects Launched</p>
+      <div class="col-6 col-md-3">
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
+          <h2 class="display-4 fw-bold text-primary mb-2">50+</h2>
+          <p class="fw-semibold">Projects Launched</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="glass-card">
-          <h2>10+</h2>
-          <p>Years of Excellence</p>
+      <div class="col-6 col-md-3">
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
+          <h2 class="display-4 fw-bold text-primary mb-2">10+</h2>
+          <p class="fw-semibold">Years of Excellence</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5))">
+<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)); padding: 80px 0;">
   <div class="container text-center">
-    <h2 class="section-title">What People Say</h2>
+    <h2 class="section-title mb-5">What People Say</h2>
 
-    <div class="row g-4 mt-5">
+    <div class="row g-4 justify-content-center">
+
       <div class="col-md-4">
-        <div class="glass-card">
-          <p>
+        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card">
+          <p class="mb-4 fst-italic">
             “FameOceans transformed our global strategy.
             Their insights are sharp and effective.”
           </p>
           <strong>Alex Johnson</strong><br>
-          <small>CEO</small>
+          <small class="text-muted">CEO</small>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="glass-card">
-          <p>
+        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card">
+          <p class="mb-4 fst-italic">
             “The cultural exchange experience opened doors
             I never imagined possible.”
           </p>
           <strong>Maria Chen</strong><br>
-          <small>Entrepreneur</small>
+          <small class="text-muted">Entrepreneur</small>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="glass-card">
-          <p>
+        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card">
+          <p class="mb-4 fst-italic">
             “Smart investments, global reach,
             and professional execution.”
           </p>
           <strong>David Okello</strong><br>
-          <small>Investor</small>
+          <small class="text-muted">Investor</small>
         </div>
       </div>
+
     </div>
   </div>
 </section>

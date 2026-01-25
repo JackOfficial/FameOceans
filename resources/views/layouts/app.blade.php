@@ -122,6 +122,23 @@ section{
   box-shadow:0 15px 45px rgba(0,224,255,.45);
 }
 
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-scale:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+}
+
 /* =======================
    FOOTER
 ======================= */
