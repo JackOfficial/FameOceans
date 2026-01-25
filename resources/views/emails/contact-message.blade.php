@@ -69,7 +69,7 @@
         
         <!-- HEADER -->
         <div class="header">
-            <img src="{{ asset('images/FameOceans Logo.png') }}" alt="FameOceans Logo">
+            <img src="{{ asset('images/FameOceans.png') }}" alt="FameOceans Logo">
             <h2>New Contact Message</h2>
         </div>
 
