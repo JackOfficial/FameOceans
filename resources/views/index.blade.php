@@ -6,9 +6,7 @@
     <h1>Business Consultancy, </h1>
     <h1>Cultural Exchange & Global Mobility</h1>
     <p>
-      FameOceans is a global platform designed to help talents, businesses,
-      and creators connect across borders, unlock opportunities,
-      and navigate the modern creative economy.
+      We provide strategic advisory services for global business and cross-border investment mobility.
     </p>
     <div class="mt-4">
       <a class="btn btn-primary me-3">Get Started</a>
