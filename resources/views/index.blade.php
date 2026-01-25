@@ -391,29 +391,22 @@
     <i class="fas fa-ship fa-3x mb-3" style="color: var(--accent);"></i>
 
     <!-- Section small title -->
-    <div class="text-uppercase fw-bold mb-2" style="letter-spacing:2px; color: rgba(255,255,255,0.7); font-size: 16px;">
-      Join the Wave
-    </div>
+    <div class="text-uppercase fw-bold mb-2" style="letter-spacing:2px; color: var(--accent); font-size:14px;">
+          Ready for Glory?
+        </div>
 
     <!-- Main headings -->
     <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      fameOceans: Your Partner in
+      Let's Make It Happen
     </h2>
-    <h3 class="mb-4" style="font-weight:500; color: #e3e9ff;">
-      Global Ambition
-    </h3>
 
-    <!-- Description -->
-    <h4 class="lead mx-auto mb-4" style="max-width:700px; color: rgba(227,233,255,0.85); font-size: 18px;">
-      From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
-    </h4>
+    <p class="mx-auto mb-4" style="color: rgba(227,233,255,0.85);">
+     Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
+    </p>
 
-    <p class="mx-auto mb-4" style="color: rgba(227,233,255,0.85);">We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.</p>
-
-    <!-- CTA Button -->
-    <a href="#" class="btn btn-primary mt-3 px-5 py-3 shadow-lg" style="font-size:16px; background: linear-gradient(90deg,#3a7bfd,#00e0ff);">
-      Connect Now! <i class="fas fa-arrow-right ms-2"></i>
-    </a>
+     <a href="#" class="btn btn-primary btn-lg shadow-lg">
+          <i class="fa fa-rocket me-2"></i>Get Started
+        </a>
 
   </div>
 </section>
