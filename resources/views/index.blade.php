@@ -121,7 +121,7 @@
     
     <!-- CARD 1 -->
     <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
-      <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3">
+      <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3 w-100">
       <h4>Bold Moves</h4>
       <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
       <button class="btn btn-sm btn-primary mt-2">Connect</button>
@@ -129,7 +129,7 @@
 
     <!-- CARD 2 -->
     <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
-      <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3">
+      <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3 w-100">
       <h4>Global Network</h4>
       <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
       <button class="btn btn-sm btn-primary mt-2">Connect</button>
@@ -137,7 +137,7 @@
 
     <!-- CARD 3 -->
     <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
-      <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+      <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3 w-100">
       <h4>Future Focus</h4>
       <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
       <button class="btn btn-sm btn-primary mt-2">Connect</button>
@@ -326,7 +326,7 @@
       <div class="col-md-4">
         <div class="glass-card text-start">
           <!-- Blog Image -->
-          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="img-fluid rounded mb-3 w-100">
           <!-- Blog Title -->
           <h4 class="mb-2">Mobility Moves</h4>
           <!-- Metadata -->
@@ -341,7 +341,7 @@
       <!-- BLOG CARD 2 -->
       <div class="col-md-4">
         <div class="glass-card text-start">
-          <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="img-fluid rounded mb-3 w-100">
           <h4 class="mb-2">Global Market Tides</h4>
           <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By John Smith | <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026</small>
           <p>Elevate your influence and digital identity, expanding your reach across global markets.</p>
@@ -352,7 +352,7 @@
       <!-- BLOG CARD 3 -->
       <div class="col-md-4">
         <div class="glass-card text-start">
-          <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="img-fluid rounded mb-3 w-100">
           <h4 class="mb-2">Cultural Currents</h4>
           <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By Maria Lee | <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026</small>
           <p>Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
