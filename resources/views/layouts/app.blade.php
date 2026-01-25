@@ -203,8 +203,8 @@ footer{
           <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="me-3 text-light"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/fameoceans_official?igsh=MTV1am83d3V4bnN0eQ==" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@fameoceans?_r=1&_t=ZS-93MoNdtBXq1" target="_blank" rel="noopener noreferrer" class="me-3 text-light"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ footer{
         <ul class="list-unstyled">
           <li><a href="/" class="text-light text-decoration-none">Home</a></li>
           <li><a href="/about" class="text-light text-decoration-none">About</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+          <li><a href="#our-services" class="text-light text-decoration-none">Services</a></li>
           <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
         </ul>
       </div>
