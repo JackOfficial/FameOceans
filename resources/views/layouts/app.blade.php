@@ -204,6 +204,7 @@ footer{
           <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="me-3 text-light"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
 
