@@ -217,7 +217,7 @@
   </div>
 </section>
 
-<section>
+<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5))">
   <div class="container text-center">
     <h2 class="section-title">What People Say</h2>
 
