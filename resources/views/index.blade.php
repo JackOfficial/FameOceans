@@ -169,78 +169,10 @@
       <div class="col-md-4">
         <div class="glass-card text-center">
           <!-- Image on top -->
-          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/global fame.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
           <h4>Global Reach</h4>
           <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
           <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="py-5" style="background: linear-gradient(to bottom, var(--mid), var(--deep));">
-  <div class="container">
-    <div class="row align-items-center g-5">
-
-      <!-- IMAGE LEFT -->
-      <div class="col-md-6 text-center text-md-start">
-        <div class="position-relative">
-          <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Fame" class="img-fluid rounded shadow-lg">
-          <!-- Optional decorative overlay -->
-          <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(58,123,253,0.15); border-radius:0.5rem;"></div>
-        </div>
-      </div>
-
-      <!-- TEXT RIGHT -->
-      <div class="col-md-6 text-center text-md-start text-light">
-        <div class="text-uppercase fw-bold mb-2" style="letter-spacing:2px; color: var(--accent); font-size:14px;">
-          Ready for Glory?
-        </div>
-        <h2 class="fw-bold mb-3" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Let's Make It Happen
-        </h2>
-        <p class="mb-4" style="font-size: 18px; color: rgba(227,233,255,0.85); max-width:500px;">
-          Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
-        </p>
-        <a href="#" class="btn btn-primary btn-lg shadow-lg">
-          <i class="fa fa-rocket me-2"></i>Get Started
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="row align-items-center g-5">
-      
-      <!-- LEFT -->
-      <div class="col-md-6">
-        <h2 class="section-title">Our Prowess</h2>
-        <p class="section-subtitle mt-3">
-          Expertise that blends strategy, capital, and global perspective
-          to deliver measurable impact.
-        </p>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="col-md-6">
-        <div class="glass-card mb-4">
-          <h5>Business Brains</h5>
-          <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
-        </div>
-
-        <div class="glass-card mb-4">
-          <h5>Money Moves</h5>
-          <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
-        </div>
-
-        <div class="glass-card">
-          <h5>Global Reach</h5>
-          <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
         </div>
       </div>
 
