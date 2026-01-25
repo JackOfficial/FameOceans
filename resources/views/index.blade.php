@@ -42,10 +42,10 @@ url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
 
     <!-- Subtext -->
     <h3 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85); max-width:700px; margin:0 auto;">
-      From boardroom strategies to cross-cultural triumphs, we make global business feel like a tropical vacation.
+      We provide strategic advisory from the initial concept, shaping your project to align with the requirements of your chosen destination.
     </h3>
     <h4 class="mb-4" style="font-weight:400; color: rgba(227,233,255,0.75); max-width:700px; margin:0 auto;">
-      We handle the complexities so you can enjoy the rewards. Let's make your global dreams a reality.
+    We support compliance with relevant authorities and embassies for visa processes, while ensuring a smooth and well-prepared settlement abroad.
     </h4>
 
     <!-- CTA Button -->
