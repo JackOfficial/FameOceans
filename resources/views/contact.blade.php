@@ -48,7 +48,7 @@
           <h4>Call Us</h4>
           <p>Let’s have a real conversation.</p>
           <a href="tel:+250700000000" class="btn btn-sm btn-outline-light mt-2">
-            +250 700 000 000
+            (+250) 788789989
           </a>
         </div>
       </div>
@@ -59,9 +59,9 @@
           <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Our Base</h4>
           <p>Operating globally, rooted in Africa.</p>
-          <span class="btn btn-sm btn-outline-light mt-2 disabled">
+          <a class="btn btn-sm btn-outline-light mt-2 disabled">
             Kigali, Rwanda
-          </span>
+          </a>
         </div>
       </div>
 

@@ -143,7 +143,7 @@ footer{
   <div class="container">
 
     <!-- LOGO IMAGE -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="/">
       <img src="{{ asset('images/FameOceans.png') }}"
            alt="FameOceans Logo"
            class="navbar-logo">
@@ -156,7 +156,7 @@ footer{
 
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Talents</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
