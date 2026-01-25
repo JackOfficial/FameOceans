@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Favicon -->
-<link href="{{ asset('images/FameOceans Logo.png') }}" rel="icon">
+<link href="{{ asset('images/FameOceans.png') }}" rel="icon">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -142,7 +142,7 @@ footer{
 
     <!-- LOGO IMAGE -->
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="{{ asset('images/FameOceans Logo.png') }}"
+      <img src="{{ asset('images/FameOceans.png') }}"
            alt="FameOceans Logo"
            class="navbar-logo">
     </a>
@@ -174,7 +174,7 @@ footer{
 
       <!-- BRAND -->
       <div class="col-md-4">
-        <img src="{{ asset('images/FameOceans Logo.png') }}"
+        <img src="{{ asset('images/FameOceans.png') }}"
              alt="FameOceans Logo"
              style="height:50px; margin-bottom:15px;">
         <p>Connecting talents, businesses, and opportunities across the oceans.</p>
