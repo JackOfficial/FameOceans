@@ -3,8 +3,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1>Discover, Connect & Grow</h1>
-    <h1>With Global Talent</h1>
+    <h1>Business Consultancy, </h1>
+    <h1>Cultural Exchange & Global Mobility</h1>
     <p>
       FameOceans is a global platform designed to help talents, businesses,
       and creators connect across borders, unlock opportunities,
