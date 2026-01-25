@@ -145,6 +145,37 @@
           <button class="btn btn-sm btn-primary mt-2">Connect</button>
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <h4>Business Brains</h4>
+          <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <h4>Money Moves</h4>
+          <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-card text-center">
+          <!-- Image on top -->
+          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <h4>Global Reach</h4>
+          <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
+          <button class="btn btn-sm btn-primary mt-2">Connect</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
