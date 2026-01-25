@@ -16,6 +16,7 @@
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <style>
 :root{
@@ -228,40 +229,21 @@ footer{
   </div>
 </footer>
 
-<div aria-live="polite" aria-atomic="true" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
-  <div id="livewire-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <strong class="me-auto" id="toast-title"></strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body" id="toast-body"></div>
-  </div>
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <script>
     document.addEventListener('livewire:init', () => {
        Livewire.on('toast', (event) => {
-           const toastEl = document.getElementById('livewire-toast');
-        const toastTitle = document.getElementById('toast-title');
-        const toastBody = document.getElementById('toast-body');
-
-        if(event.detail.type === 'success') {
-            toastTitle.textContent = 'Success';
-            toastEl.classList.remove('bg-danger');
-            toastEl.classList.add('bg-success', 'text-light');
-        } else {
-            toastTitle.textContent = 'Error';
-            toastEl.classList.remove('bg-success');
-            toastEl.classList.add('bg-danger', 'text-light');
-        }
-
-        toastBody.textContent = event.detail.message;
-
-        // Initialize and show toast
-        const toast = new bootstrap.Toast(toastEl);
-        toast.show();
+           Toastify({
+        text: event.detail.message,
+        duration: 4000,
+        close: true,
+        gravity: "top", // top or bottom
+        position: "right", // left, center, right
+        backgroundColor: event.detail.type === 'success' ? "linear-gradient(to right, #00c853, #b2ff59)" : "linear-gradient(to right, #d50000, #ff5252)",
+        stopOnFocus: true, // stop timer on hover
+    }).showToast();
        });
     });
 </script>
