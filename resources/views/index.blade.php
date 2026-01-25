@@ -18,7 +18,7 @@
 <!-- CTA SECTION: Ocean Vibe -->
 <section class="cta" style="position: relative; padding: 140px 0; overflow: hidden;
 background: linear-gradient(to bottom right, rgba(58,123,253,0.6), rgba(0,224,255,0.4)),
-url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
+url('{{ asset('images/ocean bg.jpg') }}') no-repeat center center/cover;">
 
   <!-- Optional Animated Waves (SVG) -->
   <div style="position:absolute; bottom:0; width:100%; height:100px; overflow:hidden;">
