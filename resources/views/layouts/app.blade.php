@@ -132,6 +132,8 @@ footer{
   color:rgba(227,233,255,0.8);
 }
 </style>
+
+@livewireStyles
 </head>
 
 <body>
@@ -155,10 +157,10 @@ footer{
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Talents</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
     </div>
 
@@ -219,5 +221,6 @@ footer{
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ @livewireScripts
 </body>
 </html>
