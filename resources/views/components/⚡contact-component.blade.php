@@ -43,14 +43,14 @@ new class extends Component
         // Notify user
         session()->flash('success', 'Message sent successfully! We will get back to you soon.');
 
-        $this->dispatchBrowserEvent('toast', [
+        $this->dispatch('toast', [
                 'type' => 'success',
                 'message' => 'Message sent successfully! We will get back to you soon.'
             ]);
     }
     catch (\Exception $e) {
             // Dispatch error toast
-            $this->dispatchBrowserEvent('toast', [
+            $this->dispatch('toast', [
                 'type' => 'error',
                 'message' => 'Oops! Something went wrong. Please try again later.'
             ]);

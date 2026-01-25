@@ -239,9 +239,11 @@ footer{
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-    window.addEventListener('toast', event => {
-        const toastEl = document.getElementById('livewire-toast');
+    document.addEventListener('livewire:init', () => {
+       Livewire.on('toast', (event) => {
+           const toastEl = document.getElementById('livewire-toast');
         const toastTitle = document.getElementById('toast-title');
         const toastBody = document.getElementById('toast-body');
 
@@ -260,6 +262,7 @@ footer{
         // Initialize and show toast
         const toast = new bootstrap.Toast(toastEl);
         toast.show();
+       });
     });
 </script>
 
