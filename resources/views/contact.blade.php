@@ -94,44 +94,7 @@
 
       <!-- FORM -->
       <div class="col-md-7">
-        <div class="glass-card">
-
-          <form method="POST" action="#">
-            @csrf
-
-            <div class="row g-3">
-
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control rounded-pill"
-                       placeholder="Your Name" required>
-              </div>
-
-              <div class="col-md-6">
-                <input type="email" name="email" class="form-control rounded-pill"
-                       placeholder="Your Email" required>
-              </div>
-
-              <div class="col-12">
-                <input type="text" name="subject" class="form-control rounded-pill"
-                       placeholder="Subject">
-              </div>
-
-              <div class="col-12">
-                <textarea name="message" rows="5"
-                          class="form-control rounded-4"
-                          placeholder="Your Message" required></textarea>
-              </div>
-
-              <div class="col-12 text-end">
-                <button type="submit" class="btn btn-primary px-5 py-3 shadow-lg">
-                  <i class="fas fa-paper-plane me-2"></i>Send Message
-                </button>
-              </div>
-
-            </div>
-          </form>
-
-        </div>
+        <livewire:contact-component />
       </div>
 
     </div>
