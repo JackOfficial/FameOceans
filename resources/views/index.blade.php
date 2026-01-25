@@ -108,46 +108,65 @@
 </section>
 
 
-<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/about-bg.jpg') }}') no-repeat center center/cover; padding: 120px 0;">
-  <div class="container text-center">
-    <h2 class="section-title">Why Choose FameOceans?</h2>
+<section class="px-0 py-5" style="background: linear-gradient(135deg, rgba(58,123,253,0.05), rgba(0,224,255,0.05));">
+  <div class="container text-center mb-4">
+    <h2 class="section-title">Our Expertise & Strategic Services</h2>
     <p class="section-subtitle">
-      Strategic services designed to unlock global success.
+      Combining bold moves, global reach, and business acumen to unlock your full potential.
     </p>
+  </div>
 
-    <div class="row g-4 mt-5">
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3">
-          <h4>Bold Moves</h4>
-          <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3">
-          <h4>Global Network</h4>
-          <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
-          <h4>Future Focus</h4>
-          <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
+  <!-- Horizontal Scroll Container -->
+  <div class="horizontal-scroll d-flex gap-4 px-3" style="overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling: touch; padding-bottom:20px;">
+    
+    <!-- CARD 1 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3">
+      <h4>Bold Moves</h4>
+      <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
     </div>
+
+    <!-- CARD 2 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3">
+      <h4>Global Network</h4>
+      <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+      <h4>Future Focus</h4>
+      <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <h4>Business Brains</h4>
+      <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <h4>Money Moves</h4>
+      <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="glass-card text-center flex-shrink-0" style="min-width:300px; scroll-snap-align:start;">
+      <h4>Global Reach</h4>
+      <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
+      <button class="btn btn-sm btn-primary mt-2">Connect</button>
+    </div>
+
   </div>
 </section>
+
 
 <section class="py-5" style="background: linear-gradient(to bottom, var(--mid), var(--deep));">
   <div class="container">
