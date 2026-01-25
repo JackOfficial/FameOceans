@@ -32,8 +32,8 @@ new class extends Component
             'message' => $this->message,
         ]);
 
-        // Send email to admin
-        Mail::to(config('mail.from.address'))->send(new ContactMessageMail($contact));
+        // Send email to admin (mail.from.address)
+        Mail::to(config('musengimanajacques@gmail.com'))->send(new ContactMessageMail($contact));
 
         // Reset fields
         $this->reset(['name', 'email', 'subject', 'message']);
