@@ -50,7 +50,7 @@
       <!-- IMAGE COLUMN -->
       <div class="col-lg-6 text-center">
         <div class="position-relative">
-          <img src="{{ asset('images/consulting-illustration.png') }}" 
+          <img src="{{ asset('images/Investors.jpeg') }}" 
                alt="Global Advisory" 
                class="img-fluid rounded shadow-lg"
                style="max-height: 450px; object-fit: cover;">
