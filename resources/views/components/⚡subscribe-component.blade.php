@@ -3,7 +3,7 @@
 use Livewire\Component;
 use App\Mail\SubscriptionConfirmation;
 use Illuminate\Support\Facades\Mail;
-use App\Models\Subscriber;
+use App\Models\Subscribe;
 
 new class extends Component
 {
@@ -16,7 +16,7 @@ new class extends Component
             'email' => 'required|email',
         ]);
 
-        Subscriber::create([
+        Subscribe::create([
             'email' => $this->email,
         ]);
 
