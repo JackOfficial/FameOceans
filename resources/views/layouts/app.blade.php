@@ -218,16 +218,7 @@ footer{
       </div>
 
       <!-- NEWSLETTER -->
-      <div class="col-md-4">
-        <h5>Join the Wave</h5>
-        <p>Subscribe for updates and opportunities.</p>
-        <form class="d-flex">
-          <input type="email" class="form-control me-2 rounded-pill" placeholder="Your email">
-          <button class="btn btn-primary rounded-pill">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
+     <livewire:subscribe-component />
 
     </div>
 
