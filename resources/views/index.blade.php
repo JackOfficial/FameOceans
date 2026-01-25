@@ -64,7 +64,7 @@
 </section>
 
 <!-- TREASURE CHEST -->
-<section>
+<section id="our-services">
   <div class="container text-center">
     <h2 class="section-title">Our Treasure Chest</h2>
     <p class="section-subtitle">
