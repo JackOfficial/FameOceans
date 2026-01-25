@@ -16,46 +16,52 @@
 </section>
 
 <!-- CTA SECTION: Ocean Vibe -->
-<section class="cta" style="position: relative; padding: 140px 0; overflow: hidden;
-background: linear-gradient(to bottom right, rgba(58,123,253,0.6), rgba(0,224,255,0.4)),
-url('{{ asset('images/ocean bg.jpg') }}') no-repeat center center/cover;">
+<section class="cta py-5" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.4));">
+  <div class="container">
+    <div class="row align-items-center g-5">
 
-  <!-- Optional Animated Waves (SVG) -->
-  <div style="position:absolute; bottom:0; width:100%; height:100px; overflow:hidden;">
-    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%; height:100%;">
-      <path d="M0,30 C150,80 350,0 600,30 C850,60 1050,10 1200,30 L1200,100 L0,100 Z" style="stroke:none; fill:rgba(0,224,255,0.2);"></path>
-    </svg>
-  </div>
+      <!-- TEXT COLUMN -->
+      <div class="col-lg-6 text-light text-center text-lg-start">
+        <!-- Icon -->
+        <i class="fas fa-water fa-3x mb-3" style="color: var(--accent);"></i>
 
-  <div class="container text-center text-light" style="position: relative; z-index:1;">
-    
-    <!-- Ocean Icon -->
-    <i class="fas fa-water fa-3x mb-3" style="color: var(--accent);"></i>
+        <!-- Headings -->
+        <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          FameOceans: Your Partner in
+        </h2>
+        <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#00e0ff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Global Ambition
+        </h2>
 
-    <!-- Headings -->
-    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      FameOceans: Your Partner in
-    </h2>
-    <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#00e0ff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      Global Ambition
-    </h2>
+        <!-- Subtext -->
+        <h3 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85);">
+          We provide strategic advisory from the initial concept, shaping your project to align with the requirements of your chosen destination.
+        </h3>
+        <h4 class="mb-4" style="font-weight:400; color: rgba(227,233,255,0.75);">
+          We support compliance with relevant authorities and embassies for visa processes, while ensuring a smooth and well-prepared settlement abroad.
+        </h4>
 
-    <!-- Subtext -->
-    <h3 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85); max-width:700px; margin:0 auto;">
-      We provide strategic advisory from the initial concept, shaping your project to align with the requirements of your chosen destination.
-    </h3>
-    <h4 class="mb-4" style="font-weight:400; color: rgba(227,233,255,0.75); max-width:700px; margin:0 auto;">
-    We support compliance with relevant authorities and embassies for visa processes, while ensuring a smooth and well-prepared settlement abroad.
-    </h4>
+        <!-- CTA Button -->
+        <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px; background: linear-gradient(90deg,#3a7bfd,#00e0ff); transition: all 0.3s;">
+          <i class="fas fa-ship me-2"></i>Connect Now
+        </a>
+      </div>
 
-    <!-- CTA Button -->
-    <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px; background: linear-gradient(90deg,#3a7bfd,#00e0ff); transition: all 0.3s;">
-      <i class="fas fa-ship me-2"></i>Connect Now
-    </a>
+      <!-- IMAGE COLUMN -->
+      <div class="col-lg-6 text-center">
+        <div class="position-relative">
+          <img src="{{ asset('images/consulting-illustration.png') }}" 
+               alt="Global Advisory" 
+               class="img-fluid rounded shadow-lg"
+               style="max-height: 450px; object-fit: cover;">
+          <!-- Decorative accent circle -->
+          <div style="position:absolute; top:10%; left:10%; width:60px; height:60px; background: rgba(0,224,255,0.3); border-radius:50%;"></div>
+        </div>
+      </div>
 
+    </div>
   </div>
 </section>
-
 
 <!-- FEATURES -->
 <section>
