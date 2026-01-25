@@ -176,7 +176,7 @@ footer{
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Talents</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Partner With Us</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
@@ -211,10 +211,10 @@ footer{
       <div class="col-md-4">
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-light text-decoration-none">Home</a></li>
-          <li><a href="#" class="text-light text-decoration-none">About</a></li>
+          <li><a href="/" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="/about" class="text-light text-decoration-none">About</a></li>
           <li><a href="#" class="text-light text-decoration-none">Services</a></li>
-          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+          <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
         </ul>
       </div>
 

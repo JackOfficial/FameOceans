@@ -35,7 +35,7 @@ new class extends Component
         try {
 
         // Send email to admin (mail.from.address)
-        Mail::to('musengimanajacques@gmail.com')->send(new ContactMessageMail($contact));
+        Mail::to('ettankunda@gmail.com')->send(new ContactMessageMail($contact));
 
         // Reset fields
         $this->reset(['name', 'email', 'subject', 'message']);
