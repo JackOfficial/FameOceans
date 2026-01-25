@@ -32,6 +32,8 @@ new class extends Component
             'message' => $this->message,
         ]);
 
+        try {
+
         // Send email to admin (mail.from.address)
         Mail::to('musengimanajacques@gmail.com')->send(new ContactMessageMail($contact));
 
@@ -40,6 +42,19 @@ new class extends Component
 
         // Notify user
         session()->flash('success', 'Message sent successfully! We will get back to you soon.');
+
+        $this->dispatchBrowserEvent('toast', [
+                'type' => 'success',
+                'message' => 'Message sent successfully! We will get back to you soon.'
+            ]);
+    }
+    catch (\Exception $e) {
+            // Dispatch error toast
+            $this->dispatchBrowserEvent('toast', [
+                'type' => 'error',
+                'message' => 'Oops! Something went wrong. Please try again later.'
+            ]);
+        }
     }
 };
 ?>
