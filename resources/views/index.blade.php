@@ -63,51 +63,6 @@
   </div>
 </section>
 
-<!-- FEATURES -->
-<section>
-  <div class="container text-center">
-    <h2 class="section-title">What We Offer</h2>
-    <p class="section-subtitle">
-      Powerful tools and connections designed to elevate talent visibility
-      and business collaboration worldwide.
-    </p>
-
-    <div class="row g-4 mt-5">
-
-      <!-- CARD 1: Talent Discovery -->
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-search fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Talent Discovery</h4>
-          <p>Find and showcase talents from different industries and regions with ease.</p>
-        </div>
-      </div>
-
-      <!-- CARD 2: Global Networking -->
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-network-wired fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Global Networking</h4>
-          <p>Connect creators, brands, and investors on a single trusted platform.</p>
-        </div>
-      </div>
-
-      <!-- CARD 3: Growth Opportunities -->
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Growth Opportunities</h4>
-          <p>Unlock collaborations, sponsorships, and career-defining opportunities.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- TREASURE CHEST -->
 <section>
   <div class="container text-center">
