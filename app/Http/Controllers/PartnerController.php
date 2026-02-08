@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PartnerController extends Controller
 {
-   public function partner(){
+   public function partners(){
     return view('partners');
    }
 }
