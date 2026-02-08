@@ -11,9 +11,7 @@
     <h1>And Why We Exist</h1>
 
     <p>
-      FameOceans is a global talent and opportunity platform built to connect
-      ambitious individuals, visionary businesses, and creative forces
-      across borders — turning potential into real-world success.
+     FameOceans is a global advisory firm providing strategic business advisory, cultural exchange, global mobility, and human capital consulting, with operations across East Africa, the Middle East, and Europe.
     </p>
   </div>
 </section>
