@@ -21,7 +21,7 @@
 <!-- SERVICE 1: BUSINESS & STRATEGIC ADVISORY -->
 <section>
   <div class="container">
-    <div class="text-center my-2">
+    <div class="text-center mb-3">
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">
       Comprehensive advisory solutions for a connected global economy.
