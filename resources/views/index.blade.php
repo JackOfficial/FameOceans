@@ -158,7 +158,7 @@
       <div class="col-md-4">
         <div class="glass-card text-center">
           <!-- Image on top -->
-          <img src="{{ asset('images/Future Focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/business.jpg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
           <h4>Business Brains</h4>
           <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
           <button class="btn btn-sm btn-primary mt-2">Connect</button>
