@@ -220,6 +220,7 @@ footer img{
         <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="/partners">Partner With Us</a></li>
         <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
     </div>
