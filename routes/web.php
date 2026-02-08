@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ServiceContoller;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
