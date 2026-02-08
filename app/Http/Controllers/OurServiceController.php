@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class OurServiceController extends Controller
 {
-    //
+    public function service(){
+    return view('services');
+   }
 }
