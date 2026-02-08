@@ -30,7 +30,7 @@
   --muted:rgba(227,233,255,.75);
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -43,6 +43,8 @@ body{
     var(--abyss)
   );
   overflow-x:hidden;
+  margin:0;
+  padding:0;
 }
 
 /* =======================
@@ -72,6 +74,13 @@ body{
   font-size:14px;
 }
 
+@media (max-width:991px){
+  .nav-link{
+    margin-left:0;
+    padding:10px 0;
+  }
+}
+
 .nav-link:hover{
   color:var(--accent)!important;
 }
@@ -92,13 +101,15 @@ section{
   display:flex;
   align-items:center;
   text-align:center;
+  justify-content:center;
   background:
     radial-gradient(circle at 20% 30%,rgba(58,123,253,.35),transparent 60%),
     radial-gradient(circle at 80% 70%,rgba(0,224,255,.25),transparent 60%);
+  padding:0 15px; /* mobile padding */
 }
 
 .hero h1{
-  font-size:64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight:700;
   background:linear-gradient(90deg,#fff,#9adfff,#3a7bfd);
   -webkit-background-clip:text;
@@ -108,7 +119,7 @@ section{
 .hero p{
   max-width:760px;
   margin:25px auto;
-  font-size:18px;
+  font-size:clamp(14px,3vw,18px);
   color:var(--muted);
 }
 
@@ -124,7 +135,7 @@ section{
 }
 
 .btn-outline-light{
-  border: 1px solid rgba(0,224,255,.45);
+  border:1px solid rgba(0,224,255,.45);
   border-radius:50px;
   padding:14px 40px;
   box-shadow:0 15px 45px rgba(0,224,255,.45);
@@ -155,6 +166,30 @@ footer{
   border-top:1px solid rgba(255,255,255,.08);
   padding:80px 0;
   color:rgba(227,233,255,0.8);
+}
+
+footer img{
+  max-width:100%;
+  height:auto;
+}
+
+/* =======================
+   RESPONSIVE FIXES
+======================= */
+.container,
+.container-fluid{
+  overflow-x:hidden;
+}
+
+.row{
+  margin-left:0;
+  margin-right:0;
+}
+
+@media (max-width:768px){
+  section{
+    padding:80px 15px;
+  }
 }
 </style>
 
@@ -210,7 +245,7 @@ footer{
           <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
           <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/fameoceans_official?igsh=MTV1am83d3V4bnN0eQ==" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/fameoceans_official" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
           <a href="https://www.tiktok.com/@fameoceans?_r=1&_t=ZS-93MoNdtBXq1" target="_blank" rel="noopener noreferrer" class="me-3 text-light"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
@@ -227,7 +262,7 @@ footer{
       </div>
 
       <!-- NEWSLETTER -->
-     <livewire:subscribe-component />
+      <livewire:subscribe-component />
 
     </div>
 
@@ -241,22 +276,22 @@ footer{
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <script>
-    document.addEventListener('livewire:init', () => {
-       Livewire.on('toast', (event) => {
-           Toastify({
+document.addEventListener('livewire:init', () => {
+   Livewire.on('toast', (event) => {
+       Toastify({
         text: event.detail.message,
         duration: 4000,
         close: true,
-        gravity: "top", // top or bottom
-        position: "right", // left, center, right
+        gravity: "top",
+        position: "right",
         backgroundColor: event.detail.type === 'success' ? "linear-gradient(to right, #00c853, #b2ff59)" : "linear-gradient(to right, #d50000, #ff5252)",
-        stopOnFocus: true, // stop timer on hover
+        stopOnFocus: true,
     }).showToast();
-       });
-    });
+   });
+});
 </script>
 
- @livewireScripts
+@livewireScripts
 
 </body>
 </html>
