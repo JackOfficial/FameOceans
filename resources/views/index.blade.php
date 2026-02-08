@@ -178,7 +178,7 @@
       <div class="col-md-4">
         <div class="glass-card text-center">
           <!-- Image on top -->
-          <img src="{{ asset('images/global fame.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
+          <img src="{{ asset('images/Global reach.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
           <h4>Global Reach</h4>
           <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
           <button class="btn btn-sm btn-primary mt-2">Connect</button>
