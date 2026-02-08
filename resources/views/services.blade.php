@@ -19,60 +19,51 @@
 </section>
 
 <!-- SERVICES OVERVIEW -->
-<section>
+<section id="our-services">
   <div class="container text-center">
-    <h2 class="section-title">Our Advisory Services</h2>
+    <h2 class="section-title">Our Treasure Chest</h2>
     <p class="section-subtitle">
-      Strategic solutions shaped by global perspective and regional expertise.
+      Strategic services designed to unlock global success.
     </p>
 
     <div class="row g-4 mt-5">
 
-      <!-- BUSINESS ADVISORY -->
-      <div class="col-md-6 col-lg-3">
-        <div class="glass-card h-100 text-center">
-          <i class="fas fa-chart-line fa-2x mb-3" style="color: var(--accent);"></i>
-          <h5>Business Advisory</h5>
-          <p>
-            We support organizations in strategy development, market entry,
-            organizational structuring, and sustainable growth across borders.
-          </p>
+      <!-- CARD 1: Consult -->
+      <div class="col-md-3">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-lightbulb fa-3x mb-3" style="color: var(--accent);"></i>
+          <h4>Consult</h4>
+          <p>We dissect your business problems like a pirate with a map. Solutions incoming!</p>
         </div>
       </div>
 
-      <!-- HUMAN CAPITAL CONSULTING -->
-      <div class="col-md-6 col-lg-3">
-        <div class="glass-card h-100 text-center">
-          <i class="fas fa-users-cog fa-2x mb-3" style="color: var(--accent);"></i>
-          <h5>Human Capital Consulting</h5>
-          <p>
-            We help organizations attract, develop, and manage talent through
-            workforce planning, performance systems, and leadership development.
-          </p>
+      <!-- CARD 2: Culture -->
+      <div class="col-md-3">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-globe-americas fa-3x mb-3" style="color: var(--accent);"></i>
+          <h4>Culture</h4>
+          <p>Bridging worlds, one handshake at a time. Get ready for global connections.</p>
         </div>
       </div>
 
-      <!-- GLOBAL MOBILITY -->
-      <div class="col-md-6 col-lg-3">
-        <div class="glass-card h-100 text-center">
-          <i class="fas fa-plane-departure fa-2x mb-3" style="color: var(--accent);"></i>
-          <h5>Global Mobility</h5>
-          <p>
-            Advisory support for international relocation, mobility planning,
-            and cross-border transitions for professionals and organizations.
-          </p>
+      <!-- CARD 3: Invest -->
+      <div class="col-md-3">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
+          <h4>Invest</h4>
+          <p>We find the gold mines for your capital. Let your money swim in profit.</p>
         </div>
       </div>
 
-      <!-- CULTURAL EXCHANGE -->
-      <div class="col-md-6 col-lg-3">
-        <div class="glass-card h-100 text-center">
-          <i class="fas fa-globe-americas fa-2x mb-3" style="color: var(--accent);"></i>
-          <h5>Cultural Exchange</h5>
-          <p>
-            We design and support programs that promote cross-cultural
-            understanding, collaboration, and international engagement.
-          </p>
+       <div class="col-md-3">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-users-cog fa-3x mb-3" style="color: var(--accent);"></i>
+          <h4>Human Capital Consulting</h4>
+          <p>Strategic human capital advisory supporting global workforce mobility.</p>
         </div>
       </div>
 
