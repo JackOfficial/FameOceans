@@ -106,9 +106,9 @@
        <div class="col-md-3">
         <div class="glass-card text-center">
           <!-- Icon -->
-          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
+          <i class="fas fa-users-cog fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Human Capital Consulting</h4>
-          <p>We support organizations with workforce strategy, organizational effectiveness, HR advisory, and talent development to strengthen people-driven performance in international environments.</p>
+          <p>Strategic human capital advisory supporting global workforce mobility.</p>
         </div>
       </div>
 
