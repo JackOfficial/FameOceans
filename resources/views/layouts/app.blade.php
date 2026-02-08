@@ -175,7 +175,7 @@ footer{
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Partner With Us</a></li>
         <li class="nav-item"><a class="nav-link" href="#our-services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
@@ -213,7 +213,7 @@ footer{
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
           <li><a href="/" class="text-light text-decoration-none">Home</a></li>
-          <li><a href="/about" class="text-light text-decoration-none">About</a></li>
+          <li><a href="/about" class="text-light text-decoration-none">About Us</a></li>
           <li><a href="#our-services" class="text-light text-decoration-none">Services</a></li>
           <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
         </ul>
