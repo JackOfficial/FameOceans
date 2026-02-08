@@ -19,14 +19,14 @@
 </section>
 
 <!-- SERVICES INTRO -->
-<section>
+<div>
   <div class="container text-center">
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">
       Comprehensive advisory solutions for a connected global economy.
     </p>
   </div>
-</section>
+</div>
 
 <!-- SERVICE 1: BUSINESS & STRATEGIC ADVISORY -->
 <section>
