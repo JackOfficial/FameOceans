@@ -32,16 +32,17 @@
         </h2>
 
         <p style="color: rgba(227,233,255,0.85); font-size:18px;">
-          FameOceans was created to solve a simple but powerful problem:
-          talent is everywhere, opportunity is not.
+         FameOceans was established to address the growing need for structured advisory services in an increasingly interconnected global environment. From its inception, the firm has focused on supporting organizations and stakeholders navigating cross-border business, cultural exchange, global mobility, and human capital challenges.
         </p>
 
         <p style="color: rgba(227,233,255,0.75);">
-          We saw creators struggling to get visibility, businesses searching
-          for the right people, and opportunities trapped by borders.
-          So we built a bridge — a digital ocean where talent and ambition
-          can meet, connect, and grow.
+          Over time, FameOceans has expanded its advisory scope and geographic reach, developing a presence across East Africa, the Middle East, and Europe. Through this growth, the firm has maintained a consistent emphasis on professionalism, strategic insight, and international standards.
         </p>
+
+        <p style="color: rgba(227,233,255,0.50);">
+         Today, FameOceans operates as a global advisory firm, working across multiple markets and sectors to deliver strategic consulting solutions grounded in regional expertise and international perspective.
+        </p>
+
       </div>
 
       <!-- IMAGE -->
