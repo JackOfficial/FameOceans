@@ -18,19 +18,15 @@
   </div>
 </section>
 
-<!-- SERVICES INTRO -->
-<div>
-  <div class="container text-center">
+<!-- SERVICE 1: BUSINESS & STRATEGIC ADVISORY -->
+<section>
+  <div class="container">
+    <div class="text-center my-2">
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">
       Comprehensive advisory solutions for a connected global economy.
     </p>
   </div>
-</div>
-
-<!-- SERVICE 1: BUSINESS & STRATEGIC ADVISORY -->
-<section>
-  <div class="container">
     <div class="row align-items-center g-5">
 
       <div class="col-md-6 text-light">
