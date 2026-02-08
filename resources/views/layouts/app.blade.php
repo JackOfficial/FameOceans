@@ -176,8 +176,8 @@ footer{
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Partner With Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#our-services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="/partners">Partner With Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
     </div>
