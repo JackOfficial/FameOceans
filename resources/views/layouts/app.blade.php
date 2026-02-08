@@ -123,6 +123,13 @@ section{
   box-shadow:0 15px 45px rgba(0,224,255,.45);
 }
 
+.btn-outline-light{
+  border: 1px solid rgba(0,224,255,.45);
+  border-radius:50px;
+  padding:14px 40px;
+  box-shadow:0 15px 45px rgba(0,224,255,.45);
+}
+
 .hover-scale {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
