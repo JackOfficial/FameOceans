@@ -18,96 +18,160 @@
   </div>
 </section>
 
-<!-- SERVICES OVERVIEW -->
-<section id="our-services">
+<!-- SERVICES INTRO -->
+<section>
   <div class="container text-center">
-    <h2 class="section-title">Our Treasure Chest</h2>
+    <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">
-      Strategic services designed to unlock global success.
+      Comprehensive advisory solutions for a connected global economy.
     </p>
+  </div>
+</section>
 
-    <div class="row g-4 mt-5">
+<!-- SERVICE 1: BUSINESS & STRATEGIC ADVISORY -->
+<section>
+  <div class="container">
+    <div class="row align-items-center g-5">
 
-      <!-- CARD 1: Consult -->
-      <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-lightbulb fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Consult</h4>
-          <p>We dissect your business problems like a pirate with a map. Solutions incoming!</p>
-        </div>
+      <div class="col-md-6 text-light">
+        <i class="fas fa-chart-line fa-2x mb-3" style="color: var(--accent);"></i>
+        <h3 class="fw-bold mb-3">Business & Strategic Advisory</h3>
+
+        <p style="color: rgba(227,233,255,0.85); font-size:18px;">
+          FameOceans provides strategic advisory services to organizations seeking
+          clarity, structure, and sustainable growth in complex and emerging markets.
+        </p>
+
+        <p style="color: rgba(227,233,255,0.70);">
+          We work closely with leadership teams to assess business challenges,
+          identify opportunities, and design strategies that align vision with
+          execution across borders.
+        </p>
+
+        <ul style="color: rgba(227,233,255,0.65);">
+          <li>Market entry and expansion strategy</li>
+          <li>Business diagnostics and performance analysis</li>
+          <li>Organizational structuring and governance</li>
+          <li>Strategic planning and advisory engagements</li>
+        </ul>
       </div>
 
-      <!-- CARD 2: Culture -->
-      <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-globe-americas fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Culture</h4>
-          <p>Bridging worlds, one handshake at a time. Get ready for global connections.</p>
-        </div>
-      </div>
-
-      <!-- CARD 3: Invest -->
-      <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Invest</h4>
-          <p>We find the gold mines for your capital. Let your money swim in profit.</p>
-        </div>
-      </div>
-
-       <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-users-cog fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Human Capital Consulting</h4>
-          <p>Strategic human capital advisory supporting global workforce mobility.</p>
-        </div>
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('images/service-business.jpg') }}"
+             class="img-fluid rounded shadow-lg"
+             alt="Business Advisory">
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
+<!-- SERVICE 2: HUMAN CAPITAL CONSULTING -->
+<section>
+  <div class="container">
+    <div class="row align-items-center g-5 flex-md-row-reverse">
+
+      <div class="col-md-6 text-light">
+        <i class="fas fa-users-cog fa-2x mb-3" style="color: var(--accent);"></i>
+        <h3 class="fw-bold mb-3">Human Capital Consulting</h3>
+
+        <p style="color: rgba(227,233,255,0.85); font-size:18px;">
+          We help organizations align their people strategy with business goals
+          in an increasingly global and mobile workforce.
+        </p>
+
+        <p style="color: rgba(227,233,255,0.70);">
+          Our human capital advisory focuses on building capable leadership,
+          optimizing workforce structures, and enabling talent to perform
+          effectively across cultures and regions.
+        </p>
+
+        <ul style="color: rgba(227,233,255,0.65);">
+          <li>Workforce planning and talent strategy</li>
+          <li>Leadership and management development</li>
+          <li>Performance management frameworks</li>
+          <li>Global workforce mobility advisory</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('images/service-human-capital.jpg') }}"
+             class="img-fluid rounded shadow-lg"
+             alt="Human Capital Consulting">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 3: GLOBAL MOBILITY ADVISORY -->
 <section>
   <div class="container">
     <div class="row align-items-center g-5">
 
-      <!-- TEXT -->
       <div class="col-md-6 text-light">
-        <div class="text-uppercase fw-bold mb-2"
-             style="letter-spacing:2px; color: var(--accent); font-size:14px;">
-          Our Approach
-        </div>
-
-        <h2 class="fw-bold mb-3"
-            style="background: linear-gradient(90deg,#fff,#9adfff);
-                   -webkit-background-clip: text;
-                   -webkit-text-fill-color: transparent;">
-          Strategy Meets Perspective
-        </h2>
+        <i class="fas fa-plane-departure fa-2x mb-3" style="color: var(--accent);"></i>
+        <h3 class="fw-bold mb-3">Global Mobility Advisory</h3>
 
         <p style="color: rgba(227,233,255,0.85); font-size:18px;">
-          At FameOceans, we combine analytical rigor with cultural awareness.
-          Every engagement is approached with a deep understanding of regional
-          dynamics and global standards.
+          FameOceans supports professionals and organizations navigating
+          international mobility with clarity, compliance, and confidence.
         </p>
 
         <p style="color: rgba(227,233,255,0.70);">
-          Our advisory process is collaborative, research-driven, and outcomes-focused,
-          ensuring that recommendations are practical, scalable, and aligned
-          with long-term objectives.
+          We advise on cross-border transitions, relocation pathways, and
+          international career mobility while minimizing risk and uncertainty.
         </p>
+
+        <ul style="color: rgba(227,233,255,0.65);">
+          <li>International relocation advisory</li>
+          <li>Mobility planning and strategy</li>
+          <li>Cross-border workforce transitions</li>
+          <li>Global career pathway guidance</li>
+        </ul>
       </div>
 
-      <!-- IMAGE -->
       <div class="col-md-6 text-center">
-        <img src="{{ asset('images/services-bg.jpg') }}"
-             alt="Our Services"
-             class="img-fluid rounded shadow-lg">
+        <img src="{{ asset('images/service-mobility.jpg') }}"
+             class="img-fluid rounded shadow-lg"
+             alt="Global Mobility Advisory">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 4: CULTURAL EXCHANGE & PARTNERSHIPS -->
+<section>
+  <div class="container">
+    <div class="row align-items-center g-5 flex-md-row-reverse">
+
+      <div class="col-md-6 text-light">
+        <i class="fas fa-globe fa-2x mb-3" style="color: var(--accent);"></i>
+        <h3 class="fw-bold mb-3">Cultural Exchange & Partnerships</h3>
+
+        <p style="color: rgba(227,233,255,0.85); font-size:18px;">
+          We design and support structured cultural exchange initiatives that
+          promote international collaboration and cross-cultural understanding.
+        </p>
+
+        <p style="color: rgba(227,233,255,0.70);">
+          FameOceans partners with institutions, networks, and organizations to
+          build sustainable international relationships that create shared value.
+        </p>
+
+        <ul style="color: rgba(227,233,255,0.65);">
+          <li>Cross-cultural exchange programs</li>
+          <li>Institutional and organizational partnerships</li>
+          <li>International collaboration frameworks</li>
+          <li>Global network development</li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="{{ asset('images/service-culture.jpg') }}"
+             class="img-fluid rounded shadow-lg"
+             alt="Cultural Exchange & Partnerships">
       </div>
 
     </div>
