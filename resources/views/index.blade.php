@@ -74,7 +74,7 @@
     <div class="row g-4 mt-5">
 
       <!-- CARD 1: Consult -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="glass-card text-center">
           <!-- Icon -->
           <i class="fas fa-lightbulb fa-3x mb-3" style="color: var(--accent);"></i>
@@ -84,7 +84,7 @@
       </div>
 
       <!-- CARD 2: Culture -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="glass-card text-center">
           <!-- Icon -->
           <i class="fas fa-globe-americas fa-3x mb-3" style="color: var(--accent);"></i>
@@ -94,12 +94,21 @@
       </div>
 
       <!-- CARD 3: Invest -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="glass-card text-center">
           <!-- Icon -->
           <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Invest</h4>
           <p>We find the gold mines for your capital. Let your money swim in profit.</p>
+        </div>
+      </div>
+
+       <div class="col-md-3">
+        <div class="glass-card text-center">
+          <!-- Icon -->
+          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
+          <h4>Human Capital Consulting</h4>
+          <p>We support organizations with workforce strategy, organizational effectiveness, HR advisory, and talent development to strengthen people-driven performance in international environments.</p>
         </div>
       </div>
 
