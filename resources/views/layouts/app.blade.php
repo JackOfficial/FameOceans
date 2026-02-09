@@ -269,10 +269,10 @@ footer img{
 
     <div class="text-center mt-5 pt-4 border-top border-light border-opacity-25">
       &copy; 2026 FameOceans. All rights reserved. 
-      {{ Auth::user()->name }}
+      
        @if(Auth::check())
           <a href="#" class="nav-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            Logout
+            Logout ({{ Auth::user()->name }})
           </a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
         @endif
