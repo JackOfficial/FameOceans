@@ -1,82 +1,102 @@
 @extends('layouts.auth')
+
 @section('content')
 
-        <div class="container-fluid about  py-2">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-3">
-                    </div>
-                    <div class="col-md-6">
-                        <img class="mb-4 d-block mx-auto" style="width: 200px;" src="{{ asset('frontend/img/logo.png') }}" alt="Icon">
-                    
-                        <div class="card rounded shadow">
-                          <div class="card-header">Login to AutoSpareLink</div>
-                          <div class="card-body">
-                           @error('socialLoginInError')
-    <div>
-        {{ $message }}
-    </div>
-                  @enderror
+<div class="container-fluid d-flex align-items-center justify-content-center py-5">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-5 col-lg-4">
 
-  @if (session('status'))
-    <div class="mb-4 font-medium text-sm text-green-600">
-        {{ session('status') }}
-    </div>
-@endif
+            <img class="mb-4 d-block mx-auto"
+                 style="width: 180px;"
+                 src="{{ asset('frontend/img/logo.png') }}"
+                 alt="FameOceans Logo">
 
-<div>
-  <a class="btn btn-primary mb-2 d-block" href="{{ url('auth/redirect/google') }}">Login with Google</a>
-</div>
-<div class="text-center my-1">Or</div>
-    <form method="post" action="/login">
-      @csrf
-      <div class="input-group mb-3">
-          <input type="email" name="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" placeholder="Email" required />
-          <div class="input-group-append">
-            <div class="input-group-text h-100">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        
-        </div>
-          @error('email')
-        <div class="text-primary" role="alert">
-            <strong>{{ $message }}</strong>
-        </div>
-        @enderror
+            <div class="card glass-card">
+                <div class="card-header">
+                    Login to FameOceans
+                </div>
 
-        <div class="input-group mb-3" x-data="{ show: false }">
-          <input :type="show ? 'text' : 'password'" id="psd" name="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" placeholder="Password" />
-          <div class="input-group-append">
-            <div class="input-group-text h-100" @click="show = !show">
-              <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-            </div>
-          </div>
-        </div>
-         @error('password')
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </div>
-        @enderror
-        
-         <div><a href="/forgot-password">Forgot your password?</a></div>
-           <div class="icheck-primary">
-              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-        <hr>    
-      <button type="submit" class="btn btn-primary w-50">Login</button>
-    </form>
-    <div>Not have account yet? <a href="/register">Register</a></div>
+                <div class="card-body">
+
+                    @error('socialLoginInError')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
                         </div>
+                    @endif
+
+                    <a class="btn btn-light w-100 mb-3 fw-semibold"
+                       href="{{ url('auth/redirect/google') }}">
+                        <i class="fab fa-google me-2"></i> Continue with Google
+                    </a>
+
+                    <div class="text-center my-2 text-light">or</div>
+
+                    <form method="POST" action="/login">
+                        @csrf
+
+                        <div class="input-group mb-3">
+                            <input type="email"
+                                   name="email"
+                                   value="{{ old('email') }}"
+                                   class="form-control @error('email') is-invalid @enderror"
+                                   placeholder="Email address"
+                                   required>
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+
+                        @error('email')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
+
+                        <div class="input-group mb-3" x-data="{ show: false }">
+                            <input :type="show ? 'text' : 'password'"
+                                   name="password"
+                                   class="form-control @error('password') is-invalid @enderror"
+                                   placeholder="Password">
+                            <span class="input-group-text" @click="show = !show" style="cursor:pointer">
+                                <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                            </span>
+                        </div>
+
+                        @error('password')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <a href="/forgot-password">Forgot password?</a>
+
+                            <div class="form-check text-light">
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       name="remember"
+                                       id="remember"
+                                       {{ old('remember') ? 'checked' : '' }}>
+                                <label class="form-check-label" for="remember">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-ocean w-100 py-2">
+                            Login
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-3 text-light">
+                        Don’t have an account?
+                        <a href="/register" class="fw-semibold">Register</a>
                     </div>
-                     <div class="col-md-3">
-                    </div>
+
                 </div>
             </div>
+
         </div>
-      </div>
-        
+    </div>
+</div>
 @endsection
