@@ -8,10 +8,10 @@
         <div class="col-md-5 col-lg-4">
 
             <!-- Logo -->
-            <div class="text-center mb-0">
+            <div class="text-center mb-4">
                 <img src="{{ asset('images/logo.png') }}"
                      alt="FameOceans Logo"
-                     style="width: 250px;">
+                     style="width: 180px;">
             </div>
 
             <!-- Glass Card -->
@@ -33,7 +33,7 @@
                         </div>
                     @endif
 
-                    <form action="/reset-password" method="POST">
+                    <form action="{{ route('password.update') }}" method="POST">
                         @csrf
 
                         <!-- Hidden token -->
@@ -81,13 +81,13 @@
                     </form>
 
                     <div class="text-center mt-2">
-                        <a href="/login">Back to Login</a>
+                        <a href="/login" class="fw-semibold">Back to Login</a>
                     </div>
 
                 </div>
             </div>
 
-             <div class="auth-footer">
+            <div class="auth-footer text-center text-muted mt-4">
                 © {{ date('Y') }} FameOceans ·
                 <a href="/privacy-policy">Privacy</a> ·
                 <a href="/terms">Terms</a>
