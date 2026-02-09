@@ -24,54 +24,52 @@
     :root {
         --ocean-blue: #0d6efd;
         --deep-ocean: #0a3d62;
-        --glass-bg: rgba(255, 255, 255, 0.96);
-        --glass-border: rgba(226, 232, 240, 0.9);
-        --text-dark: #0f172a;
-        --text-muted: #475569;
+        --card-bg: rgba(255, 255, 255, 0.97);
+        --border-soft: #e5e7eb;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
     }
 
     body {
-        background: linear-gradient(135deg, #0a3d62, #0d6efd);
+        background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
         min-height: 100vh;
-        color: #fff;
+        color: #e5e7eb;
     }
 
-    /* 🔒 FORCE DARK TEXT INSIDE CARD */
-    .glass-card,
-    .glass-card * {
-        color: var(--text-dark) !important;
+    /* Page wrapper */
+    .auth-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    /* Glass card */
     .glass-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid var(--glass-border);
-        border-radius: 16px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        background: var(--card-bg);
+        border-radius: 18px;
+        border: 1px solid var(--border-soft);
+        box-shadow: 0 25px 50px rgba(0,0,0,.25);
+        color: var(--text-main);
+    }
+
+    .glass-card * {
+        color: var(--text-main);
     }
 
     .glass-card .card-header {
-        font-weight: 700;
-        font-size: 1.15rem;
-        text-align: center;
         background: transparent;
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid var(--border-soft);
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-align: center;
     }
 
-    .glass-card a {
-        color: var(--ocean-blue) !important;
-        font-weight: 500;
-    }
-
-    .glass-card a:hover {
-        text-decoration: underline;
-    }
-
+    /* Inputs */
     .form-control {
-        background: #ffffff;
-        color: var(--text-dark) !important;
-        border-radius: 8px;
+        border-radius: 10px;
+        border: 1px solid var(--border-soft);
+        color: var(--text-main);
     }
 
     .form-control::placeholder {
@@ -79,49 +77,54 @@
     }
 
     .input-group-text {
-        background: #f1f5f9;
-        color: var(--text-muted) !important;
-        border-radius: 0 8px 8px 0;
+        background: #f8fafc;
+        border-radius: 0 10px 10px 0;
+        color: var(--text-muted);
     }
 
+    /* Primary button */
     .btn-ocean {
         background: linear-gradient(135deg, #0d6efd, #00c6ff);
         border: none;
-        border-radius: 30px;
+        border-radius: 999px;
+        padding: 10px 16px;
         font-weight: 600;
         color: #fff !important;
     }
 
     .btn-ocean:hover {
-        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
+        box-shadow: 0 8px 22px rgba(13,110,253,.45);
     }
 
-    footer {
-        color: #e2e8f0;
+    /* Google button */
+    .btn-google {
+        border-radius: 999px;
+        font-weight: 600;
     }
 
+    /* Links */
     .glass-card a {
-    color: var(--ocean-blue) !important;
-    font-weight: 500;
-}
+        color: var(--ocean-blue);
+        font-weight: 500;
+        text-decoration: none;
+    }
 
-.glass-card a:hover {
-    text-decoration: underline;
-}
+    .glass-card a:hover {
+        text-decoration: underline;
+    }
 
-/* Links OUTSIDE the card (on blue background) */
-body > a,
-footer a,
-.text-light a {
-    color: #e2e8f0 !important;
-}
+    /* Outside-card text */
+    .auth-footer {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 0.85rem;
+        color: #e5e7eb;
+    }
 
-body > a:hover,
-footer a:hover,
-.text-light a:hover {
-    text-decoration: underline;
-}
-
+    .auth-footer a {
+        color: #e5e7eb;
+        text-decoration: underline;
+    }
 </style>
 
         @livewireStyles

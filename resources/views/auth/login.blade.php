@@ -2,12 +2,14 @@
 
 @section('content')
 
-<div class="container-fluid d-flex align-items-center justify-content-center py-5">
+
+
+<div class="auth-page container-fluid">
     <div class="row w-100 justify-content-center">
         <div class="col-md-5 col-lg-4">
 
             <img class="mb-4 d-block mx-auto"
-                 style="width: 180px;"
+                 style="width: 180px"
                  src="{{ asset('images/FameOceans Logo.png') }}"
                  alt="FameOceans Logo">
 
@@ -19,21 +21,21 @@
                 <div class="card-body">
 
                     @error('socialLoginInError')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                        <div class="alert alert-danger small">{{ $message }}</div>
                     @enderror
 
                     @if (session('status'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success small">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <a class="btn btn-light w-100 mb-3 fw-semibold"
-                       href="{{ url('auth/redirect/google') }}">
+                    <a href="{{ url('auth/redirect/google') }}"
+                       class="btn btn-light btn-google w-100 mb-3">
                         <i class="fab fa-google me-2"></i> Continue with Google
                     </a>
 
-                    <div class="text-center my-2 text-light">or</div>
+                    <div class="text-center text-muted my-2">or</div>
 
                     <form method="POST" action="/login">
                         @csrf
@@ -51,7 +53,7 @@
                         </div>
 
                         @error('email')
-                            <div class="text-warning small mb-2">{{ $message }}</div>
+                            <div class="text-danger small mb-2">{{ $message }}</div>
                         @enderror
 
                         <div class="input-group mb-3" x-data="{ show: false }">
@@ -59,19 +61,21 @@
                                    name="password"
                                    class="form-control @error('password') is-invalid @enderror"
                                    placeholder="Password">
-                            <span class="input-group-text" @click="show = !show" style="cursor:pointer">
+                            <span class="input-group-text"
+                                  style="cursor:pointer"
+                                  @click="show = !show">
                                 <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
                             </span>
                         </div>
 
                         @error('password')
-                            <div class="text-warning small mb-2">{{ $message }}</div>
+                            <div class="text-danger small mb-2">{{ $message }}</div>
                         @enderror
 
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <a href="/forgot-password">Forgot password?</a>
 
-                            <div class="form-check text-light">
+                            <div class="form-check">
                                 <input class="form-check-input"
                                        type="checkbox"
                                        name="remember"
@@ -83,20 +87,27 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-ocean w-100 py-2">
+                        <button type="submit" class="btn btn-ocean w-100">
                             Login
                         </button>
                     </form>
 
-                    <div class="text-center mt-3 text-light">
+                    <div class="text-center mt-3 text-muted">
                         Don’t have an account?
-                        <a href="/register" class="fw-semibold">Register</a>
+                        <a href="/register">Register</a>
                     </div>
 
                 </div>
             </div>
 
+            <div class="auth-footer">
+                © {{ date('Y') }} FameOceans ·
+                <a href="/privacy-policy">Privacy</a> ·
+                <a href="/terms">Terms</a>
+            </div>
+
         </div>
     </div>
 </div>
+
 @endsection
