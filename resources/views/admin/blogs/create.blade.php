@@ -78,7 +78,7 @@
 </div>
 
 <div class="card-body">
- <livewire:admin.part.create />
+
 </div>
 </div>
 </section>
