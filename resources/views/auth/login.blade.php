@@ -8,7 +8,7 @@
 
             <img class="mb-4 d-block mx-auto"
                  style="width: 180px;"
-                 src="{{ asset('frontend/img/logo.png') }}"
+                 src="{{ asset('images/FameOceans Logo.png') }}"
                  alt="FameOceans Logo">
 
             <div class="card glass-card">
