@@ -35,7 +35,7 @@
 
                 <!-- Creators -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.creators.index') }}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-user-check"></i>
                         <p>Creators</p>
                     </a>
@@ -43,7 +43,7 @@
 
                 <!-- Posts -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.posts.index') }}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-pen-nib"></i>
                         <p>Posts</p>
                     </a>
@@ -51,7 +51,7 @@
 
                 <!-- Reports -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.reports.index') }}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-flag"></i>
                         <p>Reports</p>
                     </a>
@@ -59,7 +59,7 @@
 
                 <!-- Settings -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.settings') }}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>Settings</p>
                     </a>
