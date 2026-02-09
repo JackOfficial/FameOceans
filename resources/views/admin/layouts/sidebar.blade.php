@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-pink elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
-        <img src="{{ asset('images/logo.png') }}" alt="FameOceans" class="w-25">
+        <img src="{{ asset('images/logo.png') }}" alt="FameOceans" class="w-100">
     </a>
 
     <!-- Sidebar -->
