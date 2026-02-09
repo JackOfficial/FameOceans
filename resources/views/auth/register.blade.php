@@ -112,7 +112,7 @@
                     @endif
 
                     <!-- Google signup -->
-                    <a class="btn btn-light w-100 mb-3 d-block fw-semibold"
+                    <a class="btn btn-light w-100 d-block fw-semibold"
                        href="{{ url('auth/redirect/google') }}">
                         <i class="fab fa-google me-2"></i> Sign up with Google
                     </a>
