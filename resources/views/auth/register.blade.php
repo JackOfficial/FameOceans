@@ -1,155 +1,195 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
+
+<style>
+    :root {
+        --ocean-blue: #0d6efd;
+        --deep-ocean: #0a3d62;
+        --glass-bg: rgba(255, 255, 255, 0.97);
+        --glass-border: rgba(226, 232, 240, 0.9);
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+    }
+
+    body {
+        background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
+        min-height: 100vh;
+    }
+
+    .auth-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .glass-card {
+        background: var(--glass-bg);
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 20px 40px rgba(0,0,0,.25);
+        color: var(--text-dark);
+    }
+
+    .glass-card * {
+        color: var(--text-dark);
+    }
+
+    .glass-card .card-header {
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-align: center;
+        background: transparent;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem 0;
+    }
+
+    .glass-card a {
+        color: var(--ocean-blue);
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .glass-card a:hover {
+        text-decoration: underline;
+    }
+
+    .form-control {
+        background: #ffffff;
+        color: var(--text-dark);
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+    }
+
+    .form-control::placeholder {
+        color: var(--text-muted);
+    }
+
+    .input-group-text {
+        background: #f1f5f9;
+        color: var(--text-muted);
+        border-radius: 0 8px 8px 0;
+    }
+
+    .btn-ocean {
+        background: linear-gradient(135deg, #0d6efd, #00c6ff);
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .btn-ocean:hover {
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
+    }
+
+</style>
+
+<div class="auth-page container-fluid">
     <div class="row w-100 justify-content-center">
-        <div class="col-lg-5 col-md-7">
+        <div class="col-md-5 col-lg-4">
 
-            <!-- Logo -->
-            <div class="text-center mb-4">
-                <img src="{{ asset('images/FameOceans Logo.png') }}"
-                     alt="FameOceans"
-                     style="width: 180px;">
-            </div>
+            <img class="mb-4 d-block mx-auto"
+                 style="width: 180px;"
+                 src="{{ asset('images/FameOceans Logo.png') }}"
+                 alt="FameOceans Logo">
 
-            <!-- Card -->
-            <div class="card border-0 shadow-lg rounded-4">
-                <div class="card-header bg-white border-0 text-center pt-4">
-                    <h4 class="fw-bold mb-1">Create your account</h4>
-                    <p class="text-muted small mb-0">
-                        Join FameOceans and start your journey
-                    </p>
+            <div class="card glass-card">
+                <div class="card-header">
+                    Sign up For FameOceans
                 </div>
 
-                <div class="card-body px-4 py-4">
+                <div class="card-body">
 
-                    {{-- Social login error --}}
                     @error('socialLoginInError')
-                        <div class="alert alert-danger small">
-                            {{ $message }}
-                        </div>
+                        <div class="alert alert-danger small">{{ $message }}</div>
                     @enderror
 
-                    {{-- Status message --}}
                     @if (session('status'))
-                        <div class="alert alert-success small">
-                            {{ session('status') }}
-                        </div>
+                        <div class="alert alert-success small">{{ session('status') }}</div>
                     @endif
 
                     <!-- Google signup -->
-                    <a href="{{ url('auth/redirect/google') }}"
-                       class="btn btn-outline-dark w-100 mb-3 d-flex align-items-center justify-content-center gap-2">
-                        <i class="fab fa-google"></i>
-                        Sign up with Google
+                    <a class="btn btn-light w-100 mb-3 d-block fw-semibold"
+                       href="{{ url('auth/redirect/google') }}">
+                        <i class="fab fa-google me-2"></i> Sign up with Google
                     </a>
 
-                    <div class="text-center text-muted small mb-3">
-                        — or sign up with email —
-                    </div>
+                    <div class="text-center text-muted my-2">Or</div>
 
-                    <!-- Form -->
-                    <form method="POST" action="/register">
+                    <!-- Registration Form -->
+                    <form method="post" action="/register">
                         @csrf
 
-                        <!-- Full name -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold">Full name</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-light">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                                <input type="text"
-                                       name="name"
-                                       value="{{ old('name') }}"
-                                       class="form-control @error('name') is-invalid @enderror"
-                                       placeholder="John Doe"
-                                       required>
-                            </div>
-                            @error('name')
-                                <div class="invalid-feedback d-block">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        <!-- Name -->
+                        <div class="input-group mb-3">
+                            <input type="text"
+                                   name="name"
+                                   value="{{ old('name') }}"
+                                   class="form-control @error('name') is-invalid @enderror"
+                                   placeholder="Full name"
+                                   required>
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
                         </div>
+                        @error('name')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
 
                         <!-- Email -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold">Email address</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-light">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <input type="email"
-                                       name="email"
-                                       value="{{ old('email') }}"
-                                       class="form-control @error('email') is-invalid @enderror"
-                                       placeholder="you@example.com"
-                                       required>
-                            </div>
-                            @error('email')
-                                <div class="invalid-feedback d-block">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        <div class="input-group mb-3">
+                            <input type="email"
+                                   name="email"
+                                   value="{{ old('email') }}"
+                                   class="form-control @error('email') is-invalid @enderror"
+                                   placeholder="Email address"
+                                   required>
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
                         </div>
+                        @error('email')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
 
                         <!-- Password -->
-                        <div class="mb-3" x-data="{ show: false }">
-                            <label class="form-label small fw-semibold">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-light">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                                <input :type="show ? 'text' : 'password'"
-                                       name="password"
-                                       class="form-control @error('password') is-invalid @enderror"
-                                       placeholder="••••••••">
-                                <span class="input-group-text bg-light cursor-pointer"
-                                      @click="show = !show">
-                                    <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-                                </span>
-                            </div>
-                            @error('password')
-                                <div class="invalid-feedback d-block">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        <div class="input-group mb-3" x-data="{ show: false }">
+                            <input :type="show ? 'text' : 'password'"
+                                   name="password"
+                                   class="form-control @error('password') is-invalid @enderror"
+                                   placeholder="Password">
+                            <span class="input-group-text" @click="show = !show" style="cursor:pointer">
+                                <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                            </span>
                         </div>
+                        @error('password')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
 
-                        <!-- Confirm password -->
-                        <div class="mb-4" x-data="{ show: false }">
-                            <label class="form-label small fw-semibold">Confirm password</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-light">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                                <input :type="show ? 'text' : 'password'"
-                                       name="password_confirmation"
-                                       class="form-control @error('password_confirmation') is-invalid @enderror"
-                                       placeholder="••••••••">
-                                <span class="input-group-text bg-light cursor-pointer"
-                                      @click="show = !show">
-                                    <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-                                </span>
-                            </div>
-                            @error('password_confirmation')
-                                <div class="invalid-feedback d-block">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        <!-- Confirm Password -->
+                        <div class="input-group mb-3" x-data="{ show: false }">
+                            <input :type="show ? 'text' : 'password'"
+                                   name="password_confirmation"
+                                   class="form-control @error('password_confirmation') is-invalid @enderror"
+                                   placeholder="Confirm password">
+                            <span class="input-group-text" @click="show = !show" style="cursor:pointer">
+                                <i :class="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                            </span>
                         </div>
+                        @error('password_confirmation')
+                            <div class="text-warning small mb-2">{{ $message }}</div>
+                        @enderror
 
-                        <!-- Submit -->
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
-                            Create account
-                        </button>
+                        <hr>
 
-                        <!-- Login -->
-                        <p class="text-center small mt-3 mb-0">
-                            Already have an account?
-                            <a href="/login" class="fw-semibold">Login</a>
-                        </p>
+                        <button type="submit" class="btn btn-ocean w-100 py-2">Register</button>
+
+                        <div class="text-center mt-3">
+                            Already have an account? <a href="/login">Login</a>
+                        </div>
                     </form>
 
                 </div>
@@ -158,4 +198,5 @@
         </div>
     </div>
 </div>
+
 @endsection
