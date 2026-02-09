@@ -1,116 +1,140 @@
 @extends('admin.layouts.app')
-@section('title', 'Dashboard | AutoSpareLink')
+
+@section('title', 'Dashboard | FameOceans')
+
 @section('content')
 <div class="container-fluid">
+
     <!-- KPI Cards -->
     <div class="row">
+
+        <!-- Total Creators -->
         <div class="col-lg-3 col-6">
             <div class="small-box bg-primary">
                 <div class="inner">
-                    <h3>{{ $brands }}</h3>
-                    <p>Total Brands</p>
+                    <h3>{{ $totalCreators ?? 0 }}</h3>
+                    <p>Total Creators</p>
                 </div>
-                <div class="icon"><i class="fas fa-car"></i></div>
-                <a href="/admin/vehicle-brands" class="small-box-footer">Manage Brands <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-user-check"></i></div>
+                <a href="/admin/creators" class="small-box-footer">
+                    Manage Creators <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
 
+        <!-- Total Posts -->
         <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{ $vehicle_models }}</h3>
-                    <p>Total Models</p>
+                    <h3>{{ $totalPosts ?? 0 }}</h3>
+                    <p>Total Posts</p>
                 </div>
-                <div class="icon"><i class="fas fa-cogs"></i></div>
-                <a href="/admin/vehicle-models" class="small-box-footer">Manage Models <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-pen-nib"></i></div>
+                <a href="/admin/posts" class="small-box-footer">
+                    View Posts <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
 
+        <!-- Pending Reviews -->
         <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $pendingOrders }}</h3>
-                    <p>Pending Orders</p>
+                    <h3>{{ $pendingPosts ?? 0 }}</h3>
+                    <p>Pending Reviews</p>
                 </div>
-                <div class="icon"><i class="fas fa-shopping-cart"></i></div>
-                <a href="#" class="small-box-footer">View Orders <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+                <a href="/admin/posts?status=pending" class="small-box-footer">
+                    Review Content <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
 
+        <!-- Reported Content -->
         <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>{{ $lowStockParts }}</h3>
-                    <p>Low Stock Parts</p>
+                    <h3>{{ $reportedPosts ?? 0 }}</h3>
+                    <p>Reported Content</p>
                 </div>
-                <div class="icon"><i class="fas fa-boxes"></i></div>
-                <a href="#" class="small-box-footer">Check Inventory <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fas fa-flag"></i></div>
+                <a href="/admin/reports" class="small-box-footer">
+                    View Reports <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
+
     </div>
 
     <!-- Charts Row -->
     <div class="row">
+
+        <!-- Growth Chart -->
         <div class="col-md-8">
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Monthly Sales Overview</h3>
+                    <h3 class="card-title">Platform Growth Overview</h3>
                 </div>
                 <div class="card-body">
-                    <canvas id="salesChart"></canvas>
+                    <canvas id="growthChart"></canvas>
                 </div>
             </div>
         </div>
 
+        <!-- Content Distribution -->
         <div class="col-md-4">
             <div class="card card-success">
                 <div class="card-header">
-                    <h3 class="card-title">Inventory Status</h3>
+                    <h3 class="card-title">Content Distribution</h3>
                 </div>
                 <div class="card-body">
-                    <canvas id="inventoryChart"></canvas>
+                    <canvas id="contentChart"></canvas>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <!-- Recent Orders & Shortcuts -->
+    <!-- Recent Activity & Quick Access -->
     <div class="row">
-        <!-- Recent Orders -->
+
+        <!-- Recent Posts -->
         <div class="col-md-8">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Recent Orders</h3>
+                    <h3 class="card-title">Recent Posts</h3>
                 </div>
                 <div class="card-body p-0">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Order #</th>
-                                <th>Customer</th>
+                                <th>Title</th>
+                                <th>Creator</th>
                                 <th>Status</th>
-                                <th>Total</th>
                                 <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($recentOrders as $order)
-                            <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->customer_name }}</td>
-                                <td>
-                                    <span class="badge 
-                                        @if($order->status == 'Pending') badge-warning 
-                                        @elseif($order->status == 'Completed') badge-success 
-                                        @else badge-secondary @endif">
-                                        {{ $order->status }}
-                                    </span>
-                                </td>
-                                <td>${{ number_format($order->total, 2) }}</td>
-                                <td>{{ $order->created_at->format('d M Y') }}</td>
-                            </tr>
+                            @forelse ($recentPosts ?? [] as $post)
+                                <tr>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $post->user->name ?? '—' }}</td>
+                                    <td>
+                                        <span class="badge
+                                            @if($post->status === 'pending') badge-warning
+                                            @elseif($post->status === 'published') badge-success
+                                            @else badge-secondary @endif">
+                                            {{ ucfirst($post->status) }}
+                                        </span>
+                                    </td>
+                                    <td>{{ $post->created_at->format('d M Y') }}</td>
+                                </tr>
                             @empty
-                            <td colspan="5" class="text-center py-2">No order made at this moment</td>
+                                <tr>
+                                    <td colspan="4" class="text-center py-3 text-muted">
+                                        No recent activity
+                                    </td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>
@@ -118,64 +142,61 @@
             </div>
         </div>
 
-        <!-- Quick Access Shortcuts -->
+        <!-- Quick Access -->
         <div class="col-md-4">
             <div class="card card-outline card-secondary">
                 <div class="card-header">
                     <h3 class="card-title">Quick Access</h3>
                 </div>
                 <div class="card-body">
-                    <a href="/admin/vehicle-models" class="btn btn-app bg-info">
-                        <i class="fas fa-car"></i> Vehicles
+                    <a href="/admin/posts" class="btn btn-app bg-info">
+                        <i class="fas fa-pen"></i> Posts
                     </a>
-                    <a href="/admin/spare-parts" class="btn btn-app bg-warning">
-                        <i class="fas fa-boxes"></i> Spare Parts
-                    </a>
-                    <a href="#" class="btn btn-app bg-success">
-                        <i class="fas fa-shopping-cart"></i> Orders
+                    <a href="/admin/categories" class="btn btn-app bg-warning">
+                        <i class="fas fa-tags"></i> Categories
                     </a>
                     <a href="/admin/users" class="btn btn-app bg-primary">
                         <i class="fas fa-users"></i> Users
                     </a>
-                    <a href="#" class="btn btn-app bg-danger">
-                        <i class="fas fa-chart-pie"></i> Reports
+                    <a href="/admin/reports" class="btn btn-app bg-danger">
+                        <i class="fas fa-flag"></i> Reports
+                    </a>
+                    <a href="/admin/settings" class="btn btn-app bg-success">
+                        <i class="fas fa-cog"></i> Settings
                     </a>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
-@endsection
 
-@section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Sales Chart
-    var ctx = document.getElementById('salesChart').getContext('2d');
-    new Chart(ctx, {
+    // Growth Chart
+    new Chart(document.getElementById('growthChart'), {
         type: 'line',
         data: {
-            labels: @json($salesMonths),
+            labels: @json($growthMonths ?? []),
             datasets: [{
-                label: 'Sales',
-                data: @json($salesData),
-                borderColor: '#007bff',
-                backgroundColor: 'rgba(0,123,255,0.2)',
+                label: 'New Users',
+                data: @json($growthData ?? []),
+                borderColor: '#0d6efd',
+                backgroundColor: 'rgba(13,110,253,0.2)',
                 fill: true,
                 tension: 0.3
             }]
         }
     });
 
-    // Inventory Chart
-    var ctx2 = document.getElementById('inventoryChart').getContext('2d');
-    new Chart(ctx2, {
+    // Content Distribution
+    new Chart(document.getElementById('contentChart'), {
         type: 'doughnut',
         data: {
-            labels: ['In Stock', 'Low Stock', 'Out of Stock'],
+            labels: ['Published', 'Pending', 'Draft'],
             datasets: [{
-                data: @json($inventoryData),
-                backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+                data: @json($contentStats ?? [0,0,0]),
+                backgroundColor: ['#28a745', '#ffc107', '#6c757d']
             }]
         }
     });
