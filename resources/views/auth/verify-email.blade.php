@@ -9,7 +9,7 @@
 
             <!-- Logo -->
             <div class="text-center mb-4">
-                <img src="{{ asset('images/FameOceans Logo.png') }}"
+                <img src="{{ asset('images/logo.png') }}"
                      alt="FameOceans Logo"
                      style="width: 180px;">
             </div>
