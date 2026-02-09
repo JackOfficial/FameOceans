@@ -8,7 +8,7 @@
     <div class="row w-100 justify-content-center">
         <div class="col-md-5 col-lg-4">
 
-            <img class="mb-4 d-block mx-auto"
+            <img class="mb-0 d-block mx-auto"
                  style="width: 180px"
                  src="{{ asset('images/logo.png') }}"
                  alt="FameOceans Logo">
