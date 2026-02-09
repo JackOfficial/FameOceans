@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/home', function () {
+    return view('index');
+});
+
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/partners', [PartnerController::class, 'partners'])->name('partners');
