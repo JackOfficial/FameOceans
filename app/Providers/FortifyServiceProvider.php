@@ -13,6 +13,11 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
+use App\Http\Controllers\Auth\LoginResponseController;
+use Laravel\Fortify\Contracts\LoginResponse;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -21,7 +26,7 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(LoginResponse::class, LoginResponseController::class);
     }
 
     /**
@@ -29,6 +34,37 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+         Fortify::authenticateUsing(function (Request $request) {
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            // If user signed up with a social provider
+            if ($user->provider) {
+                // Stop here and return a validation error
+                throw ValidationException::withMessages([
+                 'email' => 'These credentials do not match our records.',
+                 'socialLoginInError' => 'It looks like you signed up with Google. Please click login with google button.'
+                ]);
+            }
+            
+            // If normal account, check password
+            if ($user->password && Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+            }
+
+            // Normal login (check password)
+            if (Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+
+            // Default failure message
+        throw ValidationException::withMessages([
+            'email' => trans('auth.failed'),
+        ]);
+// fallback: Fortify shows "These credentials do not match our records."
+         });
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
