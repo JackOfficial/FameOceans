@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('index');
-});
+})->middleware('verified');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
