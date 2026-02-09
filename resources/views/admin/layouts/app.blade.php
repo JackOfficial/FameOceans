@@ -1,162 +1,84 @@
-@extends('admin.layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'FameOceans Admin')</title>
 
-@section('title', 'Dashboard | FameOceans')
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-@section('content')
-<div class="container-fluid">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wx3ZPVD6pK+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    {{-- Page Header --}}
-    <div class="row mb-4">
-        <div class="col-12">
-            <h1 class="m-0 font-weight-bold">FameOceans Dashboard</h1>
-            <p class="text-muted mb-0">Overview of platform activity & content performance</p>
-        </div>
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="{{ asset('back/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+
+    @yield('styles')
+    @livewireStyles
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="{{ asset('images/logo.png') }}" alt="FameOceans Logo" height="60" width="60">
     </div>
 
-    {{-- KPI CARDS --}}
-    <div class="row">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link">Home</a>
+            </li>
+        </ul>
 
-        {{-- Total Users --}}
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-primary">
-                <div class="inner">
-                    <h3>{{ $totalUsers ?? 0 }}</h3>
-                    <p>Total Users</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <a href="/admin/users" class="small-box-footer">
-                    Manage Users <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
+        <!-- Right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Fullscreen -->
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#"><i class="fas fa-expand-arrows-alt"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
 
-        {{-- Total Posts --}}
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h3>{{ $totalPosts ?? 0 }}</h3>
-                    <p>Total Posts</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-pen-nib"></i>
-                </div>
-                <a href="/admin/posts" class="small-box-footer">
-                    View Posts <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
+    <!-- Sidebar -->
+    @include('admin.layouts.sidebar')
 
-        {{-- Pending Reviews --}}
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    <h3>{{ $pendingPosts ?? 0 }}</h3>
-                    <p>Pending Reviews</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-hourglass-half"></i>
-                </div>
-                <a href="/admin/posts?status=pending" class="small-box-footer">
-                    Review Content <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        {{-- Reports --}}
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>{{ $reports ?? 0 }}</h3>
-                    <p>User Reports</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-flag"></i>
-                </div>
-                <a href="/admin/reports" class="small-box-footer">
-                    View Reports <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        @yield('content')
     </div>
+    <!-- /.content-wrapper -->
 
-    {{-- CHARTS --}}
-    <div class="row">
-
-        {{-- Engagement Chart --}}
-        <div class="col-md-8">
-            <div class="card card-info">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="fas fa-chart-line mr-1"></i>
-                        Monthly Engagement
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <canvas id="engagementChart" height="120"></canvas>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <strong>&copy; {{ date('Y') }} <a href="/">FameOceans</a>.</strong> All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0
         </div>
+    </footer>
 
-        {{-- Content Status --}}
-        <div class="col-md-4">
-            <div class="card card-success">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
-                        Content Status
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <canvas id="contentChart"></canvas>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    {{-- QUICK ACTIONS --}}
-    <div class="row">
-
-        <div class="col-md-12">
-            <div class="card card-outline card-secondary">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="fas fa-bolt mr-1"></i>
-                        Quick Actions
-                    </h3>
-                </div>
-
-                <div class="card-body">
-
-                    <a href="/admin/posts/create" class="btn btn-app bg-info">
-                        <i class="fas fa-plus"></i> New Post
-                    </a>
-
-                    <a href="/admin/posts?status=pending" class="btn btn-app bg-warning">
-                        <i class="fas fa-hourglass-half"></i> Review Posts
-                    </a>
-
-                    <a href="/admin/users" class="btn btn-app bg-primary">
-                        <i class="fas fa-users"></i> Users
-                    </a>
-
-                    <a href="/admin/roles-and-permissions" class="btn btn-app bg-success">
-                        <i class="fas fa-user-shield"></i> Roles
-                    </a>
-
-                    <a href="/admin/settings" class="btn btn-app bg-danger">
-                        <i class="fas fa-cog"></i> Settings
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+    <!-- /.control-sidebar -->
 
 </div>
+<!-- ./wrapper -->
 
-@endsection
+<!-- Scripts -->
+<script src="{{ asset('back/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('back/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('back/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ asset('back/dist/js/adminlte.min.js') }}"></script>
+@yield('scripts')
+@livewireScripts
+</body>
+</html>
