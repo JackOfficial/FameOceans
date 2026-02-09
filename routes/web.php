@@ -17,3 +17,7 @@ Route::get('/partners', [PartnerController::class, 'partners'])->name('partners'
 Route::get('/services', [OurServiceController::class, 'services'])->name('services');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('/dashboard', function () {
+    // ...
+})->middleware(['verified']);
