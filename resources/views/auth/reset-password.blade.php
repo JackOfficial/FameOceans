@@ -39,6 +39,17 @@
                         <!-- Hidden token -->
                         <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
+                        <!-- Email -->
+    <div class="input-group mb-3">
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               value="{{ old('email', request('email')) }}"
+               class="form-control"
+               required
+               autofocus>
+    </div>
+
                         <!-- Password -->
                         <div class="input-group mb-3" x-data="{ show: false }">
                             <input :type="show ? 'text' : 'password'"
