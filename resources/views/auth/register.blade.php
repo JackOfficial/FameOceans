@@ -195,6 +195,12 @@
                 </div>
             </div>
 
+             <div class="auth-footer">
+                © {{ date('Y') }} FameOceans ·
+                <a href="/privacy-policy">Privacy</a> ·
+                <a href="/terms">Terms</a>
+            </div>
+
         </div>
     </div>
 </div>
