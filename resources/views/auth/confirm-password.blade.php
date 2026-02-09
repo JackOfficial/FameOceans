@@ -11,7 +11,7 @@
             <div class="text-center mb-0">
                 <img src="{{ asset('images/logo.png') }}"
                      alt="FameOceans Logo"
-                     style="width: 180px;">
+                     style="width: 250px;">
             </div>
 
             <!-- Glass Card -->
