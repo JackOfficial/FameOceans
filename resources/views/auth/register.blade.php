@@ -92,7 +92,7 @@
         <div class="col-md-5 col-lg-4">
 
             <img class="mb-4 d-block mx-auto"
-                 style="width: 180px;"
+                 style="width: 200px;"
                  src="{{ asset('images/logo.png') }}"
                  alt="FameOceans Logo">
 
