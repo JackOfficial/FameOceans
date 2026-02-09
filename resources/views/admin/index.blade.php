@@ -174,14 +174,14 @@
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Growth Chart (dummy data if backend not ready)
+    // Growth Chart
     new Chart(document.getElementById('growthChart'), {
         type: 'line',
         data: {
-            labels: @json($growthMonths ?? ['Jan','Feb','Mar','Apr']),
+            labels: {!! json_encode($growthMonths ?? ['Jan','Feb','Mar','Apr']) !!},
             datasets: [{
                 label: 'New Users',
-                data: @json($growthData ?? [10,20,15,30]),
+                data: {!! json_encode($growthData ?? [10,20,15,30]) !!},
                 borderColor: '#0d6efd',
                 backgroundColor: 'rgba(13,110,253,0.2)',
                 fill: true,
@@ -190,13 +190,13 @@
         }
     });
 
-    // Content Distribution (dummy data)
+    // Content Distribution
     new Chart(document.getElementById('contentChart'), {
         type: 'doughnut',
         data: {
             labels: ['Published', 'Pending', 'Draft'],
             datasets: [{
-                data: @json($contentStats ?? [5,3,2]),
+                data: {!! json_encode($contentStats ?? [5,3,2]) !!},
                 backgroundColor: ['#28a745', '#ffc107', '#6c757d']
             }]
         }
