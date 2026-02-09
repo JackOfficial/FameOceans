@@ -39,24 +39,6 @@
                         <!-- Hidden token -->
                         <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
-                        <!-- Email -->
-                        <div class="input-group mb-3">
-                            <input type="email"
-                                   name="email"
-                                   value="{{ old('email') }}"
-                                   class="form-control @error('email') is-invalid @enderror"
-                                   placeholder="Email address"
-                                   required>
-                            <span class="input-group-text">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                        </div>
-                        @error('email')
-                            <div class="text-warning small mb-2">
-                                {{ $message }}
-                            </div>
-                        @enderror
-
                         <!-- Password -->
                         <div class="input-group mb-3" x-data="{ show: false }">
                             <input :type="show ? 'text' : 'password'"
