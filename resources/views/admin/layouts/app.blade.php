@@ -220,12 +220,18 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
         <!-- Dashboard -->
+        @role('admin')
         <li class="nav-item">
           <a href="/admin" class="nav-link">
             <i class="nav-icon fas fa-gauge"></i>
             <p>Dashboard</p>
           </a>
         </li>
+        @endrole
+
+        @can('edit posts')
+    <li>Edit</li>
+@endcan
 
         <!-- Content Management -->
         <li class="nav-header">CONTENT MANAGEMENT</li>

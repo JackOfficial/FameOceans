@@ -42,3 +42,18 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::resource('organization', OrganizationController::class);
 
 });
+
+//Using permissions
+Route::middleware(['permission:create posts'])->group(function () {
+    // Route::get('/posts/create', ...);
+});
+
+//Using roles
+Route::middleware(['role:admin'])->group(function () {
+    // Route::get('/admin', ...);
+});
+
+//Multiple roles
+Route::middleware(['role:admin|editor'])->group(function () {
+    //
+});
