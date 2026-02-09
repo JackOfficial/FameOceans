@@ -1,0 +1,83 @@
+<aside class="main-sidebar sidebar-dark-pink elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{ route('admin.dashboard') }}" class="brand-link">
+        <img src="{{ asset('images/logo.png') }}" alt="FameOceans" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">FameOceans</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <!-- User Panel -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
+            <div class="image">
+                <img src="{{ Auth::user()->avatar ?? 'https://www.gravatar.com/avatar/?d=mp&s=200' }}" class="img-circle elevation-2" alt="User Avatar">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block text-light fw-bold">
+                    {{ Auth::user()->name ?? 'Admin' }}
+                    <small class="d-block text-muted">{{ Auth::user()?->getRoleNames()->first() ?? '—' }}</small>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <!-- Creators -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.creators.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-check"></i>
+                        <p>Creators</p>
+                    </a>
+                </li>
+
+                <!-- Posts -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.posts.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-pen-nib"></i>
+                        <p>Posts</p>
+                    </a>
+                </li>
+
+                <!-- Reports -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.reports.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-flag"></i>
+                        <p>Reports</p>
+                    </a>
+                </li>
+
+                <!-- Settings -->
+                <li class="nav-item">
+                    <a href="{{ route('admin.settings') }}" class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+
+                <!-- Logout -->
+                @if(Auth::check())
+                <li class="nav-item mt-3 border-top border-secondary">
+                    <a href="#" class="nav-link text-danger"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="nav-icon fas fa-right-from-bracket"></i>
+                        <p>Logout</p>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                </li>
+                @endif
+
+            </ul>
+        </nav>
+    </div>
+</aside>
