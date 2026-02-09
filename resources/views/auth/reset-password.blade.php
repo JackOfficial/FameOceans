@@ -40,7 +40,7 @@
                         <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
                         <!-- Email -->
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 d-none">
         <input type="email"
                name="email"
                value="{{ old('email', request('email')) }}"
