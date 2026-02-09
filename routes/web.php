@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrganizationController;
@@ -9,6 +10,9 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\SocialLoginController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Socialite;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
@@ -26,8 +30,8 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 // Social login routes
-Route::get('/auth/redirect/{provider}', [SocialLoginController::class, 'redirect']);
-Route::get('/auth/callback/{provider}', [SocialLoginController::class, 'callback']);
+Route::get('/auth/google', [SocialAuthController::class, 'redirect']);
+Route::get('/auth/google/callback', [SocialAuthController::class, 'callback']);
 
 //Admin and super admin Routes
 Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -57,3 +61,4 @@ Route::middleware(['role:admin'])->group(function () {
 Route::middleware(['role:admin|editor'])->group(function () {
     //
 });
+

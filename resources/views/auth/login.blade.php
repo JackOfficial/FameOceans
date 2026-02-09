@@ -30,7 +30,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ url('auth/redirect/google') }}"
+                    <a href="/auth/google"
                        class="btn btn-light btn-google w-100">
                         <i class="fab fa-google me-2"></i> Continue with Google
                     </a>
