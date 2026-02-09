@@ -31,7 +31,7 @@
                     @endif
 
                     <a href="{{ url('auth/redirect/google') }}"
-                       class="btn btn-light btn-google w-100 mb-3">
+                       class="btn btn-light btn-google w-100 mb-0">
                         <i class="fab fa-google me-2"></i> Continue with Google
                     </a>
 
