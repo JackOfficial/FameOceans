@@ -5,22 +5,21 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\OurServiceController;
-use App\Http\Controllers\SocialLoginController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Socialite;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
+//Guest user routes
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/home', function () {
-    return view('index');
-})->middleware('verified');
+//Authenticated user routes
+Route::middleware(['auth', 'verified', 'role:user'])->group(function () { 
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/about', [AboutController::class, 'about'])->name('about');

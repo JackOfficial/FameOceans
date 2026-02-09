@@ -25,16 +25,28 @@ class SocialAuthController extends Controller
             $user = User::create([
                 'name'              => $googleUser->getName() ?? $googleUser->getNickname(),
                 'email'             => $googleUser->getEmail(),
+                'avatar'            => $googleUser->getAvatar(),  
                 'email_verified_at' => now(),
                 'password'          => bcrypt(Str::random(24)),
             ]);
 
-            // ✅ Assign default role (Spatie)
-            $user->assignRole('user');
+             // Assign default role
+        if ($user->wasRecentlyCreated) {
+            $user->assignRole('user'); // or 'super-admin' for first user
         }
 
-        Auth::login($user, true);
+        if (is_null($user->email_verified_at)) {
+            $user->markEmailAsVerified();
+           }
+        }
 
-        return redirect()->intended('/dashboard');
+         Auth::login($user, true);
+
+         if ($user->hasRole('editor') || $user->hasRole('admin')) {
+        return redirect()->route('admin.dashboard');
+        }else {
+        return redirect()->route('home');
+      }
+        
     }
 }
