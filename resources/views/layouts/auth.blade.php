@@ -24,8 +24,10 @@
     :root {
         --ocean-blue: #0d6efd;
         --deep-ocean: #0a3d62;
-        --glass-bg: rgba(255, 255, 255, 0.15);
-        --glass-border: rgba(255, 255, 255, 0.3);
+        --glass-bg: rgba(255, 255, 255, 0.88);
+        --glass-border: rgba(255, 255, 255, 0.65);
+        --text-dark: #0f172a;
+        --text-muted: #475569;
     }
 
     body {
@@ -35,25 +37,46 @@
 
     .glass-card {
         background: var(--glass-bg);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid var(--glass-border);
         border-radius: 16px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        color: #fff;
+        color: var(--text-dark);
     }
 
     .glass-card .card-header {
-        background: transparent;
-        border-bottom: 1px solid var(--glass-border);
-        font-weight: 600;
-        font-size: 1.1rem;
+        color: var(--text-dark);
+        font-weight: 700;
+        font-size: 1.15rem;
         text-align: center;
+        background: transparent;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .glass-card a {
+        color: var(--ocean-blue);
+        font-weight: 500;
+    }
+
+    .glass-card a:hover {
+        text-decoration: underline;
     }
 
     .form-control {
-        background: rgba(255, 255, 255, 0.9);
+        background: #ffffff;
+        color: var(--text-dark);
         border-radius: 8px;
+    }
+
+    .form-control::placeholder {
+        color: var(--text-muted);
+    }
+
+    .input-group-text {
+        background: #f1f5f9;
+        color: var(--text-muted);
+        border-radius: 0 8px 8px 0;
     }
 
     .btn-ocean {
@@ -61,21 +84,15 @@
         border: none;
         border-radius: 30px;
         font-weight: 600;
-        transition: all 0.3s ease;
+        color: #fff;
     }
 
     .btn-ocean:hover {
-        transform: translateY(-1px);
         box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
     }
 
-    a {
-        color: #e0f2ff;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
+    footer {
+        color: #e2e8f0;
     }
 </style>
 
