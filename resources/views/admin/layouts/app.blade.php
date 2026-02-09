@@ -159,36 +159,4 @@
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-/* Engagement Chart */
-new Chart(document.getElementById('engagementChart'), {
-    type: 'line',
-    data: {
-        labels: @json($months ?? []),
-        datasets: [{
-            label: 'Engagement',
-            data: @json($engagementData ?? []),
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0,123,255,0.2)',
-            fill: true,
-            tension: 0.4
-        }]
-    }
-});
-
-/* Content Status Chart */
-new Chart(document.getElementById('contentChart'), {
-    type: 'doughnut',
-    data: {
-        labels: ['Published', 'Pending', 'Rejected'],
-        datasets: [{
-            data: @json($contentStatus ?? [0,0,0]),
-            backgroundColor: ['#28a745', '#ffc107', '#dc3545']
-        }]
-    }
-});
-</script>
-
 @endsection
