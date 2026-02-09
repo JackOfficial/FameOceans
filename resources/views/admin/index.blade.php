@@ -117,12 +117,12 @@
                         <tbody>
                             @forelse ($recentPosts ?? [] as $post)
                                 <tr>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->user->name ?? '—' }}</td>
+                                    <td>{{ $post->title ?? '—' }}</td>
+                                    <td>{{ $post->user?->name ?? '—' }}</td>
                                     <td>
                                         <span class="badge
-                                            @if($post->status === 'pending') badge-warning
-                                            @elseif($post->status === 'published') badge-success
+                                            @if(($post->status ?? '') === 'pending') badge-warning
+                                            @elseif(($post->status ?? '') === 'published') badge-success
                                             @else badge-secondary @endif">
                                             {{ ucfirst($post->status ?? 'N/A') }}
                                         </span>
@@ -187,6 +187,11 @@
                 fill: true,
                 tension: 0.3
             }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: true } },
+            scales: { y: { beginAtZero: true } }
         }
     });
 
@@ -199,6 +204,10 @@
                 data: {!! json_encode($contentStats ?? [5,3,2]) !!},
                 backgroundColor: ['#28a745', '#ffc107', '#6c757d']
             }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom' } }
         }
     });
 </script>
