@@ -87,6 +87,10 @@
         color: #fff;
     }
 
+    .btn-ocean a{
+        color: lightgray
+    }
+
     .btn-ocean:hover {
         box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
     }
