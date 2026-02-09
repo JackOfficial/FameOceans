@@ -24,8 +24,8 @@
     :root {
         --ocean-blue: #0d6efd;
         --deep-ocean: #0a3d62;
-        --glass-bg: rgba(255, 255, 255, 0.88);
-        --glass-border: rgba(255, 255, 255, 0.65);
+        --glass-bg: rgba(255, 255, 255, 0.96);
+        --glass-border: rgba(226, 232, 240, 0.9);
         --text-dark: #0f172a;
         --text-muted: #475569;
     }
@@ -33,6 +33,13 @@
     body {
         background: linear-gradient(135deg, #0a3d62, #0d6efd);
         min-height: 100vh;
+        color: #fff;
+    }
+
+    /* 🔒 FORCE DARK TEXT INSIDE CARD */
+    .glass-card,
+    .glass-card * {
+        color: var(--text-dark) !important;
     }
 
     .glass-card {
@@ -42,11 +49,9 @@
         border: 1px solid var(--glass-border);
         border-radius: 16px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        color: var(--text-dark);
     }
 
     .glass-card .card-header {
-        color: var(--text-dark);
         font-weight: 700;
         font-size: 1.15rem;
         text-align: center;
@@ -55,7 +60,7 @@
     }
 
     .glass-card a {
-        color: var(--ocean-blue);
+        color: var(--ocean-blue) !important;
         font-weight: 500;
     }
 
@@ -65,7 +70,7 @@
 
     .form-control {
         background: #ffffff;
-        color: var(--text-dark);
+        color: var(--text-dark) !important;
         border-radius: 8px;
     }
 
@@ -75,7 +80,7 @@
 
     .input-group-text {
         background: #f1f5f9;
-        color: var(--text-muted);
+        color: var(--text-muted) !important;
         border-radius: 0 8px 8px 0;
     }
 
@@ -84,11 +89,7 @@
         border: none;
         border-radius: 30px;
         font-weight: 600;
-        color: #fff;
-    }
-
-    .btn-ocean a{
-        color: lightgray
+        color: #fff !important;
     }
 
     .btn-ocean:hover {
@@ -98,6 +99,29 @@
     footer {
         color: #e2e8f0;
     }
+
+    .glass-card a {
+    color: var(--ocean-blue) !important;
+    font-weight: 500;
+}
+
+.glass-card a:hover {
+    text-decoration: underline;
+}
+
+/* Links OUTSIDE the card (on blue background) */
+body > a,
+footer a,
+.text-light a {
+    color: #e2e8f0 !important;
+}
+
+body > a:hover,
+footer a:hover,
+.text-light a:hover {
+    text-decoration: underline;
+}
+
 </style>
 
         @livewireStyles
