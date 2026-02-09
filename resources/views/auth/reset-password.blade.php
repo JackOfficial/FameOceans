@@ -41,7 +41,6 @@
 
                         <!-- Email -->
     <div class="input-group mb-3">
-        <label>Email</label>
         <input type="email"
                name="email"
                value="{{ old('email', request('email')) }}"
