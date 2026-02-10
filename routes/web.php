@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\BlogController;
@@ -37,12 +38,22 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('/dashboard', fn() => 'Admin Dashboard')->name('admin.dashboard');
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-
+    Route::resource('categories', BlogCategoryController::class)->except(['show']);
     Route::resource('blogs', BlogController::class);
 
     // Route::resource('users', UsersController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('organization', OrganizationController::class);
+
+    //Trash Management
+    Route::get('categories-trash', [BlogCategoryController::class, 'trash'])
+    ->name('categories.trash');
+
+    Route::post('categories/{id}/restore', [BlogCategoryController::class, 'restore'])
+    ->name('categories.restore');
+
+    Route::delete('categories/{id}/force-delete', [BlogCategoryController::class, 'forceDelete'])
+    ->name('categories.force-delete');
 
 });
 
