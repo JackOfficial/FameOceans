@@ -5,19 +5,8 @@
         {{-- Name --}}
         <div class="form-group mb-3">
             <label><i class="fas fa-tag"></i> Name *</label>
-            <input type="text" name="name" x-model="name"
-                   @input="if (!slug) slug = name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')"
-                   class="form-control @error('name') is-invalid @enderror" required>
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" required>
             @error('name') <span class="invalid-feedback">{{ $message }}</span> @enderror
-        </div>
-
-        {{-- Slug --}}
-        <div class="form-group mb-3">
-            <label><i class="fas fa-link"></i> Slug</label>
-            <input type="text" name="slug" x-model="slug"
-                   class="form-control @error('slug') is-invalid @enderror">
-            <small class="text-muted">Auto-generated from name unless edited manually.</small>
-            @error('slug') <span class="invalid-feedback">{{ $message }}</span> @enderror
         </div>
 
         {{-- Description --}}
