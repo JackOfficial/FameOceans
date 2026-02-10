@@ -91,7 +91,7 @@
     <div class="row w-100 justify-content-center">
         <div class="col-md-5 col-lg-4">
 
-            <img class="mb-0 d-block mx-auto"
+            <img class="my-2 d-block mx-auto"
                  style="width: 180px;"
                  src="{{ asset('images/FameOceans.png') }}"
                  alt="FameOceans Logo">
