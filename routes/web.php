@@ -64,6 +64,12 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::delete('categories/{id}/force-delete', [BlogCategoryController::class, 'forceDelete'])
     ->name('categories.force-delete');
 
+    Route::prefix('posts')->name('posts.')->group(function () {
+    Route::get('trash', [PostController::class, 'trash'])->name('trash');
+    Route::post('restore/{id}', [PostController::class, 'restore'])->name('restore');
+    Route::delete('force-delete/{id}', [PostController::class, 'forceDelete'])->name('forceDelete');
+});
+
 });
 
 //Using permissions
