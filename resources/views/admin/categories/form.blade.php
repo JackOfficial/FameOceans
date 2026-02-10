@@ -31,9 +31,3 @@
             <textarea name="meta_description" class="form-control" rows="2">{{ old('meta_description', $category->meta_description ?? '') }}</textarea>
         </div>
     </fieldset>
-
-    <div class="mt-4 text-right">
-        <button class="btn btn-success">
-            <i class="fas fa-save"></i> Save Category
-        </button>
-    </div>
