@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with(['auth', 'category'])
+        $posts = Post::with(['author', 'category'])
                      ->orderBy('created_at', 'desc')
                      ->paginate(10);
 
@@ -140,7 +140,7 @@ class PostController extends Controller
      */
     public function trash()
     {
-        $posts = Post::onlyTrashed()->with(['auth','category'])->paginate(10);
+        $posts = Post::onlyTrashed()->with(['author','category'])->paginate(10);
         return view('admin.posts.trash', compact('posts'));
     }
 
