@@ -65,7 +65,7 @@
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->user->name ?? '—' }}</td>
+                            <td>{{ $post->auth->name ?? '—' }}</td>
                             <td>{{ $post->blogCategory->name ?? '—' }}</td>
                             <td>
                                 <span class="badge

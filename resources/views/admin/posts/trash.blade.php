@@ -67,7 +67,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->category->name ?? '—' }}</td>
-                                <td>{{ $post->user->name ?? '—' }}</td>
+                                <td>{{ $post->auth->name ?? '—' }}</td>
                                 <td>{{ $post->deleted_at?->format('d M Y H:i') ?? '—' }}</td>
                                 <td>
                                     {{-- Restore --}}
