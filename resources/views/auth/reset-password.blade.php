@@ -8,7 +8,7 @@
         <div class="col-md-5 col-lg-4">
 
             <!-- Logo -->
-            <div class="text-center mb-4">
+            <div class="text-center my-4">
                 <img src="{{ asset('images/FameOceans.png') }}"
                      alt="FameOceans Logo"
                      style="width: 180px;">
