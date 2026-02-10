@@ -64,15 +64,22 @@
     </div>
 
     {{-- Content --}}
-    <div class="form-group mb-0">
-        <label><i class="fas fa-file-alt"></i> Content *</label>
-        <textarea name="content" 
-                  class="form-control @error('content') is-invalid @enderror" 
-                  rows="8" required>{{ old('content', $post->content ?? '') }}</textarea>
-        @error('content') 
-            <span class="text-danger">{{ $message }}</span> 
-        @enderror
-    </div>
+<div class="form-group mb-0" x-data x-init="$nextTick(() => $refs.editor && Alpine.store('tinymceEditor').init($refs.editor, '{{ old('content', addslashes($post->content ?? '')) }}'))">
+    <label><i class="fas fa-file-alt"></i> Content *</label>
+
+    <textarea 
+        x-ref="editor"
+        name="content" 
+        class="form-control @error('content') is-invalid @enderror" 
+        rows="8" 
+        required
+    >{{ old('content', $post->content ?? '') }}</textarea>
+
+    @error('content') 
+        <span class="text-danger">{{ $message }}</span> 
+    @enderror
+</div>
+
 </fieldset>
 
 {{-- ================= SEO SETTINGS ================= --}}
