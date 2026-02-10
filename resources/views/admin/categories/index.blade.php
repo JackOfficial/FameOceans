@@ -10,6 +10,7 @@
         <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
             <i class="fas fa-plus"></i> New Category
         </a>
+        <a href="/admin/categories/trash" class="btn btn-primary"><i class="fas fa-trash"></i> View Trash</a>
     </div>
 
     @if(session('success'))
