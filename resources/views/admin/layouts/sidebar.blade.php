@@ -43,10 +43,10 @@
 
                 <!-- Creators -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.creators.index') }}"
-                       class="nav-link {{ request()->routeIs('admin.creators.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.users.index') }}"
+                       class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-check"></i>
-                        <p>Creators</p>
+                        <p>Users</p>
                     </a>
                 </li>
 

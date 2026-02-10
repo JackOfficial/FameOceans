@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\BlogController;
@@ -44,6 +48,11 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     // Route::resource('users', UsersController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('organization', OrganizationController::class);
+
+    Route::resource('users', UserController::class);
+    Route::resource('reports', ReportController::class);
+    Route::resource('settings', SettingController::class);
+    Route::resource('posts', PostController::class);
 
     //Trash Management
     Route::get('categories-trash', [BlogCategoryController::class, 'trash'])
