@@ -9,8 +9,8 @@
         <div class="col-md-5 col-lg-4">
 
             <img class="mb-0 d-block mx-auto"
-                 style="width: 250px"
-                 src="{{ asset('images/logo.png') }}"
+                 style="width: 180px"
+                 src="{{ asset('images/FameOceans.png') }}"
                  alt="FameOceans Logo">
 
             <div class="card glass-card">
