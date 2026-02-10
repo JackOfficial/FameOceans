@@ -40,6 +40,12 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+     // User who created the post
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(BlogCategory::class);
