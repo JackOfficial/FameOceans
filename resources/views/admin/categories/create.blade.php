@@ -38,7 +38,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.categories.store') }}" method="POST">
+    <form action="{{ route('admin.categories.store') }}" method="POST" x-data="{ name: '{{ old('name', $category->name ?? '') }}', slug: '{{ old('slug', $category->slug ?? '') }}' }">
         @csrf
 
         <div class="card card-outline card-primary">

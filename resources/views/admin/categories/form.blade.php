@@ -1,8 +1,4 @@
-@csrf
-
-<form x-data="{ name: '{{ old('name', $category->name ?? '') }}', slug: '{{ old('slug', $category->slug ?? '') }}' }">
-
-    {{-- Basic Info --}}
+ {{-- Basic Info --}}
     <fieldset class="border rounded p-3 mb-4">
         <legend class="w-auto px-2 text-primary"><i class="fas fa-folder-open"></i> Basic Information</legend>
 
@@ -52,5 +48,3 @@
             <i class="fas fa-save"></i> Save Category
         </button>
     </div>
-
-</form>
