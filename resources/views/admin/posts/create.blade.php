@@ -86,29 +86,15 @@
                         </div>
 
                         {{-- Content --}}
-                        <div class="form-group mb-0" x-data x-init="$nextTick(() => tinymce.init({
-                            selector: '#contentEditor',
-                            height: 400,
-                            plugins: 'lists link image table code wordcount',
-                            toolbar: 'undo redo | styles | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | indent outdent | bullist numlist | link image table | code',
-                            setup(editor) {
-                                editor.on('init', function() {
-                                    editor.setContent(@json(old('content', $post->content ?? '')));
-                                });
-                                editor.on('Change KeyUp', function() {
-                                    editor.targetElm.value = editor.getContent();
-                                    editor.targetElm.dispatchEvent(new Event('input'));
-                                });
-                            }
-                        }))">
+                        <div class="form-group mb-0">
                             <label><i class="fas fa-file-alt"></i> Content *</label>
                             <textarea
-                                id="contentEditor"
+                                id="myeditorinstance"
                                 name="content"
                                 class="form-control @error('content') is-invalid @enderror"
                                 rows="8"
                                 required
-                            ></textarea>
+                            >{{ old('content', $post->content ?? '') }}</textarea>
                             @error('content') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
                     </fieldset>
@@ -162,7 +148,13 @@
     </div>
 </section>
 
-{{-- ================= TINYMCE SCRIPT ================= --}}
+{{-- ================= TINYMCE SIMPLE ================= --}}
 <script src="https://cdn.tiny.cloud/1/akrlpx2p28jit8egdeyeyu4q0osghccndfvgksphc8hfni44/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-
+<script>
+  tinymce.init({
+    selector: 'textarea#myeditorinstance',
+    plugins: 'lists link image table code wordcount',
+    toolbar: 'undo redo | styles | blocks | bold italic | alignleft aligncenter alignright alignjustify | indent outdent | bullist numlist | code | table'
+  });
+</script>
 @endsection
