@@ -112,9 +112,9 @@
                     @endif
 
                     <!-- Google signup -->
-                    <a class="btn btn-light w-100 d-block fw-semibold"
-                       href="/auth/google">
-                        <i class="fab fa-google me-2"></i> Sign up with Google
+                     <a href="/auth/google"
+                       class="btn btn-light btn-google w-100">
+                        <i class="fab fa-google me-2"></i> Continue with Google
                     </a>
 
                     <div class="text-center text-muted my-2">Or</div>
