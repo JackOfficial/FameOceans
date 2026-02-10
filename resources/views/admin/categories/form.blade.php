@@ -1,37 +1,56 @@
 @csrf
 
-<div class="form-group mb-3">
-    <label>Name *</label>
-    <input type="text" name="name" class="form-control"
-           value="{{ old('name', $category->name ?? '') }}" required>
-</div>
+<form x-data="{ name: '{{ old('name', $category->name ?? '') }}', slug: '{{ old('slug', $category->slug ?? '') }}' }">
 
-<div class="form-group mb-3">
-    <label>Slug</label>
-    <input type="text" name="slug" class="form-control"
-           value="{{ old('slug', $category->slug ?? '') }}">
-</div>
+    {{-- Basic Info --}}
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="w-auto px-2 text-primary"><i class="fas fa-folder-open"></i> Basic Information</legend>
 
-<div class="form-group mb-3">
-    <label>Description</label>
-    <textarea name="description" class="form-control" rows="3">{{ old('description', $category->description ?? '') }}</textarea>
-</div>
+        {{-- Name --}}
+        <div class="form-group mb-3">
+            <label><i class="fas fa-tag"></i> Name *</label>
+            <input type="text" name="name" x-model="name"
+                   @input="if (!slug) slug = name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')"
+                   class="form-control @error('name') is-invalid @enderror" required>
+            @error('name') <span class="invalid-feedback">{{ $message }}</span> @enderror
+        </div>
 
-<hr>
+        {{-- Slug --}}
+        <div class="form-group mb-3">
+            <label><i class="fas fa-link"></i> Slug</label>
+            <input type="text" name="slug" x-model="slug"
+                   class="form-control @error('slug') is-invalid @enderror">
+            <small class="text-muted">Auto-generated from name unless edited manually.</small>
+            @error('slug') <span class="invalid-feedback">{{ $message }}</span> @enderror
+        </div>
 
-<h6 class="text-muted">SEO Settings</h6>
+        {{-- Description --}}
+        <div class="form-group mb-0">
+            <label><i class="fas fa-align-left"></i> Description</label>
+            <textarea name="description" class="form-control" rows="3">{{ old('description', $category->description ?? '') }}</textarea>
+        </div>
+    </fieldset>
 
-<div class="form-group mb-3">
-    <label>Meta Title</label>
-    <input type="text" name="meta_title" class="form-control"
-           value="{{ old('meta_title', $category->meta_title ?? '') }}">
-</div>
+    {{-- SEO --}}
+    <fieldset class="border rounded p-3">
+        <legend class="w-auto px-2 text-success"><i class="fas fa-search"></i> SEO Settings</legend>
 
-<div class="form-group mb-3">
-    <label>Meta Description</label>
-    <textarea name="meta_description" class="form-control" rows="2">{{ old('meta_description', $category->meta_description ?? '') }}</textarea>
-</div>
+        <div class="form-group mb-3">
+            <label><i class="fas fa-heading"></i> Meta Title</label>
+            <input type="text" name="meta_title" class="form-control"
+                   value="{{ old('meta_title', $category->meta_title ?? '') }}">
+        </div>
 
-<button class="btn btn-success">
-    Save Category
-</button>
+        <div class="form-group mb-0">
+            <label><i class="fas fa-align-justify"></i> Meta Description</label>
+            <textarea name="meta_description" class="form-control" rows="2">{{ old('meta_description', $category->meta_description ?? '') }}</textarea>
+        </div>
+    </fieldset>
+
+    <div class="mt-4 text-right">
+        <button class="btn btn-success">
+            <i class="fas fa-save"></i> Save Category
+        </button>
+    </div>
+
+</form>
