@@ -221,10 +221,8 @@
 </section>
 
 
-<section class="cta py-5" style="position: relative; overflow: hidden; background: var(--deep); padding: 120px 0 !important;">
+<section class="cta" style="position: relative; overflow: hidden; background: var(--deep); padding: 120px 0;">
   
-  <div class="position-absolute" style="top: -10%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,224,255,0.1) 0%, transparent 70%);"></div>
-
   <div class="container position-relative" style="z-index: 2;">
     <div class="row align-items-center g-5">
 
@@ -236,26 +234,26 @@
         <h2 class="display-5 fw-bold mb-0" style="color: #fff;">Strategic Workforce</h2>
         <h2 class="display-5 fw-bold mb-4" style="background: linear-gradient(90deg, var(--accent), #3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smart Capital</h2>
 
-        <p class="mb-5" style="font-size: 1.15rem; color: rgba(227,233,255,0.75); line-height: 1.8;">
+        <p class="mb-5" style="font-size: 1.1rem; color: rgba(227,233,255,0.75); line-height: 1.8;">
           FameOceans structures <strong>compliant workforce mobility</strong> and strategic investment corridors between Africa, the Gulf, and Europe.
         </p>
 
         <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
            style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px;">
-            Connect Now <i class="fas fa-arrow-right ms-2" style="font-size: 0.8rem;"></i>
+            Connect Now <i class="fas fa-arrow-right ms-2"></i>
         </a>
       </div>
 
       <div class="col-lg-6">
-        <div class="position-relative px-3">
-          <div class="glass-image-wrapper p-3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; backdrop-filter: blur(5px);">
+        <div class="position-relative px-2">
+          <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 12px; backdrop-filter: blur(5px); overflow: hidden;">
             <img src="{{ asset('images/Consultancy.jpeg') }}" 
                  alt="Global Advisory" 
                  class="img-fluid rounded-4 shadow-lg w-100"
-                 style="max-height: 480px; object-fit: cover;">
+                 style="display: block; height: auto; object-fit: cover; border-radius: 20px;">
           </div>
           
-          <div class="position-absolute d-none d-md-block" style="bottom: -20px; right: -10px; width: 100px; height: 100px; background: linear-gradient(135deg, var(--accent), #3a7bfd); border-radius: 20px; z-index: -1; opacity: 0.5;"></div>
+          <div class="position-absolute d-none d-md-block" style="bottom: -15px; right: -5px; width: 100px; height: 100px; background: linear-gradient(135deg, var(--accent), #3a7bfd); border-radius: 20px; z-index: -1; opacity: 0.3;"></div>
         </div>
       </div>
 
