@@ -1,18 +1,105 @@
 @extends('layouts.app')
 @section('content')
 <!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Business Consultancy, </h1>
-    <h1>Cultural Exchange & Global Mobility</h1>
-    <p>
-      We provide strategic advisory services for global business and cross-border investment mobility.
-    </p>
-    <div class="mt-4">
-      <a class="btn btn-primary me-3">Get Started</a>
-      <a class="btn btn-outline-light">Explore Talents</a>
+<section x-data="{ 
+    activeSlide: 0, 
+    slides: [
+        { 
+            label: 'STRATEGIC ADVISORY',
+            title: 'Business Consultancy', 
+            text: 'We dissect complex business puzzles with razor-sharp intellect to yield extraordinary results.',
+            img: '{{ asset('images/Consultancy.jpeg') }}',
+            link: '#our-services'
+        },
+        { 
+            label: 'GLOBAL CONNECTIVITY',
+            title: 'Cultural Exchange', 
+            text: 'Bridging worlds and opening doors you didn’t even know existed through global connections.',
+            img: '{{ asset('images/culture.jpeg') }}',
+            link: '#explore'
+        },
+        { 
+            label: 'ELITE TRANSITION',
+            title: 'Global Mobility', 
+            text: 'Seamlessly transition across borders with expert compliance and settlement support.',
+            img: '{{ asset('images/Global reach.jpeg') }}',
+            link: '#mobility'
+        }
+    ],
+    next() { this.activeSlide = (this.activeSlide + 1) % this.slides.length },
+    prev() { this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length },
+    init() { setInterval(() => this.next(), 7000) } 
+}" class="p-0 vh-100 position-relative d-flex align-items-center overflow-hidden">
+
+    <template x-for="(slide, index) in slides" :key="index">
+        <div x-show="activeSlide === index" 
+             x-transition:enter="transition ease-out duration-1000"
+             x-transition:enter-start="opacity-0 scale-110"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-1000"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             class="position-absolute top-0 start-0 w-100 h-100">
+            <div class="w-100 h-100" 
+                 :style="`background: linear-gradient(to right, rgba(2, 6, 17, 0.9), rgba(2, 6, 17, 0.3)), url('${slide.img}') no-repeat center center/cover;`"
+            ></div>
+        </div>
+    </template>
+
+    <div class="position-absolute top-50 start-0 translate-middle-y ms-5 d-none d-xl-block" style="z-index: 5; opacity: 0.1;">
+        <i class="fas fa-water fa-10x text-white"></i>
     </div>
-  </div>
+
+    <div class="container position-relative" style="z-index: 10;">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-start">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div x-show="activeSlide === index"
+                         x-transition:enter="transition ease-out delay-300 duration-700"
+                         x-transition:enter-start="opacity-0 translate-middle-y"
+                         x-transition:enter-end="opacity-100 translate-none">
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge rounded-pill px-3 py-2 me-3" style="background: rgba(0, 224, 255, 0.15); color: var(--accent); border: 1px solid var(--accent); letter-spacing: 2px; font-size: 12px;" x-text="slide.label"></span>
+                            <div style="height: 1px; width: 50px; background: var(--accent);"></div>
+                        </div>
+
+                        <h1 class="display-1 fw-bold mb-4" style="background: linear-gradient(90deg, #fff, #9adfff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" x-text="slide.title"></h1>
+                        
+                        <p class="fs-4 mb-5 opacity-75" style="max-width: 600px; line-height: 1.6;" x-text="slide.text"></p>
+                        
+                        <div class="d-flex flex-wrap gap-3">
+                            <a :href="slide.link" class="btn btn-primary btn-lg shadow-lg">
+                                <i class="fas fa-ship me-2"></i>Get Started
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-lg glass-card border-0">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-absolute bottom-0 end-0 p-4 p-md-5 d-flex align-items-center gap-4" style="z-index: 20;">
+        <div class="d-flex gap-2">
+            <template x-for="(slide, index) in slides" :key="index">
+                <button @click="activeSlide = index" 
+                        class="border-0 rounded-circle" 
+                        :style="activeSlide === index ? 'width: 40px; background: var(--accent);' : 'width: 12px; background: rgba(255,255,255,0.3);'"
+                        style="height: 12px; transition: all 0.4s ease;"></button>
+            </template>
+        </div>
+        <div class="d-flex gap-2 ms-3">
+            <button @click="prev()" class="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button @click="next()" class="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 </section>
 
 <!-- CTA SECTION: Ocean Vibe -->
