@@ -315,18 +315,6 @@ body {
 
             <div class="mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-column justify-content-center align-items-center text-center">
     <p class="small mb-0 opacity-75">&copy; 2026 FameOceans. Designed for Excellence.</p>
-    
-    @if(Auth::check())
-        <div class="d-flex align-items-center mt-2">
-            <span class="mx-2 opacity-25">|</span>
-            <a href="#" class="small text-danger text-decoration-none hover-opacity" 
-               style="transition: opacity 0.3s ease;"
-               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Admin Logout ({{ Auth::user()->name }})
-            </a>
-        </div>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-    @endif
 </div>
         </div>
     </footer>
