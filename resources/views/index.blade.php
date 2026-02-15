@@ -268,53 +268,46 @@
 </section>
 
 <!-- TREASURE CHEST -->
-<section id="our-services" style="background: var(--deep); padding: 100px 0;">
-  <div class="container text-center">
+<section id="our-services" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0;">
+  
+  <div class="container text-center position-relative" style="z-index: 2;">
     
     <div class="mb-5">
       <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Our Strategic Pillars</h2>
       <p class="section-subtitle mx-auto" style="color: var(--muted); max-width: 600px;">Expert-led solutions designed to navigate and unlock global market potential.</p>
     </div>
 
-    <div class="row g-4 mt-2">
+    <div class="row g-5 mt-2">
 
       <div class="col-md-3">
-        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
-          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
-            <i class="fas fa-lightbulb fa-2x" style="color: var(--accent);"></i>
-          </div>
-          <h4 class="text-white fw-bold">Consult</h4>
-          <p class="text-white-50 small">Expert analysis and bespoke roadmaps to solve complex market entry and operational challenges.</p>
+        <div class="pillar-item p-3">
+          <i class="fas fa-lightbulb fa-3x mb-4" style="color: var(--accent); opacity: 0.9;"></i>
+          <h4 class="text-white fw-bold mb-3">Consult</h4>
+          <p style="color: rgba(227,233,255,0.7); font-size: 0.95rem; line-height: 1.6;">Expert analysis and bespoke roadmaps to solve complex market entry and operational challenges.</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
-          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
-            <i class="fas fa-globe-africa fa-2x" style="color: var(--accent);"></i>
-          </div>
-          <h4 class="text-white fw-bold">Culture</h4>
-          <p class="text-white-50 small">Facilitating cross-border connections and cultural intelligence to bridge Africa and the world.</p>
+        <div class="pillar-item p-3">
+          <i class="fas fa-globe-africa fa-3x mb-4" style="color: var(--accent); opacity: 0.9;"></i>
+          <h4 class="text-white fw-bold mb-3">Culture</h4>
+          <p style="color: rgba(227,233,255,0.7); font-size: 0.95rem; line-height: 1.6;">Facilitating cross-border connections and cultural intelligence to bridge Africa and the world.</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
-          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
-            <i class="fas fa-chart-line fa-2x" style="color: var(--accent);"></i>
-          </div>
-          <h4 class="text-white fw-bold">Invest</h4>
-          <p class="text-white-50 small">Identifying high-yield, compliant investment corridors for long-term capital appreciation.</p>
+        <div class="pillar-item p-3">
+          <i class="fas fa-chart-line fa-3x mb-4" style="color: var(--accent); opacity: 0.9;"></i>
+          <h4 class="text-white fw-bold mb-3">Invest</h4>
+          <p style="color: rgba(227,233,255,0.7); font-size: 0.95rem; line-height: 1.6;">Identifying high-yield, compliant investment corridors for long-term capital appreciation.</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
-          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
-            <i class="fas fa-users-cog fa-2x" style="color: var(--accent);"></i>
-          </div>
-          <h4 class="text-white fw-bold">Mobility</h4>
-          <p class="text-white-50 small">Strategic human capital advisory and legal compliance for international workforce mobility.</p>
+        <div class="pillar-item p-3">
+          <i class="fas fa-users-cog fa-3x mb-4" style="color: var(--accent); opacity: 0.9;"></i>
+          <h4 class="text-white fw-bold mb-3">Mobility</h4>
+          <p style="color: rgba(227,233,255,0.7); font-size: 0.95rem; line-height: 1.6;">Strategic human capital advisory and legal compliance for international workforce mobility.</p>
         </div>
       </div>
 
