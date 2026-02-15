@@ -623,35 +623,35 @@
   </div>
 </section>
 
-<!-- CTA ABOVE FOOTER -->
-<section style="
-  position: relative; 
-  background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover; 
-  padding: 120px 0;
-  overflow: hidden;
- ">
-  <div class="container text-center text-light">
+<section id="final-cta" style="
+    position: relative; 
+    background: linear-gradient(135deg, rgba(4, 13, 28, 0.9), rgba(8, 27, 52, 0.7)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect for depth */
+    padding: 140px 0;
+    overflow: hidden;
+">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(4, 13, 28, 0.4); pointer-events: none;"></div>
 
-    <!-- Decorative icon -->
-    <i class="fas fa-ship fa-3x mb-3" style="color: var(--accent);"></i>
+  <div class="container text-center text-light position-relative" style="z-index: 2;">
 
-    <!-- Section small title -->
-    <div class="text-uppercase fw-bold mb-2" style="letter-spacing:2px; color: var(--accent); font-size:14px;">
-          Ready for Glory?
-        </div>
+    <div class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color: var(--accent); font-size:13px; opacity: 0.9;">
+        Ready for Glory?
+    </div>
 
-    <!-- Main headings -->
-    <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <h2 class="display-4 fw-bold mb-3" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
       Let's Make It Happen
     </h2>
 
-    <p class="mx-auto mb-4" style="color: rgba(227,233,255,0.85);">
-     Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
+    <p class="mx-auto mb-5" style="color: rgba(227,233,255,0.8); max-width: 550px; font-size: 1.1rem; line-height: 1.8;">
+      Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
     </p>
 
-     <a href="#" class="btn btn-primary btn-lg shadow-lg">
-          <i class="fa fa-rocket me-2"></i>Get Started
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg transition-all" 
+           style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px;">
+            Get Started Now
         </a>
+    </div>
 
   </div>
 </section>
