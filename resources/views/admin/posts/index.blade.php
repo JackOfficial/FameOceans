@@ -52,6 +52,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th width="60">#</th>
+                        <th width="90">Photo</th>
                         <th>Title</th>
                         <th>Author</th>
                         <th>Category</th>
@@ -63,10 +64,21 @@
                 <tbody>
                     @forelse($posts as $post)
                         <tr>
-                            <td>{{ $post->id }}</td>
+                            <td>{{ $post->itelation }}</td>
+                            <td>
+    @if($post->featured_image)
+        <img src="{{ asset('storage/'.$post->featured_image) }}"
+             alt="Post Image"
+             width="60"
+             height="60"
+             style="object-fit: cover; border-radius: 6px;">
+    @else
+        <span class="text-muted">—</span>
+    @endif
+</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->author->name ?? '—' }}</td>
-                            <td>{{ $post->blogCategory->name ?? '—' }}</td>
+                            <td>{{ $post->category->name ?? '—' }}</td>
                             <td>
                                 <span class="badge
                                     @if($post->status === 'draft') badge-secondary
