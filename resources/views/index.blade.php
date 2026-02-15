@@ -8,21 +8,21 @@
             label: 'STRATEGIC ADVISORY',
             title: 'Business Consultancy', 
             text: 'We dissect complex business puzzles with razor-sharp intellect to yield extraordinary results.',
-            img: '{{ asset('images/Consultancy.jpeg') }}',
+            img: '{{ asset('images/Stratetic investment opportunities in Africa.png') }}',
             link: '#our-services'
         },
         { 
             label: 'GLOBAL CONNECTIVITY',
             title: 'Cultural Exchange', 
             text: 'Bridging worlds and opening doors you didn’t even know existed through global connections.',
-            img: '{{ asset('images/culture.jpeg') }}',
+            img: '{{ asset('images/Strategic investment pathways accross Africa.png') }}',
             link: '#explore'
         },
         { 
             label: 'ELITE TRANSITION',
             title: 'Global Mobility', 
             text: 'Seamlessly transition across borders with expert compliance and settlement support.',
-            img: '{{ asset('images/Global reach.jpeg') }}',
+            img: '{{ asset('images/Bridging workforce into UAE.png') }}',
             link: '#mobility'
         }
     ],
