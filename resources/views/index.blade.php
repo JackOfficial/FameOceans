@@ -75,6 +75,38 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/* Navigation Buttons Styling */
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Scroll Behavior */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Mobile Snap - ensures the card stops centered on mobile swipe */
+@media (max-width: 767px) {
+    .testimonial-card {
+        scroll-snap-align: center;
+    }
+}
 </style>
 @endpush
 @section('content')
@@ -473,17 +505,34 @@
   </div>
 </section>
 
-<section id="testimonials" style="position: relative; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0; overflow: hidden;">
+<section id="testimonials" 
+    x-data="{ 
+        scrollNext() { $refs.container.scrollBy({ left: $refs.container.offsetWidth * 0.8, behavior: 'smooth' }) },
+        scrollPrev() { $refs.container.scrollBy({ left: -$refs.container.offsetWidth * 0.8, behavior: 'smooth' }) }
+    }"
+    style="position: relative; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0; overflow: hidden;">
   
-  <i class="fas fa-quote-right position-absolute end-0 top-0 opacity-10" style="font-size: 20rem; transform: translate(30%, -10%); color: var(--accent);"></i>
+  <div class="container position-relative" style="z-index: 2;">
+    
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="text-start">
+            <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0;">What People Say</h2>
+            <p class="section-subtitle mb-0" style="color: var(--muted);">Voices of success from around the ocean.</p>
+        </div>
 
-  <div class="container text-center position-relative" style="z-index: 2;">
-    <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What People Say</h2>
-    <p class="section-subtitle mb-5" style="color: var(--muted);">Voices of success from around the ocean.</p>
+        <div class="d-none d-md-flex gap-2">
+            <button @click="scrollPrev()" class="btn d-flex align-items-center justify-content-center nav-btn" aria-label="Previous">
+                <i class="fas fa-chevron-left text-white"></i>
+            </button>
+            <button @click="scrollNext()" class="btn d-flex align-items-center justify-content-center nav-btn" aria-label="Next">
+                <i class="fas fa-chevron-right text-white"></i>
+            </button>
+        </div>
+    </div>
 
-    <div class="row g-4 justify-content-start justify-content-md-center flex-nowrap overflow-auto hide-scrollbar flex-md-wrap">
+    <div class="row g-4 flex-nowrap overflow-auto hide-scrollbar pb-2" x-ref="container" style="scroll-snap-type: x mandatory;">
 
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+      <div class="col-10 col-md-4 flex-shrink-0" style="scroll-snap-align: start;">
         <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
              style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
           
@@ -505,7 +554,7 @@
         </div>
       </div>
 
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+      <div class="col-10 col-md-4 flex-shrink-0" style="scroll-snap-align: start;">
         <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
              style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
           
@@ -527,7 +576,7 @@
         </div>
       </div>
 
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+      <div class="col-10 col-md-4 flex-shrink-0" style="scroll-snap-align: start;">
         <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
              style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
           
@@ -540,7 +589,7 @@
           </p>
           
           <div class="d-flex align-items-center">
-            <div class="rounded-circle bg-accent d-flex align-items-center justify-content-center text-white me-3" style="width: 45px; height: 45px; font-weight: bold; background-color: var(--primary);">DO</div>
+            <div class="rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 45px; height: 45px; font-weight: bold; background-color: var(--primary);">DO</div>
             <div>
               <strong style="color: #fff; display: block;">David Okello</strong>
               <small style="color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Investor</small>
