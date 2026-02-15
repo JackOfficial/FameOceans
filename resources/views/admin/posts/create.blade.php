@@ -95,8 +95,7 @@
                             <textarea id="myeditorinstance"
                                       name="content"
                                       class="form-control @error('content') is-invalid @enderror"
-                                      rows="8"
-                                      required>{{ old('content') }}</textarea>
+                                      rows="8">{{ old('content') }}</textarea>
                             @error('content')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -151,7 +150,7 @@
 
                     {{-- ================= SUBMIT ================= --}}
                     <div class="text-right">
-                        <button class="btn btn-success">
+                        <button class="btn btn-success" type="submit">
                             <i class="fas fa-save"></i> Save Post
                         </button>
                     </div>
