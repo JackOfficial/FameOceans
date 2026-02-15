@@ -474,29 +474,16 @@
 </section>
 
 <section id="testimonials" 
-    x-data="{ 
-        scrollNext() { $refs.container.scrollBy({ left: $refs.container.offsetWidth * 0.8, behavior: 'smooth' }) },
-        scrollPrev() { $refs.container.scrollBy({ left: -$refs.container.offsetWidth * 0.8, behavior: 'smooth' }) }
-    }"
     style="position: relative; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0; overflow: hidden;">
   
   <div class="container position-relative" style="z-index: 2;">
     
-    <div class="text-center mb-5 position-relative">
+    <div class="text-center mb-5">
         <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">What People Say</h2>
         <p class="section-subtitle mx-auto" style="color: var(--muted); max-width: 600px;">Voices of success from around the ocean.</p>
-
-        <div class="d-none d-md-flex gap-2 position-absolute end-0 bottom-0">
-            <button @click="scrollPrev()" class="btn d-flex align-items-center justify-content-center nav-btn" aria-label="Previous">
-                <i class="fas fa-chevron-left text-white"></i>
-            </button>
-            <button @click="scrollNext()" class="btn d-flex align-items-center justify-content-center nav-btn" aria-label="Next">
-                <i class="fas fa-chevron-right text-white"></i>
-            </button>
-        </div>
     </div>
 
-    <div class="row g-4 flex-nowrap overflow-auto hide-scrollbar pb-2" x-ref="container" style="scroll-snap-type: x mandatory;">
+    <div class="row g-4 flex-nowrap overflow-auto hide-scrollbar pb-4" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
 
       <div class="col-10 col-md-4 flex-shrink-0" style="scroll-snap-align: start;">
         <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
