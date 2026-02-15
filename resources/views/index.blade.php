@@ -473,84 +473,79 @@
   </div>
 </section>
 
-<section id="testimonials" style="position: relative; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0; overflow: hidden;">
-  
-  <i class="fas fa-quote-right position-absolute end-0 top-0 opacity-10" style="font-size: 20rem; transform: translate(30%, -10%); color: var(--accent);"></i>
+<section id="testimonials" 
+    x-data="{ 
+        scrollNext() { $refs.container.scrollBy({ left: $refs.container.offsetWidth * 0.8, behavior: 'smooth' }) },
+        scrollPrev() { $refs.container.scrollBy({ left: -$refs.container.offsetWidth * 0.8, behavior: 'smooth' }) }
+    }"
+    style="position: relative; background: var(--deep); padding: 100px 0;">
 
-  <div class="container text-center position-relative" style="z-index: 2;">
-    <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What People Say</h2>
-    <p class="section-subtitle mb-5" style="color: var(--muted);">Voices of success from around the ocean.</p>
-
-    <div class="row g-4 justify-content-start justify-content-md-center flex-nowrap overflow-auto hide-scrollbar flex-md-wrap">
-
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
-             style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
-          
-          <div class="d-flex mb-3 text-warning">
-             <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star"></i>
-          </div>
-
-          <p class="mb-4 fst-italic" style="color: #e3e9ff; line-height: 1.7; font-size: 1.1rem;">
-            “FameOceans transformed our global strategy. Their insights are sharp, effective, and uniquely tailored to the GCC market.”
-          </p>
-          
-          <div class="d-flex align-items-center">
-            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white me-3" style="width: 45px; height: 45px; font-weight: bold;">AJ</div>
-            <div>
-              <strong style="color: #fff; display: block;">Alex Johnson</strong>
-              <small style="color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">CEO, Global Ventures</small>
+    <div class="container position-relative">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div class="text-start">
+                <h2 class="fw-bold text-white mb-2">Client Success</h2>
+                <div style="height: 3px; width: 40px; background: var(--accent);"></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
-             style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
-          
-          <div class="d-flex mb-3 text-warning">
-             <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star"></i>
-          </div>
-
-          <p class="mb-4 fst-italic" style="color: #e3e9ff; line-height: 1.7; font-size: 1.1rem;">
-            “The cultural exchange experience opened doors I never imagined possible. Truly a bridge between Africa and the world.”
-          </p>
-          
-          <div class="d-flex align-items-center">
-            <div class="rounded-circle bg-info d-flex align-items-center justify-content-center text-white me-3" style="width: 45px; height: 45px; font-weight: bold;">MC</div>
-            <div>
-              <strong style="color: #fff; display: block;">Maria Chen</strong>
-              <small style="color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Entrepreneur</small>
+            
+            <div class="d-none d-md-flex gap-3">
+                <button @click="scrollPrev()" class="btn btn-link p-0 text-white-50 hover-white transition-all">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button @click="scrollNext()" class="btn btn-link p-0 text-white-50 hover-white transition-all">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
 
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card p-4 shadow-lg rounded-4 h-100 testimonial-card text-start border-0" 
-             style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1) !important;">
-          
-          <div class="d-flex mb-3 text-warning">
-             <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star"></i>
-          </div>
+        <div class="row flex-nowrap overflow-auto hide-scrollbar pb-3" x-ref="container" style="scroll-snap-type: x mandatory; gap: 1.5rem;">
 
-          <p class="mb-4 fst-italic" style="color: #e3e9ff; line-height: 1.7; font-size: 1.1rem;">
-            “Smart investments, global reach, and professional execution. My capital is safe and growing in the right corridors.”
-          </p>
-          
-          <div class="d-flex align-items-center">
-            <div class="rounded-circle bg-accent d-flex align-items-center justify-content-center text-white me-3" style="width: 45px; height: 45px; font-weight: bold; background-color: var(--primary);">DO</div>
-            <div>
-              <strong style="color: #fff; display: block;">David Okello</strong>
-              <small style="color: var(--accent); text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Investor</small>
+            <div class="col-11 col-md-5 col-lg-4 flex-shrink-0" style="scroll-snap-align: start;">
+                <div class="p-4 rounded-4 h-100" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1);">
+                    <p class="mb-4 text-white-50" style="font-size: 1.05rem; line-height: 1.8; letter-spacing: 0.2px;">
+                        “FameOceans transformed our global strategy. Their insights are sharp, effective, and uniquely tailored to the UAE market.”
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3" style="width: 40px; height: 1px; background: var(--accent);"></div>
+                        <div>
+                            <span class="d-block text-white fw-bold">Alex Johnson</span>
+                            <small class="text-uppercase tracking-wider" style="color: var(--accent); font-size: 0.7rem; letter-spacing: 1px;">CEO, Global Ventures</small>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
+            <div class="col-11 col-md-5 col-lg-4 flex-shrink-0" style="scroll-snap-align: start;">
+                <div class="p-4 rounded-4 h-100" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1);">
+                    <p class="mb-4 text-white-50" style="font-size: 1.05rem; line-height: 1.8;">
+                        “The cultural exchange experience opened doors I never imagined possible. Truly a bridge between Africa and the world.”
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3" style="width: 40px; height: 1px; background: var(--accent);"></div>
+                        <div>
+                            <span class="d-block text-white fw-bold">Maria Chen</span>
+                            <small class="text-uppercase tracking-wider" style="color: var(--accent); font-size: 0.7rem; letter-spacing: 1px;">Entrepreneur</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-11 col-md-5 col-lg-4 flex-shrink-0" style="scroll-snap-align: start;">
+                <div class="p-4 rounded-4 h-100" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1);">
+                    <p class="mb-4 text-white-50" style="font-size: 1.05rem; line-height: 1.8;">
+                        “Smart investments, global reach, and professional execution. My capital is safe and growing in the right corridors.”
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3" style="width: 40px; height: 1px; background: var(--accent);"></div>
+                        <div>
+                            <span class="d-block text-white fw-bold">David Okello</span>
+                            <small class="text-uppercase tracking-wider" style="color: var(--accent); font-size: 0.7rem; letter-spacing: 1px;">Investor</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- OCEAN INSIGHTS BLOG SECTION -->
