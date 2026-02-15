@@ -13,8 +13,8 @@
         },
         { 
             label: 'GLOBAL CONNECTIVITY',
-            title: 'Cultural Exchange', 
-            text: 'Bridging worlds and opening doors you didn’t even know existed through global connections.',
+            title: 'Cross-cultural Workforce Alignment', 
+            text: 'Reducing Hiring Risk Across the UAE Market Through Structured and Regulated Workforce Alignment.',
             img: '{{ asset('images/Employment opportunities in UAE.png') }}',
             link: '#explore'
         },
