@@ -77,7 +77,7 @@
     @endif
 </td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->author->name ?? '—' }}</td>
+                            <td>{{ $post->author->name ?? '—' }} {{ Auth::user()->name == $post->author->name ? ' (You)' : '' }}</td>
                             <td>{{ $post->category->name ?? '—' }}</td>
                             <td>
                                 <span class="badge
