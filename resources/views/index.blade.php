@@ -15,7 +15,7 @@
             label: 'GLOBAL CONNECTIVITY',
             title: 'Cultural Exchange', 
             text: 'Bridging worlds and opening doors you didn’t even know existed through global connections.',
-            img: '{{ asset('images/Strategic investment pathways accross Africa.png') }}',
+            img: '{{ asset('images/Employment opportunities in UAE.png') }}',
             link: '#explore'
         },
         { 
