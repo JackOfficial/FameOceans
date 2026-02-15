@@ -125,6 +125,41 @@
         /* HELPERS */
         .section-padding { padding: 120px 0; }
         @media (max-width: 768px) { .section-padding { padding: 80px 0; } }
+
+           .btn-scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform: translateY(20px);
+    }
+
+    .btn-scroll-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .btn-scroll-top:hover {
+        background: var(--accent);
+        color: var(--deep);
+        box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+        transform: scale(1.1);
+    }
     </style>
 
     @stack('styles')
@@ -194,20 +229,53 @@
                 </div>
             </div>
 
-            <div class="mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <p class="small mb-0">&copy; 2026 FameOceans. Designed for Excellence.</p>
-                @if(Auth::check())
-                    <a href="#" class="small text-danger text-decoration-none" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Admin Logout ({{ Auth::user()->name }})
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-                @endif
-            </div>
+            <div class="mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-column justify-content-center align-items-center text-center">
+    <p class="small mb-0 opacity-75">&copy; 2026 FameOceans. Designed for Excellence.</p>
+    
+    @if(Auth::check())
+        <div class="d-flex align-items-center mt-2">
+            <span class="mx-2 opacity-25">|</span>
+            <a href="#" class="small text-danger text-decoration-none hover-opacity" 
+               style="transition: opacity 0.3s ease;"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Admin Logout ({{ Auth::user()->name }})
+            </a>
+        </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+    @endif
+</div>
         </div>
     </footer>
 
+    <button id="scrollToTop" class="btn-scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+        // Show button after scrolling down 400px
+        if (window.pageYOffset > 400) {
+            scrollBtn.classList.add('show');
+        } else {
+            scrollBtn.classList.remove('show');
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+
     @livewireScripts
     @stack('scripts')
 </body>
