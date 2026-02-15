@@ -240,7 +240,7 @@ footer img{
         <img src="{{ asset('images/FameOceans.png') }}"
              alt="FameOceans Logo"
              style="height:50px; margin-bottom:15px;">
-        <p>Connecting talents, businesses, and opportunities across the oceans.</p>
+        <p>Strategic Workforce, Smart Capital.</p>
 
         <div class="mt-3">
           <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f"></i></a>
