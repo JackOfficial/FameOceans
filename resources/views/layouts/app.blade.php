@@ -161,6 +161,70 @@
         transform: scale(1.1);
     }
 
+    /* User Profile Pill */
+.user-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 5px 15px 5px 5px !important;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Glass Dropdown */
+.glass-dropdown {
+    background: rgba(4, 13, 28, 0.95) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 15px !important;
+    padding: 10px !important;
+    margin-top: 15px !important;
+}
+
+.dropdown-item {
+    color: var(--text) !important;
+    border-radius: 8px;
+    padding: 8px 15px !important;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 224, 255, 0.1) !important;
+    color: var(--accent) !important;
+}
+
+/* Sign Up Button */
+.btn-signup {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: var(--abyss) !important;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-signup:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 224, 255, 0.4);
+    color: var(--abyss) !important;
+}
+
     @keyframes oceanFlow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
