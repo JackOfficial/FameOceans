@@ -150,7 +150,7 @@
 <!-- TREASURE CHEST -->
 <section id="our-services">
   <div class="container text-center">
-    <h2 class="section-title">Our Treasure Chest</h2>
+    <h2 class="section-title">Our Strategic Pillars</h2>
     <p class="section-subtitle">
       Strategic services designed to unlock global success.
     </p>
@@ -183,7 +183,7 @@
           <!-- Icon -->
           <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
           <h4>Invest</h4>
-          <p>We find the gold mines for your capital. Let your money swim in profit.</p>
+          <p>We find the yield-Driven Opportunities for your capital. Let your money swim in profit.</p>
         </div>
       </div>
 
@@ -273,7 +273,14 @@
   </div>
 </section>
 
-<section>
+<section class="py-5" x-data="{ 
+    started: false,
+    checkScroll() {
+        if (!this.started && window.scrollY + window.innerHeight > $el.offsetTop) {
+            this.started = true;
+        }
+    }
+}" x-on:scroll.window="checkScroll()">
   <div class="container text-center">
     <h2 class="section-title mb-2">Our Impact</h2>
     <p class="section-subtitle mb-5">Numbers that reflect trust and results.</p>
@@ -281,29 +288,74 @@
     <div class="row g-4 justify-content-center">
       
       <div class="col-6 col-md-3">
-        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
-          <h2 class="display-4 fw-bold text-primary mb-2">99+</h2>
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale" 
+             x-data="{ count: 0, target: 99 }" 
+             x-init="$watch('started', value => {
+                if (value) {
+                    let interval = setInterval(() => {
+                        if (count < target) count++;
+                        else clearInterval(interval);
+                    }, 20);
+                }
+             })">
+          <h2 class="display-4 fw-bold text-primary mb-2">
+            <span x-text="count">0</span>+
+          </h2>
           <p class="fw-semibold">Client Wins</p>
         </div>
       </div>
 
       <div class="col-6 col-md-3">
-        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
-          <h2 class="display-4 fw-bold text-primary mb-2">1K+</h2>
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale" 
+             x-data="{ count: 0, target: 1000 }" 
+             x-init="$watch('started', value => {
+                if (value) {
+                    let step = target / 50; 
+                    let interval = setInterval(() => {
+                        if (count < target) count = Math.ceil(count + step);
+                        else { count = target; clearInterval(interval); }
+                    }, 30);
+                }
+             })">
+          <h2 class="display-4 fw-bold text-primary mb-2">
+            <span x-text="count">0</span>+
+          </h2>
           <p class="fw-semibold">Connections Made</p>
         </div>
       </div>
 
       <div class="col-6 col-md-3">
-        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
-          <h2 class="display-4 fw-bold text-primary mb-2">50+</h2>
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale" 
+             x-data="{ count: 0, target: 50 }" 
+             x-init="$watch('started', value => {
+                if (value) {
+                    let interval = setInterval(() => {
+                        if (count < target) count++;
+                        else clearInterval(interval);
+                    }, 40);
+                }
+             })">
+          <h2 class="display-4 fw-bold text-primary mb-2">
+            <span x-text="count">0</span>+
+          </h2>
           <p class="fw-semibold">Projects Launched</p>
         </div>
       </div>
 
       <div class="col-6 col-md-3">
-        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale">
-          <h2 class="display-4 fw-bold text-primary mb-2">10+</h2>
+        <div class="glass-card py-4 px-3 shadow-lg rounded-4 h-100 hover-scale" 
+             x-data="{ count: 0, target: 10 }" 
+             x-init="$watch('started', value => {
+                if (value) {
+                    let interval = setInterval(() => {
+                        if (count < target) count++;
+                        else clearInterval(interval);
+                    }, 150);
+                }
+             })">
+          <h2 class="display-4 fw-bold text-primary mb-2">
+            <span x-text="count">0</span>+
+          </h2>
           <p class="fw-semibold">Years of Excellence</p>
         </div>
       </div>
