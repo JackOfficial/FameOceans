@@ -317,7 +317,7 @@ body {
             <i class="fas fa-th-large me-2"></i> Dashboard
         </a>
     @endrole
-                <li><a class="dropdown-item" href="/profile"><i class="fas fa-user-circle me-2"></i> My Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i> My Profile</a></li>
                 <li><hr class="dropdown-divider border-white border-opacity-10"></li>
                 <li>
                     <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
