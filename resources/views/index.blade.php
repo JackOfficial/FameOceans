@@ -1,4 +1,49 @@
 @extends('layouts.app')
+@push('styles')
+<style>
+  /* Mobile Horizontal Scroll */
+@media (max-width: 767px) {
+    .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        padding-bottom: 20px; /* Space for the cards to breathe */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
+
+/* Image Zoom Effect */
+.zoom-img {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-card:hover .zoom-img {
+    transform: scale(1.15);
+}
+
+/* Button & Card Hover Polishing */
+.hover-accent-btn {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    transition: all 0.3s ease;
+}
+
+.hover-accent-btn:hover {
+    background: var(--accent) !important;
+    color: var(--deep) !important;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.glass-card {
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 224, 255, 0.4) !important;
+}
+</style>
+@endpush
 @section('content')
 <!-- HERO -->
 <section x-data="{ 
@@ -201,76 +246,107 @@
 </section>
 
 
-<section style="position: relative; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.5)), url('{{ asset('images/about-bg.jpg') }}') no-repeat center center/cover; padding: 120px 0;">
-  <div class="container text-center">
-    <h2 class="section-title">Why Choose FameOceans?</h2>
-    <p class="section-subtitle">
-      Strategic services designed to unlock global success.
-    </p>
-
-    <div class="row g-4 mt-5">
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="img-fluid rounded mb-3">
-          <h4>Bold Moves</h4>
-          <p>We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
+<section id="why-choose-us" 
+    x-data="{ shown: false }" 
+    x-intersect.half="shown = true" 
+    style="position: relative; background: var(--deep); padding: 120px 0;">
+    
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Why Choose FameOceans?</h2>
+            <p class="section-subtitle" style="color: var(--muted); max-width: 600px; margin: 0 auto;">
+                Strategic services designed to unlock global success.
+            </p>
         </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="img-fluid rounded mb-3">
-          <h4>Global Network</h4>
-          <p>Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
+        <div class="row g-4 mt-2 flex-nowrap overflow-auto hide-scrollbar flex-md-wrap">
+            
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Bold Moves</h4>
+                        <p class="small text-muted mb-4">We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-100">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/Global Network.jpeg') }}" alt="Global Network" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Global Network</h4>
+                        <p class="small text-muted mb-4">Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-200">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/focus.jpeg') }}" alt="Future Focus" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Future Focus</h4>
+                        <p class="small text-muted mb-4">We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-300">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/Business brain.jpeg') }}" alt="Business Brains" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Business Brains</h4>
+                        <p class="small text-muted mb-4">We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-400">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/money1.jpg') }}" alt="Money Moves" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Money Moves</h4>
+                        <p class="small text-muted mb-4">Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-500">
+                <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/Global reach.jpeg') }}" alt="Global Reach" class="w-100 h-100 object-fit-cover zoom-img">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-white fw-bold mb-3">Global Reach</h4>
+                        <p class="small text-muted mb-4">Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/focus.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
-          <h4>Future Focus</h4>
-          <p>We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Business brain.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
-          <h4>Business Brains</h4>
-          <p>We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work, not just fancy jargon.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/money1.jpg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
-          <h4>Money Moves</h4>
-          <p>Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-card text-center">
-          <!-- Image on top -->
-          <img src="{{ asset('images/Global reach.jpeg') }}" alt="Future Focus" class="img-fluid rounded mb-3">
-          <h4>Global Reach</h4>
-          <p>Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
-          <button class="btn btn-sm btn-primary mt-2">Connect</button>
-        </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
 <section class="py-5" x-data="{ 

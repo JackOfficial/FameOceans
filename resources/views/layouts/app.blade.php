@@ -193,6 +193,8 @@ footer img{
 }
 </style>
 
+@stack('styles')
+
 @livewireStyles
 </head>
 
