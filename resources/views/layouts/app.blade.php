@@ -160,6 +160,56 @@
         box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
         transform: scale(1.1);
     }
+
+    @keyframes oceanFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background: linear-gradient(-45deg, #0e2a47, #081b34, #040d1c, #020611);
+    background-size: 400% 400%;
+    animation: oceanFlow 15s ease infinite;
+}
+
+.ocean-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; /* Allows clicking through to buttons */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 224, 255, 0.1);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+.bubble:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-duration: 12s; }
+.bubble:nth-child(2) { left: 80%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 45%; width: 15px; height: 15px; animation-duration: 15s; animation-delay: 4s; }
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+
+.zoom-img {
+    animation: drift 20s infinite alternate ease-in-out;
+}
+
+@keyframes drift {
+    from { transform: scale(1.1) translateX(-2%); }
+    to { transform: scale(1.2) translateX(2%) translateY(2%); }
+}
+
     </style>
 
     @stack('styles')
@@ -188,6 +238,12 @@
             </div>
         </div>
     </nav>
+
+    <div class="ocean-overlay">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
 
     <main>
         @yield('content')
