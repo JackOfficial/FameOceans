@@ -122,6 +122,20 @@
     color: #fff !important;
 }
 
+.group-hover-effect:hover h4 {
+    color: var(--accent) !important;
+    transition: color 0.3s ease;
+}
+
+/* Keep cards bordered, but pillars clean */
+#why-choose-us .glass-card, #ocean-insights .glass-card {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#our-services .pillar-item {
+    border: none !important;
+}
+
 </style>
 @endpush
 @section('content')
@@ -194,9 +208,10 @@
                         <p class="fs-4 mb-5 opacity-75" style="max-width: 600px; line-height: 1.6;" x-text="slide.text"></p>
                         
                         <div class="d-flex flex-wrap gap-3">
-                            <a :href="slide.link" class="btn btn-primary btn-lg shadow-lg">
-                                <i class="fas fa-ship me-2"></i>Get Started
-                            </a>
+                            <a :href="slide.link" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg" 
+                  style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px;">
+                    <i class="fas fa-ship me-2"></i>Get Started
+                      </a>
                             <a href="#" class="btn btn-outline-light btn-lg glass-card border-0">
                                 Explore Services
                             </a>
