@@ -228,13 +228,41 @@ body {
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blogs">Insights</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-                </ul>
+                <ul class="navbar-nav ms-auto align-items-center">
+    <li class="nav-item"><a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
+    <li class="nav-item"><a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a></li>
+    <li class="nav-item"><a class="nav-link" href="/blogs">Insights</a></li>
+    <li class="nav-item"><a class="nav-link me-lg-3" href="/contact">Contact</a></li>
+
+    @auth
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 user-pill" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="user-avatar">
+                    {{ substr(Auth::user()->name, 0, 1) }}
+                </div>
+                <span class="d-none d-xl-inline">{{ Auth::user()->name }}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end glass-dropdown">
+                <li><a class="dropdown-item" href="/dashboard"><i class="fas fa-th-large me-2"></i> Dashboard</a></li>
+                <li><a class="dropdown-item" href="/profile"><i class="fas fa-user-circle me-2"></i> My Profile</a></li>
+                <li><hr class="dropdown-divider border-white border-opacity-10"></li>
+                <li>
+                    <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </li>
+    @else
+        <li class="nav-item d-flex align-items-center gap-2 ms-lg-2 mt-3 mt-lg-0">
+            <a href="{{ route('login') }}" class="btn btn-link nav-link m-0 p-2">Login</a>
+            <a href="{{ route('register') }}" class="btn btn-signup">
+                <span>Join Now</span>
+            </a>
+        </li>
+    @endauth
+</ul>
             </div>
         </div>
     </nav>
