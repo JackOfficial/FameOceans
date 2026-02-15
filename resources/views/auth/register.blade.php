@@ -91,10 +91,10 @@
     <div class="row w-100 justify-content-center">
         <div class="col-md-5 col-lg-4">
 
-            <img class="my-4 d-block mx-auto"
+            <a href="/"><img class="my-4 d-block mx-auto"
                  style="width: 180px;"
                  src="{{ asset('images/FameOceans.png') }}"
-                 alt="FameOceans Logo">
+                 alt="FameOceans Logo"></a>
 
             <div class="card glass-card">
                 <div class="card-header">

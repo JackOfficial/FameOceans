@@ -9,9 +9,9 @@
 
             <!-- Logo -->
             <div class="text-center my-4">
-                <img src="{{ asset('images/FameOceans.png') }}"
+                <a href="/"><img src="{{ asset('images/FameOceans.png') }}"
                      alt="FameOceans Logo"
-                     style="width: 180px;">
+                     style="width: 180px;"></a>
             </div>
 
             <!-- Glass Card -->
