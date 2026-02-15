@@ -102,28 +102,6 @@
                         </div>
                     </fieldset>
 
-                    {{-- ================= SEO SETTINGS ================= --}}
-                    <fieldset class="border rounded p-3 mb-4">
-                        <legend class="w-auto px-2 text-success">
-                            <i class="fas fa-search"></i> SEO Settings
-                        </legend>
-
-                        <div class="form-group mb-3">
-                            <label><i class="fas fa-heading"></i> Meta Title</label>
-                            <input type="text"
-                                   name="meta_title"
-                                   class="form-control"
-                                   value="{{ old('meta_title') }}">
-                        </div>
-
-                        <div class="form-group mb-0">
-                            <label><i class="fas fa-align-justify"></i> Meta Description</label>
-                            <textarea name="meta_description"
-                                      class="form-control"
-                                      rows="2">{{ old('meta_description') }}</textarea>
-                        </div>
-                    </fieldset>
-
                     {{-- ================= PUBLISHING ================= --}}
                     <fieldset class="border rounded p-3 mb-4">
                         <legend class="w-auto px-2 text-warning">

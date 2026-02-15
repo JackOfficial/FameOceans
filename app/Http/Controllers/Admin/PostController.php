@@ -35,41 +35,32 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'blog_category_id' => 'nullable|exists:blog_categories,id',
-            'excerpt' => 'nullable|string|max:500',
-            'content' => 'required|string',
-            'featured_image' => 'nullable|image|max:2048',
-            'meta_title' => 'nullable|string|max:255',
-            'meta_description' => 'nullable|string|max:255',
-            'status' => 'required|in:draft,published,scheduled',
-            'published_at' => 'nullable|date',
-        ]);
+ public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'blog_category_id' => 'nullable|exists:blog_categories,id',
+        'excerpt' => 'nullable|string|max:500',
+        'content' => 'required|string',
+        'featured_image' => 'nullable|image|max:2048',
+        'status' => 'required|in:draft,published,scheduled',
+        'published_at' => 'nullable|date',
+    ]);
 
-        $post = new Post();
-        $post->user_id = auth()->id();
-        $post->blog_category_id = $request->blog_category_id;
-        $post->title = $request->title;
-        $post->slug = Str::slug($request->title);
-        $post->excerpt = $request->excerpt;
-        $post->content = $request->content;
-
-        // Handle featured image
-        if ($request->hasFile('featured_image')) {
-            $post->featured_image = $request->file('featured_image')->store('posts', 'public');
-        }
-
-        $post->meta_title = $request->meta_title;
-        $post->meta_description = $request->meta_description;
-        $post->status = $request->status;
-        $post->published_at = $request->published_at;
-        $post->save();
-
-        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
+    // Handle Image first
+    if ($request->hasFile('featured_image')) {
+        $validated['featured_image'] = $request->file('featured_image')->store('posts', 'public');
     }
+
+    // Attach current user
+    $validated['user_id'] = auth()->id();
+
+    // Create the post (Slug and SEO handled by Model)
+    Post::create($validated);
+
+    return redirect()->route('admin.posts.index')
+        ->with('success', 'Post created successfully.');
+}
 
     /**
      * Display the specified resource.
