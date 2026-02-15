@@ -79,30 +79,40 @@
 @keyframes breathe {
     0% {
         transform: scale(1);
-        box-shadow: 0 10px 20px rgba(0, 224, 255, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     50% {
         transform: scale(1.05);
-        /* Creates a glowing aura effect */
-        box-shadow: 0 15px 35px rgba(0, 224, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.2);
+        /* Intense oceanic glow shadow */
+        box-shadow: 0 0 30px rgba(0, 224, 255, 0.6), 0 0 60px rgba(0, 224, 255, 0.2);
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 10px 20px rgba(0, 224, 255, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 }
 
 .btn-breathing {
     animation: breathe 3s ease-in-out infinite;
-    transition: all 0.4s ease !important;
+    transition: all 0.4s ease;
+    /* Prevents "jiggle" and layout-shifting scrollbars */
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    will-change: transform, box-shadow;
 }
 
-/* Pause the breathing on hover so the user can click easily */
+/* Ensure the main section kills any potential horizontal scroll */
+#final-cta {
+    overflow-x: hidden !important;
+}
+
+/* Hover state: hold the breath and change color */
 .btn-breathing:hover {
     animation-play-state: paused;
     transform: translateY(-5px) scale(1.08) !important;
     background: var(--accent) !important;
     color: #fff !important;
+    box-shadow: 0 15px 40px rgba(0, 224, 255, 0.5) !important;
 }
 
 </style>
@@ -676,12 +686,12 @@
       Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
     </p>
 
-    <div class="d-flex justify-content-center gap-3">
+<div class="d-flex justify-content-center gap-3 py-4" style="overflow: visible;">
     <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
-       style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; z-index: 1;">
+       style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; display: inline-block;">
         Get Started Now
     </a>
-   </div>
+</div>
 
   </div>
 </section>
