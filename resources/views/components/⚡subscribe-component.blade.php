@@ -30,7 +30,7 @@ new class extends Component
 };
 ?>
 
-<div class="col-md-4">
+<div>
     <h5>Join the Wave</h5>
     <p>Subscribe for updates and opportunities.</p>
 
