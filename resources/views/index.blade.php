@@ -115,6 +115,13 @@
     box-shadow: 0 15px 40px rgba(0, 224, 255, 0.5) !important;
 }
 
+.hover-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 224, 255, 0.4) !important;
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
 </style>
 @endpush
 @section('content')
@@ -220,7 +227,7 @@
     </div>
 </section>
 
-<section class="cta" id="strategic-cta" style="position: relative; background: var(--deep); padding: 120px 0; overflow: clip !important;">
+<section class="cta" id="strategic-cta" style="position: relative; background: var(--deep); padding: 100px 0; overflow: hidden;">
   
   <div class="container position-relative" style="z-index: 2;">
     <div class="row align-items-center g-5">
@@ -237,24 +244,22 @@
           FameOceans structures <strong>compliant workforce mobility</strong> and strategic investment corridors between Africa, the Gulf, and Europe.
         </p>
 
-        <div style="padding: 20px 0; margin-top: -20px;">
-            <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
-               style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; display: inline-block;">
-                Connect Now <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-        </div>
+        <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg hover-glow" 
+           style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; transition: all 0.3s ease;">
+            Connect Now <i class="fas fa-arrow-right ms-2"></i>
+        </a>
       </div>
 
       <div class="col-lg-6">
-        <div class="position-relative px-2" style="overflow: clip; padding-bottom: 20px;">
+        <div class="position-relative px-2">
           <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 12px; backdrop-filter: blur(5px);">
             <img src="{{ asset('images/Consultancy.jpeg') }}" 
                  alt="Global Advisory" 
                  class="img-fluid rounded-4 shadow-lg w-100"
-                 style="display: block; height: auto; border-radius: 20px;">
+                 style="display: block; height: auto; border-radius: 20px; object-fit: cover;">
           </div>
           
-          <div class="position-absolute d-none d-md-block" style="bottom: 5px; right: 5px; width: 100px; height: 100px; background: linear-gradient(135deg, var(--accent), #3a7bfd); border-radius: 20px; z-index: -1; opacity: 0.3;"></div>
+          <div class="position-absolute d-none d-md-block" style="bottom: 5px; right: 5px; width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent), #3a7bfd); border-radius: 15px; z-index: -1; opacity: 0.2;"></div>
         </div>
       </div>
 
