@@ -220,44 +220,42 @@
     </div>
 </section>
 
-<!-- CTA SECTION: Ocean Vibe -->
-<section class="cta py-5" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(58,123,253,0.7), rgba(0,224,255,0.4));">
-  <div class="container">
+
+<section class="cta py-5" style="position: relative; overflow: hidden; background: var(--deep); padding: 120px 0 !important;">
+  
+  <div class="position-absolute" style="top: -10%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,224,255,0.1) 0%, transparent 70%);"></div>
+
+  <div class="container position-relative" style="z-index: 2;">
     <div class="row align-items-center g-5">
 
-      <!-- TEXT COLUMN -->
       <div class="col-lg-6 text-light text-center text-lg-start">
-        <!-- Icon -->
-        <i class="fas fa-water fa-3x mb-3" style="color: var(--accent);"></i>
+        <div class="text-uppercase fw-bold mb-3" style="letter-spacing:3px; color: var(--accent); font-size:12px;">
+            Global Mobility & Investment
+        </div>
 
-        <!-- Headings -->
-        <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-         Strategic Workforce
-        </h2>
-        <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#00e0ff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-         Smart Capital
-        </h2>
+        <h2 class="display-5 fw-bold mb-0" style="color: #fff;">Strategic Workforce</h2>
+        <h2 class="display-5 fw-bold mb-4" style="background: linear-gradient(90deg, var(--accent), #3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smart Capital</h2>
 
-        <!-- Subtext -->
-        <h4 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85);">
-          FameOceans structures compliant workforce mobility and strategic investment corridors between Africa, the Gulf, and Europe.
-        </h4>
+        <p class="mb-5" style="font-size: 1.15rem; color: rgba(227,233,255,0.75); line-height: 1.8;">
+          FameOceans structures <strong>compliant workforce mobility</strong> and strategic investment corridors between Africa, the Gulf, and Europe.
+        </p>
 
-        <!-- CTA Button -->
-        <a href="#" class="btn btn-primary btn-lg shadow-lg px-5 py-3" style="font-size: 18px; background: linear-gradient(90deg,#3a7bfd,#00e0ff); transition: all 0.3s;">
-          <i class="fas fa-ship me-2"></i>Connect Now
+        <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
+           style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px;">
+            Connect Now <i class="fas fa-arrow-right ms-2" style="font-size: 0.8rem;"></i>
         </a>
       </div>
 
-      <!-- IMAGE COLUMN -->
-      <div class="col-lg-6 text-center">
-        <div class="position-relative">
-          <img src="{{ asset('images/Consultancy.jpeg') }}" 
-               alt="Global Advisory" 
-               class="img-fluid rounded shadow-lg"
-               style="max-height: 450px; object-fit: cover;">
-          <!-- Decorative accent circle -->
-          <div style="position:absolute; top:10%; left:10%; width:60px; height:60px; background: rgba(0,224,255,0.3); border-radius:50%;"></div>
+      <div class="col-lg-6">
+        <div class="position-relative px-3">
+          <div class="glass-image-wrapper p-3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; backdrop-filter: blur(5px);">
+            <img src="{{ asset('images/Consultancy.jpeg') }}" 
+                 alt="Global Advisory" 
+                 class="img-fluid rounded-4 shadow-lg w-100"
+                 style="max-height: 480px; object-fit: cover;">
+          </div>
+          
+          <div class="position-absolute d-none d-md-block" style="bottom: -20px; right: -10px; width: 100px; height: 100px; background: linear-gradient(135deg, var(--accent), #3a7bfd); border-radius: 20px; z-index: -1; opacity: 0.5;"></div>
         </div>
       </div>
 
