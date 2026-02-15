@@ -1,143 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FameOceans | Secure Portal</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <link href="{{ asset('images/FameOceans Logo.png') }}" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <head>
-        <meta charset="utf-8">
-        <title>FameOceans</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <style>
+        :root {
+            --surface: #0e2a47;
+            --mid: #081b34;
+            --deep: #040d1c;
+            --abyss: #020611;
+            --primary: #3a7bfd;
+            --accent: #00e0ff;
+            --text: #e3e9ff;
+            --muted: rgba(227, 233, 255, .6);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-        <!-- Favicon -->
-<link href="{{ asset('images/FameOceans Logo.png') }}" rel="icon">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, var(--surface), var(--abyss));
+            min-height: 100vh;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        /* Animated Background (Optional: matching your main page) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(-45deg, #0e2a47, #020611, #081b34);
+            background-size: 400% 400%;
+            animation: oceanFlow 15s ease infinite;
+            z-index: -1;
+        }
 
-<!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        @keyframes oceanFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        /* The Auth Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 450px;
+        }
 
-<style>
-    :root {
-        --ocean-blue: #0d6efd;
-        --deep-ocean: #0a3d62;
-        --card-bg: rgba(255, 255, 255, 0.97);
-        --border-soft: #e5e7eb;
-        --text-main: #0f172a;
-        --text-muted: #64748b;
-    }
+        /* Input Styling */
+        .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: #fff !important;
+            border-radius: 12px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
 
-    body {
-        background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
-        min-height: 100vh;
-        color: #e5e7eb;
-    }
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+        }
 
-    /* Page wrapper */
-    .auth-page {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        .input-group-text {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            color: var(--muted);
+            border-radius: 12px;
+        }
 
-    /* Glass card */
-    .glass-card {
-        background: var(--card-bg);
-        border-radius: 18px;
-        border: 1px solid var(--border-soft);
-        box-shadow: 0 25px 50px rgba(0,0,0,.25);
-        color: var(--text-main);
-    }
+        /* Buttons */
+        .btn-ocean {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: var(--abyss) !important;
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-    .glass-card * {
-        color: var(--text-main);
-    }
+        .btn-ocean:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 224, 255, 0.3);
+        }
 
-    .glass-card .card-header {
-        background: transparent;
-        border-bottom: 1px solid var(--border-soft);
-        font-weight: 700;
-        font-size: 1.2rem;
-        text-align: center;
-    }
+        .btn-google {
+            background: white;
+            color: #000 !important;
+            border-radius: 12px;
+            font-weight: 500;
+            border: none;
+            padding: 10px;
+        }
 
-    /* Inputs */
-    .form-control {
-        border-radius: 10px;
-        border: 1px solid var(--border-soft);
-        color: var(--text-main);
-    }
+        /* Links */
+        a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+        a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
 
-    .form-control::placeholder {
-        color: var(--text-muted);
-    }
+        .auth-footer {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            text-align: center;
+        }
+    </style>
+    @livewireStyles
+</head>
+<body>
 
-    .input-group-text {
-        background: #f8fafc;
-        border-radius: 0 10px 10px 0;
-        color: var(--text-muted);
-    }
+    @yield('content')
 
-    /* Primary button */
-    .btn-ocean {
-        background: linear-gradient(135deg, #0d6efd, #00c6ff);
-        border: none;
-        border-radius: 999px;
-        padding: 10px 16px;
-        font-weight: 600;
-        color: #fff !important;
-    }
-
-    .btn-ocean:hover {
-        box-shadow: 0 8px 22px rgba(13,110,253,.45);
-    }
-
-    /* Google button */
-    .btn-google {
-        border-radius: 999px;
-        font-weight: 600;
-    }
-
-    /* Links */
-    .glass-card a {
-        color: var(--ocean-blue);
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    .glass-card a:hover {
-        text-decoration: underline;
-    }
-
-    /* Outside-card text */
-    .auth-footer {
-        text-align: center;
-        margin-top: 16px;
-        font-size: 0.85rem;
-        color: #e5e7eb;
-    }
-
-    .auth-footer a {
-        color: #e5e7eb;
-        text-decoration: underline;
-    }
-</style>
-
-        @livewireStyles
-    </head>
-
-    <body>
-        
-         @yield('content')
-        
-        <!-- JavaScript Libraries -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        @livewireScripts
-    </body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    @livewireScripts
+</body>
 </html>
