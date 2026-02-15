@@ -75,38 +75,6 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-
-/* Navigation Buttons Styling */
-.nav-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* Scroll Behavior */
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Mobile Snap - ensures the card stops centered on mobile swipe */
-@media (max-width: 767px) {
-    .testimonial-card {
-        scroll-snap-align: center;
-    }
-}
 </style>
 @endpush
 @section('content')
