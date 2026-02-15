@@ -121,11 +121,8 @@
         </h2>
 
         <!-- Subtext -->
-        <h3 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85);">
-          We provide strategic advisory from the initial concept, shaping your project to align with the requirements of your chosen destination.
-        </h3>
-        <h4 class="mb-4" style="font-weight:400; color: rgba(227,233,255,0.75);">
-          We support compliance with relevant authorities and embassies for visa processes, while ensuring a smooth and well-prepared settlement abroad.
+        <h4 class="mb-3" style="font-weight:500; color: rgba(227,233,255,0.85);">
+          FameOceans structures compliant workforce mobility and strategic investment corridors between Africa, the Gulf, and Europe.
         </h4>
 
         <!-- CTA Button -->
