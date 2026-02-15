@@ -315,6 +315,7 @@ body {
                     <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt me-2"></i> Logout
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
                 </li>
             </ul>
         </li>
