@@ -114,10 +114,10 @@
 
         <!-- Headings -->
         <h2 class="display-5 fw-bold mb-2" style="background: linear-gradient(90deg,#9adfff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          FameOceans: Your Partner in
+         Strategic Workforce
         </h2>
         <h2 class="display-5 fw-bold mb-3" style="background: linear-gradient(90deg,#00e0ff,#3a7bfd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Global Ambition
+         Smart Capital
         </h2>
 
         <!-- Subtext -->
