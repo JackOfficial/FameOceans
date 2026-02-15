@@ -13,7 +13,7 @@
         },
         { 
             label: 'GLOBAL CONNECTIVITY',
-            title: 'Cross-cultural Workforce Alignment', 
+            title: 'Cross-cultural Integration', 
             text: 'Reducing Hiring Risk Across the UAE Market Through Structured and Regulated Workforce Alignment.',
             img: '{{ asset('images/Employment opportunities in UAE.png') }}',
             link: '#explore'
