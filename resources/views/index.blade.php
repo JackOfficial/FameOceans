@@ -42,6 +42,22 @@
 .glass-card:hover {
     border-color: rgba(0, 224, 255, 0.4) !important;
 }
+
+#why-choose-us .text-muted {
+    color: rgba(227, 233, 255, 0.95) !important; /* Brighter than standard muted */
+    font-weight: 300;
+}
+
+#why-choose-us h4 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Subtle depth */
+}
+
+/* Add a bit more "white" to the glass background for better contrast */
+#why-choose-us .glass-card {
+    background: rgba(255, 255, 255, 0.07) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
 </style>
 @endpush
 @section('content')
