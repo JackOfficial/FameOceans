@@ -484,7 +484,7 @@
     
     <div class="d-flex justify-content-between align-items-center mb-5">
         <div class="text-start">
-            <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0;">What People Say</h2>
+            <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0; text-align: center">What People Say</h2>
             <p class="section-subtitle mb-0" style="color: var(--muted);">Voices of success from around the ocean.</p>
         </div>
 
