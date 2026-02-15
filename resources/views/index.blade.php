@@ -482,13 +482,11 @@
   
   <div class="container position-relative" style="z-index: 2;">
     
-    <div class="d-flex justify-content-between align-items-center mb-5">
-        <div class="text-start">
-            <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0; text-align: center">What People Say</h2>
-            <p class="section-subtitle mb-0" style="color: var(--muted);">Voices of success from around the ocean.</p>
-        </div>
+    <div class="text-center mb-5 position-relative">
+        <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">What People Say</h2>
+        <p class="section-subtitle mx-auto" style="color: var(--muted); max-width: 600px;">Voices of success from around the ocean.</p>
 
-        <div class="d-none d-md-flex gap-2">
+        <div class="d-none d-md-flex gap-2 position-absolute end-0 bottom-0">
             <button @click="scrollPrev()" class="btn d-flex align-items-center justify-content-center nav-btn" aria-label="Previous">
                 <i class="fas fa-chevron-left text-white"></i>
             </button>
