@@ -75,6 +75,14 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+#final-cta .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 224, 255, 0.3) !important;
+    background: var(--accent) !important;
+    color: white !important;
+}
+
 </style>
 @endpush
 @section('content')
