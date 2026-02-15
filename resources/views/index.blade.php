@@ -8,7 +8,7 @@
             label: 'STRATEGIC ADVISORY',
             title: 'Business Consultancy', 
             text: 'We dissect complex business puzzles with razor-sharp intellect to yield extraordinary results.',
-            img: '{{ asset('images/Stratetic investment opportunities in Africa.png') }}',
+            img: '{{ asset('images/Workforce mobility in GCC.png') }}',
             link: '#our-services'
         },
         { 
