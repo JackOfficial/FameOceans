@@ -1,307 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>FameOceans | Discover, Connect & Grow Talent</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>@yield('title', 'FameOceans | Strategic Global Mobility & Investment Advisory')</title>
+    <meta name="description" content="FameOceans connects global talent with strategic investment opportunities. Specialized in workforce mobility between Africa, the Gulf, and Europe.">
+    <meta name="keywords" content="Global Mobility, Investment Advisory, Workforce Solutions, Africa Gulf Europe Business">
+    
+    <meta property="og:title" content="FameOceans | Strategic Workforce & Smart Capital">
+    <meta property="og:description" content="Bridging markets with compliant mobility and high-yield investment corridors.">
+    <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
+    <meta property="og:type" content="website">
 
-<!-- Favicon -->
-<link href="{{ asset('images/FameOceans Logo.png') }}" rel="icon">
+    <link href="{{ asset('images/FameOceans Logo.png') }}" rel="icon">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        :root {
+            --surface: #0e2a47;
+            --mid: #081b34;
+            --deep: #040d1c;
+            --abyss: #020611;
+            --primary: #3a7bfd;
+            --accent: #00e0ff;
+            --text: #e3e9ff;
+            --muted: rgba(227, 233, 255, .65);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
 
-<style>
-:root{
-  --surface:#0e2a47;
-  --mid:#081b34;
-  --deep:#040d1c;
-  --abyss:#020611;
-  --primary:#3a7bfd;
-  --accent:#00e0ff;
-  --text:#e3e9ff;
-  --muted:rgba(227,233,255,.75);
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--deep); /* Fallback */
+            background-attachment: fixed;
+            background-image: linear-gradient(to bottom, var(--surface), var(--mid) 35%, var(--deep) 70%, var(--abyss));
+            overflow-x: hidden;
+        }
 
-*{box-sizing:border-box;}
+        /* PREMIUM NAVBAR */
+        .navbar {
+            background: rgba(4, 13, 28, 0.8) !important;
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
 
-body{
-  font-family:'Poppins',sans-serif;
-  color:var(--text);
-  background:linear-gradient(
-    to bottom,
-    var(--surface),
-    var(--mid) 35%,
-    var(--deep) 70%,
-    var(--abyss)
-  );
-  overflow-x:hidden;
-  margin:0;
-  padding:0;
-}
+        .nav-link {
+            color: var(--text) !important;
+            margin-left: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
 
-/* =======================
-   NAVBAR
-======================= */
-.navbar{
-  background:rgba(3,8,20,.75);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent) !important;
+        }
 
-.navbar-logo{
-  height:42px;
-  width:auto;
-  object-fit:contain;
-}
+        /* CUSTOM MOBILE MENU */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(2, 6, 17, 0.98);
+                margin-top: 15px;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid var(--glass-border);
+            }
+            .nav-link { margin: 10px 0; font-size: 16px; }
+        }
 
-@media (max-width:768px){
-  .navbar-logo{
-    height:34px;
-  }
-}
+        /* FOOTER DECORATION */
+        footer {
+            background: var(--abyss);
+            border-top: 1px solid var(--glass-border);
+            padding: 100px 0 50px;
+        }
 
-.nav-link{
-  color:var(--text)!important;
-  margin-left:20px;
-  font-size:14px;
-}
+        .footer-link {
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-@media (max-width:991px){
-  .nav-link{
-    margin-left:0;
-    padding:10px 0;
-  }
-}
+        .footer-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
 
-.nav-link:hover{
-  color:var(--accent)!important;
-}
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
 
-/* =======================
-   SECTIONS
-======================= */
-section{
-  padding:120px 0;
-  position:relative;
-}
+        .social-icon:hover {
+            background: var(--accent);
+            color: var(--deep);
+            transform: translateY(-5px);
+        }
 
-/* =======================
-   HERO
-======================= */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(58,123,253,.35),transparent 60%),
-    radial-gradient(circle at 80% 70%,rgba(0,224,255,.25),transparent 60%);
-  padding:0 15px; /* mobile padding */
-}
+        /* HELPERS */
+        .section-padding { padding: 120px 0; }
+        @media (max-width: 768px) { .section-padding { padding: 80px 0; } }
+    </style>
 
-.hero h1{
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight:700;
-  background:linear-gradient(90deg,#fff,#9adfff,#3a7bfd);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-  max-width:760px;
-  margin:25px auto;
-  font-size:clamp(14px,3vw,18px);
-  color:var(--muted);
-}
-
-/* =======================
-   BUTTONS
-======================= */
-.btn-primary{
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-  border:none;
-  border-radius:50px;
-  padding:14px 40px;
-  box-shadow:0 15px 45px rgba(0,224,255,.45);
-}
-
-.btn-outline-light{
-  border:1px solid rgba(0,224,255,.45);
-  border-radius:50px;
-  padding:14px 40px;
-  box-shadow:0 15px 45px rgba(0,224,255,.45);
-}
-
-.hover-scale {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-scale:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.05);
-}
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
-}
-
-/* =======================
-   FOOTER
-======================= */
-footer{
-  background:#01040d;
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:80px 0;
-  color:rgba(227,233,255,0.8);
-}
-
-footer img{
-  max-width:100%;
-  height:auto;
-}
-
-/* =======================
-   RESPONSIVE FIXES
-======================= */
-.container,
-.container-fluid{
-  overflow-x:hidden;
-}
-
-.row{
-  margin-left:0;
-  margin-right:0;
-}
-
-@media (max-width:768px){
-  section{
-    padding:80px 15px;
-  }
-}
-</style>
-
-@stack('styles')
-
-@livewireStyles
+    @stack('styles')
+    @livewireStyles
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
-  <div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('images/FameOceans.png') }}" alt="FameOceans" height="45">
+            </a>
 
-    <!-- LOGO IMAGE -->
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="{{ asset('images/FameOceans.png') }}"
-           alt="FameOceans Logo"
-           class="navbar-logo">
-    </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <i class="fas fa-bars text-white fs-2"></i>
+            </button>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="/partners">Partner With Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
-@yield('content')
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="row g-4">
-
-      <!-- BRAND -->
-      <div class="col-md-4">
-        <img src="{{ asset('images/FameOceans.png') }}"
-             alt="FameOceans Logo"
-             style="height:50px; margin-bottom:15px;">
-        <p>Strategic Workforce, Smart Capital.</p>
-
-        <div class="mt-3">
-          <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/fameoceans_official" class="me-3 text-light"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@fameoceans?_r=1&_t=ZS-93MoNdtBXq1" target="_blank" rel="noopener noreferrer" class="me-3 text-light"><i class="fab fa-tiktok"></i></a>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blogs">Insights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <!-- LINKS -->
-      <div class="col-md-4">
-        <h5>Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="/" class="text-light text-decoration-none">Home</a></li>
-          <li><a href="/about" class="text-light text-decoration-none">About Us</a></li>
-          <li><a href="#our-services" class="text-light text-decoration-none">Services</a></li>
-          <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
+    <main>
+        @yield('content')
+    </main>
 
-      <!-- NEWSLETTER -->
-      <livewire:subscribe-component />
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <img src="{{ asset('images/FameOceans.png') }}" alt="Logo" height="50" class="mb-4">
+                    <p class="mb-4">Strategically bridging workforce mobility and smart capital across global corridors.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
 
-    </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-4">Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/about" class="footer-link">Our Story</a></li>
+                        <li><a href="/services" class="footer-link">Services</a></li>
+                        <li><a href="/partners" class="footer-link">Partners</a></li>
+                    </ul>
+                </div>
 
-    <div class="text-center mt-5 pt-4 border-top border-light border-opacity-25">
-      &copy; 2026 FameOceans. All rights reserved. 
-      
-       @if(Auth::check())
-          <a href="#" class="nav-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            Logout ({{ Auth::user()->name }})
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-        @endif
-    </div>
-  </div>
-</footer>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/contact" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+                <div class="col-lg-4 col-md-6">
+                    <livewire:subscribe-component />
+                </div>
+            </div>
 
-<script>
-document.addEventListener('livewire:init', () => {
-   Livewire.on('toast', (event) => {
-       Toastify({
-        text: event.detail.message,
-        duration: 4000,
-        close: true,
-        gravity: "top",
-        position: "right",
-        backgroundColor: event.detail.type === 'success' ? "linear-gradient(to right, #00c853, #b2ff59)" : "linear-gradient(to right, #d50000, #ff5252)",
-        stopOnFocus: true,
-    }).showToast();
-   });
-});
-</script>
+            <div class="mt-5 pt-4 border-top border-white border-opacity-10 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="small mb-0">&copy; 2026 FameOceans. Designed for Excellence.</p>
+                @if(Auth::check())
+                    <a href="#" class="small text-danger text-decoration-none" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Admin Logout ({{ Auth::user()->name }})
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                @endif
+            </div>
+        </div>
+    </footer>
 
-@livewireScripts
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    @livewireScripts
+    @stack('scripts')
 </body>
 </html>
