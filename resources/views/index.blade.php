@@ -58,6 +58,23 @@
     background: rgba(255, 255, 255, 0.07) !important; 
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
+
+.testimonial-card {
+    transition: all 0.4s ease !important;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 20px 40px rgba(0, 224, 255, 0.2) !important;
+}
+
+/* Fix for mobile scroll visibility */
+.hide-scrollbar {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 </style>
 @endpush
 @section('content')
