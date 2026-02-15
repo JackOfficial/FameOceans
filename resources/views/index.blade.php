@@ -268,51 +268,53 @@
 </section>
 
 <!-- TREASURE CHEST -->
-<section id="our-services">
+<section id="our-services" style="background: var(--deep); padding: 100px 0;">
   <div class="container text-center">
-    <h2 class="section-title">Our Strategic Pillars</h2>
-    <p class="section-subtitle">
-      Strategic services designed to unlock global success.
-    </p>
+    
+    <div class="mb-5">
+      <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Our Strategic Pillars</h2>
+      <p class="section-subtitle mx-auto" style="color: var(--muted); max-width: 600px;">Expert-led solutions designed to navigate and unlock global market potential.</p>
+    </div>
 
-    <div class="row g-4 mt-5">
+    <div class="row g-4 mt-2">
 
-      <!-- CARD 1: Consult -->
       <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-lightbulb fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Consult</h4>
-          <p>We dissect your business problems like a pirate with a map. Solutions incoming!</p>
+        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
+          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
+            <i class="fas fa-lightbulb fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h4 class="text-white fw-bold">Consult</h4>
+          <p class="text-white-50 small">Expert analysis and bespoke roadmaps to solve complex market entry and operational challenges.</p>
         </div>
       </div>
 
-      <!-- CARD 2: Culture -->
       <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-globe-americas fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Culture</h4>
-          <p>Bridging worlds, one handshake at a time. Get ready for global connections.</p>
+        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
+          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
+            <i class="fas fa-globe-africa fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h4 class="text-white fw-bold">Culture</h4>
+          <p class="text-white-50 small">Facilitating cross-border connections and cultural intelligence to bridge Africa and the world.</p>
         </div>
       </div>
 
-      <!-- CARD 3: Invest -->
       <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-coins fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Invest</h4>
-          <p>We find the yield-Driven Opportunities for your capital. Let your money swim in profit.</p>
+        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
+          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
+            <i class="fas fa-chart-line fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h4 class="text-white fw-bold">Invest</h4>
+          <p class="text-white-50 small">Identifying high-yield, compliant investment corridors for long-term capital appreciation.</p>
         </div>
       </div>
 
-       <div class="col-md-3">
-        <div class="glass-card text-center">
-          <!-- Icon -->
-          <i class="fas fa-users-cog fa-3x mb-3" style="color: var(--accent);"></i>
-          <h4>Human Capital Consulting</h4>
-          <p>Strategic human capital advisory supporting global workforce mobility.</p>
+      <div class="col-md-3">
+        <div class="glass-card text-center h-100 p-4 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 24px;">
+          <div class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: rgba(0, 224, 255, 0.1); border-radius: 20px;">
+            <i class="fas fa-users-cog fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h4 class="text-white fw-bold">Mobility</h4>
+          <p class="text-white-50 small">Strategic human capital advisory and legal compliance for international workforce mobility.</p>
         </div>
       </div>
 
