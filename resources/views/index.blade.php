@@ -555,49 +555,67 @@
   </div>
 </section>
 
-<!-- OCEAN INSIGHTS BLOG SECTION -->
-<section>
-  <div class="container text-center">
-    <h2 class="section-title">Ocean Insights</h2>
-    <p class="section-subtitle">Wisdom from the deep blue.</p>
+<section id="ocean-insights" style="background: var(--deep); padding: 100px 0;">
+  <div class="container">
+    <div class="text-center mb-5">
+        <h2 class="section-title mb-2" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Ocean Insights</h2>
+        <p class="section-subtitle mx-auto" style="color: var(--muted); max-width: 600px;">Wisdom from the deep blue.</p>
+    </div>
 
-    <div class="row g-4 mt-5">
+    <div class="row g-4 flex-nowrap overflow-auto hide-scrollbar pb-4 flex-md-wrap">
 
-      <!-- BLOG CARD 1 -->
-      <div class="col-md-4">
-        <div class="glass-card text-start">
-          <!-- Blog Image -->
-          <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="img-fluid rounded mb-3">
-          <!-- Blog Title -->
-          <h4 class="mb-2">Mobility Moves</h4>
-          <!-- Metadata -->
-          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By Jane Doe | <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026</small>
-          <!-- Blog Excerpt -->
-          <p>Showcase your talent on an international stage and explore career-defining opportunities worldwide.</p>
-          <!-- Read More -->
-          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
+          <div class="position-relative overflow-hidden" style="height: 220px;">
+            <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="w-100 h-100 object-fit-cover zoom-img">
+          </div>
+          
+          <div class="p-4 text-start">
+            <h4 class="text-white fw-bold mb-2">Mobility Moves</h4>
+            <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.5px;">
+              <i class="fas fa-user me-1"></i>By Jane Doe &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026
+            </small>
+            <p class="text-white-50 small mb-4">Showcase your talent on an international stage and explore career-defining opportunities worldwide.</p>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
+                Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- BLOG CARD 2 -->
-      <div class="col-md-4">
-        <div class="glass-card text-start">
-          <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="img-fluid rounded mb-3">
-          <h4 class="mb-2">Global Market Tides</h4>
-          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By John Smith | <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026</small>
-          <p>Elevate your influence and digital identity, expanding your reach across global markets.</p>
-          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
+          <div class="position-relative overflow-hidden" style="height: 220px;">
+            <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="w-100 h-100 object-fit-cover zoom-img">
+          </div>
+          <div class="p-4 text-start">
+            <h4 class="text-white fw-bold mb-2">Global Market Tides</h4>
+            <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem;">
+              <i class="fas fa-user me-1"></i>By John Smith &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026
+            </small>
+            <p class="text-white-50 small mb-4">Elevate your influence and digital identity, expanding your reach across global markets.</p>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
+                Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- BLOG CARD 3 -->
-      <div class="col-md-4">
-        <div class="glass-card text-start">
-          <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="img-fluid rounded mb-3">
-          <h4 class="mb-2">Cultural Currents</h4>
-          <small class="text-light d-block mb-2"><i class="fas fa-user me-1"></i>By Maria Lee | <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026</small>
-          <p>Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
-          <a href="#" class="btn btn-sm btn-outline-light mt-2"><i class="fas fa-arrow-right me-1"></i>Read More</a>
+      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
+          <div class="position-relative overflow-hidden" style="height: 220px;">
+            <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="w-100 h-100 object-fit-cover zoom-img">
+          </div>
+          <div class="p-4 text-start">
+            <h4 class="text-white fw-bold mb-2">Cultural Currents</h4>
+            <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem;">
+              <i class="fas fa-user me-1"></i>By Maria Lee &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026
+            </small>
+            <p class="text-white-50 small mb-4">Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
+                Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -605,8 +623,6 @@
   </div>
 </section>
 
-
-<!-- CTA ABOVE FOOTER -->
 <!-- CTA ABOVE FOOTER -->
 <section style="
   position: relative; 
