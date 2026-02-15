@@ -308,7 +308,15 @@ body {
                 <span class="d-none d-xl-inline">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end glass-dropdown">
-                <li><a class="dropdown-item" href="/dashboard"><i class="fas fa-th-large me-2"></i> Dashboard</a></li>
+               @role('admin')
+        <a class="dropdown-item" href="/admin">
+            <i class="fas fa-th-large me-2"></i> Dashboard
+        </a>
+    @elserole('user')
+        <a class="dropdown-item" href="/home">
+            <i class="fas fa-th-large me-2"></i> Dashboard
+        </a>
+    @endrole
                 <li><a class="dropdown-item" href="/profile"><i class="fas fa-user-circle me-2"></i> My Profile</a></li>
                 <li><hr class="dropdown-divider border-white border-opacity-10"></li>
                 <li>
