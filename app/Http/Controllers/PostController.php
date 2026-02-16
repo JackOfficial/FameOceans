@@ -37,7 +37,7 @@ class PostController extends Controller
 
         // 2. Get posts belonging to this category
         $posts = Post::with(['author', 'category'])
-                     ->where('blog_category_id', $category->id)
+                     ->where('blog_blog_category_id', $category->id)
                      ->latest()
                      ->paginate(10);
 
@@ -57,7 +57,7 @@ class PostController extends Controller
                     ->firstOrFail();
 
         // 2. Fetch Related Posts (same category, excluding current post)
-        $related_posts = Post::where('category_id', $post->category_id)
+        $related_posts = Post::where('blog_category_id', $post->blog_category_id)
                              ->where('id', '!=', $post->id)
                              ->latest()
                              ->take(3)
