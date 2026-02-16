@@ -635,7 +635,7 @@
                 <i class="fas fa-calendar-alt me-1"></i>{{ $post->published_at?->format('M d, Y') ?? '—' }}
             </small>
             
-            <p class="text-white-50 small mb-4">{{ $post->excerpt }}</p>
+            <p class="text-white-50 small mb-4">{{ Str::limit($post->excerpt, 150) }}</p>
             
             <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
                 Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
