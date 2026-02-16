@@ -13,8 +13,11 @@ class PostController extends Controller
        $posts = Post::with(['author', 'category'])
                      ->orderBy('created_at', 'desc')
                      ->paginate(10);
-        $categories = BlogCategory::all();             
-        return view('blogs.index', compact('posts', 'categories'));
+        $categories = BlogCategory::all(); 
+        $recent_posts =  $posts = Post::with(['author', 'category'])
+                     ->latest()
+                     ->take(5)->get();            
+        return view('blogs.index', compact('posts', 'categories', 'recent_posts'));
     }
 
      public function show(){
