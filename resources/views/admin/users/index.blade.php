@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="text-dark">Users ({{ $users->count() }})</h1>
+                <h1 class="text-dark">Users ({{ $users->total() }})</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -41,6 +41,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Roles</th>
+                    <th>Permissions</th>
                     <th>Date</th>
                     <th>Actions</th>
                 </tr>
@@ -75,13 +76,22 @@
                         @endforelse
                     </td>
 
+                    <td>
+                        @forelse($user->getAllPermissions() as $perm)
+                            <span class="badge rounded-pill bg-warning text-dark">{{ $perm->name }}</span>
+                        @empty
+                            <span class="badge rounded-pill bg-secondary">No permission</span>
+                        @endforelse
+                    </td>
+
                     <td>{{ optional($user->created_at)->format('Y-m-d') }}</td>
 
                     <td class="d-flex gap-1">
-                        <a href="{{ route('admin.users.edit', $user) }}"
-                           class="btn btn-info btn-sm" title="Edit">
+                        <!-- Edit button triggers modal -->
+                        <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#editUserModal{{ $user->id }}" title="Edit Role & Permissions">
                             <i class="fas fa-pencil-alt"></i>
-                        </a>
+                        </button>
 
                         <form method="POST" action="{{ route('admin.users.destroy', $user) }}">
                             @csrf
@@ -93,9 +103,58 @@
                         </form>
                     </td>
                 </tr>
+
+                <!-- Modal for editing roles and permissions -->
+                <div class="modal fade" id="editUserModal{{ $user->id }}" tabindex="-1"
+                     aria-labelledby="editUserModalLabel{{ $user->id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <form method="POST" action="{{ route('admin.users.updateRolePermission', $user) }}">
+                            @csrf
+                            @method('PATCH')
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editUserModalLabel{{ $user->id }}">
+                                        Edit Role & Permissions: {{ $user->name }}
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Role</label>
+                                        <select name="role" class="form-select">
+                                            <option value="">No Role</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role->name }}" {{ $user->hasRole($role->name) ? 'selected' : '' }}>
+                                                    {{ $role->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Permissions</label>
+                                        <select name="permissions[]" class="form-select" multiple>
+                                            @foreach($permissions as $permission)
+                                                <option value="{{ $permission->name }}"
+                                                    {{ $user->hasPermissionTo($permission->name) ? 'selected' : '' }}>
+                                                    {{ $permission->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             @empty
                 <tr>
-                    <td colspan="6" class="text-center text-muted py-3">
+                    <td colspan="7" class="text-center text-muted py-3">
                         <i class="fas fa-user-slash"></i> No users available.
                     </td>
                 </tr>
@@ -108,11 +167,16 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Roles</th>
+                    <th>Permissions</th>
                     <th>Date</th>
                     <th>Actions</th>
                 </tr>
             </tfoot>
         </table>
+    </div>
+
+    <div class="card-footer">
+        {{ $users->links() }}
     </div>
 </div>
 
