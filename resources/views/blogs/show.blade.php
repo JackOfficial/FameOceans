@@ -41,14 +41,57 @@
     <div class="container">
         <div class="row justify-content-center">
             
+            {{-- 1. SOCIAL SHARE SIDEBAR (Desktop) --}}
+            <div class="col-lg-1 d-none d-lg-block">
+                <div class="sticky-top" style="top: 150px; z-index: 10;">
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <small class="text-white-50 text-uppercase fw-bold mb-2" style="writing-mode: vertical-rl; font-size: 0.65rem; letter-spacing: 2px;">Share</small>
+                        
+                        <a href="https://twitter.com/intent/tweet?url={{ urlcurrent() }}&text={{ urlencode($post->title) }}" 
+                           target="_blank" class="share-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlcurrent() }}" 
+                           target="_blank" class="share-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        
+                        <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' ' . urlcurrent()) }}" 
+                           target="_blank" class="share-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {{-- 2. MAIN ARTICLE CONTENT --}}
             <div class="col-lg-8">
-                {{-- Main Article Text --}}
                 <div class="article-content mb-5">
                     {!! $post->content !!}
                 </div>
 
-                {{-- Author Box --}}
-                <div class="mt-5 p-5 rounded-4 border" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.08) !important;">
+                {{-- MOBILE SHARE BUTTONS (Visible only on mobile) --}}
+                <div class="d-lg-none py-4 border-top border-secondary">
+                    <p class="text-white fw-bold small mb-3">SHARE THIS INSIGHT:</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://twitter.com/intent/tweet?url={{ urlcurrent() }}" class="btn btn-dark btn-sm rounded-pill px-3 border-secondary"><i class="fab fa-twitter me-1"></i> Twitter</a>
+                        <a href="https://www.linkedin.com/shareArticle?url={{ urlcurrent() }}" class="btn btn-dark btn-sm rounded-pill px-3 border-secondary"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                {{-- TAGS SECTION --}}
+                <div class="pt-4 border-top border-secondary">
+                    <div class="d-flex align-items-center flex-wrap gap-2">
+                        <span class="text-white me-2 small fw-bold">TAGS:</span>
+                        @foreach(explode(',', $post->tags) as $tag) {{-- Assuming you have tags stored as CSV --}}
+                            <a href="#" class="btn btn-sm btn-glass rounded-pill px-3">{{ trim($tag) }}</a>
+                        @endforeach
+                    </div>
+                </div>
+
+                {{-- AUTHOR BIO --}}
+                <div class="mt-5 p-5 rounded-4 border author-card">
                     <div class="row align-items-center">
                         <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
                              <div class="rounded-circle bg-accent d-inline-flex align-items-center justify-content-center text-dark fw-bold" style="width: 70px; height: 70px; font-size: 1.5rem;">
@@ -57,17 +100,46 @@
                         </div>
                         <div class="col-md-10">
                             <h5 class="text-white fw-bold mb-1">{{ $post->author->name }}</h5>
-                            <p class="text-white-50 small mb-0" style="line-height: 1.6;">Our financial analysts specialize in deep-sea market trends and sustainable investments. This insight is part of our commitment to navigating the financial oceans with clarity.</p>
+                            <p class="text-white-50 small mb-0">Senior Market Strategist at FameOceans.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="col-lg-1"></div>
         </div>
     </div>
 </section>
 
 <style>
+    /* Premium Share Buttons Styling */
+    .share-btn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .share-btn:hover {
+        transform: translateY(-5px);
+        background: var(--accent);
+        color: #000;
+        border-color: var(--accent);
+        box-shadow: 0 5px 15px rgba(0, 224, 255, 0.4);
+    }
+
+    .author-card {
+        background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border-color: rgba(255,255,255,0.08) !important;
+    }
+    
     :root {
         --accent: #00e0ff; /* Ensure this is your bright cyan */
     }
