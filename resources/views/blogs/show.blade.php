@@ -47,20 +47,23 @@
                     <div class="d-flex flex-column align-items-center gap-3">
                         <small class="text-white-50 text-uppercase fw-bold mb-2" style="writing-mode: vertical-rl; font-size: 0.65rem; letter-spacing: 2px;">Share</small>
                         
-                        <a href="https://twitter.com/intent/tweet?url={{ urlcurrent() }}&text={{ urlencode($post->title) }}" 
-                           target="_blank" class="share-btn twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlcurrent() }}" 
-                           target="_blank" class="share-btn linkedin">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        
-                        <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' ' . urlcurrent()) }}" 
-                           target="_blank" class="share-btn whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        {{-- Twitter/X --}}
+<a href="https://twitter.com/intent/tweet?url={{ url()->current() }}&text={{ urlencode($post->title) }}" 
+   target="_blank" class="share-btn twitter">
+    <i class="fab fa-twitter"></i>
+</a>
+
+{{-- LinkedIn --}}
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}" 
+   target="_blank" class="share-btn linkedin">
+    <i class="fab fa-linkedin-in"></i>
+</a>
+
+{{-- WhatsApp --}}
+<a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' ' . url()->current()) }}" 
+   target="_blank" class="share-btn whatsapp">
+    <i class="fab fa-whatsapp"></i>
+</a>
                     </div>
                 </div>
             </div>
@@ -139,7 +142,7 @@
         background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
         border-color: rgba(255,255,255,0.08) !important;
     }
-    
+
     :root {
         --accent: #00e0ff; /* Ensure this is your bright cyan */
     }
