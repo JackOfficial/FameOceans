@@ -70,6 +70,16 @@
 
                 <!-- Reports -->
                 <li class="nav-item">
+                    <a href="{{ route('admin.messages.inbox') }}"
+                       class="nav-link {{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-mail"></i>
+                        <p>Messages</p>
+                    </a>
+                </li>
+
+
+                <!-- Reports -->
+                <li class="nav-item">
                     <a href="{{ route('admin.reports.index') }}"
                        class="nav-link {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-flag"></i>

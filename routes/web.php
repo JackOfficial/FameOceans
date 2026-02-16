@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\SettingController;
@@ -65,6 +66,15 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('categories-trash', [BlogCategoryController::class, 'trash'])
     ->name('categories.trash');
 
+ // List all sent messages
+Route::get('messages/inbox', [MessageController::class, 'inbox'])->name('messages.inbox');
+
+// Read a single message
+Route::get('messages/{id}', [MessageController::class, 'read'])->name('messages.read');
+
+// Delete a single message
+Route::delete('messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
+    
     Route::post('categories/{id}/restore', [BlogCategoryController::class, 'restore'])
     ->name('categories.restore');
 
