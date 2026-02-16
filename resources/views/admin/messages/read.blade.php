@@ -13,7 +13,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.messages.sent') }}">Messages</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.messages.inbox') }}">Messages</a></li>
                     <li class="breadcrumb-item active">View Message</li>
                 </ol>
             </div>
@@ -27,7 +27,7 @@
     <div class="card shadow-sm">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h3 class="card-title text-uppercase">Message from {{ $message->name }}</h3>
-            <a href="{{ route('admin.messages.sent') }}" class="btn btn-secondary btn-sm">
+            <a href="{{ route('admin.messages.inbox') }}" class="btn btn-secondary btn-sm">
                 <i class="fas fa-arrow-left"></i> Back to Inbox
             </a>
         </div>
@@ -62,7 +62,7 @@
             </form>
 
             {{-- Back to Inbox --}}
-            <a href="{{ route('admin.messages.sent') }}" class="btn btn-secondary">
+            <a href="{{ route('admin.messages.inbox') }}" class="btn btn-secondary">
                 <i class="fas fa-arrow-left"></i> Back to Inbox
             </a>
         </div>
