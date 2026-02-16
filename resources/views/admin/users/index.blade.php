@@ -20,6 +20,12 @@
     </div>
 </section>
 
+<section class="content">
+<div class="container-fluid">
+
 <livewire:admin.user-component />
+
+</div>
+</section>
 
 @endsection
