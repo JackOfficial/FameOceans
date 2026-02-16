@@ -1,4 +1,37 @@
 @extends('layouts.app')
+@push
+<style>
+    /* Styling for the title truncation */
+    .blog-card-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 3rem; /* Keeps cards aligned */
+    }
+
+    /* Hover Effects */
+    .glass-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255,255,255,0.06) !important;
+        border-color: var(--accent) !important;
+    }
+
+    .zoom-img {
+        transition: transform 0.5s ease;
+    }
+
+    .glass-card:hover .zoom-img {
+        transform: scale(1.1);
+    }
+
+    .hover-accent-btn:hover {
+        background-color: var(--accent) !important;
+        color: var(--deep) !important;
+        border-color: var(--accent) !important;
+    }
+</style>
+@endpush
 
 @section('content')
 
@@ -72,48 +105,63 @@
 
         </div>
         <div class="col-lg-9 col-md-8">
-            <div class="row pb-3">
+    <div class="row pb-3">
 
-                @forelse ($posts as $post)
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-4">
-                    <div class="glass-card mb-4 shadow-sm h-100 border-0 overflow-hidden" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); transition: 0.3s;">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" 
-                                 src="{{ $post->featured_image ? asset('storage/'.$post->featured_image) : asset('images/placeholder.jpg') }}" 
-                                 alt="{{ $post->title }}" style="height: 200px; object-fit: cover;">
-                        </div>
-                        <div class="p-4">
-                            <a class="h6 text-decoration-none d-block blog-card-title mb-2 text-white hover-accent" href="{{ route('post.show', $post->slug) }}">
-                                {{ $post->title }}
-                            </a>
-                            <p class="text-muted mb-3" style="font-size: 13px; line-height:1.6;">
-                                {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 90) }}
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top border-secondary">
-                                <small class="text-muted" style="font-size: 11px;">
-                                    <i class="fa fa-calendar text-accent me-1"></i> {{ $post->published_at?->format('M d, Y') }}
-                                </small>
-                                <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-accent py-1 px-2" style="font-size: 11px;">
-                                    Read More <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
+        @forelse ($posts as $post)
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-4">
+            <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" 
+                 style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important; transition: 0.3s;">
+                
+                {{-- Featured Image & Category Badge --}}
+                <div class="position-relative overflow-hidden" style="height: 200px;">
+                    <img src="{{ $post->featured_image ? asset('storage/'.$post->featured_image) : asset('images/Bold Moves.jpeg') }}" 
+                         alt="{{ $post->title }}" 
+                         class="w-100 h-100 object-fit-cover zoom-img">
+                    
+                    {{-- Category Ribbon/Badge --}}
+                    @if($post->category)
+                    <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge rounded-pill px-3 py-2" style="background: var(--accent); color: var(--deep); font-size: 0.65rem; font-weight: 700; text-uppercase: uppercase; letter-spacing: 0.5px;">
+                            {{ $post->category->name }}
+                        </span>
                     </div>
+                    @endif
                 </div>
-                @empty
-                <div class="col-12 text-center py-5">
-                    <h4 class="text-muted">No posts found.</h4>
+                
+                {{-- Card Content --}}
+                <div class="p-4 text-start">
+                    <h5 class="text-white fw-bold mb-2 blog-card-title">{{ $post->title }}</h5>
+                    
+                    <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.5px;">
+                        <i class="fas fa-user me-1"></i>By {{ $post->author->name ?? 'Unknown' }} &nbsp;|&nbsp; 
+                        <i class="fas fa-calendar-alt me-1"></i>{{ $post->published_at?->format('M d, Y') ?? '—' }}
+                    </small>
+                    
+                    <p class="text-white-50 small mb-4" style="line-height: 1.6;">
+                        {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 100) }}
+                    </p>
+                    
+                    <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn" style="font-size: 0.75rem;">
+                        Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
+                    </a>
                 </div>
-                @endforelse
-
-                <div class="col-12 mt-4">
-                    <div class="d-flex justify-content-center">
-                        {{ $posts->links() }}
-                    </div>
-                </div>
-
             </div>
         </div>
+        @empty
+        <div class="col-12 text-center py-5">
+            <h4 class="text-muted">The tide is low. No insights found.</h4>
+        </div>
+        @endforelse
+
+        {{-- Pagination --}}
+        <div class="col-12 mt-5">
+            <div class="d-flex justify-content-center custom-pagination">
+                {{ $posts->links() }}
+            </div>
+        </div>
+
+    </div>
+</div>
         </div>
 </div>
 <style>
