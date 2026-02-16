@@ -23,7 +23,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/posts', [BlogController::class, 'index'])->name('post.index'); // Blog homepage
 Route::get('/category/{slug}', [BlogController::class, 'category'])->name('post.category'); // Category page
 Route::get('/author/{username}', [BlogController::class, 'author'])->name('post.author'); // Author page
-Route::get('/post/{slug}', [BlogController::class, 'show'])->name('post.show'); // Single post page
+Route::get('/post/{slug}', [BlogController::class, 'show'])->name('post.show'); // Single post page 
+Route::get('/post/tag/{slug}', [BlogController::class, 'tag'])->name('post.tag');
 
 //Authenticated user routes
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () { 

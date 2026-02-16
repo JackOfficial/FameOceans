@@ -101,15 +101,17 @@
     </div>
 </div>
 
-                {{-- TAGS SECTION --}}
-                <div class="pt-4 border-top border-secondary">
-                    <div class="d-flex align-items-center flex-wrap gap-2">
-                        <span class="text-white me-2 small fw-bold">TAGS:</span>
-                        @foreach(explode(',', $post->tags) as $tag) {{-- Assuming you have tags stored as CSV --}}
-                            <a href="#" class="btn btn-sm btn-glass rounded-pill px-3">{{ trim($tag) }}</a>
-                        @endforeach
-                    </div>
-                </div>
+               {{-- TAGS SECTION --}}
+<div class="pt-4 border-top border-secondary">
+    <div class="d-flex align-items-center flex-wrap gap-2">
+        <span class="text-white me-2 small fw-bold">TAGS:</span>
+        @foreach($post->tags as $tag)
+            <a href="{{ route('post.tag', $tag->slug) }}" class="btn btn-sm btn-glass rounded-pill px-3">
+                {{ $tag->name }}
+            </a>
+        @endforeach
+    </div>
+</div>
 
                 {{-- AUTHOR BIO --}}
                 <div class="mt-5 p-5 rounded-4 border author-card">
