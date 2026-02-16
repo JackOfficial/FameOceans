@@ -16,7 +16,7 @@
                     <p>Total Users</p>
                 </div>
                 <div class="icon"><i class="fas fa-user-check"></i></div>
-                <a href="/admin/creators" class="small-box-footer">
+                <a href="/admin/users" class="small-box-footer">
                     Manage Creators <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
