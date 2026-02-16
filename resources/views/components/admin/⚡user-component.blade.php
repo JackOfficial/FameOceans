@@ -58,6 +58,15 @@ new class extends Component
         session()->flash('success', 'User updated successfully!');
         $this->dispatch('hide-edit-modal');
     }
+
+    // NEW: Delete Functionality
+    public function deleteUser($userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->delete();
+
+        session()->flash('success', 'User deleted successfully!');
+    }
 };
 ?>
 
@@ -76,12 +85,11 @@ new class extends Component
             {{ session('success') }}
         </div>
         
-        {{-- Manual Close Icon --}}
         <button type="button" class="btn p-0 border-0 shadow-none" @click="show = false">
             <i class="fas fa-times"></i>
         </button>
     </div>
-@endif
+    @endif
 
     <div class="card shadow-sm border-0">
         <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
@@ -119,8 +127,18 @@ new class extends Component
                                     <span class="text-muted small">{{ $user->permissions->count() }} direct</span>
                                 </td>
                                 <td class="text-end pe-4">
-                                    <button wire:click="editUser({{ $user->id }})" class="btn btn-outline-primary btn-sm rounded-circle shadow-sm">
+                                    {{-- Edit Button --}}
+                                    <button wire:click="editUser({{ $user->id }})" class="btn btn-outline-primary btn-sm rounded-circle shadow-sm me-1" title="Edit Permissions">
                                         <i class="fas fa-user-shield"></i>
+                                    </button>
+
+                                    {{-- NEW: Delete Button with Alpine confirmation --}}
+                                    <button 
+                                        x-on:click="if (confirm('Are you sure you want to delete this user?')) { $wire.deleteUser({{ $user->id }}) }" 
+                                        class="btn btn-outline-danger btn-sm rounded-circle shadow-sm"
+                                        title="Delete User"
+                                    >
+                                        <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -153,7 +171,6 @@ new class extends Component
             <form wire:submit.prevent="updateRolePermission" class="modal-content border-0 shadow-lg">
                 <div class="modal-header border-bottom-0">
                     <h5 class="modal-title fw-bold">Manage Access</h5>
-                    {{-- FIXED: Manual Alpine hide on close button --}}
                     <button type="button" class="btn border-0 shadow-none" @click="bsModal.hide()" aria-label="Close">
                         <i class="fas fa-times fs-5 text-muted"></i>
                     </button>
@@ -186,7 +203,6 @@ new class extends Component
                 </div>
 
                 <div class="modal-footer border-top-0 pt-0">
-                    {{-- FIXED: Manual Alpine hide on cancel button --}}
                     <button type="button" class="btn btn-light rounded-pill px-4 shadow-none" @click="bsModal.hide()">Cancel</button>
                     <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm" wire:loading.attr="disabled">
                         <span wire:loading.remove wire:target="updateRolePermission">Apply Changes</span>
