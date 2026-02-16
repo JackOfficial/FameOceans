@@ -45,7 +45,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid mb-2">
+<div class="container-fluid mb-5">
     <div class="row px-xl-5">
 
         <div class="col-lg-3 col-md-4">
