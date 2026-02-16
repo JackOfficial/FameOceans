@@ -1,6 +1,6 @@
 <?php
 
-use Livewire\Volt\Component;
+use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
