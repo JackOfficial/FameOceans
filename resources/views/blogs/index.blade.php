@@ -38,7 +38,7 @@
 <div class="container-fluid mt-4 pt-5">
     <div class="row px-xl-5">
         <div class="col-12">
-            <nav class="breadcrumb bg-dark bg-opacity-25 mb-30 p-3 rounded" style="backdrop-filter: blur(10px);">
+            <nav class="breadcrumb bg-dark bg-opacity-25 mb-30 mt-3 p-3 rounded" style="backdrop-filter: blur(10px);">
                 <a class="breadcrumb-item text-accent text-decoration-none" href="/">Home</a>
                 <span class="breadcrumb-item active text-white">Blog</span>
             </nav>
@@ -66,7 +66,7 @@
                 </form>
             </div>
 
-            <div class="glass-card mt-2 p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+            <div class="glass-card p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
                 <h5 class="section-title position-relative text-uppercase mb-3 text-white">
                     <span class="pr-3">Categories</span>
                 </h5>
