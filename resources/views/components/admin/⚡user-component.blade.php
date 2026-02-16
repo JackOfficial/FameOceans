@@ -57,13 +57,6 @@ new class extends Component
         $this->dispatch('hide-edit-modal');
     }
 
-    // THIS IS THE MISSING PIECE: The Render Method
-    public function render()
-    {
-        return view('livewire.user-management', [
-            'users' => User::with(['roles', 'permissions'])->latest()->paginate(10)
-        ]);
-    }
 };
 ?>
 
