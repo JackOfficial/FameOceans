@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 //Guest user routes
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index'); // Blog homepage
-Route::get('/category/{slug}', [BlogController::class, 'category'])->name('blog.category'); // Category page
-Route::get('/author/{username}', [BlogController::class, 'author'])->name('blog.author'); // Author page
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show'); // Single post page
+Route::get('/posts', [BlogController::class, 'index'])->name('post.index'); // Blog homepage
+Route::get('/category/{slug}', [BlogController::class, 'category'])->name('post.category'); // Category page
+Route::get('/author/{username}', [BlogController::class, 'author'])->name('post.author'); // Author page
+Route::get('/post/{slug}', [BlogController::class, 'show'])->name('blog.show'); // Single post page
 
 //Authenticated user routes
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () { 
