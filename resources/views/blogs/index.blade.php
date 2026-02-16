@@ -1,94 +1,144 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="blog-container" style="background: var(--deep); color: #fff; padding-top: 120px;">
-    <div class="container">
-        
-        {{-- 1. HEADER SECTION --}}
-        <div class="row align-items-end mb-5">
-            <div class="col-lg-8">
-                <h6 class="text-accent text-uppercase fw-bold mb-2" style="letter-spacing: 3px;">The Intelligence Feed</h6>
-                <h1 class="display-3 fw-bold">Ocean Insights</h1>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <p class="text-muted small">Navigating market depths with <br>precision and clarity.</p>
-            </div>
-        </div>
 
-        <hr class="border-white border-opacity-10 mb-5">
-
-        {{-- 2. FEATURED POST (The Big Catch) --}}
-        @if($posts->first())
-        @php $featured = $posts->first(); @endphp
-        <div class="row mb-5 pb-5">
-            <div class="col-12">
-                <a href="{{ route('blog.show', $featured->slug) }}" class="text-decoration-none group">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-lg-7">
-                            <div class="overflow-hidden rounded-start-4">
-                                <img src="{{ asset('storage/'.$featured->featured_image) }}" class="img-fluid featured-img" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="p-5 bg-white bg-opacity-5 rounded-end-4 h-100 border-start-0" style="border: 1px solid rgba(255,255,255,0.1);">
-                                <span class="badge bg-accent text-dark mb-3">LATEST REPORT</span>
-                                <h2 class="display-6 fw-bold text-white mb-3 group-hover-accent">{{ $featured->title }}</h2>
-                                <p class="text-muted mb-4">{{ Str::limit($featured->excerpt, 180) }}</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="ms-0">
-                                        <p class="mb-0 small fw-bold">{{ $featured->author->name }}</p>
-                                        <p class="mb-0 extra-small text-muted">{{ $featured->published_at->format('M d, Y') }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        @endif
-
-        {{-- 3. THE "MINIMALIST" GRID --}}
-        <div class="row g-5">
-            @foreach($posts->skip(1) as $post)
-            <div class="col-md-6">
-                <article class="post-item pb-4 border-bottom border-white border-opacity-10 h-100">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="{{ asset('storage/'.$post->featured_image) }}" class="img-fluid rounded-3" style="aspect-ratio: 1/1; object-fit: cover;" alt="">
-                        </div>
-                        <div class="col-8">
-                            <small class="text-accent fw-bold">{{ $post->category->name ?? 'Update' }}</small>
-                            <h4 class="mt-2 text-white fw-bold">
-                                <a href="{{ route('blog.show', $post->slug) }}" class="text-white text-decoration-none hover-link">
-                                    {{ $post->title }}
-                                </a>
-                            </h4>
-                            <p class="text-muted small mt-2">{{ $post->published_at->format('M d, Y') }}</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            @endforeach
-        </div>
-
-        {{-- PAGINATION --}}
-        <div class="py-5">
-            {{ $posts->links() }}
+<div class="container-fluid mt-4 pt-5">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-dark bg-opacity-25 mb-30 p-3 rounded" style="backdrop-filter: blur(10px);">
+                <a class="breadcrumb-item text-accent text-decoration-none" href="/">Home</a>
+                <span class="breadcrumb-item active text-white">Blog</span>
+            </nav>
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row px-xl-5">
 
+        <div class="col-lg-3 col-md-4">
+
+            <div class="glass-card p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+                <h5 class="section-title position-relative text-uppercase mb-3 text-white">
+                    <span class="pr-3">Search</span>
+                </h5>
+                <form action="{{ route('blog.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control bg-transparent text-white border-secondary" placeholder="Search insights..." value="{{ request('search') }}">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-accent" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="glass-card p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+                <h5 class="section-title position-relative text-uppercase mb-3 text-white">
+                    <span class="pr-3">Categories</span>
+                </h5>
+                <ul class="list-unstyled mb-0">
+                    @foreach($categories as $category)
+                    <li class="d-flex justify-content-between align-items-center mb-3">
+                        <a class="text-white-50 text-decoration-none hover-accent" href="{{ route('blog.category', $category->slug) }}">
+                            {{ $category->name }}
+                        </a>
+                        <span class="badge border border-secondary text-muted font-weight-normal">{{ $category->posts_count ?? '0' }}</span>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="glass-card p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+                <h5 class="section-title position-relative text-uppercase mb-3 text-white">
+                    <span class="pr-3">Recent Posts</span>
+                </h5>
+
+                @foreach ($recent_posts as $recent)
+                <div class="media mb-3 d-flex">
+                    <img src="{{ $recent->featured_image ? asset('storage/'.$recent->featured_image) : asset('images/placeholder.jpg') }}" 
+                         class="mr-3 rounded" style="width: 70px; height: 50px; object-fit: cover;">
+                    <div class="media-body ms-3">
+                        <a class="text-white text-decoration-none" href="{{ route('blog.show', $recent->slug) }}">
+                            <h6 class="mt-0 text-truncate small">{{ $recent->title }}</h6>
+                        </a>
+                        <small class="text-muted" style="font-size: 11px;">
+                            <i class="fa fa-calendar text-accent me-1"></i> {{ $recent->published_at?->format('d M, Y') }}
+                        </small>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <div class="row pb-3">
+
+                @forelse ($posts as $post)
+                <div class="col-lg-4 col-md-6 col-sm-6 pb-4">
+                    <div class="glass-card mb-4 shadow-sm h-100 border-0 overflow-hidden" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); transition: 0.3s;">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" 
+                                 src="{{ $post->featured_image ? asset('storage/'.$post->featured_image) : asset('images/placeholder.jpg') }}" 
+                                 alt="{{ $post->title }}" style="height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="p-4">
+                            <a class="h6 text-decoration-none d-block blog-card-title mb-2 text-white hover-accent" href="{{ route('blog.show', $post->slug) }}">
+                                {{ $post->title }}
+                            </a>
+                            <p class="text-muted mb-3" style="font-size: 13px; line-height:1.6;">
+                                {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 90) }}
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top border-secondary">
+                                <small class="text-muted" style="font-size: 11px;">
+                                    <i class="fa fa-calendar text-accent me-1"></i> {{ $post->published_at?->format('M d, Y') }}
+                                </small>
+                                <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-sm btn-outline-accent py-1 px-2" style="font-size: 11px;">
+                                    Read More <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center py-5">
+                    <h4 class="text-muted">No posts found.</h4>
+                </div>
+                @endforelse
+
+                <div class="col-12 mt-4">
+                    <div class="d-flex justify-content-center">
+                        {{ $posts->links() }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+</div>
 <style>
     .text-accent { color: var(--accent) !important; }
-    .featured-img { 
-        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
-        width: 100%; height: 450px; object-fit: cover;
+    .btn-outline-accent { color: var(--accent); border-color: var(--accent); }
+    .btn-outline-accent:hover { background-color: var(--accent); color: #000; }
+    .hover-accent:hover { color: var(--accent) !important; }
+
+    .blog-card-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: 0.3s;
     }
-    .group:hover .featured-img { transform: scale(1.05); }
-    .group-hover-accent { transition: color 0.3s ease; }
-    .group:hover .group-hover-accent { color: var(--accent) !important; }
-    .hover-link:hover { color: var(--accent) !important; }
-    .extra-small { font-size: 0.7rem; }
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.06) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Override Laravel Pagination to match theme */
+    .pagination .page-link { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #fff; }
+    .pagination .page-item.active .page-link { background: var(--accent); border-color: var(--accent); color: #000; }
 </style>
+
 @endsection
