@@ -60,7 +60,7 @@
                          class="mr-3 rounded" style="width: 70px; height: 50px; object-fit: cover;">
                     <div class="media-body ms-3">
                         <a class="text-white text-decoration-none" href="{{ route('post.show', $recent->slug) }}">
-                            <h6 class="mt-0 text-truncate small">{{ $recent->title }}</h6>
+                            <h6 class="mt-0 text-truncate small">{{ Str::limit($recent->title, 15) }}</h6>
                         </a>
                         <small class="text-muted" style="font-size: 11px;">
                             <i class="fa fa-calendar text-accent me-1"></i> {{ $recent->published_at?->format('d M, Y') }}
