@@ -14,7 +14,7 @@ new class extends Component
     public $selectedUserId;
     public $selectedRole;
     public $selectedPermissions = [];
-
+    public $users;
     public $roles;
     public $permissions;
 
@@ -24,6 +24,7 @@ new class extends Component
     {
         $this->roles = Role::all();
         $this->permissions = Permission::all();
+        $this->users = User::with(['roles','permissions'])->latest()->paginate(10);
     }
 
     public function editUser($userId)
