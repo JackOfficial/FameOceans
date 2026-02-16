@@ -37,7 +37,7 @@ class PostController extends Controller
 
         // 2. Get posts belonging to this category
         $posts = Post::with(['author', 'category'])
-                     ->where('category_id', $category->id)
+                     ->where('blog_category_id', $category->id)
                      ->latest()
                      ->paginate(10);
 
