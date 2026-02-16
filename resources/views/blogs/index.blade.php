@@ -38,7 +38,7 @@
 <div class="container-fluid mt-4 pt-5">
     <div class="row px-xl-5">
         <div class="col-12">
-            <nav class="breadcrumb bg-dark bg-opacity-25 mb-30 mt-3 p-3 rounded" style="backdrop-filter: blur(10px);">
+            <nav class="breadcrumb bg-dark bg-opacity-25 mb-30 mt-5 p-3 rounded" style="backdrop-filter: blur(10px);">
                 <a class="breadcrumb-item text-accent text-decoration-none" href="/">Home</a>
                 <span class="breadcrumb-item active text-white">Blog</span>
             </nav>
