@@ -40,7 +40,7 @@
                 <ul class="list-unstyled mb-0">
                     @foreach($categories as $category)
                     <li class="d-flex justify-content-between align-items-center mb-3">
-                        <a class="text-white-50 text-decoration-none hover-accent" href="{{ route('blog.category', $category->slug) }}">
+                        <a class="text-white-50 text-decoration-none hover-accent" href="{{ route('post.category', $category->slug) }}">
                             {{ $category->name }}
                         </a>
                         <span class="badge border border-secondary text-muted font-weight-normal">{{ $category->posts_count ?? '0' }}</span>
@@ -59,7 +59,7 @@
                     <img src="{{ $recent->featured_image ? asset('storage/'.$recent->featured_image) : asset('images/placeholder.jpg') }}" 
                          class="mr-3 rounded" style="width: 70px; height: 50px; object-fit: cover;">
                     <div class="media-body ms-3">
-                        <a class="text-white text-decoration-none" href="{{ route('blog.show', $recent->slug) }}">
+                        <a class="text-white text-decoration-none" href="{{ route('post.show', $recent->slug) }}">
                             <h6 class="mt-0 text-truncate small">{{ $recent->title }}</h6>
                         </a>
                         <small class="text-muted" style="font-size: 11px;">
@@ -83,7 +83,7 @@
                                  alt="{{ $post->title }}" style="height: 200px; object-fit: cover;">
                         </div>
                         <div class="p-4">
-                            <a class="h6 text-decoration-none d-block blog-card-title mb-2 text-white hover-accent" href="{{ route('blog.show', $post->slug) }}">
+                            <a class="h6 text-decoration-none d-block blog-card-title mb-2 text-white hover-accent" href="{{ route('post.show', $post->slug) }}">
                                 {{ $post->title }}
                             </a>
                             <p class="text-muted mb-3" style="font-size: 13px; line-height:1.6;">
@@ -93,7 +93,7 @@
                                 <small class="text-muted" style="font-size: 11px;">
                                     <i class="fa fa-calendar text-accent me-1"></i> {{ $post->published_at?->format('M d, Y') }}
                                 </small>
-                                <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-sm btn-outline-accent py-1 px-2" style="font-size: 11px;">
+                                <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-accent py-1 px-2" style="font-size: 11px;">
                                     Read More <i class="fa fa-angle-right"></i>
                                 </a>
                             </div>
