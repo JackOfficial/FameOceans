@@ -58,6 +58,8 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::resource('reports', ReportController::class);
     Route::resource('settings', SettingController::class);
     Route::resource('posts', PostController::class);
+    Route::patch('users/{user}/role-permission', [UserController::class, 'updateRolePermission'])
+    ->name('users.updateRolePermission');
 
     //Trash Management
     Route::get('categories-trash', [BlogCategoryController::class, 'trash'])

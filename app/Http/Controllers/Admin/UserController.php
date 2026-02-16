@@ -37,6 +37,23 @@ class UserController extends Controller
         return back()->with('success', 'User role updated successfully.');
     }
 
+    public function updateRolePermission(Request $request, User $user)
+{
+    $request->validate([
+        'role' => 'nullable|string|exists:roles,name',
+        'permissions' => 'nullable|array',
+        'permissions.*' => 'string|exists:permissions,name',
+    ]);
+
+    // Remove all current roles
+    $user->syncRoles($request->role ? [$request->role] : []);
+
+    // Sync permissions
+    $user->syncPermissions($request->permissions ?? []);
+
+    return redirect()->back()->with('success', 'User role and permissions updated successfully.');
+}
+
     /**
      * Change a user's permissions.
      */
