@@ -12,8 +12,8 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-primary">
                 <div class="inner">
-                    <h3>{{ $totalCreators ?? 0 }}</h3>
-                    <p>Total Creators</p>
+                    <h3>{{ Auth::user()->count() ?? 0 }}</h3>
+                    <p>Total Users</p>
                 </div>
                 <div class="icon"><i class="fas fa-user-check"></i></div>
                 <a href="/admin/creators" class="small-box-footer">
@@ -26,7 +26,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{ $totalPosts ?? 0 }}</h3>
+                    <h3>{{ $posts ?? 0 }}</h3>
                     <p>Total Posts</p>
                 </div>
                 <div class="icon"><i class="fas fa-pen-nib"></i></div>
