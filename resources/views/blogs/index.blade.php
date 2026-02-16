@@ -66,7 +66,7 @@
                 </form>
             </div>
 
-            <div class="glass-card p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+            <div class="glass-card mt-2 p-4 mb-30 border-0 shadow-sm" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
                 <h5 class="section-title position-relative text-uppercase mb-3 text-white">
                     <span class="pr-3">Categories</span>
                 </h5>
