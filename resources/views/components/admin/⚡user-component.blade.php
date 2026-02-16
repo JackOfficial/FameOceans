@@ -8,12 +8,13 @@ use Spatie\Permission\Models\Permission;
 
 new class extends Component
 {
-  use WithPagination;
+    use WithPagination;
 
     public $selectedUserId;
     public $selectedRole;
     public $selectedPermissions = [];
 
+    // Note: It's better to keep these as simple arrays or collections
     public $roles;
     public $permissions;
 
@@ -29,10 +30,13 @@ new class extends Component
     {
         $this->selectedUserId = $userId;
         $user = User::findOrFail($userId);
-        $this->selectedRole = $user->roles->first()?->name;
-        $this->selectedPermissions = $user->permissions->pluck('name')->toArray();
+        
+        // Spatie methods
+        $this->selectedRole = $user->getRoleNames()->first();
+        $this->selectedPermissions = $user->getPermissionNames()->toArray();
 
-        $this->dispatchBrowserEvent('show-edit-modal');
+        // Livewire 3 syntax
+        $this->dispatch('show-edit-modal');
     }
 
     public function updateRolePermission()
@@ -49,8 +53,16 @@ new class extends Component
         // Sync Permissions
         $user->syncPermissions($this->selectedPermissions);
 
-        session()->flash('success', 'Role & permissions updated successfully.');
-        $this->dispatchBrowserEvent('hide-edit-modal');
+        session()->flash('success', 'User updated successfully.');
+        $this->dispatch('hide-edit-modal');
+    }
+
+    // THIS IS THE MISSING PIECE: The Render Method
+    public function render()
+    {
+        return view('livewire.user-management', [
+            'users' => User::with(['roles', 'permissions'])->latest()->paginate(10)
+        ]);
     }
 };
 ?>
