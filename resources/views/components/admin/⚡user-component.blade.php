@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Storage;
 
-class UserManagement extends Component
+class UserComponent extends Component
 {
     use WithPagination;
 
