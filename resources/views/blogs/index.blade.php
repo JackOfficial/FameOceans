@@ -1,215 +1,114 @@
 @extends('layouts.app')
-<style>
-    .blog-card-title {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
 
-    .hover-shadow:hover {
-        box-shadow: 0 8px 20px rgba(0,0,0,.15);
-        transition: .3s ease;
-    }
-</style>
 @section('content')
-
-@php
-    $categories = [
-        ['name' => 'Car Maintenance', 'count' => 12],
-        ['name' => 'Spare Parts', 'count' => 18],
-        ['name' => 'Auto Tips', 'count' => 9],
-        ['name' => 'Industry News', 'count' => 7],
-    ];
-
-    $recentPosts = [
-        ['title' => 'How to Maintain Your Engine', 'date' => '12 Dec, 2025', 'slug' => 'engine-maintenance'],
-        ['title' => 'Choosing Quality Spare Parts', 'date' => '10 Dec, 2025', 'slug' => 'quality-spare-parts'],
-        ['title' => 'Fuel Saving Tips for Drivers', 'date' => '08 Dec, 2025', 'slug' => 'fuel-saving-tips'],
-        ['title' => 'Common Car Mistakes', 'date' => '06 Dec, 2025', 'slug' => 'common-car-mistakes'],
-        ['title' => 'When to Service Your Car', 'date' => '04 Dec, 2025', 'slug' => 'car-service-time'],
-    ];
-
-    $blogs = [
-        [
-            'title' => 'Simple Car Maintenance Tips Everyone Should Know',
-            'excerpt' => 'Learn simple and effective car maintenance tips that can save you money and extend your vehicle’s life.',
-            'date' => '12 Dec, 2025',
-            'slug' => 'simple-car-maintenance',
-        ],
-        [
-            'title' => 'How to Choose the Right Spare Parts',
-            'excerpt' => 'Not all spare parts are equal. Here is how to choose quality parts for your vehicle.',
-            'date' => '11 Dec, 2025',
-            'slug' => 'choose-right-spare-parts',
-        ],
-        [
-            'title' => 'Auto Tips That Improve Fuel Efficiency',
-            'excerpt' => 'These practical driving habits will help reduce fuel consumption and costs.',
-            'date' => '10 Dec, 2025',
-            'slug' => 'fuel-efficiency-tips',
-        ],
-        [
-            'title' => 'Signs Your Car Needs Immediate Service',
-            'excerpt' => 'Ignoring these warning signs could cause serious damage to your car.',
-            'date' => '09 Dec, 2025',
-            'slug' => 'car-needs-service',
-        ],
-        [
-            'title' => 'Latest Trends in the Auto Industry',
-            'excerpt' => 'A look at modern technologies shaping the future of the automotive industry.',
-            'date' => '08 Dec, 2025',
-            'slug' => 'auto-industry-trends',
-        ],
-        [
-            'title' => 'Common Driving Mistakes to Avoid',
-            'excerpt' => 'Avoid these common mistakes to improve safety and extend your car’s lifespan.',
-            'date' => '07 Dec, 2025',
-            'slug' => 'driving-mistakes',
-        ],
-    ];
-@endphp
-
-<!-- Breadcrumb Start -->
-<div class="container-fluid mt-4">
-    <div class="row px-xl-5">
-        <div class="col-12">
-            <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="/">Home</a>
-                <span class="breadcrumb-item active">Blog</span>
-            </nav>
-        </div>
+<section class="blog-hero" style="background: radial-gradient(circle at top right, var(--surface), var(--abyss)); padding: 120px 0 60px;">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ocean Insights</h1>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Expert analysis, market wisdom, and deep-sea investment strategies to navigate the financial currents.</p>
     </div>
-</div>
-<!-- Breadcrumb End -->
+</section>
 
-<!-- Blog Start -->
-<div class="container-fluid">
-    <div class="row px-xl-5">
+<section class="pb-5" style="background: var(--abyss);">
+    <div class="container">
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+            <a href="{{ route('blog.index') }}" class="btn btn-sm btn-glass active px-4 rounded-pill">All Insights</a>
+            @foreach($categories as $category)
+                <a href="{{ route('blog.category', $category->slug) }}" class="btn btn-sm btn-glass px-4 rounded-pill">{{ $category->name }}</a>
+            @endforeach
+        </div>
 
-        <!-- Sidebar Start -->
-        <div class="col-lg-3 col-md-4">
+        <div class="row g-4">
+            @forelse ($posts as $post)
+            <div class="col-md-6 col-lg-4">
+                <article class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect position-relative" 
+                         style="background: rgba(255,255,255,0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08)!important; transition: transform 0.3s ease;">
+                    
+                    {{-- Category Badge --}}
+                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill bg-accent text-dark fw-bold px-3 py-2" style="z-index: 10; font-size: 0.65rem; background: var(--accent);">
+                        {{ $post->category->name ?? 'Insight' }}
+                    </span>
 
-            <!-- Search Start -->
-            <div class="bg-light p-4 mb-30">
-                <h5 class="section-title position-relative text-uppercase mb-3">
-                    <span class="bg-secondary pr-3">Search</span>
-                </h5>
-                <form action="#" method="GET">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search blog...">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
+                    {{-- Image Wrapper --}}
+                    <div class="overflow-hidden" style="height: 240px;">
+                        <img src="{{ $post->featured_image ? asset('storage/'.$post->featured_image) : asset('images/Bold Moves.jpeg') }}" 
+                             alt="{{ $post->title }}" 
+                             class="w-100 h-100 object-fit-cover transition-transform duration-500 hover-zoom">
                     </div>
-                </form>
-            </div>
-            <!-- Search End -->
 
-            <!-- Categories Start -->
-            <div class="bg-light p-4 mb-30">
-                <h5 class="section-title position-relative text-uppercase mb-3">
-                    <span class="bg-secondary pr-3">Categories</span>
-                </h5>
-                <ul class="list-unstyled mb-0">
-                    @foreach ($categories as $category)
-                        <li class="d-flex justify-content-between align-items-center mb-3">
-                            <a class="text-dark" href="#">{{ $category['name'] }}</a>
-                            <span class="badge border font-weight-normal">{{ $category['count'] }}</span>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <!-- Categories End -->
+                    {{-- Content --}}
+                    <div class="p-4">
+                        <div class="d-flex align-items-center mb-3 text-muted" style="font-size: 0.75rem;">
+                            <span><i class="fas fa-calendar-alt me-1 text-accent"></i> {{ $post->published_at?->format('M d, Y') }}</span>
+                            <span class="mx-2">•</span>
+                            <span><i class="fas fa-clock me-1 text-accent"></i> 5 min read</span>
+                        </div>
 
-            <!-- Recent Posts Start -->
-            <div class="bg-light p-4 mb-30">
-                <h5 class="section-title position-relative text-uppercase mb-3">
-                    <span class="bg-secondary pr-3">Recent Posts</span>
-                </h5>
-
-                @foreach ($recentPosts as $post)
-                    <div class="media mb-3">
-                        <img src="{{ asset('frontend/img/parts.jpg') }}"
-                             class="mr-3"
-                             style="width: 80px; height: 60px; object-fit: cover;">
-                        <div class="media-body">
-                            <a class="text-dark" href="/blog/{{ $post['slug'] }}">
-                                <h6 class="mt-0 text-truncate">{{ $post['title'] }}</h6>
+                        <h3 class="h4 text-white fw-bold mb-3 line-clamp-2">
+                            <a href="{{ route('blog.show', $post->slug) }}" class="text-decoration-none text-white hover-accent">
+                                {{ $post->title }}
                             </a>
-                            <small>
-                                <i class="fa fa-calendar text-primary mr-1"></i>
-                                {{ $post['date'] }}
-                            </small>
-                        </div>
-                    </div>
-                @endforeach
+                        </h3>
 
-            </div>
-            <!-- Recent Posts End -->
+                        <p class="text-white-50 small mb-4 line-clamp-3">
+                            {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 120) }}
+                        </p>
 
-        </div>
-        <!-- Sidebar End -->
-
-        <!-- Blog List Start -->
-        <div class="col-lg-9 col-md-8">
-            <div class="row pb-3">
-
-                @foreach ($blogs as $blog)
-                    <div class="col-lg-4 col-md-6 col-sm-6 pb-4">
-                        <div class="bg-light mb-4 shadow-sm hover-shadow">
-                            <img class="img-fluid w-100"
-                                 src="{{ asset('frontend/img/part.png') }}"
-                                 style="height: 250px; object-fit: cover;">
-
-                            <div class="p-4">
-                                <a class="h6 text-decoration-none d-block blog-card-title mb-2"
-                                   href="/blog/{{ $blog['slug'] }}">
-                                    {{ $blog['title'] }}
-                                </a>
-
-                                <p class="text-muted mb-3" style="font-size: 14px;">
-                                    {{ $blog['excerpt'] }}
-                                </p>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">
-                                        <i class="fa fa-calendar text-primary mr-1"></i>
-                                        {{ $blog['date'] }}
-                                    </small>
-                                    <a href="/blog/{{ $blog['slug'] }}"
-                                       class="btn btn-sm btn-primary">
-                                        Read More <i class="fa fa-angle-right"></i>
-                                    </a>
+                        <div class="d-flex align-items-center justify-content-between mt-auto">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-accent d-flex align-items-center justify-content-center text-dark fw-bold me-2" style="width: 30px; height: 30px; font-size: 0.7rem;">
+                                    {{ substr($post->author->name ?? 'F', 0, 1) }}
                                 </div>
+                                <span class="small text-muted">{{ $post->author->name ?? 'FameOceans' }}</span>
                             </div>
+                            
+                            <a href="{{ route('blog.show', $post->slug) }}" class="text-accent text-decoration-none small fw-bold arrow-link">
+                                READ MORE <i class="fas fa-chevron-right ms-1"></i>
+                            </a>
                         </div>
                     </div>
-                @endforeach
-
-                <!-- Pagination (static) -->
-                <div class="col-12">
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link">Previous</a></li>
-                            <li class="page-item active"><a class="page-link">1</a></li>
-                            <li class="page-item"><a class="page-link">2</a></li>
-                            <li class="page-item"><a class="page-link">3</a></li>
-                            <li class="page-item"><a class="page-link">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
+                </article>
             </div>
+            @empty
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-search mb-3 text-muted display-4"></i>
+                    <p class="text-muted">The tide is low. No articles found in this category.</p>
+                </div>
+            @endforelse
         </div>
-        <!-- Blog List End -->
 
+        {{-- Pagination --}}
+        <div class="d-flex justify-content-center mt-5">
+            {{ $posts->links() }}
+        </div>
     </div>
-</div>
-<!-- Blog End -->
+</section>
 
+<style>
+    /* Premium Visual Enhancements */
+    .btn-glass {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+        transition: all 0.3s ease;
+    }
+    .btn-glass:hover, .btn-glass.active {
+        background: var(--accent);
+        color: var(--abyss);
+        border-color: var(--accent);
+        box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+    }
 
+    .hover-zoom { transition: transform 0.5s ease; }
+    .glass-card:hover .hover-zoom { transform: scale(1.1); }
+    .glass-card:hover { transform: translateY(-10px); }
 
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .text-accent { color: var(--accent) !important; }
+    .hover-accent:hover { color: var(--accent) !important; }
+
+    .arrow-link { transition: all 0.3s ease; }
+    .arrow-link:hover i { transform: translateX(5px); }
+</style>
 @endsection
