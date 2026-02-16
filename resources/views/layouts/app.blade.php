@@ -296,7 +296,7 @@ body {
     <li class="nav-item"><a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
     <li class="nav-item"><a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
     <li class="nav-item"><a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="/services">Services</a></li>
-    <li class="nav-item"><a class="nav-link" href="/blogs">Insights</a></li>
+    <li class="nav-item"><a class="nav-link" href="/posts">Insights</a></li>
     <li class="nav-item"><a class="nav-link me-lg-3" href="/contact">Contact</a></li>
 
     @auth
