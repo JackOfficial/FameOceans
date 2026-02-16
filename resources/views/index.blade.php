@@ -615,27 +615,35 @@
     </div>
 
     <div class="row g-4 flex-nowrap overflow-auto hide-scrollbar pb-4 flex-md-wrap">
-
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
-          <div class="position-relative overflow-hidden" style="height: 220px;">
-            <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Mobility Moves" class="w-100 h-100 object-fit-cover zoom-img">
-          </div>
-          
-          <div class="p-4 text-start">
-            <h4 class="text-white fw-bold mb-2">Mobility Moves</h4>
+@foreach ($posts as $post)
+<div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
+    <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
+        
+        {{-- Featured Image --}}
+        <div class="position-relative overflow-hidden" style="height: 220px;">
+            <img src="{{ $post->featured_image ? asset('storage/'.$post->featured_image) : asset('images/Bold Moves.jpeg') }}" 
+                 alt="{{ $post->title }}" 
+                 class="w-100 h-100 object-fit-cover zoom-img">
+        </div>
+        
+        {{-- Card Content --}}
+        <div class="p-4 text-start">
+            <h4 class="text-white fw-bold mb-2">{{ $post->title }}</h4>
+            
             <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.5px;">
-              <i class="fas fa-user me-1"></i>By Jane Doe &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 10, 2026
+                <i class="fas fa-user me-1"></i>By {{ $post->author->name ?? 'Unknown' }} &nbsp;|&nbsp; 
+                <i class="fas fa-calendar-alt me-1"></i>{{ $post->published_at?->format('M d, Y') ?? '—' }}
             </small>
-            <p class="text-white-50 small mb-4">Showcase your talent on an international stage and explore career-defining opportunities worldwide.</p>
-            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
+            
+            <p class="text-white-50 small mb-4">{{ $post->excerpt }}</p>
+            
+            <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
                 Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
             </a>
-          </div>
         </div>
-      </div>
-
-      
+    </div>
+</div>
+@endforeach
 
     </div>
   </div>
