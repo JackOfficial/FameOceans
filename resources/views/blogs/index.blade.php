@@ -138,7 +138,7 @@
                     </small>
                     
                     <p class="text-white-50 small mb-4" style="line-height: 1.6;">
-                        {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 100) }}
+                        {{ Str::limit($post->excerpt, 100) ?? Str::limit(strip_tags($post->content), 100) }}
                     </p>
                     
                     <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn" style="font-size: 0.75rem;">
