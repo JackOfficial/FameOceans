@@ -17,7 +17,7 @@ use App\Http\Controllers\OurServiceController;
 use Illuminate\Support\Facades\Route;
 
 //Guest user routes
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Authenticated user routes
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () { 
