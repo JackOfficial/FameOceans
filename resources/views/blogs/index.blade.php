@@ -21,7 +21,7 @@
                 <h5 class="section-title position-relative text-uppercase mb-3 text-white">
                     <span class="pr-3">Search</span>
                 </h5>
-                <form action="{{ route('blog.index') }}" method="GET">
+                <form action="{{ route('post.index') }}" method="GET">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control bg-transparent text-white border-secondary" placeholder="Search insights..." value="{{ request('search') }}">
                         <div class="input-group-append">
