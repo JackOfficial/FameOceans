@@ -637,7 +637,7 @@
             
             <p class="text-white-50 small mb-4">{{ $post->excerpt }}</p>
             
-            <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
+            <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
                 Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
             </a>
         </div>
