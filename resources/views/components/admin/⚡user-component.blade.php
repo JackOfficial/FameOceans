@@ -14,7 +14,6 @@ new class extends Component
     public $selectedRole;
     public $selectedPermissions = [];
     
-    // Static data can stay in public properties
     public $roles;
     public $permissions;
 
@@ -22,15 +21,10 @@ new class extends Component
 
     public function mount()
     {
-        // Only load roles and permissions once
         $this->roles = Role::all();
         $this->permissions = Permission::all();
     }
 
-    /**
-     * Provide data to the view. 
-     * This replaces public $users and keeps pagination working.
-     */
     public function with()
     {
         return [
@@ -43,11 +37,9 @@ new class extends Component
         $this->selectedUserId = $userId;
         $user = User::findOrFail($userId);
         
-        // Correct Spatie retrieval
         $this->selectedRole = $user->roles->first()?->name;
         $this->selectedPermissions = $user->permissions->pluck('name')->toArray();
 
-        // New Livewire 3 dispatch syntax
         $this->dispatch('show-edit-modal');
     }
 
@@ -55,141 +47,144 @@ new class extends Component
     {
         $user = User::findOrFail($this->selectedUserId);
 
-        // Sync Role
         if ($this->selectedRole) {
             $user->syncRoles([$this->selectedRole]);
         } else {
             $user->roles()->detach();
         }
 
-        // Sync Permissions
         $user->syncPermissions($this->selectedPermissions);
 
-        session()->flash('success', 'Role & permissions updated successfully.');
-        
-        // New Livewire 3 dispatch syntax
+        session()->flash('success', 'User updated successfully!');
         $this->dispatch('hide-edit-modal');
     }
 };
 ?>
 
-<div>
+<div class="p-4">
+    {{-- Self-Hiding Success Alert --}}
     @if(session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <div 
+            x-data="{ show: true }" 
+            x-init="setTimeout(() => show = false, 4000)" 
+            x-show="show" 
+            x-transition.duration.500ms
+            class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4"
+        >
+            <i class="fas fa-check-circle me-2"></i> {{ session('success') }}
+            <button type="button" class="btn-close" @click="show = false"></button>
         </div>
     @endif
 
     <div class="card shadow-sm border-0">
         <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-            <h5 class="mb-0 fw-bold text-uppercase">User Access Control</h5>
-            <a href="{{ route('register') }}" class="btn btn-primary btn-sm rounded-pill px-3">
-                <i class="fas fa-plus"></i> Add User
+            <h5 class="mb-0 fw-bold text-uppercase text-primary">User Access Control</h5>
+            <a href="{{ route('register') }}" class="btn btn-primary btn-sm rounded-pill px-3 shadow-sm">
+                <i class="fas fa-plus me-1"></i> Add User
             </a>
         </div>
 
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
-                    <thead class="bg-light">
+                    <thead class="bg-light text-muted small">
                         <tr>
-                            <th class="ps-4">Name</th>
-                            <th>Email</th>
-                            <th>Roles</th>
-                            <th>Permissions</th>
-                            <th>Date</th>
-                            <th class="text-end pe-4">Actions</th>
+                            <th class="ps-4">NAME</th>
+                            <th>EMAIL</th>
+                            <th>ROLE</th>
+                            <th>PERMISSIONS</th>
+                            <th class="text-end pe-4">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($users as $user)
-                            <tr wire:key="{{ $user->id }}">
-                                <td class="ps-4 fw-bold">{{ $user->name }}</td>
+                            <tr wire:key="user-{{ $user->id }}">
+                                <td class="ps-4 fw-bold text-dark">{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     @forelse($user->getRoleNames() as $role)
-                                        <span class="badge rounded-pill bg-info text-dark">{{ $role }}</span>
+                                        <span class="badge rounded-pill bg-info text-dark fw-normal">{{ $role }}</span>
                                     @empty
-                                        <span class="text-muted small">User</span>
+                                        <span class="text-muted small italic">General User</span>
                                     @endforelse
                                 </td>
                                 <td>
-                                    <span class="text-muted small">{{ $user->permissions->count() }} direct permissions</span>
+                                    <span class="text-muted small">{{ $user->permissions->count() }} direct</span>
                                 </td>
-                                <td>{{ $user->created_at->format('M d, Y') }}</td>
                                 <td class="text-end pe-4">
-                                    <button wire:click="editUser({{ $user->id }})" class="btn btn-outline-primary btn-sm rounded-circle">
+                                    <button wire:click="editUser({{ $user->id }})" class="btn btn-outline-primary btn-sm rounded-circle shadow-sm">
                                         <i class="fas fa-user-shield"></i>
                                     </button>
                                 </td>
                             </tr>
                         @empty
-                            <tr>
-                                <td colspan="6" class="text-center py-4 text-muted">No users found.</td>
-                            </tr>
+                            <tr><td colspan="5" class="text-center py-5 text-muted">No users found in directory.</td></tr>
                         @endforelse
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <div class="card-footer bg-white border-top-0">
-            {{ $users->links() }}
-        </div>
+        <div class="card-footer bg-white border-0">{{ $users->links() }}</div>
     </div>
 
-    <div wire:ignore.self class="modal fade" id="editUserModal" tabindex="-1">
+    {{-- Single-File Alpine & Bootstrap Modal --}}
+    <div 
+        wire:ignore.self 
+        class="modal fade" 
+        id="editUserModal" 
+        tabindex="-1"
+        x-data="{ 
+            bsModal: null, 
+            init() { 
+                this.bsModal = new bootstrap.Modal($el);
+            } 
+        }"
+        x-on:show-edit-modal.window="bsModal.show()"
+        x-on:hide-edit-modal.window="bsModal.hide()"
+    >
         <div class="modal-dialog modal-dialog-centered">
-            <form wire:submit.prevent="updateRolePermission" class="modal-content border-0 shadow">
+            <form wire:submit.prevent="updateRolePermission" class="modal-content border-0 shadow-lg">
                 <div class="modal-header border-bottom-0">
                     <h5 class="modal-title fw-bold">Manage Access</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label small fw-bold">PRIMARY ROLE</label>
-                        <select wire:model="selectedRole" class="form-select border-0 bg-light">
-                            <option value="">No Role</option>
+                
+                <div class="modal-body pt-0">
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">PRIMARY SYSTEM ROLE</label>
+                        <select wire:model="selectedRole" class="form-select border-0 bg-light shadow-none">
+                            <option value="">No Role Assigned</option>
                             @foreach($roles as $role)
                                 <option value="{{ $role->name }}">{{ $role->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label small fw-bold">DIRECT PERMISSIONS</label>
-                        <div class="p-3 border rounded bg-light" style="max-height: 200px; overflow-y: auto;">
+                    <div class="mb-2">
+                        <label class="form-label small fw-bold text-muted">DIRECT PERMISSIONS OVERRIDE</label>
+                        <div class="p-3 border rounded-3 bg-light" style="max-height: 220px; overflow-y: auto;">
                             @foreach($permissions as $permission)
-                                <div class="form-check">
-                                    <input wire:model="selectedPermissions" class="form-check-input" type="checkbox" value="{{ $permission->name }}" id="p{{ $permission->id }}">
-                                    <label class="form-check-label small" for="p{{ $permission->id }}">
-                                        {{ $permission->name }}
+                                <div class="form-check mb-2">
+                                    <input wire:model="selectedPermissions" class="form-check-input" type="checkbox" value="{{ $permission->name }}" id="perm-{{ $permission->id }}">
+                                    <label class="form-check-label small" for="perm-{{ $permission->id }}">
+                                        {{ str_replace('_', ' ', $permission->name) }}
                                     </label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer border-top-0">
-                    <button type="submit" class="btn btn-success rounded-pill px-4">Update User</button>
+
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm" wire:loading.attr="disabled">
+                        <span wire:loading.remove wire:target="updateRolePermission">Apply Changes</span>
+                        <span wire:loading wire:target="updateRolePermission">
+                            <span class="spinner-border spinner-border-sm me-1"></span> Processing...
+                        </span>
+                    </button>
                 </div>
             </form>
         </div>
     </div>
-
-    @script
-    <script>
-        // New Livewire 3 Javascript listener syntax
-        $wire.on('show-edit-modal', () => {
-            new bootstrap.Modal(document.getElementById('editUserModal')).show();
-        });
-
-        $wire.on('hide-edit-modal', () => {
-            const modalEl = document.getElementById('editUserModal');
-            const modal = bootstrap.Modal.getInstance(modalEl);
-            if (modal) modal.hide();
-        });
-    </script>
-    @endscript
 </div>
