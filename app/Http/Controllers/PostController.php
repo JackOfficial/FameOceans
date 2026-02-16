@@ -27,7 +27,23 @@ class PostController extends Controller
     return view('blogs.index', compact('posts', 'categories', 'recent_posts'));
 }
 
-     public function show(){
-         return view('blogs.show');
+        public function show($slug)
+    {
+        // 1. Fetch the post by slug or fail with a 404
+        $post = Post::with(['author', 'category'])
+                    ->where('slug', $slug)
+                    ->firstOrFail();
+
+        // 2. Fetch Related Posts (same category, excluding current post)
+        $related_posts = Post::where('category_id', $post->category_id)
+                             ->where('id', '!=', $post->id)
+                             ->latest()
+                             ->take(3)
+                             ->get();
+
+        // 3. Optional: Increment view count if you have a 'views' column
+        // $post->increment('views');
+
+        return view('blogs.show', compact('post', 'related_posts'));
     }
 }
