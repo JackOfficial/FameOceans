@@ -11,9 +11,9 @@
 <section class="pb-5" style="background: var(--abyss);">
     <div class="container">
         <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
-            <a href="{{ route('blog.index') }}" class="btn btn-sm btn-glass active px-4 rounded-pill">All Insights</a>
+            <a href="{{ route('post.index') }}" class="btn btn-sm btn-glass active px-4 rounded-pill">All Insights</a>
             @foreach($categories as $category)
-                <a href="{{ route('blog.category', $category->slug) }}" class="btn btn-sm btn-glass px-4 rounded-pill">{{ $category->name }}</a>
+                <a href="{{ route('post.category', $category->slug) }}" class="btn btn-sm btn-glass px-4 rounded-pill">{{ $category->name }}</a>
             @endforeach
         </div>
 
