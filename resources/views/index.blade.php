@@ -635,41 +635,7 @@
         </div>
       </div>
 
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
-          <div class="position-relative overflow-hidden" style="height: 220px;">
-            <img src="{{ asset('images/global fame.jpeg') }}" alt="Global Market Tides" class="w-100 h-100 object-fit-cover zoom-img">
-          </div>
-          <div class="p-4 text-start">
-            <h4 class="text-white fw-bold mb-2">Global Market Tides</h4>
-            <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem;">
-              <i class="fas fa-user me-1"></i>By John Smith &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 15, 2026
-            </small>
-            <p class="text-white-50 small mb-4">Elevate your influence and digital identity, expanding your reach across global markets.</p>
-            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
-                Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-10 col-md-4 flex-shrink-0 flex-md-shrink-1">
-        <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
-          <div class="position-relative overflow-hidden" style="height: 220px;">
-            <img src="{{ asset('images/culture.jpeg') }}" alt="Cultural Currents" class="w-100 h-100 object-fit-cover zoom-img">
-          </div>
-          <div class="p-4 text-start">
-            <h4 class="text-white fw-bold mb-2">Cultural Currents</h4>
-            <small class="d-block mb-3" style="color: var(--accent); font-size: 0.75rem;">
-              <i class="fas fa-user me-1"></i>By Maria Lee &nbsp;|&nbsp; <i class="fas fa-calendar-alt me-1"></i>Jan 20, 2026
-            </small>
-            <p class="text-white-50 small mb-4">Connect with brands, sponsors, and collaborators to expand your creative horizons globally.</p>
-            <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">
-                Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+      
 
     </div>
   </div>
