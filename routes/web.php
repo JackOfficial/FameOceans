@@ -8,16 +8,22 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\SocialAuthController;
-use App\Http\Controllers\BlogController;
+// use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\PostController as BlogController;
 use Illuminate\Support\Facades\Route;
 
 //Guest user routes
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index'); // Blog homepage
+Route::get('/category/{slug}', [BlogController::class, 'category'])->name('blog.category'); // Category page
+Route::get('/author/{username}', [BlogController::class, 'author'])->name('blog.author'); // Author page
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show'); // Single post page
 
 //Authenticated user routes
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () { 
