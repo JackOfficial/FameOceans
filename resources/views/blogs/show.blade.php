@@ -74,14 +74,32 @@
                     {!! $post->content !!}
                 </div>
 
-                {{-- MOBILE SHARE BUTTONS (Visible only on mobile) --}}
-                <div class="d-lg-none py-4 border-top border-secondary">
-                    <p class="text-white fw-bold small mb-3">SHARE THIS INSIGHT:</p>
-                    <div class="d-flex gap-2">
-                        <a href="https://twitter.com/intent/tweet?url={{ urlcurrent() }}" class="btn btn-dark btn-sm rounded-pill px-3 border-secondary"><i class="fab fa-twitter me-1"></i> Twitter</a>
-                        <a href="https://www.linkedin.com/shareArticle?url={{ urlcurrent() }}" class="btn btn-dark btn-sm rounded-pill px-3 border-secondary"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</a>
-                    </div>
-                </div>
+              {{-- MOBILE SHARE BUTTONS (Visible only on mobile) --}}
+<div class="d-lg-none py-4 border-top border-secondary">
+    <p class="text-white fw-bold small mb-3">SHARE THIS INSIGHT:</p>
+    <div class="d-flex flex-wrap gap-2">
+        {{-- Twitter --}}
+        <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}&text={{ urlencode($post->title) }}" 
+           target="_blank" 
+           class="btn btn-dark btn-sm rounded-pill px-3 border-secondary hover-accent-btn">
+            <i class="fab fa-twitter me-1"></i> Twitter
+        </a>
+
+        {{-- LinkedIn --}}
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}" 
+           target="_blank" 
+           class="btn btn-dark btn-sm rounded-pill px-3 border-secondary hover-accent-btn">
+            <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+        </a>
+
+        {{-- WhatsApp --}}
+        <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' ' . url()->current()) }}" 
+           target="_blank" 
+           class="btn btn-dark btn-sm rounded-pill px-3 border-secondary hover-accent-btn">
+            <i class="fab fa-whatsapp me-1"></i> WhatsApp
+        </a>
+    </div>
+</div>
 
                 {{-- TAGS SECTION --}}
                 <div class="pt-4 border-top border-secondary">
