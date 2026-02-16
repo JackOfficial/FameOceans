@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@push
+@push('styles')
 <style>
     /* Styling for the title truncation */
     .blog-card-title {
