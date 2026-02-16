@@ -27,6 +27,28 @@ class PostController extends Controller
     return view('blogs.index', compact('posts', 'categories', 'recent_posts'));
 }
 
+/**
+     * Display posts filtered by category.
+     */
+    public function category($slug)
+    {
+        // 1. Find the category by slug
+        $category = BlogCategory::where('slug', $slug)->firstOrFail();
+
+        // 2. Get posts belonging to this category
+        $posts = Post::with(['author', 'category'])
+                     ->where('category_id', $category->id)
+                     ->latest()
+                     ->paginate(10);
+
+        // 3. Keep the sidebar data consistent
+        $categories = BlogCategory::withCount('posts')->get();
+        $recent_posts = Post::latest()->take(5)->get();
+
+        // 4. Pass an optional 'current_category' to highlight it in the UI
+        return view('blogs.index', compact('posts', 'categories', 'recent_posts', 'category'));
+    }
+
         public function show($slug)
     {
         // 1. Fetch the post by slug or fail with a 404

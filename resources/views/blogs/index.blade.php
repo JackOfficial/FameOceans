@@ -141,7 +141,7 @@
                         {{ Str::limit($post->excerpt, 100) ?? Str::limit(strip_tags($post->content), 100) }}
                     </p>
                     
-                    <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn" style="font-size: 0.75rem;">
+                    <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn" style="font-size: 0.75rem;">
                         Read More <i class="fas fa-arrow-right ms-2" style="font-size: 0.7rem;"></i>
                     </a>
                 </div>
