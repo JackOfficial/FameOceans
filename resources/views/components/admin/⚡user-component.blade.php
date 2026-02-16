@@ -1,11 +1,10 @@
 <?php
 
-use Livewire\Component;
+use Livewire\Volt\Component;
 use Livewire\WithPagination;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-
 
 new class extends Component
 {
@@ -14,7 +13,8 @@ new class extends Component
     public $selectedUserId;
     public $selectedRole;
     public $selectedPermissions = [];
-    public $users;
+    
+    // Static data can stay in public properties
     public $roles;
     public $permissions;
 
@@ -22,19 +22,33 @@ new class extends Component
 
     public function mount()
     {
+        // Only load roles and permissions once
         $this->roles = Role::all();
         $this->permissions = Permission::all();
-        $this->users = User::with(['roles','permissions'])->latest()->paginate(10);
+    }
+
+    /**
+     * Provide data to the view. 
+     * This replaces public $users and keeps pagination working.
+     */
+    public function with()
+    {
+        return [
+            'users' => User::with(['roles', 'permissions'])->latest()->paginate(10),
+        ];
     }
 
     public function editUser($userId)
     {
         $this->selectedUserId = $userId;
         $user = User::findOrFail($userId);
+        
+        // Correct Spatie retrieval
         $this->selectedRole = $user->roles->first()?->name;
         $this->selectedPermissions = $user->permissions->pluck('name')->toArray();
 
-        $this->dispatchBrowserEvent('show-edit-modal');
+        // New Livewire 3 dispatch syntax
+        $this->dispatch('show-edit-modal');
     }
 
     public function updateRolePermission()
@@ -52,111 +66,90 @@ new class extends Component
         $user->syncPermissions($this->selectedPermissions);
 
         session()->flash('success', 'Role & permissions updated successfully.');
-        $this->dispatchBrowserEvent('hide-edit-modal');
+        
+        // New Livewire 3 dispatch syntax
+        $this->dispatch('hide-edit-modal');
     }
-
 };
 ?>
 
 <div>
     @if(session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show">
+        <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     @endif
 
-    <div class="card shadow-sm">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h3 class="card-title text-uppercase">All Users</h3>
-            <a href="{{ route('register') }}" class="btn btn-primary btn-sm">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+            <h5 class="mb-0 fw-bold text-uppercase">User Access Control</h5>
+            <a href="{{ route('register') }}" class="btn btn-primary btn-sm rounded-pill px-3">
                 <i class="fas fa-plus"></i> Add User
             </a>
         </div>
 
-        <div class="card-body table-responsive p-3">
-            <table class="table table-bordered table-striped table-hover">
-                <thead class="thead-light">
-                    <tr class="text-uppercase">
-                        <th>Photo</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Roles</th>
-                        <th>Permissions</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @forelse($users as $user)
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light">
                         <tr>
-                            <td>
-                                @if ($user->photo)
-                                    <img src="{{ asset('storage/'.$user->photo) }}" class="rounded-circle border" style="width:50px;height:50px;object-fit:cover;">
-                                @else
-                                    <img src="{{ asset('images/avatar-placeholder.png') }}" class="rounded-circle border" style="width:50px;height:50px;object-fit:cover;">
-                                @endif
-                            </td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>
-                                @forelse($user->getRoleNames() as $role)
-                                    <span class="badge rounded-pill bg-info text-dark">{{ $role }}</span>
-                                @empty
-                                    <span class="badge rounded-pill bg-secondary">No role</span>
-                                @endforelse
-                            </td>
-                            <td>
-                                @forelse($user->getAllPermissions() as $perm)
-                                    <span class="badge rounded-pill bg-warning text-dark">{{ $perm->name }}</span>
-                                @empty
-                                    <span class="badge rounded-pill bg-secondary">No permission</span>
-                                @endforelse
-                            </td>
-                            <td>{{ $user->created_at->format('Y-m-d') }}</td>
-                            <td class="d-flex gap-1">
-                                <button wire:click="editUser({{ $user->id }})" class="btn btn-info btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-
-                                <form method="POST" action="{{ route('admin.users.destroy', $user) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Delete this user?')">
-                                        <i class="fas fa-trash"></i>
+                            <th class="ps-4">Name</th>
+                            <th>Email</th>
+                            <th>Roles</th>
+                            <th>Permissions</th>
+                            <th>Date</th>
+                            <th class="text-end pe-4">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($users as $user)
+                            <tr wire:key="{{ $user->id }}">
+                                <td class="ps-4 fw-bold">{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>
+                                    @forelse($user->getRoleNames() as $role)
+                                        <span class="badge rounded-pill bg-info text-dark">{{ $role }}</span>
+                                    @empty
+                                        <span class="text-muted small">User</span>
+                                    @endforelse
+                                </td>
+                                <td>
+                                    <span class="text-muted small">{{ $user->permissions->count() }} direct permissions</span>
+                                </td>
+                                <td>{{ $user->created_at->format('M d, Y') }}</td>
+                                <td class="text-end pe-4">
+                                    <button wire:click="editUser({{ $user->id }})" class="btn btn-outline-primary btn-sm rounded-circle">
+                                        <i class="fas fa-user-shield"></i>
                                     </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="7" class="text-center text-muted py-3">
-                                <i class="fas fa-user-slash"></i> No users available.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="6" class="text-center py-4 text-muted">No users found.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer bg-white border-top-0">
             {{ $users->links() }}
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="editUserModal" tabindex="-1">
+    <div wire:ignore.self class="modal fade" id="editUserModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <form wire:submit.prevent="updateRolePermission" class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Role & Permissions</h5>
+            <form wire:submit.prevent="updateRolePermission" class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold">Manage Access</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label>Role</label>
-                        <select wire:model="selectedRole" class="form-select">
+                        <label class="form-label small fw-bold">PRIMARY ROLE</label>
+                        <select wire:model="selectedRole" class="form-select border-0 bg-light">
                             <option value="">No Role</option>
                             @foreach($roles as $role)
                                 <option value="{{ $role->name }}">{{ $role->name }}</option>
@@ -165,33 +158,38 @@ new class extends Component
                     </div>
 
                     <div class="mb-3">
-                        <label>Permissions</label>
-                        <select wire:model="selectedPermissions" class="form-select" multiple>
+                        <label class="form-label small fw-bold">DIRECT PERMISSIONS</label>
+                        <div class="p-3 border rounded bg-light" style="max-height: 200px; overflow-y: auto;">
                             @foreach($permissions as $permission)
-                                <option value="{{ $permission->name }}">{{ $permission->name }}</option>
+                                <div class="form-check">
+                                    <input wire:model="selectedPermissions" class="form-check-input" type="checkbox" value="{{ $permission->name }}" id="p{{ $permission->id }}">
+                                    <label class="form-check-label small" for="p{{ $permission->id }}">
+                                        {{ $permission->name }}
+                                    </label>
+                                </div>
                             @endforeach
-                        </select>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Save Changes</button>
+                <div class="modal-footer border-top-0">
+                    <button type="submit" class="btn btn-success rounded-pill px-4">Update User</button>
                 </div>
             </form>
         </div>
     </div>
 
-    @push('scripts')
+    @script
     <script>
-        window.addEventListener('show-edit-modal', () => {
-            var modal = new bootstrap.Modal(document.getElementById('editUserModal'));
-            modal.show();
+        // New Livewire 3 Javascript listener syntax
+        $wire.on('show-edit-modal', () => {
+            new bootstrap.Modal(document.getElementById('editUserModal')).show();
         });
 
-        window.addEventListener('hide-edit-modal', () => {
-            var modal = bootstrap.Modal.getInstance(document.getElementById('editUserModal'));
-            modal.hide();
+        $wire.on('hide-edit-modal', () => {
+            const modalEl = document.getElementById('editUserModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
         });
     </script>
-    @endpush
+    @endscript
 </div>
