@@ -64,17 +64,24 @@ new class extends Component
 <div class="p-4">
     {{-- Self-Hiding Success Alert --}}
     @if(session()->has('success'))
-        <div 
-            x-data="{ show: true }" 
-            x-init="setTimeout(() => show = false, 4000)" 
-            x-show="show" 
-            x-transition.duration.500ms
-            class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4"
-        >
-            <i class="fas fa-check-circle me-2"></i> {{ session('success') }}
-            <button type="button" class="btn-close" @click="show = false"></button>
+    <div 
+        x-data="{ show: true }" 
+        x-init="setTimeout(() => show = false, 4000)" 
+        x-show="show" 
+        x-transition.duration.500ms
+        class="alert alert-success d-flex align-items-center justify-content-between border-0 shadow-sm mb-4"
+    >
+        <div>
+            <i class="fas fa-check-circle me-2"></i> 
+            {{ session('success') }}
         </div>
-    @endif
+        
+        {{-- Manual Close Icon --}}
+        <button type="button" class="btn p-0 border-0 shadow-none" @click="show = false">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+@endif
 
     <div class="card shadow-sm border-0">
         <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
@@ -146,7 +153,10 @@ new class extends Component
             <form wire:submit.prevent="updateRolePermission" class="modal-content border-0 shadow-lg">
                 <div class="modal-header border-bottom-0">
                     <h5 class="modal-title fw-bold">Manage Access</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    {{-- FIXED: Manual Alpine hide on close button --}}
+                    <button type="button" class="btn border-0 shadow-none" @click="bsModal.hide()" aria-label="Close">
+                        <i class="fas fa-times fs-5 text-muted"></i>
+                    </button>
                 </div>
                 
                 <div class="modal-body pt-0">
@@ -176,7 +186,8 @@ new class extends Component
                 </div>
 
                 <div class="modal-footer border-top-0 pt-0">
-                    <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                    {{-- FIXED: Manual Alpine hide on cancel button --}}
+                    <button type="button" class="btn btn-light rounded-pill px-4 shadow-none" @click="bsModal.hide()">Cancel</button>
                     <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm" wire:loading.attr="disabled">
                         <span wire:loading.remove wire:target="updateRolePermission">Apply Changes</span>
                         <span wire:loading wire:target="updateRolePermission">
