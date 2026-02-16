@@ -9,16 +9,23 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-       $posts = Post::with(['author', 'category'])
-                     ->orderBy('created_at', 'desc')
-                     ->paginate(10);
-        $categories = BlogCategory::all(); 
-        $recent_posts =  $posts = Post::with(['author', 'category'])
-                     ->latest()
-                     ->take(5)->get();            
-        return view('blogs.index', compact('posts', 'categories', 'recent_posts'));
+   public function index(Request $request)
+{
+    $query = Post::with(['author', 'category'])->latest();
+
+    // Search Logic
+    if ($request->has('search')) {
+        $searchTerm = $request->search;
+        $query->where('title', 'LIKE', "%{$searchTerm}%")
+              ->orWhere('content', 'LIKE', "%{$searchTerm}%");
     }
+
+    $posts = $query->paginate(10);
+    $categories = BlogCategory::withCount('posts')->get();
+    $recent_posts = Post::latest()->take(5)->get();
+
+    return view('blogs.index', compact('posts', 'categories', 'recent_posts'));
+}
 
      public function show(){
          return view('blogs.show');
