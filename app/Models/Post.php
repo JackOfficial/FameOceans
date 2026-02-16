@@ -48,7 +48,7 @@ class Post extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class, 'post_tags')->withTimestamps(false);
+           return $this->belongsToMany(Tag::class, 'post_tags')->withPivot([])->usingPivotModel()->withoutTimestamps();
     }
 
     public function comments(): HasMany
