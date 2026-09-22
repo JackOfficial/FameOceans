@@ -127,68 +127,68 @@
             </p>
         </div>
 
-        <div class="row g-4">
-            <!-- Romania -->
-            <div class="col-lg-4 col-md-6">
-                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-                    <div class="d-flex align-items-center mb-3">
-                        <span class="fs-1 me-3" role="img" aria-label="Romania">🇷🇴</span>
-                        <div>
-                            <h4 class="fw-bold text-white mb-0">FameOceans S.R.L.</h4>
-                            <span class="badge bg-info text-dark font-monospace small">European Headquarters</span>
-                        </div>
-                    </div>
-                    <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
-                        Anchors FameOceans’ European operations, advisory services, education initiatives, cultural exchange, market development, exhibitions, and international partnerships.
-                    </p>
-                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Registered Office:</strong> Calea Moșilor Nr. 195, Unit 17, Bl. 1bis, Etaj 5, Sector 2, Bucharest, Romania</p>
-                        <p class="mb-1"><i class="fas fa-file-contract me-2 text-info"></i><strong>Trade Register:</strong> J2026050443000</p>
-                        <p class="mb-0"><i class="fas fa-id-card me-2 text-info"></i><strong>CUI:</strong> 55447937</p>
-                    </div>
+      <div class="row g-4">
+    <!-- Romania -->
+    <div class="col-lg-4 col-md-6">
+        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+            <div class="d-flex align-items-center mb-3">
+                <span class="fi fi-ro fs-1 me-3 rounded-1 shadow-sm" aria-label="Romania"></span>
+                <div>
+                    <h4 class="fw-bold text-white mb-0">FameOceans S.R.L.</h4>
+                    <span class="badge bg-info text-dark font-monospace small">European Headquarters</span>
                 </div>
             </div>
-
-            <!-- Rwanda -->
-            <div class="col-lg-4 col-md-6">
-                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-                    <div class="d-flex align-items-center mb-3">
-                        <span class="fs-1 me-3" role="img" aria-label="Rwanda">🇷🇼</span>
-                        <div>
-                            <h4 class="fw-bold text-white mb-0">FameOceans Ltd</h4>
-                            <span class="badge bg-info text-dark font-monospace small">African Operations</span>
-                        </div>
-                    </div>
-                    <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
-                        Serves as FameOceans’ African operational base, supporting clients, partners, and cross-border initiatives across Rwanda, Burundi, Uganda, and wider African markets.
-                    </p>
-                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Office Address:</strong> KK 15 Rd, Kigali, Rwanda</p>
-                        <p class="mb-1"><i class="fas fa-barcode me-2 text-info"></i><strong>Company Code:</strong> 121768804</p>
-                        <p class="mb-0"><i class="fas fa-building me-2 text-info"></i><strong>Registered with:</strong> Rwanda Development Board — Office of the Registrar General</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- UAE -->
-            <div class="col-lg-4 col-md-12">
-                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-                    <div class="d-flex align-items-center mb-3">
-                        <span class="fs-1 me-3" role="img" aria-label="United Arab Emirates">🇦🇪</span>
-                        <div>
-                            <h4 class="fw-bold text-white mb-0">United Arab Emirates</h4>
-                            <span class="badge bg-info text-dark font-monospace small">Strategic Partner Network</span>
-                        </div>
-                    </div>
-                    <p class="small text-light-50 mb-3" style="color: rgba(227,233,255,0.75);">
-                        Through our UAE partner network, FameOceans supports businesses with strategic advisory, compliant workforce mobility, qualified talent solutions, and HR technology development.
-                    </p>
-                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                        <p class="mb-0"><i class="fas fa-laptop-code me-2 text-info"></i><strong>Focus Areas:</strong> Business Development, HR Management Software, & Workforce Mobility Solutions.</p>
-                    </div>
-                </div>
+            <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
+                Anchors FameOceans’ European operations, advisory services, education initiatives, cultural exchange, market development, exhibitions, and international partnerships.
+            </p>
+            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Registered Office:</strong> Calea Moșilor Nr. 195, Unit 17, Bl. 1bis, Etaj 5, Sector 2, Bucharest, Romania</p>
+                <p class="mb-1"><i class="fas fa-file-contract me-2 text-info"></i><strong>Trade Register:</strong> J2026050443000</p>
+                <p class="mb-0"><i class="fas fa-id-card me-2 text-info"></i><strong>CUI:</strong> 55447937</p>
             </div>
         </div>
+    </div>
+
+    <!-- Rwanda -->
+    <div class="col-lg-4 col-md-6">
+        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+            <div class="d-flex align-items-center mb-3">
+                <span class="fi fi-rw fs-1 me-3 rounded-1 shadow-sm" aria-label="Rwanda"></span>
+                <div>
+                    <h4 class="fw-bold text-white mb-0">FameOceans Ltd</h4>
+                    <span class="badge bg-info text-dark font-monospace small">African Operations</span>
+                </div>
+            </div>
+            <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
+                Serves as FameOceans’ African operational base, supporting clients, partners, and cross-border initiatives across Rwanda, Burundi, Uganda, and wider African markets.
+            </p>
+            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Office Address:</strong> KK 15 Rd, Kigali, Rwanda</p>
+                <p class="mb-1"><i class="fas fa-barcode me-2 text-info"></i><strong>Company Code:</strong> 121768804</p>
+                <p class="mb-0"><i class="fas fa-building me-2 text-info"></i><strong>Registered with:</strong> Rwanda Development Board — Office of the Registrar General</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- UAE -->
+    <div class="col-lg-4 col-md-12">
+        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+            <div class="d-flex align-items-center mb-3">
+                <span class="fi fi-ae fs-1 me-3 rounded-1 shadow-sm" aria-label="United Arab Emirates"></span>
+                <div>
+                    <h4 class="fw-bold text-white mb-0">United Arab Emirates</h4>
+                    <span class="badge bg-info text-dark font-monospace small">Strategic Partner Network</span>
+                </div>
+            </div>
+            <p class="small text-light-50 mb-3" style="color: rgba(227,233,255,0.75);">
+                Through our UAE partner network, FameOceans supports businesses with strategic advisory, compliant workforce mobility, qualified talent solutions, and HR technology development.
+            </p>
+            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                <p class="mb-0"><i class="fas fa-laptop-code me-2 text-info"></i><strong>Focus Areas:</strong> Business Development, HR Management Software, & Workforce Mobility Solutions.</p>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 </section>
 
