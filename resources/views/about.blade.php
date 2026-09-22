@@ -133,20 +133,6 @@
             'image' => asset('images/team/musengimana-jacques.jpeg'),
             'color' => 'primary'
         ],
-        [
-            'name' => 'Global Mobility Advisory',
-            'role' => 'Director of Legal & Compliance',
-            'bio' => 'Oversees international labor compliance, mobility legal frameworks, trade registry alignments, and institutional immigration pathways.',
-            'image' => asset('images/team/legal-director.jpg'),
-            'color' => 'info'
-        ],
-        [
-            'name' => 'Regional Market Development',
-            'role' => 'Head of Partnerships (Middle East & Gulf)',
-            'bio' => 'Manages strategic partner networks in UAE, driving workforce mobility technology and international trade collaborations.',
-            'image' => asset('images/team/partnerships-head.jpg'),
-            'color' => 'primary'
-        ],
     ];
 @endphp
 
