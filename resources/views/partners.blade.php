@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- HERO / PARTNERS INTRO -->
-<section class="hero">
+<section class="hero mt-5">
   <div class="container text-center">
     <i class="fas fa-handshake fa-3x mb-3" style="color: var(--accent);"></i>
 
@@ -129,7 +129,7 @@
       Principles that guide every collaboration.
     </p>
 
-    <div class="row g-4 mt-5">
+    <div class="row g-4 mt-5"> 
 
       <div class="col-md-3">
         <div class="glass-card text-center">
