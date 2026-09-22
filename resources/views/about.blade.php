@@ -127,68 +127,103 @@
             </p>
         </div>
 
-  <div class="row g-4">
-    <!-- Romania -->
-    <div class="col-lg-4 col-md-6">
-        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-            <div class="d-flex align-items-center mb-3">
-                <img src="https://flagcdn.com/w80/ro.png" alt="Romania Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
-                <div>
-                    <h4 class="fw-bold text-white mb-0">FameOceans S.R.L.</h4>
-                    <span class="badge bg-info text-dark font-monospace small">European Headquarters</span>
+        <div class="row g-4">
+            <!-- Romania -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://flagcdn.com/w80/ro.png" alt="Romania Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0">FameOceans S.R.L.</h4>
+                            <span class="badge bg-info text-dark font-monospace small">European Headquarters</span>
+                        </div>
+                    </div>
+                    <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
+                        Anchors FameOceans’ European operations, advisory services, education initiatives, cultural exchange, market development, exhibitions, and international partnerships.
+                    </p>
+                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Registered Office:</strong> Calea Moșilor Nr. 195, Unit 17, Bl. 1bis, Etaj 5, Sector 2, Bucharest, Romania</p>
+                        <p class="mb-1"><i class="fas fa-file-contract me-2 text-info"></i><strong>Trade Register:</strong> J2026050443000</p>
+                        <p class="mb-0"><i class="fas fa-id-card me-2 text-info"></i><strong>CUI:</strong> 55447937</p>
+                    </div>
                 </div>
             </div>
-            <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
-                Anchors FameOceans’ European operations, advisory services, education initiatives, cultural exchange, market development, exhibitions, and international partnerships.
-            </p>
-            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Registered Office:</strong> Calea Moșilor Nr. 195, Unit 17, Bl. 1bis, Etaj 5, Sector 2, Bucharest, Romania</p>
-                <p class="mb-1"><i class="fas fa-file-contract me-2 text-info"></i><strong>Trade Register:</strong> J2026050443000</p>
-                <p class="mb-0"><i class="fas fa-id-card me-2 text-info"></i><strong>CUI:</strong> 55447937</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- Rwanda -->
-    <div class="col-lg-4 col-md-6">
-        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-            <div class="d-flex align-items-center mb-3">
-                <img src="https://flagcdn.com/w80/rw.png" alt="Rwanda Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
-                <div>
-                    <h4 class="fw-bold text-white mb-0">FameOceans Ltd</h4>
-                    <span class="badge bg-info text-dark font-monospace small">African Operations</span>
+            <!-- Rwanda -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://flagcdn.com/w80/rw.png" alt="Rwanda Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0">FameOceans Ltd</h4>
+                            <span class="badge bg-info text-dark font-monospace small">African Operations</span>
+                        </div>
+                    </div>
+                    <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
+                        Serves as FameOceans’ African operational base, supporting clients, partners, and cross-border initiatives across Rwanda, Burundi, Uganda, and wider African markets.
+                    </p>
+                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Office Address:</strong> KK 15 Rd, Kigali, Rwanda</p>
+                        <p class="mb-1"><i class="fas fa-barcode me-2 text-info"></i><strong>Company Code:</strong> 121768804</p>
+                        <p class="mb-0"><i class="fas fa-building me-2 text-info"></i><strong>Registered with:</strong> Rwanda Development Board — Office of the Registrar General</p>
+                    </div>
                 </div>
             </div>
-            <p class="small text-light-50 mb-4" style="color: rgba(227,233,255,0.75);">
-                Serves as FameOceans’ African operational base, supporting clients, partners, and cross-border initiatives across Rwanda, Burundi, Uganda, and wider African markets.
-            </p>
-            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-info"></i><strong>Office Address:</strong> KK 15 Rd, Kigali, Rwanda</p>
-                <p class="mb-1"><i class="fas fa-barcode me-2 text-info"></i><strong>Company Code:</strong> 121768804</p>
-                <p class="mb-0"><i class="fas fa-building me-2 text-info"></i><strong>Registered with:</strong> Rwanda Development Board — Office of the Registrar General</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- UAE -->
-    <div class="col-lg-4 col-md-12">
-        <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
-            <div class="d-flex align-items-center mb-3">
-                <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
-                <div>
-                    <h4 class="fw-bold text-white mb-0">United Arab Emirates</h4>
-                    <span class="badge bg-info text-dark font-monospace small">Strategic Partner Network</span>
+            <!-- UAE -->
+            <div class="col-lg-4 col-md-12">
+                <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0">United Arab Emirates</h4>
+                            <span class="badge bg-info text-dark font-monospace small">Strategic Partner Network</span>
+                        </div>
+                    </div>
+                    <p class="small text-light-50 mb-3" style="color: rgba(227,233,255,0.75);">
+                        Through our UAE partner network, FameOceans supports businesses with strategic advisory, compliant workforce mobility, qualified talent solutions, and HR technology development.
+                    </p>
+                    <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
+                        <p class="mb-0"><i class="fas fa-laptop-code me-2 text-info"></i><strong>Focus Areas:</strong> Business Development, HR Management Software, & Workforce Mobility Solutions.</p>
+                    </div>
                 </div>
-            </div>
-            <p class="small text-light-50 mb-3" style="color: rgba(227,233,255,0.75);">
-                Through our UAE partner network, FameOceans supports businesses with strategic advisory, compliant workforce mobility, qualified talent solutions, and HR technology development.
-            </p>
-            <div class="mt-auto pt-3 border-top border-white border-opacity-10 text-light-50 small">
-                <p class="mb-0"><i class="fas fa-laptop-code me-2 text-info"></i><strong>Focus Areas:</strong> Business Development, HR Management Software, & Workforce Mobility Solutions.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Partners Carousel Section -->
+<section class="py-5 overflow-hidden">
+    <div class="container text-center py-4">
+        <h2 class="section-title h1 fw-bold mb-3">Our Trusted Partners</h2>
+        <p class="section-subtitle mb-5 text-info text-uppercase fw-bold small" style="letter-spacing: 2px;">
+            Collaborating with leading global institutions & organizations
+        </p>
+
+        @php
+            $partners = [
+                ['name' => 'Partner 1', 'logo' => asset('images/partners/partner1.png')],
+                ['name' => 'Partner 2', 'logo' => asset('images/partners/partner2.png')],
+                ['name' => 'Partner 3', 'logo' => asset('images/partners/partner3.png')],
+                ['name' => 'Partner 4', 'logo' => asset('images/partners/partner4.png')],
+                ['name' => 'Partner 5', 'logo' => asset('images/partners/partner5.png')],
+                ['name' => 'Partner 6', 'logo' => asset('images/partners/partner6.png')],
+            ];
+        @endphp
+
+        <div class="partners-slider py-3">
+            <div class="partners-track">
+                {{-- Loop twice for infinite seamless CSS scrolling effect --}}
+                @foreach(array_merge($partners, $partners) as $p)
+                <div class="partner-slide px-4">
+                    <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center border border-white border-opacity-10" 
+                         style="background: rgba(255, 255, 255, 0.03); width: 180px; height: 100px; backdrop-filter: blur(10px);">
+                        <img src="{{ $p['logo'] }}" alt="{{ $p['name'] }}" class="img-fluid partner-logo" style="max-height: 55px; opacity: 0.8; filter: grayscale(30%); transition: all 0.3s ease;">
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 </section>
 
@@ -228,6 +263,35 @@
     }
     .transform-scale:hover { transform: scale(1.05); }
     .transition-hover:hover i { transform: scale(1.2); transition: 0.3s; }
+
+    /* Continuous Partner Carousel Animation */
+    .partners-slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .partners-track {
+        display: flex;
+        width: calc(220px * 12);
+        animation: scrollPartners 25s linear infinite;
+    }
+    .partners-track:hover {
+        animation-play-state: paused;
+    }
+    .partner-slide {
+        width: 220px;
+        flex-shrink: 0;
+    }
+    .partner-logo:hover {
+        opacity: 1 !important;
+        filter: grayscale(0%) !important;
+        transform: scale(1.08);
+    }
+
+    @keyframes scrollPartners {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-220px * 6)); }
+    }
 </style>
 
 @endsection
