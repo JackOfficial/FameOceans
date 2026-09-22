@@ -93,7 +93,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="image-wrapper p-2 border border-white border-opacity-10 rounded-4 shadow-2xl">
-                    <img src="{{ asset('images/service-mobility.jpg') }}" class="img-fluid rounded-3" alt="Global Mobility Advisory">
+                    <img src="{{ asset('images/Strategic investment pathways accross Africa.png') }}" class="img-fluid rounded-3" alt="Global Mobility Advisory">
                 </div>
             </div>
         </div>
