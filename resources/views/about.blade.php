@@ -123,7 +123,7 @@
             'name' => 'Emmanuel NIYIRAGIRA',
             'role' => 'Co-Founder & Director of Operations',
             'bio' => 'One of the Co-Founders of FameOceans Corporation, Emmanuel leads operations, international partnerships, and strategic growth across our global operations.',
-            'image' => asset('images/team/emmanuel-niyiragira.jpg'),
+            'image' => asset('images/team/emmanuel-niyiragira.png'),
             'color' => 'info'
         ],
         [
