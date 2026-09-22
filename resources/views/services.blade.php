@@ -68,7 +68,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="image-wrapper p-2 border border-white border-opacity-10 rounded-4 shadow-2xl">
-                    <img src="{{ asset('images/service-human-capital.jpg') }}" class="img-fluid rounded-3" alt="Human Capital Consulting">
+                    <img src="{{ asset('images/Consultancy.jpeg') }}" class="img-fluid rounded-3" alt="Human Capital Consulting">
                 </div>
             </div>
         </div>
