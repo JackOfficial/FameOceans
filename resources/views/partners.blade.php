@@ -196,6 +196,67 @@
   </div>
 </section>
 
+<!-- OUR STRATEGIC PARTNERS & REGIONAL NETWORK -->
+<section class="py-5 border-top border-white border-opacity-10">
+  <div class="container text-center py-4">
+    <h2 class="section-title h2 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Our Strategic Partners & Alliance Network
+    </h2>
+    <p class="section-subtitle text-info text-uppercase fw-bold small mb-5" style="letter-spacing: 2px;">
+      Trusted entities and regional institutions collaborating with FameOceans
+    </p>
+
+    <!-- PARTNERS GRID / BADGES -->
+    <div class="row g-4 justify-content-center align-items-stretch">
+      
+      <!-- Partner 1 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="glass-card p-4 h-100 d-flex flex-column align-items-center justify-content-center border border-white border-opacity-10 transition-hover" style="background: rgba(255,255,255,0.02); border-radius: 16px;">
+          <div class="d-flex align-items-center justify-content-center mb-3 rounded-circle bg-info bg-opacity-10" style="width: 60px; height: 60px;">
+            <i class="fas fa-university fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h6 class="fw-bold text-white mb-1">Academic & University Alliances</h6>
+          <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-25 mt-2 px-3 py-1 rounded-pill small">EU & East Africa</span>
+        </div>
+      </div>
+
+      <!-- Partner 2 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="glass-card p-4 h-100 d-flex flex-column align-items-center justify-content-center border border-white border-opacity-10 transition-hover" style="background: rgba(255,255,255,0.02); border-radius: 16px;">
+          <div class="d-flex align-items-center justify-content-center mb-3 rounded-circle bg-info bg-opacity-10" style="width: 60px; height: 60px;">
+            <i class="fas fa-briefcase fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h6 class="fw-bold text-white mb-1">Global Workforce & Recruitment</h6>
+          <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-25 mt-2 px-3 py-1 rounded-pill small">Romania & UAE</span>
+        </div>
+      </div>
+
+      <!-- Partner 3 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="glass-card p-4 h-100 d-flex flex-column align-items-center justify-content-center border border-white border-opacity-10 transition-hover" style="background: rgba(255,255,255,0.02); border-radius: 16px;">
+          <div class="d-flex align-items-center justify-content-center mb-3 rounded-circle bg-info bg-opacity-10" style="width: 60px; height: 60px;">
+            <i class="fas fa-landmark fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h6 class="fw-bold text-white mb-1">Trade & Commercial Registries</h6>
+          <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-25 mt-2 px-3 py-1 rounded-pill small">Rwanda & CEE Hubs</span>
+        </div>
+      </div>
+
+      <!-- Partner 4 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="glass-card p-4 h-100 d-flex flex-column align-items-center justify-content-center border border-white border-opacity-10 transition-hover" style="background: rgba(255,255,255,0.02); border-radius: 16px;">
+          <div class="d-flex align-items-center justify-content-center mb-3 rounded-circle bg-info bg-opacity-10" style="width: 60px; height: 60px;">
+            <i class="fas fa-laptop-code fa-2x" style="color: var(--accent);"></i>
+          </div>
+          <h6 class="fw-bold text-white mb-1">Technology & Mobility Systems</h6>
+          <span class="badge bg-primary bg-opacity-25 text-info border border-info border-opacity-25 mt-2 px-3 py-1 rounded-pill small">International</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CALL TO ACTION / INQUIRY SECTION -->
 <section id="partner-inquiry" class="position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, rgba(10, 20, 40, 0.95), rgba(15, 32, 67, 0.9)), url('{{ asset('images/ocean-bg.jpg') }}') no-repeat center center/cover;">
   <div class="container py-5 text-light">
@@ -227,64 +288,64 @@
           <p class="small mb-4" style="color: rgba(227,233,255,0.7);">Interested in exploring joint opportunities? Connect with our strategic partnerships team.</p>
 
           <form action="{{ route('contact') }}" method="POST">
-  @csrf
-  
-  <div class="row g-3">
-    <!-- Organization Name -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Organization Name</label>
-      <input type="text" name="organization_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Acme Ltd or University Name" required>
-    </div>
+            @csrf
+            
+            <div class="row g-3">
+              <!-- Organization Name -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Organization Name</label>
+                <input type="text" name="organization_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Acme Ltd or University Name" required>
+              </div>
 
-    <!-- Contact Person Name -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Contact Name</label>
-      <input type="text" name="contact_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. John Doe" required>
-    </div>
+              <!-- Contact Person Name -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Contact Name</label>
+                <input type="text" name="contact_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. John Doe" required>
+              </div>
 
-    <!-- Work Email -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Work Email</label>
-      <input type="email" name="email" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="john@company.com" required>
-    </div>
+              <!-- Work Email -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Work Email</label>
+                <input type="email" name="email" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="john@company.com" required>
+              </div>
 
-    <!-- Phone / WhatsApp -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Phone / WhatsApp</label>
-      <input type="tel" name="phone" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="+250 780 000 000">
-    </div>
+              <!-- Phone / WhatsApp -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Phone / WhatsApp</label>
+                <input type="tel" name="phone" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="+250 780 000 000">
+              </div>
 
-    <!-- Partnership Type -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Partnership Focus</label>
-      <select name="partnership_type" class="form-select bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3">
-        <option value="corporate">Corporate / Business Advisory</option>
-        <option value="institutional">Institutional / Public Sector</option>
-        <option value="educational">Educational / Student Pathways</option>
-        <option value="tech">Technology / HR Mobility Partner</option>
-      </select>
-    </div>
+              <!-- Partnership Type -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Partnership Focus</label>
+                <select name="partnership_type" class="form-select bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3">
+                  <option value="corporate">Corporate / Business Advisory</option>
+                  <option value="institutional">Institutional / Public Sector</option>
+                  <option value="educational">Educational / Student Pathways</option>
+                  <option value="tech">Technology / HR Mobility Partner</option>
+                </select>
+              </div>
 
-    <!-- Region / Country -->
-    <div class="col-md-6">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Country / Location</label>
-      <input type="text" name="country" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Rwanda, Romania, UAE">
-    </div>
+              <!-- Region / Country -->
+              <div class="col-md-6">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Country / Location</label>
+                <input type="text" name="country" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Rwanda, Romania, UAE">
+              </div>
 
-    <!-- Brief Message -->
-    <div class="col-12">
-      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">How can we collaborate?</label>
-      <textarea name="message" rows="3" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="Briefly describe your organization's goals or proposed project..."></textarea>
-    </div>
+              <!-- Brief Message -->
+              <div class="col-12">
+                <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">How can we collaborate?</label>
+                <textarea name="message" rows="3" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="Briefly describe your organization's goals or proposed project..."></textarea>
+              </div>
 
-    <!-- Submit Button -->
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 shadow-lg transform-scale mt-2 fw-bold">
-        Submit Partner Inquiry <i class="fas fa-arrow-right ms-2"></i>
-      </button>
-    </div>
-  </div>
-</form>
+              <!-- Submit Button -->
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 shadow-lg transform-scale mt-2 fw-bold">
+                  Submit Partner Inquiry <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
