@@ -192,36 +192,66 @@
     </div>
 </section>
 
-<!-- Partners Carousel Section -->
-<section class="py-5 overflow-hidden">
+<!-- UPDATED CONTINUOUS TICKER PARTNERS CAROUSEL -->
+<section class="py-5 position-relative overflow-hidden border-top border-bottom border-white border-opacity-10" style="background: rgba(10, 20, 35, 0.6);">
     <div class="container text-center py-4">
-        <h2 class="section-title h1 fw-bold mb-3">Our Trusted Partners</h2>
-        <p class="section-subtitle mb-5 text-info text-uppercase fw-bold small" style="letter-spacing: 2px;">
-            Collaborating with leading global institutions & organizations
-        </p>
+        <div class="mb-4">
+            <h2 class="section-title h1 fw-bold mb-2" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Our Trusted Partners & Regional Network
+            </h2>
+            <p class="section-subtitle text-info text-uppercase fw-bold small" style="letter-spacing: 2px;">
+                Collaborating with leading global institutions & regional alliances
+            </p>
+        </div>
 
-        @php
-            $partners = [
-                ['name' => 'Partner 1', 'logo' => asset('images/partners/partner1.png')],
-                ['name' => 'Partner 2', 'logo' => asset('images/partners/partner2.png')],
-                ['name' => 'Partner 3', 'logo' => asset('images/partners/partner3.png')],
-                ['name' => 'Partner 4', 'logo' => asset('images/partners/partner4.png')],
-                ['name' => 'Partner 5', 'logo' => asset('images/partners/partner5.png')],
-                ['name' => 'Partner 6', 'logo' => asset('images/partners/partner6.png')],
-            ];
-        @endphp
+        <div class="partner-ticker-wrapper position-relative py-3">
+            <!-- Gradient Fade Overlay Edge Effects -->
+            <div class="ticker-overlay-left"></div>
+            <div class="ticker-overlay-right"></div>
 
-        <div class="partners-slider py-3">
-            <div class="partners-track">
-                {{-- Loop twice for infinite seamless CSS scrolling effect --}}
-                @foreach(array_merge($partners, $partners) as $p)
-                <div class="partner-slide px-4">
-                    <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center border border-white border-opacity-10" 
-                         style="background: rgba(255, 255, 255, 0.03); width: 180px; height: 100px; backdrop-filter: blur(10px);">
-                        <img src="{{ $p['logo'] }}" alt="{{ $p['name'] }}" class="img-fluid partner-logo" style="max-height: 55px; opacity: 0.8; filter: grayscale(30%); transition: all 0.3s ease;">
+            <div class="partner-ticker-track d-flex align-items-center gap-4">
+                
+                @php
+                    $partnersList = [
+                        ['icon' => 'university', 'title' => 'Academic Alliances', 'location' => 'EU & East Africa', 'color' => 'info'],
+                        ['icon' => 'briefcase', 'title' => 'Global Workforce', 'location' => 'Romania & UAE', 'color' => 'primary'],
+                        ['icon' => 'landmark', 'title' => 'Trade Registries', 'location' => 'Rwanda & CEE Hubs', 'color' => 'info'],
+                        ['icon' => 'laptop-code', 'title' => 'Mobility Systems', 'location' => 'International Tech', 'color' => 'primary'],
+                        ['icon' => 'globe-africa', 'title' => 'East Africa Trade Hub', 'location' => 'Kigali, Rwanda', 'color' => 'info'],
+                        ['icon' => 'building', 'title' => 'Corporate Advisors', 'location' => 'Bucharest, Romania', 'color' => 'primary'],
+                    ];
+                @endphp
+
+                <!-- Track Set 1 -->
+                @foreach($partnersList as $item)
+                <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
+                    <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
+                        <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                    </div>
+                    <div class="text-start">
+                        <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
+                        <small class="text-info opacity-75 d-flex align-items-center gap-1">
+                            <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
+                        </small>
                     </div>
                 </div>
                 @endforeach
+
+                <!-- Track Set 2 (Duplicate for Infinite Seamless Loop) -->
+                @foreach($partnersList as $item)
+                <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
+                    <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
+                        <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                    </div>
+                    <div class="text-start">
+                        <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
+                        <small class="text-info opacity-75 d-flex align-items-center gap-1">
+                            <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
+                        </small>
+                    </div>
+                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -257,40 +287,67 @@
 <style>
     .glass-card { transition: all 0.4s ease; }
     .glass-card:hover { 
-        transform: translateY(-10px); 
+        transform: translateY(-5px); 
         background: rgba(255,255,255,0.08) !important;
         border-color: rgba(154, 223, 255, 0.3) !important;
     }
     .transform-scale:hover { transform: scale(1.05); }
     .transition-hover:hover i { transform: scale(1.2); transition: 0.3s; }
 
-    /* Continuous Partner Carousel Animation */
-    .partners-slider {
-        position: relative;
-        width: 100%;
+    /* PARTNER TICKER STYLES */
+    .partner-ticker-wrapper {
         overflow: hidden;
-    }
-    .partners-track {
-        display: flex;
-        width: calc(220px * 12);
-        animation: scrollPartners 25s linear infinite;
-    }
-    .partners-track:hover {
-        animation-play-state: paused;
-    }
-    .partner-slide {
-        width: 220px;
-        flex-shrink: 0;
-    }
-    .partner-logo:hover {
-        opacity: 1 !important;
-        filter: grayscale(0%) !important;
-        transform: scale(1.08);
+        white-space: nowrap;
+        width: 100%;
     }
 
-    @keyframes scrollPartners {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-220px * 6)); }
+    .partner-ticker-track {
+        display: inline-flex;
+        width: max-content;
+        animation: partnerTicker 30s linear infinite;
+    }
+
+    .partner-ticker-wrapper:hover .partner-ticker-track {
+        animation-play-state: paused;
+    }
+
+    .partner-card {
+        min-width: 270px;
+        background: rgba(255, 255, 255, 0.03) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Edge Gradient Overlay Effects */
+    .ticker-overlay-left,
+    .ticker-overlay-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .ticker-overlay-left {
+        left: 0;
+        background: linear-gradient(to right, rgba(10, 20, 35, 1), rgba(10, 20, 35, 0));
+    }
+
+    .ticker-overlay-right {
+        right: 0;
+        background: linear-gradient(to left, rgba(10, 20, 35, 1), rgba(10, 20, 35, 0));
+    }
+
+    @keyframes partnerTicker {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 </style>
 
