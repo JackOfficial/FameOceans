@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- HERO / PARTNERS INTRO -->
-<section class="hero mt-5">
+<section class="hero py-5 mt-5">
   <div class="container text-center">
     <i class="fas fa-handshake fa-3x mb-3" style="color: var(--accent);"></i>
 
