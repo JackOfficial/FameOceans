@@ -117,6 +117,39 @@
     </div>
 </section>
 
+@php
+    $teamMembers = [
+        [
+            'name' => 'Emmanuel NIYIRAGIRA',
+            'role' => 'Co-Founder & Director of Operations',
+            'bio' => 'One of the Co-Founders of FameOceans Corporation, Emmanuel leads operations, international partnerships, and strategic growth across our global operations.',
+            'image' => asset('images/team/emmanuel-niyiragira.jpg'),
+            'color' => 'info'
+        ],
+        [
+            'name' => 'Executive Leadership',
+            'role' => 'Co-Founder & Chief Executive Officer',
+            'bio' => 'Guides overall corporate vision, high-level foreign investment strategy, and cross-border expansion initiatives across European and African markets.',
+            'image' => asset('images/team/ceo.jpg'),
+            'color' => 'primary'
+        ],
+        [
+            'name' => 'Global Mobility Advisory',
+            'role' => 'Director of Legal & Compliance',
+            'bio' => 'Oversees international labor compliance, mobility legal frameworks, trade registry alignments, and institutional immigration pathways.',
+            'image' => asset('images/team/legal-director.jpg'),
+            'color' => 'info'
+        ],
+        [
+            'name' => 'Regional Market Development',
+            'role' => 'Head of Partnerships (Middle East & Gulf)',
+            'bio' => 'Manages strategic partner networks in UAE, driving workforce mobility technology and international trade collaborations.',
+            'image' => asset('images/team/partnerships-head.jpg'),
+            'color' => 'primary'
+        ],
+    ];
+@endphp
+
 <!-- EXPANDED LEADERSHIP & TEAM SECTION -->
 <section class="py-5 bg-black bg-opacity-25 border-top border-white border-opacity-10">
     <div class="container py-4 text-center">
@@ -132,48 +165,16 @@
             </p>
         </div>
 
-        @php
-            $teamMembers = [
-                [
-                    'name' => 'Emmanuel NIYIRAGIRA',
-                    'role' => 'Co-Founder & Director of Operations',
-                    'bio' => 'One of the Co-Founders of FameOceans Corporation, Emmanuel leads operations, international partnerships, and strategic growth across our global operations.',
-                    'icon' => 'user-tie',
-                    'color' => 'info'
-                ],
-                [
-                    'name' => 'Executive Leadership',
-                    'role' => 'Co-Founder & Chief Executive Officer',
-                    'bio' => 'Guides overall corporate vision, high-level foreign investment strategy, and cross-border expansion initiatives across European and African markets.',
-                    'icon' => 'briefcase',
-                    'color' => 'primary'
-                ],
-                [
-                    'name' => 'Global Mobility Advisory',
-                    'role' => 'Director of Legal & Compliance',
-                    'bio' => 'Oversees international labor compliance, mobility legal frameworks, trade registry alignments, and institutional immigration pathways.',
-                    'icon' => 'balance-scale',
-                    'color' => 'info'
-                ],
-                [
-                    'name' => 'Regional Market Development',
-                    'role' => 'Head of Partnerships (Middle East & Gulf)',
-                    'bio' => 'Manages strategic partner networks in UAE, driving workforce mobility technology and international trade collaborations.',
-                    'icon' => 'globe-asia',
-                    'color' => 'primary'
-                ],
-            ];
-        @endphp
-
         <div class="row g-4 justify-content-center">
             @foreach($teamMembers as $member)
             <div class="col-lg-6 col-md-6">
                 <div class="glass-card p-4 text-center border border-white border-opacity-10 shadow-lg h-100 d-flex flex-column justify-content-between" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border-radius: 20px;">
                     <div>
-                        <div class="mb-4 position-relative mx-auto" style="width: 110px; height: 110px;">
-                            <div class="w-100 h-100 rounded-circle bg-{{ $member['color'] }} bg-opacity-10 border border-{{ $member['color'] }} border-opacity-25 d-flex align-items-center justify-content-center shadow-lg">
-                                <i class="fas fa-{{ $member['icon'] }} fa-3x text-{{ $member['color'] }}"></i>
-                            </div>
+                        <div class="mb-4 position-relative mx-auto" style="width: 120px; height: 120px;">
+                            <img src="{{ $member['image'] }}" 
+                                 alt="{{ $member['name'] }}" 
+                                 class="w-100 h-100 rounded-circle object-fit-cover border border-{{ $member['color'] }} border-opacity-50 shadow-lg"
+                                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name={{ urlencode($member['name']) }}&background=0D6EFD&color=fff&size=128';" />
                         </div>
                         
                         <h4 class="fw-bold text-white mb-1">{{ $member['name'] }}</h4>
