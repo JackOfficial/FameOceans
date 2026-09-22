@@ -45,7 +45,7 @@
 
             <div class="col-lg-6 animate__animated animate__fadeInRight">
                 <div class="position-relative">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-info rounded shadow-lg translate-middle-x translate-middle-y opacity-10" style="z-index: -1;"></div>
+                    <div class="position-absolute top-5 start-0 w-100 h-50 bg-info rounded shadow-lg translate-middle-x translate-middle-y opacity-10" style="z-index: -1;"></div>
                     <img src="{{ asset('images/Global Network.jpeg') }}" alt="Our Story"
                          class="img-fluid rounded-4 shadow-2xl border border-white border-opacity-10">
                 </div>
