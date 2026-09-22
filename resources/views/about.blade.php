@@ -117,47 +117,84 @@
     </div>
 </section>
 
-<!-- LEADERSHIP / OUR TEAM SECTION -->
+<!-- EXPANDED LEADERSHIP & TEAM SECTION -->
 <section class="py-5 bg-black bg-opacity-25 border-top border-white border-opacity-10">
     <div class="container py-4 text-center">
         <div class="mb-5">
             <h2 class="section-title h1 fw-bold mb-3" style="background: linear-gradient(90deg,#fff,#9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                Our Leadership
+                Our Leadership & Global Team
             </h2>
             <p class="section-subtitle text-info text-uppercase fw-bold small" style="letter-spacing: 2px;">
                 Leadership That Drives Global Growth
             </p>
             <p class="lead mx-auto text-light-50 mt-3" style="max-width: 750px; font-size: 1.1rem; color: rgba(227,233,255,0.8);">
-                FameOceans Corporation is led by a team driving operational excellence, international partnerships, and sustainable growth.
+                FameOceans Corporation is led by a multi-disciplinary team driving operational excellence, international partnerships, legal compliance, and sustainable growth across Africa, Europe, and the Middle East.
             </p>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-                <div class="glass-card p-4 text-center border border-white border-opacity-10 shadow-lg h-100" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border-radius: 20px;">
-                    <div class="mb-4 position-relative mx-auto" style="width: 130px; height: 130px;">
-                        <div class="w-100 h-100 rounded-circle bg-info bg-opacity-10 border border-info border-opacity-25 d-flex align-items-center justify-content-center shadow-lg">
-                            <i class="fas fa-user-tie fa-4x text-info"></i>
+        @php
+            $teamMembers = [
+                [
+                    'name' => 'Emmanuel NIYIRAGIRA',
+                    'role' => 'Co-Founder & Director of Operations',
+                    'bio' => 'One of the Co-Founders of FameOceans Corporation, Emmanuel leads operations, international partnerships, and strategic growth across our global operations.',
+                    'icon' => 'user-tie',
+                    'color' => 'info'
+                ],
+                [
+                    'name' => 'Executive Leadership',
+                    'role' => 'Co-Founder & Chief Executive Officer',
+                    'bio' => 'Guides overall corporate vision, high-level foreign investment strategy, and cross-border expansion initiatives across European and African markets.',
+                    'icon' => 'briefcase',
+                    'color' => 'primary'
+                ],
+                [
+                    'name' => 'Global Mobility Advisory',
+                    'role' => 'Director of Legal & Compliance',
+                    'bio' => 'Oversees international labor compliance, mobility legal frameworks, trade registry alignments, and institutional immigration pathways.',
+                    'icon' => 'balance-scale',
+                    'color' => 'info'
+                ],
+                [
+                    'name' => 'Regional Market Development',
+                    'role' => 'Head of Partnerships (Middle East & Gulf)',
+                    'bio' => 'Manages strategic partner networks in UAE, driving workforce mobility technology and international trade collaborations.',
+                    'icon' => 'globe-asia',
+                    'color' => 'primary'
+                ],
+            ];
+        @endphp
+
+        <div class="row g-4 justify-content-center">
+            @foreach($teamMembers as $member)
+            <div class="col-lg-6 col-md-6">
+                <div class="glass-card p-4 text-center border border-white border-opacity-10 shadow-lg h-100 d-flex flex-column justify-content-between" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border-radius: 20px;">
+                    <div>
+                        <div class="mb-4 position-relative mx-auto" style="width: 110px; height: 110px;">
+                            <div class="w-100 h-100 rounded-circle bg-{{ $member['color'] }} bg-opacity-10 border border-{{ $member['color'] }} border-opacity-25 d-flex align-items-center justify-content-center shadow-lg">
+                                <i class="fas fa-{{ $member['icon'] }} fa-3x text-{{ $member['color'] }}"></i>
+                            </div>
                         </div>
+                        
+                        <h4 class="fw-bold text-white mb-1">{{ $member['name'] }}</h4>
+                        <span class="badge bg-{{ $member['color'] }} text-dark font-monospace mb-3 px-3 py-2 small">{{ $member['role'] }}</span>
+                        
+                        <p class="text-light-50 mb-4 small" style="color: rgba(227,233,255,0.75); line-height: 1.7;">
+                            {{ $member['bio'] }}
+                        </p>
                     </div>
-                    
-                    <h3 class="fw-bold text-white mb-1">Emmanuel NIYIRAGIRA</h3>
-                    <span class="badge bg-info text-dark font-monospace mb-3 px-3 py-2 fs-6">Co-Founder & Director of Operations</span>
-                    
-                    <p class="text-light-50 mb-4 px-lg-3" style="color: rgba(227,233,255,0.75); line-height: 1.7;">
-                        One of the Co-Founders of FameOceans Corporation, Emmanuel leads operations, international partnerships, and strategic growth across our international hubs.
-                    </p>
 
                     <div class="d-flex justify-content-center gap-3 border-top border-white border-opacity-10 pt-3">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="LinkedIn">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="mailto:contact@fameoceans.com" class="btn btn-outline-info btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Email">
+                        <a href="mailto:contact@fameoceans.com" class="btn btn-outline-info btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </section>
