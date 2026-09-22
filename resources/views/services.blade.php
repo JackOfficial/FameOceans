@@ -43,7 +43,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="image-wrapper p-2 border border-white border-opacity-10 rounded-4 shadow-2xl">
-                    <img src="{{ asset('images/service-business.jpg') }}" class="img-fluid rounded-3" alt="Business Advisory">
+                    <img src="{{ asset('images/business.jpg') }}" class="img-fluid rounded-3" alt="Business Advisory">
                 </div>
             </div>
         </div>
