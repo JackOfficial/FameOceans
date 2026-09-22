@@ -127,12 +127,12 @@
             </p>
         </div>
 
-      <div class="row g-4">
+  <div class="row g-4">
     <!-- Romania -->
     <div class="col-lg-4 col-md-6">
         <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
             <div class="d-flex align-items-center mb-3">
-                <span class="fi fi-ro fs-1 me-3 rounded-1 shadow-sm" aria-label="Romania"></span>
+                <img src="https://flagcdn.com/w80/ro.png" alt="Romania Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
                 <div>
                     <h4 class="fw-bold text-white mb-0">FameOceans S.R.L.</h4>
                     <span class="badge bg-info text-dark font-monospace small">European Headquarters</span>
@@ -153,7 +153,7 @@
     <div class="col-lg-4 col-md-6">
         <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
             <div class="d-flex align-items-center mb-3">
-                <span class="fi fi-rw fs-1 me-3 rounded-1 shadow-sm" aria-label="Rwanda"></span>
+                <img src="https://flagcdn.com/w80/rw.png" alt="Rwanda Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
                 <div>
                     <h4 class="fw-bold text-white mb-0">FameOceans Ltd</h4>
                     <span class="badge bg-info text-dark font-monospace small">African Operations</span>
@@ -174,7 +174,7 @@
     <div class="col-lg-4 col-md-12">
         <div class="glass-card p-4 h-100 border border-white border-opacity-10 d-flex flex-column" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border-radius: 20px;">
             <div class="d-flex align-items-center mb-3">
-                <span class="fi fi-ae fs-1 me-3 rounded-1 shadow-sm" aria-label="United Arab Emirates"></span>
+                <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="me-3 rounded-1 shadow-sm" style="width: 45px; height: auto;">
                 <div>
                     <h4 class="fw-bold text-white mb-0">United Arab Emirates</h4>
                     <span class="badge bg-info text-dark font-monospace small">Strategic Partner Network</span>
