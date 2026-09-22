@@ -136,6 +136,71 @@
     border: none !important;
 }
 
+/* PARTNER CAROUSEL / TICKER STYLES */
+.partner-ticker-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.partner-ticker-track {
+  display: inline-flex;
+  width: max-content;
+  animation: partnerTicker 25s linear infinite;
+}
+
+/* Pause animation on hover for readability */
+.partner-ticker-wrapper:hover .partner-ticker-track {
+  animation-play-state: paused;
+}
+
+.partner-card {
+  min-width: 260px;
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(154, 223, 255, 0.4) !important;
+  box-shadow: 0 10px 25px -5px rgba(58, 123, 253, 0.3);
+}
+
+/* Gradient Fade Effects on Left & Right Edges */
+.ticker-overlay-left,
+.ticker-overlay-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker-overlay-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(10, 20, 35, 1), rgba(10, 20, 35, 0));
+}
+
+.ticker-overlay-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(10, 20, 35, 1), rgba(10, 20, 35, 0));
+}
+
+/* Continuous Marquee Animation Keyframes */
+@keyframes partnerTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 </style>
 @endpush
 @section('content')
