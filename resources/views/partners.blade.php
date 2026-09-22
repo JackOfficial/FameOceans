@@ -226,24 +226,65 @@
           <h4 class="fw-bold text-white mb-3">Partner Inquiry</h4>
           <p class="small mb-4" style="color: rgba(227,233,255,0.7);">Interested in exploring joint opportunities? Connect with our strategic partnerships team.</p>
 
-          <form action="{{ route('contact') }}" method="GET">
-            <div class="mb-3">
-              <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Organization Name</label>
-              <input type="text" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Acme Corporation or University" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Partnership Type</label>
-              <select class="form-select bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3">
-                <option value="corporate">Corporate / Business Advisory</option>
-                <option value="institutional">Institutional / Public Sector</option>
-                <option value="educational">Educational / Student Pathways</option>
-                <option value="tech">Technology / HR Mobility Partner</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 shadow-lg transform-scale mt-3 fw-bold">
-              Submit Inquiry <i class="fas fa-arrow-right ms-2"></i>
-            </button>
-          </form>
+          <form action="{{ route('contact') }}" method="POST">
+  @csrf
+  
+  <div class="row g-3">
+    <!-- Organization Name -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Organization Name</label>
+      <input type="text" name="organization_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Acme Ltd or University Name" required>
+    </div>
+
+    <!-- Contact Person Name -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Contact Name</label>
+      <input type="text" name="contact_name" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. John Doe" required>
+    </div>
+
+    <!-- Work Email -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Work Email</label>
+      <input type="email" name="email" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="john@company.com" required>
+    </div>
+
+    <!-- Phone / WhatsApp -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Phone / WhatsApp</label>
+      <input type="tel" name="phone" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="+250 780 000 000">
+    </div>
+
+    <!-- Partnership Type -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Partnership Focus</label>
+      <select name="partnership_type" class="form-select bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3">
+        <option value="corporate">Corporate / Business Advisory</option>
+        <option value="institutional">Institutional / Public Sector</option>
+        <option value="educational">Educational / Student Pathways</option>
+        <option value="tech">Technology / HR Mobility Partner</option>
+      </select>
+    </div>
+
+    <!-- Region / Country -->
+    <div class="col-md-6">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">Country / Location</label>
+      <input type="text" name="country" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="e.g. Rwanda, Romania, UAE">
+    </div>
+
+    <!-- Brief Message -->
+    <div class="col-12">
+      <label class="form-label small text-uppercase text-light-50 fw-bold" style="letter-spacing: 1px;">How can we collaborate?</label>
+      <textarea name="message" rows="3" class="form-control bg-dark text-white border-white border-opacity-10 rounded-3 py-2 px-3" placeholder="Briefly describe your organization's goals or proposed project..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 shadow-lg transform-scale mt-2 fw-bold">
+        Submit Partner Inquiry <i class="fas fa-arrow-right ms-2"></i>
+      </button>
+    </div>
+  </div>
+</form>
         </div>
       </div>
     </div>
