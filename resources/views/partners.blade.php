@@ -145,7 +145,7 @@
       <div class="col-lg-6">
         <div class="position-relative">
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-info rounded-4 shadow-lg translate-middle-x translate-middle-y opacity-10" style="z-index: -1;"></div>
-          <img src="{{ asset('images/partners-bg.jpg') }}" alt="Our Partnerships" class="img-fluid rounded-4 shadow-2xl border border-white border-opacity-10">
+          <img src="{{ asset('images/continents.jpeg') }}" alt="Our Partnerships" class="img-fluid rounded-4 shadow-2xl border border-white border-opacity-10">
         </div>
       </div>
     </div>
