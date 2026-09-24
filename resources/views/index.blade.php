@@ -405,26 +405,28 @@
         <div class="text-center mb-5">
             <h2 class="section-title" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Why Choose FameOceans?</h2>
             <p class="section-subtitle" style="color: var(--muted); max-width: 600px; margin: 0 auto;">
-                Strategic services designed to unlock global success.
+                Strategic solutions designed to optimize operations and accelerate global business growth.
             </p>
         </div>
 
         <div class="row g-4 mt-2 flex-nowrap overflow-auto hide-scrollbar flex-md-wrap">
             
+            <!-- Card 1: Calculated Growth -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect" style="background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08)!important;">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Bold Moves" class="w-100 h-100 object-fit-cover zoom-img">
+                        <img src="{{ asset('images/Bold Moves.jpeg') }}" alt="Calculated Growth" class="w-100 h-100 object-fit-cover zoom-img">
                         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h4 class="text-white fw-bold mb-3">Bold Moves</h4>
-                        <p class="small text-muted mb-4">We don't play it safe. We make audacious recommendations that yield extraordinary results. Prepare for impact.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <h4 class="text-white fw-bold mb-3">Calculated Growth</h4>
+                        <p class="small text-muted mb-4">We deliver high-impact, strategic recommendations designed to challenge standard limits and drive market leadership.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Card 2: Global Network -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-100">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
@@ -433,12 +435,13 @@
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="text-white fw-bold mb-3">Global Network</h4>
-                        <p class="small text-muted mb-4">Our connections span the globe. We open doors you didn't even know existed, leading to unparalleled opportunities.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <p class="small text-muted mb-4">Our international network connects your enterprise directly to high-value markets, partners, and institutional opportunities.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Card 3: Future Focus -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-200">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
@@ -446,51 +449,54 @@
                         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h4 class="text-white fw-bold mb-3">Future Focus</h4>
-                        <p class="small text-muted mb-4">We're always looking ahead. Get strategies that position you for tomorrow's triumphs, not yesterday's trends.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <h4 class="text-white fw-bold mb-3">Forward-Thinking Strategy</h4>
+                        <p class="small text-muted mb-4">We structure agile business models and digital capabilities that ensure long-term resilience and sustainable expansion.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Card 4: Executive Insights -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-300">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{{ asset('images/Business brain.jpeg') }}" alt="Business Brains" class="w-100 h-100 object-fit-cover zoom-img">
+                        <img src="{{ asset('images/Business brain.jpeg') }}" alt="Executive Insights" class="w-100 h-100 object-fit-cover zoom-img">
                         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h4 class="text-white fw-bold mb-3">Business Brains</h4>
-                        <p class="small text-muted mb-4">We dissect your business puzzles with razor-sharp intellect. Get ready for solutions that actually work.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <h4 class="text-white fw-bold mb-3">Executive Expertise</h4>
+                        <p class="small text-muted mb-4">We analyze operational challenges through data-backed methodologies, engineering solutions that maximize enterprise value.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Card 5: Capital Optimization -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-400">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{{ asset('images/money1.jpg') }}" alt="Money Moves" class="w-100 h-100 object-fit-cover zoom-img">
+                        <img src="{{ asset('images/money1.jpg') }}" alt="Capital Optimization" class="w-100 h-100 object-fit-cover zoom-img">
                         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h4 class="text-white fw-bold mb-3">Money Moves</h4>
-                        <p class="small text-muted mb-4">Your capital deserves a vacation. We guide it to greener pastures where it can multiply like rabbits.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <h4 class="text-white fw-bold mb-3">Capital Optimization</h4>
+                        <p class="small text-muted mb-4">We deploy strategic resource allocation methods designed to maximize overall return on investment and compound asset value.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Card 6: Market Expansion -->
             <div class="col-10 col-md-6 col-lg-4 flex-shrink-0 flex-md-shrink-1" x-show="shown" x-transition:enter="transition ease-out duration-500 delay-500">
                 <div class="glass-card h-100 p-0 overflow-hidden border-0 group-hover-effect">
                     <div class="position-relative overflow-hidden" style="height: 200px;">
-                        <img src="{{ asset('images/Global reach.jpeg') }}" alt="Global Reach" class="w-100 h-100 object-fit-cover zoom-img">
+                        <img src="{{ asset('images/Global reach.jpeg') }}" alt="Market Expansion" class="w-100 h-100 object-fit-cover zoom-img">
                         <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(4, 13, 28, 0.9));"></div>
                     </div>
                     <div class="p-4 text-center">
-                        <h4 class="text-white fw-bold mb-3">Global Reach</h4>
-                        <p class="small text-muted mb-4">Expand your horizons. We help you plant your flag on new continents, no passport required for your cash.</p>
-                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Connect</button>
+                        <h4 class="text-white fw-bold mb-3">Market Expansion</h4>
+                        <p class="small text-muted mb-4">Scale your enterprise across emerging markets with streamlined international strategies and strategic brand positioning.</p>
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-4 hover-accent-btn">Learn More</button>
                     </div>
                 </div>
             </div>
