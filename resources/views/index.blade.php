@@ -853,32 +853,41 @@
 
 <section id="final-cta" style="
     position: relative; 
-    background: linear-gradient(135deg, rgba(4, 13, 28, 0.9), rgba(8, 27, 52, 0.7)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover;
-    background-attachment: fixed; /* Parallax effect for depth */
+    background: linear-gradient(135deg, rgba(4, 13, 28, 0.92), rgba(8, 27, 52, 0.8)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover;
+    background-attachment: fixed;
     padding: 140px 0;
     overflow: hidden;">
-  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(4, 13, 28, 0.4); pointer-events: none;"></div>
+  
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(4, 13, 28, 0.5); pointer-events: none;"></div>
 
   <div class="container text-center text-light position-relative" style="z-index: 2;">
 
-    <div class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color: var(--accent); font-size:13px; opacity: 0.9;">
-        Ready to Scale Your Brand?
+    <!-- Eyebrow Badge -->
+    <div class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: var(--accent); font-size: 13px; opacity: 0.95;">
+        — Expand Beyond Borders —
     </div>
 
-    <h2 class="display-4 fw-bold mb-3" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      Let's Drive Measurable Impact
+    <!-- Main Headline -->
+    <h2 class="display-4 fw-bold mb-3" style="background: linear-gradient(90deg, #fff, #9adfff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Ready to Unlock Global Opportunities?
     </h2>
 
-    <p class="mx-auto mb-5" style="color: rgba(227,233,255,0.8); max-width: 550px; font-size: 1.1rem; line-height: 1.8;">
-      Transform your market presence. FameOceans delivers tailored digital strategies to establish industry leadership and drive global expansion.
+    <!-- Subtitle / Value Proposition -->
+    <p class="mx-auto mb-4" style="color: rgba(227, 233, 255, 0.85); max-width: 650px; font-size: 1.15rem; line-height: 1.8;">
+        Partner with <strong class="text-white">FameOceans Corporation</strong> to navigate cross-border investments, compliant workforce mobility, digital transformation, and international partnerships across Africa, Europe, and the Middle East.
     </p>
 
-  <div class="d-flex justify-content-center gap-3 py-4" style="overflow: visible;">
-    <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
-       style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; display: inline-block;">
-        Get Started Now
-    </a>
-  </div>
+    <!-- Action Buttons -->
+    <div class="d-flex flex-wrap justify-content-center gap-3 py-3" style="overflow: visible;">
+        <a href="{{ route('contact') }}" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
+           style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; display: inline-block;">
+           Schedule a Consultation <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+        <a href="{{ route('services') }}" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 shadow-lg" 
+           style="font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; border-color: rgba(255,255,255,0.3); backdrop-filter: blur(5px);">
+           Explore Our Services
+        </a>
+    </div>
 
   </div>
 </section>
