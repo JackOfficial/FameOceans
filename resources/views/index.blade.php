@@ -876,7 +876,7 @@
   <div class="d-flex justify-content-center gap-3 py-4" style="overflow: visible;">
     <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
        style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; display: inline-block;">
-        Schedule a Strategy Call
+        Get Started Now
     </a>
   </div>
 
