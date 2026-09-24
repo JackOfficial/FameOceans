@@ -856,30 +856,29 @@
     background: linear-gradient(135deg, rgba(4, 13, 28, 0.9), rgba(8, 27, 52, 0.7)), url('{{ asset('images/ocean-cta.jpg') }}') no-repeat center center/cover;
     background-attachment: fixed; /* Parallax effect for depth */
     padding: 140px 0;
-    overflow: hidden;
-">
+    overflow: hidden;">
   <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(4, 13, 28, 0.4); pointer-events: none;"></div>
 
   <div class="container text-center text-light position-relative" style="z-index: 2;">
 
     <div class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color: var(--accent); font-size:13px; opacity: 0.9;">
-        Ready for Glory?
+        Ready to Scale Your Brand?
     </div>
 
     <h2 class="display-4 fw-bold mb-3" style="background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-      Let's Make It Happen
+      Let's Drive Measurable Impact
     </h2>
 
     <p class="mx-auto mb-5" style="color: rgba(227,233,255,0.8); max-width: 550px; font-size: 1.1rem; line-height: 1.8;">
-      Stop dreaming, start doing. FameOceans is your launchpad to international acclaim and financial freedom.
+      Transform your market presence. FameOceans delivers tailored digital strategies to establish industry leadership and drive global expansion.
     </p>
 
-<div class="d-flex justify-content-center gap-3 py-4" style="overflow: visible;">
+  <div class="d-flex justify-content-center gap-3 py-4" style="overflow: visible;">
     <a href="#" class="btn btn-lg rounded-pill px-5 py-3 shadow-lg btn-breathing" 
        style="background: #fff; color: var(--deep); font-weight: 700; border: none; font-size: 1rem; letter-spacing: 1px; position: relative; display: inline-block;">
-        Get Started Now
+        Schedule a Strategy Call
     </a>
-</div>
+  </div>
 
   </div>
 </section>
