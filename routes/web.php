@@ -16,6 +16,7 @@ use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PostController as BlogController;
+use App\Http\Controllers\Admin\PartnerInquiryController;
 use Illuminate\Support\Facades\Route;
 
 //Guest user routes
@@ -52,6 +53,15 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::resource('blogs', BlogController::class);
 
     // Route::resource('users', UsersController::class);
+    // Route::resource('partners', PartnerController::class);
+
+    // Partnership Inquiries Routes
+    Route::get('partnerships-trash', [PartnerInquiryController::class, 'trash'])->name('partnerships.trash');
+    Route::post('partnerships/{id}/restore', [PartnerInquiryController::class, 'restore'])->name('partnerships.restore');
+    Route::delete('partnerships/{id}/force-delete', [PartnerInquiryController::class, 'forceDelete'])->name('partnerships.force-delete');
+    Route::resource('partnerships', PartnerInquiryController::class);
+
+    // Route::resource('users', UsersController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('organization', OrganizationController::class);
 
@@ -66,14 +76,14 @@ Route::middleware(['auth', 'role:admin|super-admin'])->prefix('admin')->name('ad
     Route::get('categories-trash', [BlogCategoryController::class, 'trash'])
     ->name('categories.trash');
 
- // List all sent messages
-Route::get('messages/inbox', [MessageController::class, 'inbox'])->name('messages.inbox');
+    // List all sent messages
+     Route::get('messages/inbox', [MessageController::class, 'inbox'])->name('messages.inbox');
 
-// Read a single message
-Route::get('messages/{id}', [MessageController::class, 'read'])->name('messages.read');
+    // Read a single message
+    Route::get('messages/{id}', [MessageController::class, 'read'])->name('messages.read');
 
-// Delete a single message
-Route::delete('messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
+    // Delete a single message
+    Route::delete('messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
     
     Route::post('categories/{id}/restore', [BlogCategoryController::class, 'restore'])
     ->name('categories.restore');
