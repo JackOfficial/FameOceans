@@ -736,120 +736,125 @@
       </p>
     </div>
 
-    <!-- INFINITE CONTINUOUS LOGO / PARTNER TICKER -->
-    <div class="partner-ticker-wrapper position-relative py-3">
-      <!-- Gradient Fade Overlay Edge Effects -->
-      <div class="ticker-overlay-left"></div>
-      <div class="ticker-overlay-right"></div>
+    @if(isset($partners) && $partners->count() > 0)
+      <!-- INFINITE CONTINUOUS LOGO / PARTNER TICKER -->
+      <div class="partner-ticker-wrapper position-relative py-3">
+        <!-- Gradient Fade Overlay Edge Effects -->
+        <div class="ticker-overlay-left"></div>
+        <div class="ticker-overlay-right"></div>
 
-      <div class="partner-ticker-track d-flex align-items-center gap-4">
-        
-        <!-- Track Set 1 -->
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-university text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Academic Alliances</h6>
-            <small class="text-info opacity-75">EU & East Africa</small>
-          </div>
+        <div class="partner-ticker-track d-flex align-items-center gap-4">
+          
+          {{-- Track Loop 1 (Original Set) --}}
+          @foreach($partners as $partner)
+            <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" style="min-width: 260px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);">
+              <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                @if($partner->logo)
+                  <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->organization_name }}" class="img-fluid p-1" style="max-height: 40px; object-fit: contain;">
+                @else
+                  <i class="fas fa-building text-info fa-lg"></i>
+                @endif
+              </div>
+              <div class="text-start">
+                <h6 class="fw-bold text-white mb-0 fs-6 text-truncate" style="max-width: 170px;">{{ $partner->organization_name }}</h6>
+                <small class="text-info opacity-75 text-capitalize d-block text-truncate" style="max-width: 170px;">
+                  @if($partner->country)
+                    <i class="fas fa-globe me-1"></i>{{ $partner->country }}
+                  @else
+                    {{ str_replace('_', ' ', $partner->partnership_type) }}
+                  @endif
+                </small>
+              </div>
+            </div>
+          @endforeach
+
+          {{-- Track Loop 2 (Duplicate for Infinite Seamless Animation) --}}
+          @foreach($partners as $partner)
+            <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true" style="min-width: 260px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);">
+              <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                @if($partner->logo)
+                  <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->organization_name }}" class="img-fluid p-1" style="max-height: 40px; object-fit: contain;">
+                @else
+                  <i class="fas fa-building text-info fa-lg"></i>
+                @endif
+              </div>
+              <div class="text-start">
+                <h6 class="fw-bold text-white mb-0 fs-6 text-truncate" style="max-width: 170px;">{{ $partner->organization_name }}</h6>
+                <small class="text-info opacity-75 text-capitalize d-block text-truncate" style="max-width: 170px;">
+                  @if($partner->country)
+                    <i class="fas fa-globe me-1"></i>{{ $partner->country }}
+                  @else
+                    {{ str_replace('_', ' ', $partner->partnership_type) }}
+                  @endif
+                </small>
+              </div>
+            </div>
+          @endforeach
+
         </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-          <div class="partner-icon-wrapper rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-briefcase text-primary fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Global Workforce</h6>
-            <small class="text-info opacity-75">Romania & UAE</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-landmark text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Trade Registries</h6>
-            <small class="text-info opacity-75">Rwanda & CEE Hubs</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-          <div class="partner-icon-wrapper rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-laptop-code text-primary fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Mobility Systems</h6>
-            <small class="text-info opacity-75">International Tech</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-globe-africa text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">East Africa Trade Hub</h6>
-            <small class="text-info opacity-75">Kigali, Rwanda</small>
-          </div>
-        </div>
-
-        <!-- Track Set 2 (Duplicate for Infinite Seamless Loop) -->
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-university text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Academic Alliances</h6>
-            <small class="text-info opacity-75">EU & East Africa</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-          <div class="partner-icon-wrapper rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-briefcase text-primary fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Global Workforce</h6>
-            <small class="text-info opacity-75">Romania & UAE</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-landmark text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Trade Registries</h6>
-            <small class="text-info opacity-75">Rwanda & CEE Hubs</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-          <div class="partner-icon-wrapper rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-laptop-code text-primary fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">Mobility Systems</h6>
-            <small class="text-info opacity-75">International Tech</small>
-          </div>
-        </div>
-
-        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-          <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-            <i class="fas fa-globe-africa text-info fa-lg"></i>
-          </div>
-          <div class="text-start">
-            <h6 class="fw-bold text-white mb-0 fs-6">East Africa Trade Hub</h6>
-            <small class="text-info opacity-75">Kigali, Rwanda</small>
-          </div>
-        </div>
-
       </div>
-    </div>
+    @else
+      {{-- Static Fallback Network Pillars --}}
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="glass-card p-4 rounded-4 border border-white border-opacity-10 text-center">
+            <i class="fas fa-university fa-2x text-info mb-2"></i>
+            <h6 class="text-white fw-bold mb-0">Academic Alliances</h6>
+            <small class="text-info opacity-75">EU & East Africa</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="glass-card p-4 rounded-4 border border-white border-opacity-10 text-center">
+            <i class="fas fa-briefcase fa-2x text-primary mb-2"></i>
+            <h6 class="text-white fw-bold mb-0">Global Workforce</h6>
+            <small class="text-info opacity-75">Romania & UAE</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="glass-card p-4 rounded-4 border border-white border-opacity-10 text-center">
+            <i class="fas fa-landmark fa-2x text-info mb-2"></i>
+            <h6 class="text-white fw-bold mb-0">Trade Registries</h6>
+            <small class="text-info opacity-75">Rwanda & CEE Hubs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="glass-card p-4 rounded-4 border border-white border-opacity-10 text-center">
+            <i class="fas fa-laptop-code fa-2x text-primary mb-2"></i>
+            <h6 class="text-white fw-bold mb-0">Mobility Systems</h6>
+            <small class="text-info opacity-75">International Tech</small>
+          </div>
+        </div>
+      </div>
+    @endif
   </div>
 </section>
+
+{{-- Marquee Ticker Styles --}}
+<style>
+  .partner-ticker-wrapper {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .partner-ticker-track {
+    width: max-content;
+    animation: scroll-ticker 35s linear infinite;
+  }
+
+  .partner-ticker-wrapper:hover .partner-ticker-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
 
 <section id="final-cta" style="
     position: relative; 
