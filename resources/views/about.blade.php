@@ -273,25 +273,14 @@
             </p>
         </div>
 
-        <div class="partner-ticker-wrapper position-relative py-3">
-            <div class="ticker-overlay-left"></div>
-            <div class="ticker-overlay-right"></div>
+        @if(isset($partners) && $partners->count() > 0)
+            <div class="partner-ticker-wrapper position-relative py-3">
+                <div class="ticker-overlay-left"></div>
+                <div class="ticker-overlay-right"></div>
 
-            <div class="partner-ticker-track d-flex align-items-center gap-4">
+                <div class="partner-ticker-track d-flex align-items-center gap-4">
 
-                @php
-                    $staticPartners = [
-                        ['icon' => 'university', 'title' => 'Academic Alliances', 'location' => 'EU & East Africa', 'color' => 'info'],
-                        ['icon' => 'briefcase', 'title' => 'Global Workforce', 'location' => 'Romania & UAE', 'color' => 'primary'],
-                        ['icon' => 'landmark', 'title' => 'Trade Registries', 'location' => 'Rwanda & CEE Hubs', 'color' => 'info'],
-                        ['icon' => 'laptop-code', 'title' => 'Mobility Systems', 'location' => 'International Tech', 'color' => 'primary'],
-                        ['icon' => 'globe-africa', 'title' => 'East Africa Trade Hub', 'location' => 'Kigali, Rwanda', 'color' => 'info'],
-                        ['icon' => 'building', 'title' => 'Corporate Advisors', 'location' => 'Bucharest, Romania', 'color' => 'primary'],
-                    ];
-                @endphp
-
-                {{-- SET 1 --}}
-                @if(isset($partners) && $partners->count() > 0)
+                    {{-- SET 1 (Database Records) --}}
                     @foreach($partners as $partner)
                         <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0">
                             <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
@@ -310,24 +299,8 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
 
-                @foreach($staticPartners as $item)
-                    <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0">
-                        <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
-                            <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
-                        </div>
-                        <div class="text-start">
-                            <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
-                            <small class="text-info opacity-75 d-flex align-items-center gap-1">
-                                <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
-                            </small>
-                        </div>
-                    </div>
-                @endforeach
-
-                {{-- SET 2 (Duplicate Loop for Infinite Smooth Marquee) --}}
-                @if(isset($partners) && $partners->count() > 0)
+                    {{-- SET 2 (Duplicate Loop for Continuous Marquee Effect) --}}
                     @foreach($partners as $partner)
                         <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0" aria-hidden="true">
                             <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
@@ -346,24 +319,15 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
 
-                @foreach($staticPartners as $item)
-                    <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0" aria-hidden="true">
-                        <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
-                            <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
-                        </div>
-                        <div class="text-start">
-                            <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
-                            <small class="text-info opacity-75 d-flex align-items-center gap-1">
-                                <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
-                            </small>
-                        </div>
-                    </div>
-                @endforeach
-
+                </div>
             </div>
-        </div>
+        @else
+            <div class="p-4 rounded-4 border border-white border-opacity-10 d-inline-block text-muted my-3" style="background: rgba(255,255,255,0.02);">
+                <i class="fas fa-handshake fa-2x mb-2 text-info opacity-50"></i>
+                <div>No dynamic partner organizations listed at this time.</div>
+            </div>
+        @endif
     </div>
 </section>
 
