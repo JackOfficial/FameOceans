@@ -261,7 +261,7 @@
     </div>
 </section>
 
-<!-- CONTINUOUS TICKER PARTNERS CAROUSEL -->
+<!-- DYNAMIC CONTINUOUS TICKER PARTNERS CAROUSEL -->
 <section class="py-5 position-relative overflow-hidden border-top border-bottom border-white border-opacity-10" style="background: rgba(10, 20, 35, 0.6);">
     <div class="container text-center py-4">
         <div class="mb-4">
@@ -278,8 +278,9 @@
             <div class="ticker-overlay-right"></div>
 
             <div class="partner-ticker-track d-flex align-items-center gap-4">
+
                 @php
-                    $partnersList = [
+                    $staticPartners = [
                         ['icon' => 'university', 'title' => 'Academic Alliances', 'location' => 'EU & East Africa', 'color' => 'info'],
                         ['icon' => 'briefcase', 'title' => 'Global Workforce', 'location' => 'Romania & UAE', 'color' => 'primary'],
                         ['icon' => 'landmark', 'title' => 'Trade Registries', 'location' => 'Rwanda & CEE Hubs', 'color' => 'info'],
@@ -289,35 +290,78 @@
                     ];
                 @endphp
 
-                <!-- Track Set 1 -->
-                @foreach($partnersList as $item)
-                <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4">
-                    <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
-                        <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                {{-- SET 1 --}}
+                @if(isset($partners) && $partners->count() > 0)
+                    @foreach($partners as $partner)
+                        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0">
+                            <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                                @if($partner->logo)
+                                    <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->organization_name }}" class="img-fluid p-1" style="max-height: 40px; object-fit: contain;">
+                                @else
+                                    <i class="fas fa-building text-info fa-lg"></i>
+                                @endif
+                            </div>
+                            <div class="text-start">
+                                <h6 class="fw-bold text-white mb-1 fs-6 text-truncate" style="max-width: 180px;">{{ $partner->organization_name }}</h6>
+                                <small class="text-info opacity-75 d-flex align-items-center gap-1 text-truncate" style="max-width: 180px;">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> 
+                                    {{ $partner->country ?? ucfirst($partner->partnership_type) }}
+                                </small>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+
+                @foreach($staticPartners as $item)
+                    <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0">
+                        <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                            <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
+                            <small class="text-info opacity-75 d-flex align-items-center gap-1">
+                                <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
+                            </small>
+                        </div>
                     </div>
-                    <div class="text-start">
-                        <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
-                        <small class="text-info opacity-75 d-flex align-items-center gap-1">
-                            <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
-                        </small>
-                    </div>
-                </div>
                 @endforeach
 
-                <!-- Track Set 2 (Duplicate for Infinite Loop) -->
-                @foreach($partnersList as $item)
-                <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4" aria-hidden="true">
-                    <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
-                        <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                {{-- SET 2 (Duplicate Loop for Infinite Smooth Marquee) --}}
+                @if(isset($partners) && $partners->count() > 0)
+                    @foreach($partners as $partner)
+                        <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0" aria-hidden="true">
+                            <div class="partner-icon-wrapper rounded-circle bg-info bg-opacity-10 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                                @if($partner->logo)
+                                    <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->organization_name }}" class="img-fluid p-1" style="max-height: 40px; object-fit: contain;">
+                                @else
+                                    <i class="fas fa-building text-info fa-lg"></i>
+                                @endif
+                            </div>
+                            <div class="text-start">
+                                <h6 class="fw-bold text-white mb-1 fs-6 text-truncate" style="max-width: 180px;">{{ $partner->organization_name }}</h6>
+                                <small class="text-info opacity-75 d-flex align-items-center gap-1 text-truncate" style="max-width: 180px;">
+                                    <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> 
+                                    {{ $partner->country ?? ucfirst($partner->partnership_type) }}
+                                </small>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+
+                @foreach($staticPartners as $item)
+                    <div class="partner-card glass-card px-4 py-3 d-flex align-items-center gap-3 border border-white border-opacity-10 rounded-4 flex-shrink-0" aria-hidden="true">
+                        <div class="partner-icon-wrapper rounded-circle bg-{{ $item['color'] }} bg-opacity-10 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                            <i class="fas fa-{{ $item['icon'] }} text-{{ $item['color'] }} fa-lg"></i>
+                        </div>
+                        <div class="text-start">
+                            <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
+                            <small class="text-info opacity-75 d-flex align-items-center gap-1">
+                                <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
+                            </small>
+                        </div>
                     </div>
-                    <div class="text-start">
-                        <h6 class="fw-bold text-white mb-1 fs-6">{{ $item['title'] }}</h6>
-                        <small class="text-info opacity-75 d-flex align-items-center gap-1">
-                            <i class="fas fa-map-marker-alt" style="font-size: 11px;"></i> {{ $item['location'] }}
-                        </small>
-                    </div>
-                </div>
                 @endforeach
+
             </div>
         </div>
     </div>
@@ -365,6 +409,8 @@
         overflow: hidden;
         white-space: nowrap;
         width: 100%;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     .partner-ticker-track {
