@@ -2,38 +2,38 @@
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
 use App\Models\PartnerInquiry;
 
 new class extends Component
 {
     use WithFileUploads;
 
+    #[Validate('required|string|max:255')]
     public $organization_name = '';
+
+    #[Validate('required|string|max:255')]
     public $contact_name = '';
+
+    #[Validate('required|email|max:255')]
     public $email = '';
+
+    #[Validate('nullable|string|max:50')]
     public $phone = '';
+
+    #[Validate('required|in:corporate,institutional,educational,tech')]
     public $partnership_type = 'corporate';
+
+    #[Validate('nullable|string|max:100')]
     public $country = '';
+
+    #[Validate('nullable|image|mimes:png,jpg,jpeg,webp,svg|max:2048')]
     public $logo;
+
+    #[Validate('nullable|string|max:2000')]
     public $message = '';
 
     public $isSubmitted = false;
-
-    protected $rules = [
-        'organization_name' => 'required|string|max:255',
-        'contact_name'      => 'required|string|max:255',
-        'email'             => 'required|email|max:255',
-        'phone'             => 'nullable|string|max:50',
-        'partnership_type'  => 'required|in:corporate,institutional,educational,tech',
-        'country'           => 'nullable|string|max:100',
-        'logo'              => 'nullable|image|mimes:png,jpg,jpeg,webp,svg|max:2048',
-        'message'           => 'nullable|string|max:2000',
-    ];
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
 
     public function submit()
     {
@@ -67,7 +67,7 @@ new class extends Component
         </div>
     @endif
 
-    <form wire:submit.prevent="submit">
+    <form wire:submit="submit">
         <div class="row g-3">
             <!-- Organization Name -->
             <div class="col-md-6">
