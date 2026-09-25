@@ -283,7 +283,7 @@
       </div>
 
       <div class="col-lg-6">
-        <x-partner-inquiry-form />
+        <livewire:components.partner-inquiry-form />
       </div>
     </div>
   </div>
