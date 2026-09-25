@@ -78,13 +78,13 @@
                 </li>
 
                 <!-- Partnerships -->
-                <li class="nav-item">
-                    <a href="{{ route('admin.partnerships.inbox') }}"
-                       class="nav-link {{ request()->routeIs('admin.partnerships.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-mail"></i>
-                        <p>Partnerships</p>
-                    </a>
-                </li>
+<li class="nav-item">
+    <a href="{{ route('admin.partnerships.index') }}"
+       class="nav-link {{ request()->routeIs('admin.partnerships.*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-handshake"></i>
+        <p>Partnerships</p>
+    </a>
+</li>
 
 
                 <!-- Reports -->
