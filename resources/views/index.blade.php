@@ -596,7 +596,7 @@
   </div>
 </section>
 
-<section id="testimonials" 
+<section id="testimonials" class="d-none"
     style="position: relative; background: linear-gradient(135deg, rgba(8, 27, 52, 0.95), rgba(4, 13, 28, 0.9)); padding: 100px 0; overflow: hidden;">
   
   <div class="container position-relative" style="z-index: 2;">
