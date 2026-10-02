@@ -95,7 +95,7 @@
                         <a class="text-white text-decoration-none" href="{{ route('post.show', $recent->slug) }}">
                             <h6 class="mt-0 text-truncate small">{{ Str::limit($recent->title, 25) }}</h6>
                         </a>
-                        <small class="text-muted" style="font-size: 11px;">
+                        <small class="text-muted text-white" style="font-size: 11px;">
                             <i class="fa fa-calendar text-accent me-1"></i> {{ $recent->published_at?->format('d M, Y') }}
                         </small>
                     </div>
