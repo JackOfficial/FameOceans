@@ -14,7 +14,7 @@ class HomeController extends Controller
         $posts = Post::with(['author', 'category'])
                      ->latest()
                      ->take(3)
-                     ->where('status', 1)
+                     ->where('status', 'published')
                      ->get();
 
         $partners = PartnerInquiry::latest()->get();
