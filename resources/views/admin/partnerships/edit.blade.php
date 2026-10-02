@@ -103,6 +103,8 @@
                                     <option value="institutional" {{ old('partnership_type', $inquiry->partnership_type) == 'institutional' ? 'selected' : '' }}>Institutional / Public Sector</option>
                                     <option value="educational" {{ old('partnership_type', $inquiry->partnership_type) == 'educational' ? 'selected' : '' }}>Educational / Student Pathways</option>
                                     <option value="tech" {{ old('partnership_type', $inquiry->partnership_type) == 'tech' ? 'selected' : '' }}>Technology / HR Mobility Partner</option>
+                                    <option value="visa consultancy" {{ old('partnership_type', $inquiry->partnership_type) == 'visa consultancy' ? 'selected' : '' }}>Visa Consultancy</option>
+                                    <option value="travels-tours" {{ old('partnership_type', $inquiry->partnership_type) == 'travels-tours' ? 'selected' : '' }}>Travels & Tours</option>
                                 </select>
                                 @error('partnership_type')
                                     <span class="invalid-feedback">{{ $message }}</span>

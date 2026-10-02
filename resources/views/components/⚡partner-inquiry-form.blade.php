@@ -105,6 +105,8 @@ new class extends Component
                     <option value="institutional">Institutional / Public Sector</option>
                     <option value="educational">Educational / Student Pathways</option>
                     <option value="tech">Technology / HR Mobility Partner</option>
+                    <option value="visa consultancy">Visa Consultancy</option>
+                    <option value="travels-tours">Travels & Tours</option>
                 </select>
                 @error('partnership_type') <small class="text-danger mt-1 d-block">{{ $message }}</small> @enderror
             </div>
