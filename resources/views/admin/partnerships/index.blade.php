@@ -57,7 +57,7 @@
                         <th>Type & Location</th>
                         <th>Message</th>
                         <th>Received</th>
-                        <th width="120" class="text-right">Actions</th>
+                        <th width="150" class="text-right">Actions</th>
                     </tr>
                 </thead>
 
@@ -115,12 +115,21 @@
                             </td>
 
                             <td class="text-right">
+                                {{-- View Details Link --}}
                                 <a href="{{ route('admin.partnerships.show', $inquiry) }}"
                                    class="btn btn-info btn-sm"
                                    title="View Details">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
+                                {{-- Edit Link --}}
+                                <a href="{{ route('admin.partnerships.edit', $inquiry) }}"
+                                   class="btn btn-warning btn-sm"
+                                   title="Edit Inquiry">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                {{-- Delete Form --}}
                                 <form action="{{ route('admin.partnerships.destroy', $inquiry) }}"
                                       method="POST"
                                       class="d-inline"
