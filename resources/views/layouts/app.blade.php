@@ -360,8 +360,8 @@ body {
                     <p class="mb-4">Strategically bridging workforce mobility and smart capital across global corridors.</p>
                     <div class="d-flex">
                         <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/fameoceans_official?stkn=MTV1am83d3V4bnN0eQ==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@fameoceansofficial?_r=1&_t=ZS-9AD44ZUCx4G" class="social-icon"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 
