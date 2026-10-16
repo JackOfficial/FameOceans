@@ -130,7 +130,7 @@
             'name' => 'Musengimana Jacques',
             'role' => 'IT & Digital Transformation Lead',
             'bio' => 'Guides overall corporate vision, driving digital transformation, IT infrastructure, global digital marketing strategies, and cross-border expansion initiatives across European and African markets.',
-            'image' => asset('images/team/musengimana-jacques.jpeg'),
+            'image' => asset('images/team/jacques.jpeg'),
             'color' => 'primary'
         ],
     ];
