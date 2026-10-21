@@ -17,7 +17,7 @@ class HomeController extends Controller
                      ->where('status', 'published')
                      ->get();
 
-        $partners = PartnerInquiry::latest()->get();
+        $partners = PartnerInquiry::where('status', 'reviewed')->take(5)->get();
 
         return view('index', compact('posts', 'partners'));
     }

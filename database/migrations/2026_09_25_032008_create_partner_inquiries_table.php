@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void 
     {
         Schema::create('partner_inquiries', function (Blueprint $table) {
            $table->id();
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('logo')->nullable(); // Column to store company logo path
             $table->text('message')->nullable();
-            $table->enum('status', ['pending', 'reviewed', 'contacted', 'rejected'])->default('pending');
+            $table->enum('status', ['pending', 'reviewed', 'contacted', 'rejected', 'approved'])->default('pending');
             $table->timestamps();
         });
     }
